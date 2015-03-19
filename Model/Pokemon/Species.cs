@@ -19,7 +19,7 @@ namespace PokeCiv.Model.Pokemon
         public int spdefense;
         public int speed;
 
-        public List<Types> types;
+        public List<PokemonType> types;
         //public List<???> evolutions;
         public Dictionary<int, Move> movesLearnable;
 
@@ -32,7 +32,7 @@ namespace PokeCiv.Model.Pokemon
             name = data["Name"];
             id = Convert.ToInt32(data["ID"]);
             setBaseStats(data["BaseStats"]);
-            //TODO: setTypes(data);
+            setTypes(data);
             //TODO: setEvolutions(data["Evolutions"]);
             //TODO: setMoves(data["Moves"]);
         }
@@ -51,7 +51,13 @@ namespace PokeCiv.Model.Pokemon
 
         private void setTypes(Dictionary<string, string> data)
         {
-
+            types = new List<PokemonType>();
+            types.Add(Types.getType(data["Type1"]));
+            string type2;
+            if (data.TryGetValue("Type2", out type2))
+            {
+                types.Add(Types.getType(type2));
+            }
         }
 
         private void setEvolutions(string evolutions)

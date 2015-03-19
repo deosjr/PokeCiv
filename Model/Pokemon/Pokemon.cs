@@ -18,5 +18,10 @@ namespace PokeCiv.Model.Pokemon
             this.species = species;
         }
 
+        public override string ToString()
+        {
+            return species.name + " lvl: " + level;
+        }
+
     }
 }

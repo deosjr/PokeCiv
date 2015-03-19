@@ -44,6 +44,7 @@
     <Compile Include="Model\Pokemon\Move.cs" />
     <Compile Include="Model\Pokemon\Pokemon.cs" />
     <Compile Include="Model\Pokemon\PokemonFactory.cs" />
+    <Compile Include="Model\Pokemon\PokemonType.cs" />
     <Compile Include="Model\Pokemon\Species.cs" />
     <Compile Include="Model\Pokemon\Types.cs" />
     <Compile Include="PokeCiv.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 using PokeCiv.Model.Pokemon;
 
@@ -13,8 +14,8 @@ namespace PokeCiv
         static void Main(string[] args)
         {
 
-            PokemonFactory pf = new PokemonFactory();
-            Console.ReadLine();
+            Pokemon p = PokemonFactory.getPokemon(10, 4);
+            Debug.WriteLine(p);
         }
     }
 }
