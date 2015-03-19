@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Pokemon\Move.cs" />
+    <Compile Include="Model\Pokemon\Pokemon.cs" />
+    <Compile Include="Model\Pokemon\PokemonFactory.cs" />
+    <Compile Include="Model\Pokemon\Species.cs" />
+    <Compile Include="Model\Pokemon\Types.cs" />
     <Compile Include="PokeCiv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\Battle\" />
-    <Folder Include="Model\Pokemon\" />
     <Folder Include="Model\World\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
