@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Pokemon\Move.cs" />
+    <Compile Include="Model\Pokemon\Moves.cs" />
     <Compile Include="Model\Pokemon\Pokemon.cs" />
     <Compile Include="Model\Pokemon\PokemonFactory.cs" />
     <Compile Include="Model\Pokemon\PokemonType.cs" />
