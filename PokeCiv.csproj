@@ -41,23 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Pokemon\Move.cs" />
-    <Compile Include="Model\Pokemon\Moves.cs" />
-    <Compile Include="Model\Pokemon\Pokemon.cs" />
-    <Compile Include="Model\Pokemon\PokemonFactory.cs" />
-    <Compile Include="Model\Pokemon\PokemonType.cs" />
-    <Compile Include="Model\Pokemon\Species.cs" />
-    <Compile Include="Model\Pokemon\Types.cs" />
+    <Compile Include="Model\Battle\Battle.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Pokedata\Move.cs" />
+    <Compile Include="Model\Pokedata\PokemonMove.cs" />
+    <Compile Include="Model\Pokedata\Moves.cs" />
+    <Compile Include="Model\Pokedata\Pokemon.cs" />
+    <Compile Include="Model\Pokedata\PokemonFactory.cs" />
+    <Compile Include="Model\Pokedata\PokemonType.cs" />
+    <Compile Include="Model\Pokedata\Species.cs" />
+    <Compile Include="Model\Pokedata\Types.cs" />
+    <Compile Include="Model\World\World.cs" />
     <Compile Include="PokeCiv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\Battle\" />
-    <Folder Include="Model\World\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

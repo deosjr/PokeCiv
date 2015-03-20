@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokeCiv.Model.Pokemon
+namespace PokeCiv.Model.Pokedata
 {
     class Species
     {
@@ -12,7 +12,7 @@ namespace PokeCiv.Model.Pokemon
         public string name;
         public int id;
 
-        public int hp;
+        public int HP;
         public int attack;
         public int defense;
         public int spattack;
@@ -21,7 +21,7 @@ namespace PokeCiv.Model.Pokemon
 
         public List<PokemonType> types;
         //public List<???> evolutions;
-        public Dictionary<int, Move> movesLearnable;
+        public Dictionary<int, List<PokemonMove>> movesLearnable = new Dictionary<int,List<PokemonMove>>();
 
         public int growthRate;
         public int baseXP;
@@ -34,13 +34,13 @@ namespace PokeCiv.Model.Pokemon
             setBaseStats(data["BaseStats"]);
             setTypes(data);
             //TODO: setEvolutions(data["Evolutions"]);
-            //TODO: setMoves(data["Moves"]);
+            setMoves(data["Moves"]);
         }
 
         private void setBaseStats(string stats)
         {
             var baseStats = new List<int>(from x in stats select Convert.ToInt32(x));
-            hp = baseStats[0];
+            HP = baseStats[0];
             attack = baseStats[1];
             defense = baseStats[2];
             spattack = baseStats[3];
@@ -67,7 +67,22 @@ namespace PokeCiv.Model.Pokemon
 
         private void setMoves(string moves)
         {
-
+            string[] m = moves.Split(',');
+            for (int i = 0; i < m.Length; i += 2)
+            {
+                int level = Convert.ToInt32(m[i]);
+                PokemonMove move = Moves.getMove(m[i+1]);
+                if (movesLearnable.ContainsKey(level))
+                {
+                    movesLearnable[level].Add(move);
+                }
+                else
+                {
+                    List<PokemonMove> list = new List<PokemonMove>();
+                    list.Add(move);
+                    movesLearnable.Add(level, list);
+                }
+            }
         }
 
     }

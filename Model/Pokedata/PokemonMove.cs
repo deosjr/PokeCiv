@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokeCiv.Model.Pokemon
+namespace PokeCiv.Model.Pokedata
 {
-    class Move
+    class PokemonMove
     {
 
         public int id;
@@ -16,7 +16,7 @@ namespace PokeCiv.Model.Pokemon
         private PokemonType type;
         private string category;
 
-        public Move(string[] data)
+        public PokemonMove(string[] data)
         {
             id = Convert.ToInt32(data[0]);
             name = data[2];

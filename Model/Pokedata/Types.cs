@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokeCiv.Model.Pokemon
+namespace PokeCiv.Model.Pokedata
 {
     class Types
     {

@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokeCiv.Model.Pokemon
+namespace PokeCiv.Model.Pokedata
 {
     class Moves
     {
         private static Dictionary<string, int> internalNames = new Dictionary<string, int>();
-        private static List<Move> moves = new List<Move>();
+        private static List<PokemonMove> moves = new List<PokemonMove>();
 
         static Moves()
         {
@@ -25,18 +25,18 @@ namespace PokeCiv.Model.Pokemon
             foreach (var line in lines)
             {
                 string[] features = line.Split(',');
-                Move move = new Move(features);
+                PokemonMove move = new PokemonMove(features);
                 moves.Add(move);
                 internalNames.Add(features[1], move.id);
             }
         }
 
-        public static Move getType(string name) 
+        public static PokemonMove getMove(string name) 
         {
             return moves[internalNames[name] - 1];
         }
 
-        public static Move getType(int id)
+        public static PokemonMove getMove(int id)
         {
             return moves[id - 1];
         }
