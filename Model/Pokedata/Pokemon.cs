@@ -8,7 +8,7 @@ using PokeCiv.Model.Battle.Status;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class Pokemon
+    public class Pokemon
     {
 
         public int level;
@@ -49,7 +49,7 @@ namespace PokeCiv.Model.Pokedata
             this.level = level;
             this.species = species;
             this.name = species.name;
-            Tuple<int,int> XPinfo = Experience.lookupXP(this);
+            Tuple<int, int> XPinfo = Experience.lookupXP(this);
             XP = XPinfo.Item1;
             nextXP = XPinfo.Item1 + XPinfo.Item2;
             generateIV();
@@ -57,26 +57,26 @@ namespace PokeCiv.Model.Pokedata
             learnMovesUntilLevel();
             currentHP = HP;
         }
-        
+
         private void generateIV()
         {
             Random r = new Random();
-            IVHP        = r.Next(33);
-            IVattack    = r.Next(33);
-            IVdefense   = r.Next(33);
-            IVspattack  = r.Next(33);
+            IVHP = r.Next(33);
+            IVattack = r.Next(33);
+            IVdefense = r.Next(33);
+            IVspattack = r.Next(33);
             IVspdefense = r.Next(33);
-            IVspeed     = r.Next(33);
+            IVspeed = r.Next(33);
         }
 
         private void calculateStats()
         {
-            HP          = calculateHP(IVHP, species.HP);
-            attack      = calculateStat(IVattack, species.attack);
-            defense     = calculateStat(IVdefense, species.defense);
-            spattack    = calculateStat(IVspattack, species.spattack);
-            spdefense   = calculateStat(IVspdefense, species.spdefense);
-            speed       = calculateStat(IVspeed, species.speed);
+            HP = calculateHP(IVHP, species.HP);
+            attack = calculateStat(IVattack, species.attack);
+            defense = calculateStat(IVdefense, species.defense);
+            spattack = calculateStat(IVspattack, species.spattack);
+            spdefense = calculateStat(IVspdefense, species.spdefense);
+            speed = calculateStat(IVspeed, species.speed);
         }
 
         private int calculateStat(int iv, int baseStat)
@@ -96,13 +96,13 @@ namespace PokeCiv.Model.Pokedata
         private void learnMovesUntilLevel()
         {
             var sorted = from entry in species.movesLearnable orderby entry.Key ascending select entry;
-            foreach(KeyValuePair<int, List<PokemonMove>> kv in sorted)
+            foreach (KeyValuePair<int, List<PokemonMove>> kv in sorted)
             {
                 if (kv.Key > level)
                 {
                     break;
                 }
-                foreach(PokemonMove m in kv.Value)
+                foreach (PokemonMove m in kv.Value)
                 {
                     learnMove(m);
                 }
@@ -133,7 +133,7 @@ namespace PokeCiv.Model.Pokedata
         {
             currentHP = HP;
             nonVolatile = null;
-            foreach(Move move in moves)
+            foreach (Move move in moves)
             {
                 if (move != null)
                 {
@@ -150,18 +150,18 @@ namespace PokeCiv.Model.Pokedata
 
         private void resetStages()
         {
-            accuracy      = 0;
-            evasion       = 0;
-            attackStat    = 0;
-            defenseStat   = 0;
-            spattackStat  = 0;
+            accuracy = 0;
+            evasion = 0;
+            attackStat = 0;
+            defenseStat = 0;
+            spattackStat = 0;
             spdefenseStat = 0;
-            speedStat     = 0;
+            speedStat = 0;
         }
 
         public bool hasPPLeft()
         {
-            foreach(Move m in moves)
+            foreach (Move m in moves)
             {
                 if (m != null && m.currentPP > 0)
                 {

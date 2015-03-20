@@ -8,13 +8,23 @@ using PokeCiv.Model.Pokedata;
 
 namespace PokeCiv.Model.Battle
 {
-    class Battle
+    public class Battle
     {
 
         Player player1;
         Player player2;
         Pokemon p1;
         Pokemon p2;
+
+        public Pokemon getP1()
+        {
+            return p1;
+        }
+
+        public Pokemon getP2()
+        {
+            return p2;
+        }
 
         public Battle(Player p1, Player p2)
         {
@@ -39,7 +49,7 @@ namespace PokeCiv.Model.Battle
             Console.WriteLine(player2.name + " sent out " + p2.name + "!");
             Console.WriteLine("Go, " + p1.species.name + "!");
 
-            while (!(player1.BlackOut() || player2.BlackOut())) 
+            while (!(player1.BlackOut() || player2.BlackOut()))
             {
                 battleLoop();
             }
@@ -120,7 +130,7 @@ namespace PokeCiv.Model.Battle
 
         private void handlePostAttack(List<BattleMove> bmoves)
         {
-            foreach(BattleMove move in bmoves)
+            foreach (BattleMove move in bmoves)
             {
                 handleStatusPostAttack(move);
                 if (move.source.currentHP == 0)
@@ -156,7 +166,7 @@ namespace PokeCiv.Model.Battle
 
         private Pokemon getFirstHealthy(Player player)
         {
-            foreach(Pokemon p in player.team)
+            foreach (Pokemon p in player.team)
             {
                 if (p.currentHP > 0)
                 {

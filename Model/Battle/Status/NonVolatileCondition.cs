@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PokeCiv.Model.Battle.Status
 {
-    abstract class NonVolatileCondition : StatusCondition
+    public abstract class NonVolatileCondition : StatusCondition
     {
 
         public virtual bool preAttack()

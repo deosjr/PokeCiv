@@ -5,9 +5,8 @@ using System.Text;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class Move
+    public class Move
     {
-
         public PokemonMove move;
         public int currentPP;
         public int totalPP;

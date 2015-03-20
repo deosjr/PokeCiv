@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class PokemonMove
+    public class PokemonMove
     {
 
         public int id;

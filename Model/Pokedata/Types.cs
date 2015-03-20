@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class Types
+   public class Types
     {
 
         private static Dictionary<string, int> internalNames = new Dictionary<string, int>();

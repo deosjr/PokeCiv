@@ -4,17 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Windows.Forms;
+using PokeCiv.View;
 
 using PokeCiv.Model.Pokedata;
 using PokeCiv.Model;
 using PokeCiv.Model.Battle;
 
+
 namespace PokeCiv
 {
     class PokeCiv
     {
+        [STAThread]
         static void Main(string[] args)
         {
+           
             Random r = new Random();
 
             Pokemon p1 = PokemonFactory.getPokemon(10, r.Next(1, 650));
@@ -26,6 +31,11 @@ namespace PokeCiv
 
             Battle battle = new Battle(player1, player2);
             battle.fight();
+
+            Application.EnableVisualStyles();
+           // Application.Run(new WorldMap());
+            Application.Run(new Combat(battle));
+
             Console.ReadLine();
         }
     }

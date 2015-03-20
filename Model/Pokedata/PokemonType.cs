@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class PokemonType
+    public class PokemonType
     {
 
         private string name;

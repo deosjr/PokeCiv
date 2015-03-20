@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class Species
+    public class Species
     {
 
         public string name;
@@ -21,7 +21,7 @@ namespace PokeCiv.Model.Pokedata
 
         public List<PokemonType> types;
         //public List<???> evolutions;
-        public Dictionary<int, List<PokemonMove>> movesLearnable = new Dictionary<int,List<PokemonMove>>();
+        public Dictionary<int, List<PokemonMove>> movesLearnable = new Dictionary<int, List<PokemonMove>>();
 
         public string growthRate;
         public int baseXP;
@@ -73,7 +73,7 @@ namespace PokeCiv.Model.Pokedata
             for (int i = 0; i < m.Length; i += 2)
             {
                 int level = Convert.ToInt32(m[i]);
-                PokemonMove move = Moves.getMove(m[i+1]);
+                PokemonMove move = Moves.getMove(m[i + 1]);
                 if (movesLearnable.ContainsKey(level))
                 {
                     movesLearnable[level].Add(move);

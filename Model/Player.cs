@@ -8,7 +8,7 @@ using PokeCiv.Model.Pokedata;
 
 namespace PokeCiv.Model
 {
-    class Player
+    public class Player
     {
 
         public List<Pokemon> team = new List<Pokemon>();

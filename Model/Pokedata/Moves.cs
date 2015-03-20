@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PokeCiv.Model.Pokedata
 {
-    class Moves
+    public class Moves
     {
         private static Dictionary<string, int> internalNames = new Dictionary<string, int>();
         private static List<PokemonMove> moves = new List<PokemonMove>();
@@ -31,7 +31,7 @@ namespace PokeCiv.Model.Pokedata
             }
         }
 
-        public static PokemonMove getMove(string name) 
+        public static PokemonMove getMove(string name)
         {
             return moves[internalNames[name] - 1];
         }
