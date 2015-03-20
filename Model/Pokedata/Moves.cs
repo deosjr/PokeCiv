@@ -14,10 +14,10 @@ namespace PokeCiv.Model.Pokedata
 
         static Moves()
         {
-            load_moves();
+            loadMoves();
         }
 
-        private static void load_moves()
+        private static void loadMoves()
         {
 
             string datapath = "../../Data/moves.txt";

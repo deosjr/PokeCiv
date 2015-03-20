@@ -14,7 +14,7 @@ namespace PokeCiv.Model.Battle
 
         public static void handleMove(BattleMove move)
         {
-            Console.WriteLine(move.source.species.name + " used " + move.move.name + "!");
+            Console.WriteLine(move.source.name + " used " + move.move.name + "!");
             double acc = accStageToModifier(move.source.accuracy);
             double evade = accStageToModifier(move.target.evasion);
 
@@ -28,7 +28,7 @@ namespace PokeCiv.Model.Battle
                 if (t != 0)
                 {
                     int damageDealt = move.target.takeDamage(damage);
-                    Console.WriteLine(move.target.species.name + " takes " + damageDealt + " damage!");
+                    Console.WriteLine(move.target.name + " takes " + damageDealt + " damage!");
                 }
             }
         }
@@ -39,7 +39,7 @@ namespace PokeCiv.Model.Battle
             int r = random.Next(101);
             if (move.move.accuracy != 0 && r > p)
             {
-                Console.WriteLine(move.source.species.name + "'s attack missed!");
+                Console.WriteLine(move.source.name + "'s attack missed!");
                 return true;
             }
             return false;

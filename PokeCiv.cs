@@ -16,8 +16,8 @@ namespace PokeCiv
         static void Main(string[] args)
         {
 
-            Pokemon p1 = PokemonFactory.getPokemon(10, 4);
-            Pokemon p2 = PokemonFactory.getPokemon(10, 7);
+            Pokemon p1 = PokemonFactory.getPokemon(10, "CHARMANDER");
+            Pokemon p2 = PokemonFactory.getPokemon(10, "SQUIRTLE");
             Player player1 = new Player("P1");
             Player player2 = new Player("P2");
             player1.AddToTeam(p1);

@@ -15,10 +15,10 @@ namespace PokeCiv.Model.Pokedata
 
         static PokemonFactory()
         {
-            load_pokemon();
+            loadPokemon();
         }
 
-        private static void load_pokemon()
+        private static void loadPokemon()
         {
             pokemonData = new List<Species>();
             string datapath = "../../Data/pokemon.txt";

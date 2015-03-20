@@ -36,7 +36,7 @@ namespace PokeCiv.Model.Battle
             setBattleReady();
 
             Console.WriteLine(player2.name + " wants to fight!");
-            Console.WriteLine(player2.name + " sent out " + p2.species.name + "!");
+            Console.WriteLine(player2.name + " sent out " + p2.name + "!");
             Console.WriteLine("Go, " + p1.species.name + "!");
 
             while (!(player1.BlackOut() || player2.BlackOut())) 
@@ -50,14 +50,22 @@ namespace PokeCiv.Model.Battle
             foreach (BattleMove move in selectMoves())
             {
                 CombatMechanics.handleMove(move);
-                if (p2.currentHP == 0)
+                if (p1.currentHP == 0 || p2.currentHP == 0)
                 {
-                    Console.WriteLine(p2.species.name + " fainted!");
+                    break;
                 }
-                if (p1.currentHP == 0)
-                {
-                    Console.WriteLine(p1.species.name + " fainted!");
-                }
+            }
+            if (p2.currentHP == 0)
+            {
+                Console.WriteLine(p2.name + " fainted!");
+            }
+            if (p1.currentHP == 0)
+            {
+                Console.WriteLine(p1.name + " fainted!");
+            }
+            if (p2.currentHP == 0 && p1.currentHP > 0)
+            {
+                Experience.gainXP(p1, p2);
             }
         }
 

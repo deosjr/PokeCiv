@@ -15,10 +15,10 @@ namespace PokeCiv.Model.Pokedata
 
         static Types()
         {
-            load_types();
+            loadTypes();
         }
 
-        private static void load_types()
+        private static void loadTypes()
         {
 
             string datapath = "../../Data/types.txt";

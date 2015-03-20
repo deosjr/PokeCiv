@@ -45,6 +45,7 @@
     <Compile Include="Model\Battle\BattleMove.cs" />
     <Compile Include="Model\Battle\CombatMechanics.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Pokedata\Experience.cs" />
     <Compile Include="Model\Pokedata\Move.cs" />
     <Compile Include="Model\Pokedata\PokemonMove.cs" />
     <Compile Include="Model\Pokedata\Moves.cs" />

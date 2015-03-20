@@ -11,7 +11,10 @@ namespace PokeCiv.Model.Pokedata
 
         public int level;
         public Species species;
+        public string name;
         public int currentHP;
+        public int XP;
+        public int nextXP;
 
         public int HP;
         public int attack;
@@ -41,8 +44,10 @@ namespace PokeCiv.Model.Pokedata
         {
             this.level = level;
             this.species = species;
-            //xp, next = lookup_xp()
-            //nextxp = xp + next
+            this.name = species.name;
+            Tuple<int,int> XPinfo = Experience.lookupXP(this);
+            XP = XPinfo.Item1;
+            nextXP = XPinfo.Item1 + XPinfo.Item2;
             generateIV();
             calculateStats();
             learnMovesUntilLevel();
@@ -124,7 +129,13 @@ namespace PokeCiv.Model.Pokedata
         {
             currentHP = HP;
             // set volatile status to {}
-            // set moves to full PP
+            foreach(Move move in moves)
+            {
+                if (move != null)
+                {
+                    move.currentPP = move.totalPP;
+                }
+            }
         }
 
         public void initForBattle()
@@ -135,13 +146,13 @@ namespace PokeCiv.Model.Pokedata
 
         private void resetStages()
         {
-            accuracy = 0;
-            evasion = 0;
-            attackStat = 0;
-            defenseStat = 0;
-            spattackStat = 0;
+            accuracy      = 0;
+            evasion       = 0;
+            attackStat    = 0;
+            defenseStat   = 0;
+            spattackStat  = 0;
             spdefenseStat = 0;
-            speedStat = 0;
+            speedStat     = 0;
         }
 
         public bool hasPPLeft()

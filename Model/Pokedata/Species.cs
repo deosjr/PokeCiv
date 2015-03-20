@@ -23,9 +23,9 @@ namespace PokeCiv.Model.Pokedata
         //public List<???> evolutions;
         public Dictionary<int, List<PokemonMove>> movesLearnable = new Dictionary<int,List<PokemonMove>>();
 
-        public int growthRate;
+        public string growthRate;
         public int baseXP;
-        public int EP;
+        //public int EP;
 
         public Species(Dictionary<string, string> data)
         {
@@ -33,13 +33,15 @@ namespace PokeCiv.Model.Pokedata
             id = Convert.ToInt32(data["ID"]);
             setBaseStats(data["BaseStats"]);
             setTypes(data);
+            growthRate = data["GrowthRate"];
+            baseXP = Convert.ToInt32(data["BaseEXP"]);
             //TODO: setEvolutions(data["Evolutions"]);
             setMoves(data["Moves"]);
         }
 
         private void setBaseStats(string stats)
         {
-            var baseStats = new List<int>(from x in stats select Convert.ToInt32(x));
+            var baseStats = new List<int>(from x in stats.Split(',') select Convert.ToInt32(x));
             HP = baseStats[0];
             attack = baseStats[1];
             defense = baseStats[2];
