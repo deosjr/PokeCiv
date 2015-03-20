@@ -12,15 +12,15 @@ namespace PokeCiv.Model.Battle
     {
         public static Random random = new Random();
 
-        public static void handleMove(BattleMove move)
+        public static void handleMove(BattleMove move, bool first)
         {
             Console.WriteLine(move.source.name + " used " + move.move.name + "!");
             double acc = accStageToModifier(move.source.accuracy);
             double evade = accStageToModifier(move.target.evasion);
 
             bool miss = determineHit(move, acc, evade);
-            int damage;
-            double crit, t;
+            int damage = 0 ;
+            double crit, t = 1;
 
             if (!miss && !move.move.category.Equals("Status"))
             {
@@ -31,6 +31,7 @@ namespace PokeCiv.Model.Battle
                     Console.WriteLine(move.target.name + " takes " + damageDealt + " damage!");
                 }
             }
+            MoveFunctions.applyMoveFunction(move, damage, t, miss, first);
         }
 
         private static bool determineHit(BattleMove move, double acc, double evade)

@@ -47,26 +47,36 @@ namespace PokeCiv.Model.Battle
 
         private void battleLoop()
         {
-            foreach (BattleMove move in selectMoves())
+            bool faint = false;
+            bool first = true;
+            List<BattleMove> bmoves = selectMoves();
+            foreach (BattleMove move in bmoves)
             {
-                CombatMechanics.handleMove(move);
+                bool halt = handleStatusPreAttack(move);
                 if (p1.currentHP == 0 || p2.currentHP == 0)
                 {
+                    faint = true;
+                    break;
+                }
+                if (halt)
+                {
+                    continue;
+                }
+                CombatMechanics.handleMove(move, first);
+                first = false;
+                if (p1.currentHP == 0 || p2.currentHP == 0)
+                {
+                    faint = true;
                     break;
                 }
             }
-            if (p2.currentHP == 0)
+            if (!faint)
             {
-                Console.WriteLine(p2.name + " fainted!");
+                handlePostAttack(bmoves);
             }
-            if (p1.currentHP == 0)
-            {
-                Console.WriteLine(p1.name + " fainted!");
-            }
-            if (p2.currentHP == 0 && p1.currentHP > 0)
-            {
-                Experience.gainXP(p1, p2);
-            }
+            // Pokemon can faint due to poison or burn
+            // so check again if fainted
+            onFainted();
         }
 
         // TODO: handle input in order to choose moves
@@ -95,6 +105,53 @@ namespace PokeCiv.Model.Battle
         private List<BattleMove> sortBySpeed(List<BattleMove> bmoves)
         {
             return bmoves.OrderByDescending(m => m.speed).ToList();
+        }
+
+        // return true if source is not allowed to attack
+        private bool handleStatusPreAttack(BattleMove move)
+        {
+            if (move.source.nonVolatile != null)
+            {
+                return move.source.nonVolatile.preAttack();
+            }
+
+            return false;
+        }
+
+        private void handlePostAttack(List<BattleMove> bmoves)
+        {
+            foreach(BattleMove move in bmoves)
+            {
+                handleStatusPostAttack(move);
+                if (move.source.currentHP == 0)
+                {
+                    return;
+                }
+            }
+        }
+
+        private void handleStatusPostAttack(BattleMove move)
+        {
+            if (move.source.nonVolatile != null)
+            {
+                move.source.nonVolatile.postAttack();
+            }
+        }
+
+        private void onFainted()
+        {
+            if (p2.currentHP == 0)
+            {
+                Console.WriteLine(p2.name + " fainted!");
+            }
+            if (p1.currentHP == 0)
+            {
+                Console.WriteLine(p1.name + " fainted!");
+            }
+            if (p2.currentHP == 0 && p1.currentHP > 0)
+            {
+                Experience.gainXP(p1, p2);
+            }
         }
 
         private Pokemon getFirstHealthy(Player player)

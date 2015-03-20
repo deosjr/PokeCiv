@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PokeCiv.Model.Battle.Status;
+
 namespace PokeCiv.Model.Pokedata
 {
     class Pokemon
@@ -39,6 +41,8 @@ namespace PokeCiv.Model.Pokedata
         public int speedStat;
 
         public Move[] moves = new Move[4];
+        public NonVolatileCondition nonVolatile;
+        public List<VolatileCondition> volatileConditions = new List<VolatileCondition>();
 
         public Pokemon(int level, Species species)
         {
@@ -128,7 +132,7 @@ namespace PokeCiv.Model.Pokedata
         public void fullHeal()
         {
             currentHP = HP;
-            // set volatile status to {}
+            nonVolatile = null;
             foreach(Move move in moves)
             {
                 if (move != null)
@@ -141,7 +145,7 @@ namespace PokeCiv.Model.Pokedata
         public void initForBattle()
         {
             resetStages();
-            // set volatile status to null
+            volatileConditions = new List<VolatileCondition>();
         }
 
         private void resetStages()
@@ -165,6 +169,21 @@ namespace PokeCiv.Model.Pokedata
                 }
             }
             return false;
+        }
+
+        public void setStatus(string statuscode)
+        {
+            if (nonVolatile == null)
+            {
+                nonVolatile = PokemonStatus.getNonVolatile(statuscode);
+                Console.WriteLine(name + nonVolatile.getInitMessage());
+            }
+
+        }
+
+        public void addStatus(string statuscode)
+        {
+
         }
 
         public override string ToString()
