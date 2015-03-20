@@ -13,6 +13,8 @@ namespace PokeCiv.Model.Battle
 
         Player player1;
         Player player2;
+        Pokemon p1;
+        Pokemon p2;
 
         public Battle(Player p1, Player p2)
         {
@@ -22,8 +24,8 @@ namespace PokeCiv.Model.Battle
 
         public void fight()
         {
-            Pokemon p1 = getFirstHealthy(player1);
-            Pokemon p2 = getFirstHealthy(player2);
+            p1 = getFirstHealthy(player1);
+            p2 = getFirstHealthy(player2);
 
             if (p1 == null)
             {
@@ -39,8 +41,52 @@ namespace PokeCiv.Model.Battle
 
             while (!(player1.BlackOut() || player2.BlackOut())) 
             {
-
+                battleLoop();
             }
+        }
+
+        private void battleLoop()
+        {
+            foreach (BattleMove move in selectMoves())
+            {
+                CombatMechanics.handleMove(move);
+                if (p2.currentHP == 0)
+                {
+                    Console.WriteLine(p2.species.name + " fainted!");
+                }
+                if (p1.currentHP == 0)
+                {
+                    Console.WriteLine(p1.species.name + " fainted!");
+                }
+            }
+        }
+
+        // TODO: handle input in order to choose moves
+        private List<BattleMove> selectMoves()
+        {
+            PokemonMove p1move = Moves.getMove("STRUGGLE");
+            PokemonMove p2move = Moves.getMove("STRUGGLE");
+            if (p1.hasPPLeft())
+            {
+                p1move = p1.moves[0].move;
+                p1.moves[0].currentPP -= 1;
+            }
+            if (p2.hasPPLeft())
+            {
+                p2move = p2.moves[0].move;
+                p2.moves[0].currentPP -= 1;
+            }
+
+            List<BattleMove> bmoves = new List<BattleMove>();
+            bmoves.Add(new BattleMove(p1, p2, p1move, p1.speedStat));
+            bmoves.Add(new BattleMove(p2, p1, p2move, p2.speedStat));
+            return sortBySpeed(bmoves);
+        }
+
+        // TODO: move priority?
+        private List<BattleMove> sortBySpeed(List<BattleMove> bmoves)
+        {
+            return bmoves.OrderByDescending(m => m.speed).ToList();
         }
 
         private Pokemon getFirstHealthy(Player player)

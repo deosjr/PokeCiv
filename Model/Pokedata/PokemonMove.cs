@@ -12,9 +12,11 @@ namespace PokeCiv.Model.Pokedata
         public int id;
         public string name;
         private string functioncode;
-        private int power;
-        private PokemonType type;
-        private string category;
+        public int power;
+        public PokemonType type;
+        public string category;
+        public int accuracy;
+        public int PP;
 
         public PokemonMove(string[] data)
         {
@@ -24,6 +26,8 @@ namespace PokeCiv.Model.Pokedata
             power = Convert.ToInt32(data[4]);
             type = Types.getType(data[5]);
             category = data[6];
+            accuracy = Convert.ToInt32(data[7]);
+            PP = Convert.ToInt32(data[8]);
         }
 
         public override string ToString()

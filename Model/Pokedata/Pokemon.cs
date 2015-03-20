@@ -27,6 +27,14 @@ namespace PokeCiv.Model.Pokedata
         private int IVspdefense;
         private int IVspeed;
 
+        public int accuracy;
+        public int evasion;
+        public int attackStat;
+        public int defenseStat;
+        public int spattackStat;
+        public int spdefenseStat;
+        public int speedStat;
+
         public Move[] moves = new Move[4];
 
         public Pokemon(int level, Species species)
@@ -78,7 +86,38 @@ namespace PokeCiv.Model.Pokedata
 
         private void learnMovesUntilLevel()
         {
-            
+            var sorted = from entry in species.movesLearnable orderby entry.Key ascending select entry;
+            foreach(KeyValuePair<int, List<PokemonMove>> kv in sorted)
+            {
+                if (kv.Key > level)
+                {
+                    break;
+                }
+                foreach(PokemonMove m in kv.Value)
+                {
+                    learnMove(m);
+                }
+            }
+        }
+
+        private void learnMove(PokemonMove m)
+        {
+            Move move = new Move(m, m.PP);
+            for (int i = 0; i < moves.Length; i++)
+            {
+                if (moves[i] == null)
+                {
+                    moves[i] = move;
+                    return;
+                }
+            }
+        }
+
+        public int takeDamage(int damage)
+        {
+            int temp = currentHP;
+            currentHP = Math.Max(0, currentHP - damage);
+            return temp - currentHP;
         }
 
         public void fullHeal()
@@ -90,8 +129,31 @@ namespace PokeCiv.Model.Pokedata
 
         public void initForBattle()
         {
-            // resetStages();
+            resetStages();
             // set volatile status to null
+        }
+
+        private void resetStages()
+        {
+            accuracy = 0;
+            evasion = 0;
+            attackStat = 0;
+            defenseStat = 0;
+            spattackStat = 0;
+            spdefenseStat = 0;
+            speedStat = 0;
+        }
+
+        public bool hasPPLeft()
+        {
+            foreach(Move m in moves)
+            {
+                if (m != null && m.currentPP > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override string ToString()
