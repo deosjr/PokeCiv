@@ -23,8 +23,8 @@ namespace PokeCiv.View
             Pokemon p1 = battle.getP1();
             Pokemon p2 = battle.getP2();
 
-            this.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id + "b.png";
-            this.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id + ".png";
+            this.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
+            this.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id.ToString().PadLeft(3, '0') + ".png";
         }
     }
 }
