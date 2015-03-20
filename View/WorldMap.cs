@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class Form1 : Form
+    public partial class WorldMap : Form
     {
-        public Form1()
+        public WorldMap()
         {
             InitializeComponent();
         }
