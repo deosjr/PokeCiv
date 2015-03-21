@@ -23,7 +23,25 @@ namespace PokeCiv.View
             //lazy fetching of pkmns and setting of images
             Pokemon p1 = battle.getP1();
             Pokemon p2 = battle.getP2();
+
+
+            //Nesting all pictures inside each other for transparancy
+            //I HATE THIS, I HATE THIS, I HATE THIS
             
+            //add both floors to the back
+            battleBack.Controls.Add(frontFloor);
+            battleBack.Controls.Add(backFloor);
+
+            //add the pokemons to there floors
+          //  battleBack.Controls.Add(frontImageBattlePokemon);
+           // battleBack.Controls.Add(backImageBattlePokemon);
+            
+
+            //backImageBattlePokemon.Location = new Point(0, 0);
+            backImageBattlePokemon.BackColor = Color.Transparent;
+            //frontImageBattlePokemon.BackColor = Color.Transparent;
+            frontFloor.BackColor = Color.Transparent;
+            backFloor.BackColor = Color.Transparent;
 
             //Pokemon Images
             me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
@@ -51,8 +69,17 @@ namespace PokeCiv.View
             me.FrontPokemonHPBar.Value = p2.currentHP;
 
             //Own Pokemon HP Label
-            me.BackPokemonHPLabel.Text = p1.currentHP + "/" + p1.HP;
+            me.BackPokemonHPLabel.Text = p1.currentHP + "/" + p1.HP +"HP";
 
+            //moves buttons
+            if (p1.moves[0] != null)
+                me.MovesButton1.Text = p1.moves[0].move.ToString();
+            if (p1.moves[1] != null)
+                me.MovesButton2.Text = p1.moves[1].move.ToString();
+            if (p1.moves[2] != null)
+                me.MovesButton3.Text = p1.moves[2].move.ToString();
+            if (p1.moves[3] != null)
+                me.MovesButton4.Text = p1.moves[3].move.ToString();
             
 
 
