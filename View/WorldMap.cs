@@ -14,13 +14,25 @@ namespace PokeCiv.View
     {
         public WorldMap()
         {
+
             InitializeComponent();
-            this.pictureBox1.Size = new Size(10920, 7312);
+            
+            this.pictureBox1.Size = new Size(6527*2, 6400*2);
         }
+
+        Point position = new Point(0,250);
 
         private void WorldMap_Load(object sender, EventArgs e)
         {
+            this.AutoScrollPosition = new Point(0, 250);
+        }
 
+
+
+        private void WorldMap_KeyDown(object sender, KeyEventArgs e)
+        {
+            position = new Point(position.X, position.Y + 100);
+            this.AutoScrollPosition = position;
         }
     }
 }
