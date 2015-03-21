@@ -15,8 +15,12 @@ namespace PokeCiv.Model.Battle
         Player player2;
         Pokemon p1;
         Pokemon p2;
-
         string type;
+
+        public string getBattleType()
+        {
+            return type;
+        }
 
         public Pokemon getP1()
         {

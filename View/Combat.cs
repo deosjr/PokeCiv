@@ -25,23 +25,34 @@ namespace PokeCiv.View
             Pokemon p2 = battle.getP2();
 
             //Nesting all pictures inside each other for transparancy
-            //I HATE THIS, I HATE THIS, I HATE THIS
-
+ 
             //add both floors to the background
             battleBack.Controls.Add(frontFloor);
             battleBack.Controls.Add(backFloor);
 
+            //then add the pokemons to the floors
             frontFloor.Controls.Add(frontImageBattlePokemon);
             backFloor.Controls.Add(backImageBattlePokemon);
 
-            frontImageBattlePokemon.Location = new Point(0, 0);
-            backImageBattlePokemon.Location = new Point(0, 0);
+            //set the floors to transparent, the pokemons will inherrit this
             frontFloor.BackColor = Color.Transparent;
             backFloor.BackColor = Color.Transparent;
+
+            //reset the startpoints of the pokemons (relative to the floors)
+            frontImageBattlePokemon.Location = new Point(0, 0);
+            backImageBattlePokemon.Location = new Point(0, 0);
 
             //Pokemon Images
             me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
             me.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id.ToString().PadLeft(3, '0') + ".png";
+
+            //backgrond Image
+            me.battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.getBattleType() + ".png";
+
+            //floors
+            me.frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.getBattleType() + ".png";
+            me.backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.getBattleType() + ".png";
+
 
             //Pokemon names
             me.backPokemonName.Text = p1.name;
@@ -76,9 +87,6 @@ namespace PokeCiv.View
                 me.MovesButton3.Text = p1.moves[2].move.ToString();
             if (p1.moves[3] != null)
                 me.MovesButton4.Text = p1.moves[3].move.ToString();
-
-
-
 
         }
 
