@@ -16,6 +16,8 @@ namespace PokeCiv.Model.Battle
         Pokemon p1;
         Pokemon p2;
 
+        string type;
+
         public Pokemon getP1()
         {
             return p1;
@@ -30,6 +32,7 @@ namespace PokeCiv.Model.Battle
         {
             player1 = p1;
             player2 = p2;
+            type = "IndoorA"; // For now
         }
 
         public void fight()
