@@ -53,7 +53,6 @@ namespace PokeCiv.View
             me.frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.getBattleType() + ".png";
             me.backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.getBattleType() + ".png";
 
-
             //Pokemon names
             me.backPokemonName.Text = p1.name;
             me.fontPokemonName.Text = p2.name;

@@ -15,6 +15,12 @@ namespace PokeCiv.View
         public WorldMap()
         {
             InitializeComponent();
+            this.pictureBox1.Size = new Size(10920, 7312);
+        }
+
+        private void WorldMap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

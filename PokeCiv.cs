@@ -33,7 +33,10 @@ namespace PokeCiv
 
             Battle battle = new Battle(player1, player2);
             battle.fight();
-            Application.Run(new Combat(battle));
+            
+
+            Application.Run(new WorldMap());
+            //Application.Run(new Combat(battle));
 
             Console.ReadLine();
         }
