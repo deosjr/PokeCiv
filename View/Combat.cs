@@ -25,6 +25,17 @@ namespace PokeCiv.View
 
             this.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
             this.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id.ToString().PadLeft(3, '0') + ".png";
+
+            this.backPokemonName.Text = p1.name;
+            this.fontPokemonName.Text = p2.name;
+
+            this.backPokemonLevel.Text = "lvl " +p1.level.ToString();
+            this.frontPokemonLevel.Text = "lvl " + p2.level.ToString();
+
+            this.label2.Text = p1.name + " do?";
         }
+
+       
+
     }
 }
