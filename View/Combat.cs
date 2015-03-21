@@ -17,31 +17,28 @@ namespace PokeCiv.View
 
         public Combat(Battle battle)
         {
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             InitializeComponent();
             var me = this;
 
-            //lazy fetching of pkmns and setting of images
+            //lazy fetching of pkmns
             Pokemon p1 = battle.getP1();
             Pokemon p2 = battle.getP2();
-
 
             //Nesting all pictures inside each other for transparancy
             //I HATE THIS, I HATE THIS, I HATE THIS
             
-            //add both floors to the back
-            battleBack.Controls.Add(frontFloor);
-            battleBack.Controls.Add(backFloor);
+                //add both floors to the background
+                battleBack.Controls.Add(frontFloor);
+                battleBack.Controls.Add(backFloor);
 
-            //add the pokemons to there floors
-          //  battleBack.Controls.Add(frontImageBattlePokemon);
-           // battleBack.Controls.Add(backImageBattlePokemon);
-            
+            frontFloor.Controls.Add(frontImageBattlePokemon);
+            backFloor.Controls.Add(backImageBattlePokemon);
 
-            //backImageBattlePokemon.Location = new Point(0, 0);
-            backImageBattlePokemon.BackColor = Color.Transparent;
-            //frontImageBattlePokemon.BackColor = Color.Transparent;
-            frontFloor.BackColor = Color.Transparent;
-            backFloor.BackColor = Color.Transparent;
+            frontImageBattlePokemon.Location = new Point(0, 0);
+            backImageBattlePokemon.Location = new Point(0, 0);
+                frontFloor.BackColor = Color.Transparent;
+                backFloor.BackColor = Color.Transparent;
 
             //Pokemon Images
             me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
@@ -59,7 +56,7 @@ namespace PokeCiv.View
 
             //XPbar
             me.BackPokemonXPBar.Maximum = p1.nextXP;
-            me.BackPokemonXPBar.Value = p1.XP;
+          //  me.BackPokemonXPBar.Value = p1.XP; //temp uit om de meer dan max xp bug op te lossen
 
             //HPBars
             me.BackPokemonHPBar.Maximum = p1.HP;
@@ -83,6 +80,16 @@ namespace PokeCiv.View
             
 
 
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frontFloor_Click(object sender, EventArgs e)
+        {
 
         }
     }
