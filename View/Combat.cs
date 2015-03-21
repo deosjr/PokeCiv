@@ -18,24 +18,48 @@ namespace PokeCiv.View
         public Combat(Battle battle)
         {
             InitializeComponent();
+            var me = this;
 
             //lazy fetching of pkmns and setting of images
             Pokemon p1 = battle.getP1();
             Pokemon p2 = battle.getP2();
+            
 
-            this.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
-            this.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id.ToString().PadLeft(3, '0') + ".png";
+            //Pokemon Images
+            me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
+            me.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id.ToString().PadLeft(3, '0') + ".png";
 
-            this.backPokemonName.Text = p1.name;
-            this.fontPokemonName.Text = p2.name;
+            //Pokemon names
+            me.backPokemonName.Text = p1.name;
+            me.fontPokemonName.Text = p2.name;
 
-            this.backPokemonLevel.Text = "lvl " +p1.level.ToString();
-            this.frontPokemonLevel.Text = "lvl " + p2.level.ToString();
+            //Pokemon Levels
+            me.backPokemonLevel.Text = "lvl " + p1.level.ToString();
+            me.frontPokemonLevel.Text = "lvl " + p2.level.ToString();
 
-            this.label2.Text = p1.name + " do?";
+            me.label2.Text = p1.name + " do?";
+
+            //XPbars
+            me.BackPokemonXPBar.Maximum = p1.nextXP;
+            me.BackPokemonXPBar.Value = p1.XP;
+
+            me.FrontPokemonXPBar.Maximum = p2.nextXP;
+            me.FrontPokemonXPBar.Value = p2.XP;
+
+            //HPBars
+            me.BackPokemonHPBar.Maximum = p1.HP;
+            me.BackPokemonHPBar.Value = p1.currentHP;
+
+            me.FrontPokemonHPBar.Maximum = p2.HP;
+            me.FrontPokemonHPBar.Value = p2.currentHP;
+
+            //Own Pokemon HP Label
+            me.BackPokemonHPLabel.Text = p1.currentHP + "/" + p1.HP;
+
+            
+
+
+
         }
-
-       
-
     }
 }

@@ -33,7 +33,6 @@
             this.frontImageBattlePokemon = new System.Windows.Forms.PictureBox();
             this.backPokemonName = new System.Windows.Forms.Label();
             this.fontPokemonName = new System.Windows.Forms.Label();
-            this.backPokemonLevel = new System.Windows.Forms.Label();
             this.frontPokemonLevel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,6 +40,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BackPokemonHPBar = new System.Windows.Forms.ProgressBar();
+            this.FrontPokemonHPBar = new System.Windows.Forms.ProgressBar();
+            this.BackPokemonXPBar = new System.Windows.Forms.ProgressBar();
+            this.FrontPokemonXPBar = new System.Windows.Forms.ProgressBar();
+            this.backPokemonLevel = new System.Windows.Forms.Label();
+            this.BackPokemonHPLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +53,7 @@
             // backImageBattlePokemon
             // 
             this.backImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("backImageBattlePokemon.Image")));
-            this.backImageBattlePokemon.Location = new System.Drawing.Point(-15, 144);
+            this.backImageBattlePokemon.Location = new System.Drawing.Point(5, 145);
             this.backImageBattlePokemon.Name = "backImageBattlePokemon";
             this.backImageBattlePokemon.Size = new System.Drawing.Size(179, 121);
             this.backImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -77,20 +82,11 @@
             // fontPokemonName
             // 
             this.fontPokemonName.AutoSize = true;
-            this.fontPokemonName.Location = new System.Drawing.Point(292, 23);
+            this.fontPokemonName.Location = new System.Drawing.Point(213, 23);
             this.fontPokemonName.Name = "fontPokemonName";
             this.fontPokemonName.Size = new System.Drawing.Size(46, 13);
             this.fontPokemonName.TabIndex = 3;
             this.fontPokemonName.Text = "Ursaring";
-            // 
-            // backPokemonLevel
-            // 
-            this.backPokemonLevel.AutoSize = true;
-            this.backPokemonLevel.Location = new System.Drawing.Point(76, 113);
-            this.backPokemonLevel.Name = "backPokemonLevel";
-            this.backPokemonLevel.Size = new System.Drawing.Size(30, 13);
-            this.backPokemonLevel.TabIndex = 4;
-            this.backPokemonLevel.Text = "Lvl 5";
             // 
             // frontPokemonLevel
             // 
@@ -157,11 +153,67 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "BULBASAUR do?";
             // 
+            // BackPokemonHPBar
+            // 
+            this.BackPokemonHPBar.Location = new System.Drawing.Point(5, 129);
+            this.BackPokemonHPBar.Name = "BackPokemonHPBar";
+            this.BackPokemonHPBar.Size = new System.Drawing.Size(187, 10);
+            this.BackPokemonHPBar.TabIndex = 12;
+            this.BackPokemonHPBar.Value = 100;
+            // 
+            // FrontPokemonHPBar
+            // 
+            this.FrontPokemonHPBar.Location = new System.Drawing.Point(216, 39);
+            this.FrontPokemonHPBar.Name = "FrontPokemonHPBar";
+            this.FrontPokemonHPBar.Size = new System.Drawing.Size(187, 10);
+            this.FrontPokemonHPBar.TabIndex = 13;
+            this.FrontPokemonHPBar.Value = 100;
+            // 
+            // BackPokemonXPBar
+            // 
+            this.BackPokemonXPBar.BackColor = System.Drawing.SystemColors.MenuText;
+            this.BackPokemonXPBar.Location = new System.Drawing.Point(5, 272);
+            this.BackPokemonXPBar.Name = "BackPokemonXPBar";
+            this.BackPokemonXPBar.Size = new System.Drawing.Size(180, 10);
+            this.BackPokemonXPBar.TabIndex = 14;
+            this.BackPokemonXPBar.Value = 14;
+            // 
+            // FrontPokemonXPBar
+            // 
+            this.FrontPokemonXPBar.Location = new System.Drawing.Point(407, 129);
+            this.FrontPokemonXPBar.Name = "FrontPokemonXPBar";
+            this.FrontPokemonXPBar.Size = new System.Drawing.Size(157, 10);
+            this.FrontPokemonXPBar.TabIndex = 15;
+            this.FrontPokemonXPBar.Value = 45;
+            // 
+            // backPokemonLevel
+            // 
+            this.backPokemonLevel.AutoSize = true;
+            this.backPokemonLevel.Location = new System.Drawing.Point(162, 113);
+            this.backPokemonLevel.Name = "backPokemonLevel";
+            this.backPokemonLevel.Size = new System.Drawing.Size(30, 13);
+            this.backPokemonLevel.TabIndex = 4;
+            this.backPokemonLevel.Text = "Lvl 5";
+            // 
+            // BackPokemonHPLabel
+            // 
+            this.BackPokemonHPLabel.AutoSize = true;
+            this.BackPokemonHPLabel.Location = new System.Drawing.Point(135, 145);
+            this.BackPokemonHPLabel.Name = "BackPokemonHPLabel";
+            this.BackPokemonHPLabel.Size = new System.Drawing.Size(57, 13);
+            this.BackPokemonHPLabel.TabIndex = 16;
+            this.BackPokemonHPLabel.Text = "HP: 20/20";
+            // 
             // Combat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 421);
+            this.Controls.Add(this.BackPokemonHPLabel);
+            this.Controls.Add(this.FrontPokemonXPBar);
+            this.Controls.Add(this.BackPokemonXPBar);
+            this.Controls.Add(this.FrontPokemonHPBar);
+            this.Controls.Add(this.BackPokemonHPBar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
@@ -189,7 +241,6 @@
         private System.Windows.Forms.PictureBox frontImageBattlePokemon;
         private System.Windows.Forms.Label backPokemonName;
         private System.Windows.Forms.Label fontPokemonName;
-        private System.Windows.Forms.Label backPokemonLevel;
         private System.Windows.Forms.Label frontPokemonLevel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -197,5 +248,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar BackPokemonHPBar;
+        private System.Windows.Forms.ProgressBar FrontPokemonHPBar;
+        private System.Windows.Forms.ProgressBar BackPokemonXPBar;
+        private System.Windows.Forms.ProgressBar FrontPokemonXPBar;
+        private System.Windows.Forms.Label backPokemonLevel;
+        private System.Windows.Forms.Label BackPokemonHPLabel;
     }
 }
