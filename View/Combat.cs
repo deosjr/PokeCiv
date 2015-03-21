@@ -17,7 +17,6 @@ namespace PokeCiv.View
 
         public Combat(Battle battle)
         {
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             InitializeComponent();
             var me = this;
 
@@ -27,18 +26,18 @@ namespace PokeCiv.View
 
             //Nesting all pictures inside each other for transparancy
             //I HATE THIS, I HATE THIS, I HATE THIS
-            
-                //add both floors to the background
-                battleBack.Controls.Add(frontFloor);
-                battleBack.Controls.Add(backFloor);
+
+            //add both floors to the background
+            battleBack.Controls.Add(frontFloor);
+            battleBack.Controls.Add(backFloor);
 
             frontFloor.Controls.Add(frontImageBattlePokemon);
             backFloor.Controls.Add(backImageBattlePokemon);
 
             frontImageBattlePokemon.Location = new Point(0, 0);
             backImageBattlePokemon.Location = new Point(0, 0);
-                frontFloor.BackColor = Color.Transparent;
-                backFloor.BackColor = Color.Transparent;
+            frontFloor.BackColor = Color.Transparent;
+            backFloor.BackColor = Color.Transparent;
 
             //Pokemon Images
             me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
@@ -56,7 +55,7 @@ namespace PokeCiv.View
 
             //XPbar
             me.BackPokemonXPBar.Maximum = p1.nextXP;
-          //  me.BackPokemonXPBar.Value = p1.XP; //temp uit om de meer dan max xp bug op te lossen
+            me.BackPokemonXPBar.Value = p1.XP;
 
             //HPBars
             me.BackPokemonHPBar.Maximum = p1.HP;
@@ -66,7 +65,7 @@ namespace PokeCiv.View
             me.FrontPokemonHPBar.Value = p2.currentHP;
 
             //Own Pokemon HP Label
-            me.BackPokemonHPLabel.Text = p1.currentHP + "/" + p1.HP +"HP";
+            me.BackPokemonHPLabel.Text = p1.currentHP + "/" + p1.HP + "HP";
 
             //moves buttons
             if (p1.moves[0] != null)
@@ -77,7 +76,7 @@ namespace PokeCiv.View
                 me.MovesButton3.Text = p1.moves[2].move.ToString();
             if (p1.moves[3] != null)
                 me.MovesButton4.Text = p1.moves[3].move.ToString();
-            
+
 
 
 
