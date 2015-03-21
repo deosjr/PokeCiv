@@ -43,7 +43,6 @@
             this.BackPokemonHPBar = new System.Windows.Forms.ProgressBar();
             this.FrontPokemonHPBar = new System.Windows.Forms.ProgressBar();
             this.BackPokemonXPBar = new System.Windows.Forms.ProgressBar();
-            this.FrontPokemonXPBar = new System.Windows.Forms.ProgressBar();
             this.backPokemonLevel = new System.Windows.Forms.Label();
             this.BackPokemonHPLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).BeginInit();
@@ -178,14 +177,6 @@
             this.BackPokemonXPBar.TabIndex = 14;
             this.BackPokemonXPBar.Value = 14;
             // 
-            // FrontPokemonXPBar
-            // 
-            this.FrontPokemonXPBar.Location = new System.Drawing.Point(407, 129);
-            this.FrontPokemonXPBar.Name = "FrontPokemonXPBar";
-            this.FrontPokemonXPBar.Size = new System.Drawing.Size(157, 10);
-            this.FrontPokemonXPBar.TabIndex = 15;
-            this.FrontPokemonXPBar.Value = 45;
-            // 
             // backPokemonLevel
             // 
             this.backPokemonLevel.AutoSize = true;
@@ -210,7 +201,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 421);
             this.Controls.Add(this.BackPokemonHPLabel);
-            this.Controls.Add(this.FrontPokemonXPBar);
             this.Controls.Add(this.BackPokemonXPBar);
             this.Controls.Add(this.FrontPokemonHPBar);
             this.Controls.Add(this.BackPokemonHPBar);
@@ -251,7 +241,6 @@
         private System.Windows.Forms.ProgressBar BackPokemonHPBar;
         private System.Windows.Forms.ProgressBar FrontPokemonHPBar;
         private System.Windows.Forms.ProgressBar BackPokemonXPBar;
-        private System.Windows.Forms.ProgressBar FrontPokemonXPBar;
         private System.Windows.Forms.Label backPokemonLevel;
         private System.Windows.Forms.Label BackPokemonHPLabel;
     }
