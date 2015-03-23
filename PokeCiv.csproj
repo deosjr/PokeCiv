@@ -78,17 +78,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\Combat.cs">
+    <Compile Include="View\BattleView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Combat.Designer.cs">
-      <DependentUpon>Combat.cs</DependentUpon>
+    <Compile Include="View\BattleView.Designer.cs">
+      <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\WorldMap.cs">
+    <Compile Include="View\WorldView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\WorldMap.Designer.cs">
-      <DependentUpon>WorldMap.cs</DependentUpon>
+    <Compile Include="View\WorldView.Designer.cs">
+      <DependentUpon>WorldView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -99,11 +99,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Combat.resx">
-      <DependentUpon>Combat.cs</DependentUpon>
+    <EmbeddedResource Include="View\BattleView.resx">
+      <DependentUpon>BattleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\WorldMap.resx">
-      <DependentUpon>WorldMap.cs</DependentUpon>
+    <EmbeddedResource Include="View\WorldView.resx">
+      <DependentUpon>WorldView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,11 +32,13 @@ namespace PokeCiv
             player2.AddToTeam(p2);
 
             Battle battle = new Battle(player1, player2);
-            battle.fight();
-            
+            BattleView battleview = new BattleView(battle);
+            battle.View = battleview;
 
-           // Application.Run(new WorldMap());
-            Application.Run(new Combat(battle));
+           // Application.Run(new WorldView());
+            Application.Run(battleview);
+
+            battle.fight();
 
             Console.ReadLine();
         }

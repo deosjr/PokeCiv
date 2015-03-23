@@ -12,12 +12,20 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class Combat : Form
+    public partial class BattleView : Form
     {
 
-        public Combat(Battle battle)
+        private Battle battle;
+
+        public BattleView(Battle battle)
         {
             InitializeComponent();
+            this.battle = battle;
+            drawOnce();
+        }
+
+        private void drawOnce()
+        {
             var me = this;
 
             //lazy fetching of pkmns
@@ -86,7 +94,17 @@ namespace PokeCiv.View
                 me.MovesButton3.Text = p1.Moves[2].move.ToString();
             if (p1.Moves[3] != null)
                 me.MovesButton4.Text = p1.Moves[3].move.ToString();
+        }
 
+        public void message(string msg)
+        {
+            Console.WriteLine(msg);
+            Console.ReadLine();
+        }
+
+        public PokemonMove selectMove()
+        {
+            return battle.P1.Moves[0].move;
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

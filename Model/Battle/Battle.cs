@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using PokeCiv.Model.Pokedata;
+using PokeCiv.View;
 
 namespace PokeCiv.Model.Battle
 {
@@ -16,30 +17,31 @@ namespace PokeCiv.Model.Battle
         public Pokemon P1 { get; private set; }
         public Pokemon P2 { get; private set; }
         public string BattleType { get; private set; }
+        public BattleView View { private get; set; }
 
         public Battle(Player p1, Player p2)
         {
             player1 = p1;
             player2 = p2;
+            P1 = getFirstHealthy(player1);
+            P2 = getFirstHealthy(player2);
             BattleType = "IndoorA"; // For now
         }
 
         public void fight()
         {
-            P1 = getFirstHealthy(player1);
-            P2 = getFirstHealthy(player2);
 
             if (P1 == null)
             {
-                Console.WriteLine("You don't have any pokemon!");
+                message("You don't have any pokemon!");
                 return;
             }
 
             setBattleReady();
 
-            Console.WriteLine(player2.Name + " wants to fight!");
-            Console.WriteLine(player2.Name + " sent out " + P2.Name + "!");
-            Console.WriteLine("Go, " + P1.Name + "!");
+            message(player2.Name + " wants to fight!");
+            message(player2.Name + " sent out " + P2.Name + "!");
+            message("Go, " + P1.Name + "!");
 
             while (!(player1.BlackOut() || player2.BlackOut()))
             {
@@ -88,7 +90,7 @@ namespace PokeCiv.Model.Battle
             PokemonMove p2move = Moves.getMove("STRUGGLE");
             if (P1.hasPPLeft())
             {
-                p1move = P1.Moves[0].move;
+                p1move = View.selectMove();
                 P1.Moves[0].currentPP -= 1;
             }
             if (P2.hasPPLeft())
@@ -145,11 +147,11 @@ namespace PokeCiv.Model.Battle
         {
             if (P2.CurrentHP == 0)
             {
-                Console.WriteLine(P2.Name + " fainted!");
+                message(P2.Name + " fainted!");
             }
             if (P1.CurrentHP == 0)
             {
-                Console.WriteLine(P1.Name + " fainted!");
+                message(P1.Name + " fainted!");
             }
             if (P2.CurrentHP == 0 && P1.CurrentHP > 0)
             {
@@ -181,5 +183,9 @@ namespace PokeCiv.Model.Battle
             }
         }
 
+        public void message(string msg)
+        {
+            View.message(msg);
+        }
     }
 }

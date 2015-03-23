@@ -1,6 +1,6 @@
 ﻿namespace PokeCiv.View
 {
-    partial class Combat
+    partial class BattleView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Combat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BattleView));
             this.backImageBattlePokemon = new System.Windows.Forms.PictureBox();
             this.frontImageBattlePokemon = new System.Windows.Forms.PictureBox();
             this.backPokemonName = new System.Windows.Forms.Label();
