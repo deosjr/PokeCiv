@@ -11,12 +11,12 @@ namespace PokeCiv.Model.Pokedata
     public class Pokemon
     {
 
-        public int Level                { get; set; }
+        public int Level                { get; private set; }
         public Species species          { get; private set; }
         public string Name              { get; private set; } 
         public int CurrentHP            { get; private set; }
         public int PreviousXPLevelReq   { get; private set; }
-        public int CurrentXP            { get; set; }
+        public int CurrentXP            { get; private set; }
         public int NextXPLevelReq       { get; private set; }
 
         public int HP                   { get; private set; }
@@ -53,6 +53,7 @@ namespace PokeCiv.Model.Pokedata
             Moves = new Move[4];
             VolatileConditions = new List<VolatileCondition>();
             setXPBoundaries();
+            CurrentXP = PreviousXPLevelReq;
             generateIV();
             calculateStats();
             learnMovesUntilLevel();
@@ -62,7 +63,7 @@ namespace PokeCiv.Model.Pokedata
         public void setXPBoundaries()
         {
             Tuple<int, int> XPinfo = Experience.lookupXP(this);
-            PreviousXPLevelReq = CurrentXP = XPinfo.Item1;
+            PreviousXPLevelReq = XPinfo.Item1;
             NextXPLevelReq = XPinfo.Item1 + XPinfo.Item2;
         }
 
@@ -207,6 +208,35 @@ namespace PokeCiv.Model.Pokedata
         public void nonVolatilePostAttack()
         {
             NonVolatile.postAttack(this);
+        }
+
+        public void gainXP(int xp)
+        {
+            CurrentXP += xp;
+            Console.WriteLine(Name + " gained " + xp + " XP!");
+            if (levelUp())
+            {
+                Console.WriteLine(Name + " grew to level " + Level.ToString() + "!");
+            }
+        }
+
+        public bool levelUp()
+        {
+            if (Level == 100)
+            {
+                return false;
+            }
+
+            if (CurrentXP > NextXPLevelReq)
+            {
+                Level++;
+                if (Level != 100)
+                {
+                    setXPBoundaries();
+                }
+                return true;
+            }
+            return false;
         }
 
         public override string ToString()
