@@ -11,40 +11,25 @@ namespace PokeCiv.Model.Battle
     public class Battle
     {
 
-        Player player1;
-        Player player2;
-        Pokemon p1;
-        Pokemon p2;
-        string type;
-
-        public string getBattleType()
-        {
-            return type;
-        }
-
-        public Pokemon getP1()
-        {
-            return p1;
-        }
-
-        public Pokemon getP2()
-        {
-            return p2;
-        }
+        private Player player1;
+        private Player player2;
+        public Pokemon P1 { get; private set; }
+        public Pokemon P2 { get; private set; }
+        public string BattleType { get; private set; }
 
         public Battle(Player p1, Player p2)
         {
             player1 = p1;
             player2 = p2;
-            type = "IndoorA"; // For now
+            BattleType = "IndoorA"; // For now
         }
 
         public void fight()
         {
-            p1 = getFirstHealthy(player1);
-            p2 = getFirstHealthy(player2);
+            P1 = getFirstHealthy(player1);
+            P2 = getFirstHealthy(player2);
 
-            if (p1 == null)
+            if (P1 == null)
             {
                 Console.WriteLine("You don't have any pokemon!");
                 return;
@@ -52,9 +37,9 @@ namespace PokeCiv.Model.Battle
 
             setBattleReady();
 
-            Console.WriteLine(player2.name + " wants to fight!");
-            Console.WriteLine(player2.name + " sent out " + p2.name + "!");
-            Console.WriteLine("Go, " + p1.species.name + "!");
+            Console.WriteLine(player2.Name + " wants to fight!");
+            Console.WriteLine(player2.Name + " sent out " + P2.Name + "!");
+            Console.WriteLine("Go, " + P1.Name + "!");
 
             while (!(player1.BlackOut() || player2.BlackOut()))
             {
@@ -70,7 +55,7 @@ namespace PokeCiv.Model.Battle
             foreach (BattleMove move in bmoves)
             {
                 bool halt = handleStatusPreAttack(move);
-                if (p1.currentHP == 0 || p2.currentHP == 0)
+                if (P1.CurrentHP == 0 || P2.CurrentHP == 0)
                 {
                     faint = true;
                     break;
@@ -81,7 +66,7 @@ namespace PokeCiv.Model.Battle
                 }
                 CombatMechanics.handleMove(move, first);
                 first = false;
-                if (p1.currentHP == 0 || p2.currentHP == 0)
+                if (P1.CurrentHP == 0 || P2.CurrentHP == 0)
                 {
                     faint = true;
                     break;
@@ -101,20 +86,20 @@ namespace PokeCiv.Model.Battle
         {
             PokemonMove p1move = Moves.getMove("STRUGGLE");
             PokemonMove p2move = Moves.getMove("STRUGGLE");
-            if (p1.hasPPLeft())
+            if (P1.hasPPLeft())
             {
-                p1move = p1.moves[0].move;
-                p1.moves[0].currentPP -= 1;
+                p1move = P1.Moves[0].move;
+                P1.Moves[0].currentPP -= 1;
             }
-            if (p2.hasPPLeft())
+            if (P2.hasPPLeft())
             {
-                p2move = p2.moves[0].move;
-                p2.moves[0].currentPP -= 1;
+                p2move = P2.Moves[0].move;
+                P2.Moves[0].currentPP -= 1;
             }
 
             List<BattleMove> bmoves = new List<BattleMove>();
-            bmoves.Add(new BattleMove(p1, p2, p1move, p1.speedStat));
-            bmoves.Add(new BattleMove(p2, p1, p2move, p2.speedStat));
+            bmoves.Add(new BattleMove(P1, P2, p1move, P1.SpeedStat));
+            bmoves.Add(new BattleMove(P2, P1, p2move, P2.SpeedStat));
             return sortBySpeed(bmoves);
         }
 
@@ -127,9 +112,9 @@ namespace PokeCiv.Model.Battle
         // return true if source is not allowed to attack
         private bool handleStatusPreAttack(BattleMove move)
         {
-            if (move.source.nonVolatile != null)
+            if (move.source.NonVolatile != null)
             {
-                return move.source.nonVolatile.preAttack();
+                return move.source.NonVolatile.preAttack();
             }
 
             return false;
@@ -140,7 +125,7 @@ namespace PokeCiv.Model.Battle
             foreach (BattleMove move in bmoves)
             {
                 handleStatusPostAttack(move);
-                if (move.source.currentHP == 0)
+                if (move.source.CurrentHP == 0)
                 {
                     return;
                 }
@@ -149,33 +134,33 @@ namespace PokeCiv.Model.Battle
 
         private void handleStatusPostAttack(BattleMove move)
         {
-            if (move.source.nonVolatile != null)
+            if (move.source.NonVolatile != null)
             {
-                move.source.nonVolatile.postAttack();
+                move.source.NonVolatile.postAttack();
             }
         }
 
         private void onFainted()
         {
-            if (p2.currentHP == 0)
+            if (P2.CurrentHP == 0)
             {
-                Console.WriteLine(p2.name + " fainted!");
+                Console.WriteLine(P2.Name + " fainted!");
             }
-            if (p1.currentHP == 0)
+            if (P1.CurrentHP == 0)
             {
-                Console.WriteLine(p1.name + " fainted!");
+                Console.WriteLine(P1.Name + " fainted!");
             }
-            if (p2.currentHP == 0 && p1.currentHP > 0)
+            if (P2.CurrentHP == 0 && P1.CurrentHP > 0)
             {
-                Experience.gainXP(p1, p2);
+                Experience.gainXP(P1, P2);
             }
         }
 
         private Pokemon getFirstHealthy(Player player)
         {
-            foreach (Pokemon p in player.team)
+            foreach (Pokemon p in player.Team)
             {
-                if (p.currentHP > 0)
+                if (p.CurrentHP > 0)
                 {
                     return p;
                 }
@@ -185,11 +170,11 @@ namespace PokeCiv.Model.Battle
 
         private void setBattleReady()
         {
-            foreach (Pokemon p in player1.team)
+            foreach (Pokemon p in player1.Team)
             {
                 p.initForBattle();
             }
-            foreach (Pokemon p in player2.team)
+            foreach (Pokemon p in player2.Team)
             {
                 p.initForBattle();
             }

@@ -58,30 +58,30 @@ namespace PokeCiv.Model.Pokedata
 
         public static void gainXP(Pokemon p, Pokemon fainted)
         {
-            if (p.level == 100)
+            if (p.Level == 100)
             {
                 return;
             }
 
             double a = 1.5; // 1 if fainted was wild
-            int b = fainted.species.baseXP;
-            int L = fainted.level;
+            int b = fainted.species.BaseXP;
+            int L = fainted.Level;
             //L_p = self.level
             // ignoring p,f,e
             double s = 1.0; // for multiple combatants
             double t = 1.0; // 1.5 if not original owner
 
             int xp = (int) ((a * t * b * L) / (7.0 * s));
-            p.currentXP += xp;
+            p.CurrentXP += xp;
 
-            Console.WriteLine(p.name + " gained " + xp + " XP!");
+            Console.WriteLine(p.Name + " gained " + xp + " XP!");
 
         }
 
         public static Tuple<int, int> lookupXP(Pokemon p)
         {
             int rate = 0;   // Erratic
-            switch (p.species.growthRate)
+            switch (p.species.GrowthRate)
             {
                 case "Fast":
                     rate = 1;
@@ -100,7 +100,7 @@ namespace PokeCiv.Model.Pokedata
                     break;
             }
             List<Tuple<int,int>> XPinfoRow;
-            lookupTable.TryGetValue(p.level, out XPinfoRow);
+            lookupTable.TryGetValue(p.Level, out XPinfoRow);
             return XPinfoRow.ElementAt(rate);
         }
 

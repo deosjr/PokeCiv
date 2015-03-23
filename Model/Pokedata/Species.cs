@@ -9,32 +9,32 @@ namespace PokeCiv.Model.Pokedata
     public class Species
     {
 
-        public string name;
-        public int id;
+        public string Name      { get; private set; }
+        public int ID           { get; private set; }
 
-        public int HP;
-        public int attack;
-        public int defense;
-        public int spattack;
-        public int spdefense;
-        public int speed;
+        public int HP           { get; private set; }
+        public int Attack       { get; private set; }
+        public int Defense      { get; private set; }
+        public int SPAttack     { get; private set; }
+        public int SPDefense    { get; private set; }
+        public int Speed        { get; private set; }
 
-        public List<PokemonType> types;
+        public List<PokemonType> Types { get; private set; }
         //public List<???> evolutions;
-        public Dictionary<int, List<PokemonMove>> movesLearnable = new Dictionary<int, List<PokemonMove>>();
+        public Dictionary<int, List<PokemonMove>> MovesLearnable { get; private set; }
 
-        public string growthRate;
-        public int baseXP;
+        public string GrowthRate{ get; private set; }
+        public int BaseXP       { get; private set; }
         //public int EP;
 
         public Species(Dictionary<string, string> data)
         {
-            name = data["Name"];
-            id = Convert.ToInt32(data["ID"]);
+            Name = data["Name"];
+            ID = Convert.ToInt32(data["ID"]);
             setBaseStats(data["BaseStats"]);
             setTypes(data);
-            growthRate = data["GrowthRate"];
-            baseXP = Convert.ToInt32(data["BaseEXP"]);
+            GrowthRate = data["GrowthRate"];
+            BaseXP = Convert.ToInt32(data["BaseEXP"]);
             //TODO: setEvolutions(data["Evolutions"]);
             setMoves(data["Moves"]);
         }
@@ -43,22 +43,22 @@ namespace PokeCiv.Model.Pokedata
         {
             var baseStats = new List<int>(from x in stats.Split(',') select Convert.ToInt32(x));
             HP = baseStats[0];
-            attack = baseStats[1];
-            defense = baseStats[2];
-            spattack = baseStats[3];
-            spdefense = baseStats[4];
-            speed = baseStats[5];
+            Attack = baseStats[1];
+            Defense = baseStats[2];
+            SPAttack = baseStats[3];
+            SPDefense = baseStats[4];
+            Speed = baseStats[5];
 
         }
 
         private void setTypes(Dictionary<string, string> data)
         {
-            types = new List<PokemonType>();
-            types.Add(Types.getType(data["Type1"]));
+            Types = new List<PokemonType>();
+            Types.Add(Pokedata.Types.getType(data["Type1"]));
             string type2;
             if (data.TryGetValue("Type2", out type2))
             {
-                types.Add(Types.getType(type2));
+                Types.Add(Pokedata.Types.getType(type2));
             }
         }
 
@@ -69,20 +69,21 @@ namespace PokeCiv.Model.Pokedata
 
         private void setMoves(string moves)
         {
+            MovesLearnable = new Dictionary<int, List<PokemonMove>>();
             string[] m = moves.Split(',');
             for (int i = 0; i < m.Length; i += 2)
             {
                 int level = Convert.ToInt32(m[i]);
                 PokemonMove move = Moves.getMove(m[i + 1]);
-                if (movesLearnable.ContainsKey(level))
+                if (MovesLearnable.ContainsKey(level))
                 {
-                    movesLearnable[level].Add(move);
+                    MovesLearnable[level].Add(move);
                 }
                 else
                 {
                     List<PokemonMove> list = new List<PokemonMove>();
                     list.Add(move);
-                    movesLearnable.Add(level, list);
+                    MovesLearnable.Add(level, list);
                 }
             }
         }

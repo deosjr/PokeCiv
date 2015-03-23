@@ -48,7 +48,7 @@ namespace PokeCiv.Model.Pokedata
         {
             Species species = new Species(data);
             pokemonData.Add(species);
-            internalNames.Add(data["InternalName"], species.id);
+            internalNames.Add(data["InternalName"], species.ID);
         }
 
         public static Pokemon getPokemon(int level, int id)

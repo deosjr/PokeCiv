@@ -11,27 +11,28 @@ namespace PokeCiv.Model
     public class Player
     {
 
-        public List<Pokemon> team = new List<Pokemon>();
-        public string name;
+        public List<Pokemon> Team { get; private set; }
+        public string Name { get; private set; }
 
         public Player(string name)
         {
-            this.name = name;
+            Name = name;
+            Team = new List<Pokemon>();
         }
 
         public void AddToTeam(Pokemon pokemon)
         {
-            if (team.Count < 6)
+            if (Team.Count < 6)
             {
-                team.Add(pokemon);
+                Team.Add(pokemon);
             }
         }
 
         public bool BlackOut()
         {
-            foreach (Pokemon p in team)
+            foreach (Pokemon p in Team)
             {
-                if (p.currentHP > 0)
+                if (p.CurrentHP > 0)
                 {
                     return false;
                 }

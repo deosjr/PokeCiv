@@ -21,8 +21,8 @@ namespace PokeCiv.View
             var me = this;
 
             //lazy fetching of pkmns
-            Pokemon p1 = battle.getP1();
-            Pokemon p2 = battle.getP2();
+            Pokemon p1 = battle.P1;
+            Pokemon p2 = battle.P2;
 
             //Nesting all pictures inside each other for transparancy
  
@@ -43,49 +43,49 @@ namespace PokeCiv.View
             backImageBattlePokemon.Location = new Point(0, 0);
 
             //Pokemon Images
-            me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.id.ToString().PadLeft(3, '0') + "b.png";
-            me.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.id.ToString().PadLeft(3, '0') + ".png";
+            me.backImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.png";
+            me.frontImageBattlePokemon.ImageLocation = "../../Data/Battlers/" + p2.species.ID.ToString().PadLeft(3, '0') + ".png";
 
             //backgrond Image
-            me.battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.getBattleType() + ".png";
+            me.battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";
 
             //floors
-            me.frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.getBattleType() + ".png";
-            me.backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.getBattleType() + ".png";
+            me.frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.BattleType + ".png";
+            me.backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.BattleType + ".png";
 
             //Pokemon names
-            me.backPokemonName.Text = p1.name;
-            me.fontPokemonName.Text = p2.name;
+            me.backPokemonName.Text = p1.Name;
+            me.fontPokemonName.Text = p2.Name;
 
             //Pokemon Levels
-            me.backPokemonLevel.Text = "lvl " + p1.level.ToString();
-            me.frontPokemonLevel.Text = "lvl " + p2.level.ToString();
+            me.backPokemonLevel.Text = "lvl " + p1.Level.ToString();
+            me.frontPokemonLevel.Text = "lvl " + p2.Level.ToString();
 
-            me.label2.Text = p1.name + " do?";
+            me.label2.Text = p1.Name + " do?";
 
             //XPbar
-            me.BackPokemonXPBar.Maximum = p1.nextXP - p1.previousXP;
-            me.BackPokemonXPBar.Value = p1.currentXP - p1.previousXP;
+            me.BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq;
+            me.BackPokemonXPBar.Value = p1.CurrentXP - p1.PreviousXPLevelReq;
 
             //HPBars
             me.BackPokemonHPBar.Maximum = p1.HP;
-            me.BackPokemonHPBar.Value = p1.currentHP;
+            me.BackPokemonHPBar.Value = p1.CurrentHP;
 
             me.FrontPokemonHPBar.Maximum = p2.HP;
-            me.FrontPokemonHPBar.Value = p2.currentHP;
+            me.FrontPokemonHPBar.Value = p2.CurrentHP;
 
             //Own Pokemon HP Label
-            me.BackPokemonHPLabel.Text = p1.currentHP + "/" + p1.HP + "HP";
+            me.BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
 
             //moves buttons
-            if (p1.moves[0] != null)
-                me.MovesButton1.Text = p1.moves[0].move.ToString();
-            if (p1.moves[1] != null)
-                me.MovesButton2.Text = p1.moves[1].move.ToString();
-            if (p1.moves[2] != null)
-                me.MovesButton3.Text = p1.moves[2].move.ToString();
-            if (p1.moves[3] != null)
-                me.MovesButton4.Text = p1.moves[3].move.ToString();
+            if (p1.Moves[0] != null)
+                me.MovesButton1.Text = p1.Moves[0].move.ToString();
+            if (p1.Moves[1] != null)
+                me.MovesButton2.Text = p1.Moves[1].move.ToString();
+            if (p1.Moves[2] != null)
+                me.MovesButton3.Text = p1.Moves[2].move.ToString();
+            if (p1.Moves[3] != null)
+                me.MovesButton4.Text = p1.Moves[3].move.ToString();
 
         }
 

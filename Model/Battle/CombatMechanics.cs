@@ -14,9 +14,9 @@ namespace PokeCiv.Model.Battle
 
         public static void handleMove(BattleMove move, bool first)
         {
-            Console.WriteLine(move.source.name + " used " + move.move.name + "!");
-            double acc = accStageToModifier(move.source.accuracy);
-            double evade = accStageToModifier(move.target.evasion);
+            Console.WriteLine(move.source.Name + " used " + move.move.name + "!");
+            double acc = accStageToModifier(move.source.Accuracy);
+            double evade = accStageToModifier(move.target.Evasion);
 
             bool miss = determineHit(move, acc, evade);
             int damage = 0 ;
@@ -28,7 +28,7 @@ namespace PokeCiv.Model.Battle
                 if (t != 0)
                 {
                     int damageDealt = move.target.takeDamage(damage);
-                    Console.WriteLine(move.target.name + " takes " + damageDealt + " damage!");
+                    Console.WriteLine(move.target.Name + " takes " + damageDealt + " damage!");
                 }
             }
             MoveFunctions.applyMoveFunction(move, damage, t, miss, first);
@@ -40,7 +40,7 @@ namespace PokeCiv.Model.Battle
             int r = random.Next(101);
             if (move.move.accuracy != 0 && r > p)
             {
-                Console.WriteLine(move.source.name + "'s attack missed!");
+                Console.WriteLine(move.source.Name + "'s attack missed!");
                 return true;
             }
             return false;
@@ -51,16 +51,16 @@ namespace PokeCiv.Model.Battle
             int attack, attackStat, defense, defenseStat;
             normalOrSpecialAttack(move, out attack, out attackStat, out defense, out defenseStat);
 
-            int L = move.source.level;
+            int L = move.source.Level;
             double A = attack * statStageToModifier(attackStat);
             double D = defense * statStageToModifier(defenseStat);
             double B = checkPower(move);
             double STAB = 1.0;
-            if (move.source.species.types.Contains(move.move.type))
+            if (move.source.species.Types.Contains(move.move.type))
             {
                 STAB = 1.5;
             }
-            T = Types.effectiveness(move.move.type, move.target.species.types);
+            T = Types.effectiveness(move.move.type, move.target.species.Types);
             Crit = 1.0; //TODO
             double other = 1.0; //TODO
             double rand = 1.0 - 0.15 * random.NextDouble();
@@ -73,17 +73,17 @@ namespace PokeCiv.Model.Battle
         {
             if (move.move.category.Equals("Special"))
             {
-                attack = move.source.attack;
-                attackStat = move.source.attackStat;
-                defense = move.target.defense;
-                defenseStat = move.target.defenseStat;
+                attack = move.source.Attack;
+                attackStat = move.source.AttackStat;
+                defense = move.target.Defense;
+                defenseStat = move.target.DefenseStat;
             }
             else
             {
-                attack = move.source.spattack;
-                attackStat = move.source.spattackStat;
-                defense = move.target.spdefense;
-                defenseStat = move.target.spdefenseStat;
+                attack = move.source.SPAttack;
+                attackStat = move.source.SPAttackStat;
+                defense = move.target.SPDefense;
+                defenseStat = move.target.SPDefenseStat;
             }
         }
 

@@ -11,20 +11,20 @@ namespace PokeCiv.Model.Pokedata
     public class Pokemon
     {
 
-        public int level;
-        public Species species;
-        public string name;
-        public int currentHP;
-        public int previousXP;
-        public int currentXP;
-        public int nextXP;
+        public int Level                { get; set; }
+        public Species species          { get; private set; }
+        public string Name              { get; private set; } 
+        public int CurrentHP            { get; private set; }
+        public int PreviousXPLevelReq   { get; private set; }
+        public int CurrentXP            { get; set; }
+        public int NextXPLevelReq       { get; private set; }
 
-        public int HP;
-        public int attack;
-        public int defense;
-        public int spattack;
-        public int spdefense;
-        public int speed;
+        public int HP                   { get; private set; }
+        public int Attack               { get; private set; }
+        public int Defense              { get; private set; }
+        public int SPAttack             { get; private set; }
+        public int SPDefense            { get; private set; }
+        public int Speed                { get; private set; } 
 
         private int IVHP;
         private int IVattack;
@@ -33,30 +33,37 @@ namespace PokeCiv.Model.Pokedata
         private int IVspdefense;
         private int IVspeed;
 
-        public int accuracy;
-        public int evasion;
-        public int attackStat;
-        public int defenseStat;
-        public int spattackStat;
-        public int spdefenseStat;
-        public int speedStat;
+        public int Accuracy             { get; private set; } 
+        public int Evasion              { get; private set; }
+        public int AttackStat           { get; private set; }
+        public int DefenseStat          { get; private set; }
+        public int SPAttackStat         { get; private set; }
+        public int SPDefenseStat        { get; private set; }
+        public int SpeedStat            { get; private set; }
 
-        public Move[] moves = new Move[4];
-        public NonVolatileCondition nonVolatile;
-        public List<VolatileCondition> volatileConditions = new List<VolatileCondition>();
+        public Move[] Moves { get; private set; }
+        public NonVolatileCondition NonVolatile { get; private set; }
+        public List<VolatileCondition> VolatileConditions { get; private set; }
 
         public Pokemon(int level, Species species)
         {
-            this.level = level;
+            Level = level;
             this.species = species;
-            this.name = species.name;
-            Tuple<int, int> XPinfo = Experience.lookupXP(this);
-            previousXP = currentXP = XPinfo.Item1;
-            nextXP = XPinfo.Item1 + XPinfo.Item2;
+            this.Name = species.Name;
+            Moves = new Move[4];
+            VolatileConditions = new List<VolatileCondition>();
+            setXPBoundaries();
             generateIV();
             calculateStats();
             learnMovesUntilLevel();
-            currentHP = HP;
+            CurrentHP = HP;
+        }
+
+        public void setXPBoundaries()
+        {
+            Tuple<int, int> XPinfo = Experience.lookupXP(this);
+            PreviousXPLevelReq = CurrentXP = XPinfo.Item1;
+            NextXPLevelReq = XPinfo.Item1 + XPinfo.Item2;
         }
 
         private void generateIV()
@@ -73,33 +80,33 @@ namespace PokeCiv.Model.Pokedata
         private void calculateStats()
         {
             HP = calculateHP(IVHP, species.HP);
-            attack = calculateStat(IVattack, species.attack);
-            defense = calculateStat(IVdefense, species.defense);
-            spattack = calculateStat(IVspattack, species.spattack);
-            spdefense = calculateStat(IVspdefense, species.spdefense);
-            speed = calculateStat(IVspeed, species.speed);
+            Attack = calculateStat(IVattack, species.Attack);
+            Defense = calculateStat(IVdefense, species.Defense);
+            SPAttack = calculateStat(IVspattack, species.SPAttack);
+            SPDefense = calculateStat(IVspdefense, species.SPDefense);
+            Speed = calculateStat(IVspeed, species.Speed);
         }
 
         private int calculateStat(int iv, int baseStat)
         {
             int temp = iv + (2 * baseStat); // + EV/4
-            temp = ((temp * level) / 100) + 5;
+            temp = ((temp * Level) / 100) + 5;
             return temp; // x Nature?
         }
 
         private int calculateHP(int iv, int baseStat)
         {
             int temp = iv + (2 * baseStat) + 100; // + EV/4
-            temp = ((temp * level) / 100) + 10;
+            temp = ((temp * Level) / 100) + 10;
             return temp; // x Nature?
         }
 
         private void learnMovesUntilLevel()
         {
-            var sorted = from entry in species.movesLearnable orderby entry.Key ascending select entry;
+            var sorted = from entry in species.MovesLearnable orderby entry.Key ascending select entry;
             foreach (KeyValuePair<int, List<PokemonMove>> kv in sorted)
             {
-                if (kv.Key > level)
+                if (kv.Key > Level)
                 {
                     break;
                 }
@@ -113,11 +120,11 @@ namespace PokeCiv.Model.Pokedata
         private void learnMove(PokemonMove m)
         {
             Move move = new Move(m, m.PP);
-            for (int i = 0; i < moves.Length; i++)
+            for (int i = 0; i < Moves.Length; i++)
             {
-                if (moves[i] == null)
+                if (Moves[i] == null)
                 {
-                    moves[i] = move;
+                    Moves[i] = move;
                     return;
                 }
             }
@@ -125,16 +132,16 @@ namespace PokeCiv.Model.Pokedata
 
         public int takeDamage(int damage)
         {
-            int temp = currentHP;
-            currentHP = Math.Max(0, currentHP - damage);
-            return temp - currentHP;
+            int temp = CurrentHP;
+            CurrentHP = Math.Max(0, CurrentHP - damage);
+            return temp - CurrentHP;
         }
 
         public void fullHeal()
         {
-            currentHP = HP;
-            nonVolatile = null;
-            foreach (Move move in moves)
+            CurrentHP = HP;
+            NonVolatile = null;
+            foreach (Move move in Moves)
             {
                 if (move != null)
                 {
@@ -146,23 +153,23 @@ namespace PokeCiv.Model.Pokedata
         public void initForBattle()
         {
             resetStages();
-            volatileConditions = new List<VolatileCondition>();
+            VolatileConditions = new List<VolatileCondition>();
         }
 
         private void resetStages()
         {
-            accuracy = 0;
-            evasion = 0;
-            attackStat = 0;
-            defenseStat = 0;
-            spattackStat = 0;
-            spdefenseStat = 0;
-            speedStat = 0;
+            Accuracy = 0;
+            Evasion = 0;
+            AttackStat = 0;
+            DefenseStat = 0;
+            SPAttackStat = 0;
+            SPDefenseStat = 0;
+            SpeedStat = 0;
         }
 
         public bool hasPPLeft()
         {
-            foreach (Move m in moves)
+            foreach (Move m in Moves)
             {
                 if (m != null && m.currentPP > 0)
                 {
@@ -174,10 +181,10 @@ namespace PokeCiv.Model.Pokedata
 
         public void setStatus(string statuscode)
         {
-            if (nonVolatile == null)
+            if (NonVolatile == null)
             {
-                nonVolatile = PokemonStatus.getNonVolatile(statuscode);
-                Console.WriteLine(name + nonVolatile.getInitMessage());
+                NonVolatile = PokemonStatus.getNonVolatile(statuscode);
+                Console.WriteLine(Name + NonVolatile.getInitMessage());
             }
 
         }
@@ -189,7 +196,7 @@ namespace PokeCiv.Model.Pokedata
 
         public override string ToString()
         {
-            return species.name + " lvl: " + level;
+            return species.Name + " lvl: " + Level;
         }
 
     }
