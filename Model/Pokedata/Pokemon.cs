@@ -15,7 +15,8 @@ namespace PokeCiv.Model.Pokedata
         public Species species;
         public string name;
         public int currentHP;
-        public int XP;
+        public int previousXP;
+        public int currentXP;
         public int nextXP;
 
         public int HP;
@@ -50,7 +51,7 @@ namespace PokeCiv.Model.Pokedata
             this.species = species;
             this.name = species.name;
             Tuple<int, int> XPinfo = Experience.lookupXP(this);
-            XP = XPinfo.Item1;
+            previousXP = currentXP = XPinfo.Item1;
             nextXP = XPinfo.Item1 + XPinfo.Item2;
             generateIV();
             calculateStats();

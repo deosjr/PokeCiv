@@ -64,8 +64,8 @@ namespace PokeCiv.View
             me.label2.Text = p1.name + " do?";
 
             //XPbar
-            me.BackPokemonXPBar.Maximum = p1.nextXP;
-            me.BackPokemonXPBar.Value = p1.XP;
+            me.BackPokemonXPBar.Maximum = p1.nextXP - p1.previousXP;
+            me.BackPokemonXPBar.Value = p1.currentXP - p1.previousXP;
 
             //HPBars
             me.BackPokemonHPBar.Maximum = p1.HP;

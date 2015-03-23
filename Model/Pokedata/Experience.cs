@@ -72,7 +72,7 @@ namespace PokeCiv.Model.Pokedata
             double t = 1.0; // 1.5 if not original owner
 
             int xp = (int) ((a * t * b * L) / (7.0 * s));
-            p.XP += xp;
+            p.currentXP += xp;
 
             Console.WriteLine(p.name + " gained " + xp + " XP!");
 
