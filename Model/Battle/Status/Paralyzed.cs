@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PokeCiv.Model.Pokedata;
+
 namespace PokeCiv.Model.Battle.Status
 {
     class Paralyzed : NonVolatileCondition
     {
 
-        public override bool preAttack() 
+        public override bool preAttack(Pokemon pokemon) 
         {
             if (CombatMechanics.random.NextDouble() < 0.25)
             {
-                Console.WriteLine(" is paralyzed! It can't move!");
+                Console.WriteLine(pokemon.Name + " is paralyzed! It can't move!");
                 return true;
             }
             return false;

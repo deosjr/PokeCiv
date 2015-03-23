@@ -30,10 +30,60 @@ namespace PokeCiv.Model.Battle
                 case "001":
                     Console.WriteLine("Nothing happens at all.");
                     return;
-                case "008":
+                case "002":
+                    // TODO: no type, not recoil
+                    source.takeDamage((int)Math.Floor(source.HP / 4.0));
+                    break;
+                case "003":
+                    if (!miss)
+                    {
+                        target.setStatus("SLP");
+                    }
+                    break;
+                case "005":
+                    if (addEffect && !miss)
+                    {
+                        target.setStatus("PSN");
+                    }
+                    break;
+                case "006":
+                    if (addEffect && !miss)
+                    {
+                        target.setStatus("BPSN");
+                    }
+                    break;
+                case "007":
+                    // TODO: electric move on electric pokemon doesn't work
+                    // TODO: Thunder Wave exception
                     if (addEffect)
                     {
                         target.setStatus("PAR");
+                    }
+                    break;
+                case "008":
+                    // TODO: Thunder exceptions
+                    if (addEffect)
+                    {
+                        target.setStatus("PAR");
+                    }
+                    break;
+                case "00A":
+                    if (addEffect)
+                    {
+                        target.setStatus("BRN");
+                    }
+                    break;
+                case "00C":
+                    if (addEffect)
+                    {
+                        target.setStatus("FRZ");
+                    }
+                    break;
+                case "00D":
+                    // TODO: Blizzard exceptions
+                    if (addEffect)
+                    {
+                        target.setStatus("FRZ");
                     }
                     break;
                 default:

@@ -50,8 +50,13 @@
     <Compile Include="Model\Battle\BattleMove.cs" />
     <Compile Include="Model\Battle\CombatMechanics.cs" />
     <Compile Include="Model\Battle\MoveFunctions.cs" />
+    <Compile Include="Model\Battle\Status\Asleep.cs" />
+    <Compile Include="Model\Battle\Status\BadlyPoisoned.cs" />
+    <Compile Include="Model\Battle\Status\Burned.cs" />
+    <Compile Include="Model\Battle\Status\Frozen.cs" />
     <Compile Include="Model\Battle\Status\NonVolatileCondition.cs" />
     <Compile Include="Model\Battle\Status\Paralyzed.cs" />
+    <Compile Include="Model\Battle\Status\Poisoned.cs" />
     <Compile Include="Model\Battle\Status\PokemonStatus.cs" />
     <Compile Include="Model\Battle\Status\StatusCondition.cs" />
     <Compile Include="Model\Battle\Status\VolatileCondition.cs" />

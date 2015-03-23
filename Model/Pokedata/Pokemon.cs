@@ -194,6 +194,21 @@ namespace PokeCiv.Model.Pokedata
 
         }
 
+        public void clearNonVolatileStatus()
+        {
+            NonVolatile = null;
+        }
+
+        public bool nonVolatilePreAttack()
+        {
+            return NonVolatile.preAttack(this);
+        }
+
+        public void nonVolatilePostAttack()
+        {
+            NonVolatile.postAttack(this);
+        }
+
         public override string ToString()
         {
             return species.Name + " lvl: " + Level;

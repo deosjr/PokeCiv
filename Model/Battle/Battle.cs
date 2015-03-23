@@ -98,8 +98,8 @@ namespace PokeCiv.Model.Battle
             }
 
             List<BattleMove> bmoves = new List<BattleMove>();
-            bmoves.Add(new BattleMove(P1, P2, p1move, P1.SpeedStat));
-            bmoves.Add(new BattleMove(P2, P1, p2move, P2.SpeedStat));
+            bmoves.Add(new BattleMove(P1, P2, p1move, P1.Speed));
+            bmoves.Add(new BattleMove(P2, P1, p2move, P2.Speed));
             return sortBySpeed(bmoves);
         }
 
@@ -114,7 +114,7 @@ namespace PokeCiv.Model.Battle
         {
             if (move.source.NonVolatile != null)
             {
-                return move.source.NonVolatile.preAttack();
+                return move.source.nonVolatilePreAttack();
             }
 
             return false;
@@ -136,7 +136,7 @@ namespace PokeCiv.Model.Battle
         {
             if (move.source.NonVolatile != null)
             {
-                move.source.NonVolatile.postAttack();
+                move.source.nonVolatilePostAttack();
             }
         }
 
