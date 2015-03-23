@@ -35,8 +35,8 @@ namespace PokeCiv
             BattleView battleview = new BattleView(battle);
             battle.View = battleview;
 
-           // Application.Run(new WorldView());
-            Application.Run(battleview);
+            Application.Run(new WorldView());
+           // Application.Run(battleview);
 
             battle.fight();
 

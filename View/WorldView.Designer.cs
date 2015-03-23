@@ -43,18 +43,21 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // WorldMap
+            // WorldView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(755, 423);
+            this.ClientSize = new System.Drawing.Size(717, 423);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
-            this.Name = "WorldMap";
+            this.Name = "WorldView";
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "WorldMap";
             this.Load += new System.EventHandler(this.WorldMap_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.WorldMap_KeyDown);
