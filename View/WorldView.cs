@@ -53,7 +53,7 @@ namespace PokeCiv.View
             }
             else if (e.KeyValue == 37)
             {
-                position = new Point(position.X - 100, position.Y - 100);
+                position = new Point(position.X - 100, position.Y);
             }
             else if (e.KeyValue == 39)
             {
