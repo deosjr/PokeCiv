@@ -86,6 +86,263 @@ namespace PokeCiv.Model.Battle
                         target.setStatus(battle, "FRZ");
                     }
                     break;
+                case "01C":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                    }
+                    break;
+                case "01D":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Defense", 1));
+                    }
+                    break;
+                case "01E":
+                    // TODO: curl effect
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Defense", 1));
+                    }
+                    break;
+                case "01F":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Speed", 1));
+                    }
+                    break;
+                case "020":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("SPAttack", 1));
+                    }
+                    break;
+                case "022":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Evasion", 1));
+                    }
+                    break;
+                case "024":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                        battle.message(source.increaseStat("Defense", 1));
+                    }
+                    break;
+                case "025":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                        battle.message(source.increaseStat("Defense", 1));
+                        battle.message(source.increaseStat("Accuracy", 1));
+                    }
+                    break;
+                case "026":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                        battle.message(source.increaseStat("Speed", 1));
+                    }
+                    break;
+                case "027":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                        battle.message(source.increaseStat("SPAttack", 1));
+                    }
+                    break;
+                case "029":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                        battle.message(source.increaseStat("Accuracy", 1));
+                    }
+                    break;
+                case "02A":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Defense", 1));
+                        battle.message(source.increaseStat("SPDefense", 1));
+                    }
+                    break;
+                case "02B":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Speed", 1));
+                        battle.message(source.increaseStat("SPAttack", 1));
+                        battle.message(source.increaseStat("SPDefense", 1));
+                    }
+                    break;
+                case "02C":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("SPAttack", 1));
+                        battle.message(source.increaseStat("SPDefense", 1));
+                    }
+                    break;
+                case "02D":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 1));
+                        battle.message(source.increaseStat("SPAttack", 1));
+                        battle.message(source.increaseStat("Defense", 1));
+                        battle.message(source.increaseStat("SPDefense", 1));
+                        battle.message(source.increaseStat("Speed", 1));
+                    }
+                    break;
+                case "02E":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Attack", 2));
+                    }
+                    break;
+                case "02F":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Defense", 2));
+                    }
+                    break;
+                case "030":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Speed", 2));
+                    }
+                    break;
+                case "032":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("SPAttack", 2));
+                    }
+                    break;
+                case "033":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("SPDefense", 2));
+                    }
+                    break;
+                case "035":
+                    if (addEffect)
+                    {
+                        battle.message(source.decreaseStat("Defense", 1));
+                        battle.message(source.decreaseStat("SPDefense", 1));
+                        battle.message(source.increaseStat("Attack", 2));
+                        battle.message(source.increaseStat("SPAttack", 2));
+                        battle.message(source.increaseStat("Speed", 2));
+                    }
+                    break;
+                case "036":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Speed", 2));
+                        battle.message(source.increaseStat("Attack", 1));
+                    }
+                    break;
+                case "038":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("Defense", 3));
+                    }
+                    break;
+                case "039":
+                    if (addEffect)
+                    {
+                        battle.message(source.increaseStat("SPAttack", 3));
+                    }
+                    break;
+                case "03B":
+                    if (addEffect)
+                    {
+                        battle.message(source.decreaseStat("Attack", 1));
+                        battle.message(source.decreaseStat("Defense", 1));
+                    }
+                    break;
+                case "03C":
+                    if (addEffect)
+                    {
+                        battle.message(source.decreaseStat("Defense", 1));
+                        battle.message(source.decreaseStat("SPDefense", 1));
+                    }
+                    break;
+                case "03E":
+                    if (addEffect)
+                    {
+                        battle.message(source.decreaseStat("Speed", 1));
+                    }
+                    break;
+                case "03F":
+                    if (addEffect)
+                    {
+                        battle.message(source.decreaseStat("SPAttack", 2));
+                    }
+                    break;
+                case "042":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Attack", 1));
+                    }
+                    break;
+                case "043":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Defense", 1));
+                    }
+                    break;
+                case "044":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Speed", 1));
+                    }
+                    break;
+                case "045":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("SPAttack", 1));
+                    }
+                    break;
+                case "046":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("SPDefense", 1));
+                    }
+                    break;
+                case "047":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Accuracy", 1));
+                    }
+                    break;
+                case "048":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Evasion", 1));
+                    }
+                    break;
+                case "04A":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Attack", 1));
+                        battle.message(target.decreaseStat("Defense", 1));
+                    }
+                    break;
+                case "04B":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Attack", 2));
+                    }
+                    break;
+                case "04C":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Defense", 2));
+                    }
+                    break;
+                case "04D":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("Speed", 2));
+                    }
+                    break;
                 default:
                     battle.message("This move hasn't been implemented yet!");
                     break;

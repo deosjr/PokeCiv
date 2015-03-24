@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using PokeCiv.Model.Battle.Status;
 using PokeCiv.Model.Battle;
+using System.Reflection;
 
 namespace PokeCiv.Model.Pokedata
 {
@@ -34,8 +35,8 @@ namespace PokeCiv.Model.Pokedata
         private int IVspdefense;
         private int IVspeed;
 
-        public int Accuracy             { get; private set; } 
-        public int Evasion              { get; private set; }
+        public int AccuracyStat         { get; private set; } 
+        public int EvasionStat          { get; private set; }
         public int AttackStat           { get; private set; }
         public int DefenseStat          { get; private set; }
         public int SPAttackStat         { get; private set; }
@@ -160,8 +161,8 @@ namespace PokeCiv.Model.Pokedata
 
         private void resetStages()
         {
-            Accuracy = 0;
-            Evasion = 0;
+            AccuracyStat = 0;
+            EvasionStat = 0;
             AttackStat = 0;
             DefenseStat = 0;
             SPAttackStat = 0;
@@ -238,6 +239,40 @@ namespace PokeCiv.Model.Pokedata
                 return true;
             }
             return false;
+        }
+
+        private int calculateStatIncrease(int stat, int amount)
+        {
+            return Math.Min(6, stat + amount);
+        }
+
+        private int calculateStatDecrease(int stat, int amount)
+        {
+            return Math.Max(-6, stat - amount);
+        }
+
+        public string increaseStat(string stat, int amount)
+        {
+            string statname = stat + "Stat";
+            PropertyInfo propertyInfo = this.GetType().GetProperty(statname);
+            int currentValue = (int) propertyInfo.GetValue(this);
+            if (currentValue == 6)
+            {
+                return Name + "'s " + stat + " won't go any higher!";
+            }
+            int change = calculateStatIncrease(currentValue, amount);
+            propertyInfo.SetValue(this, change, null);
+            return Name + "'s " + stat + (amount > 1 ? "sharply" : "") + " rose!";
+        }
+
+        public string decreaseStat(string stat, int amount)
+        {
+            string statname = stat + "Stat";
+            PropertyInfo propertyInfo = this.GetType().GetProperty(statname);
+            int currentValue = (int)propertyInfo.GetValue(this);
+            int change = calculateStatDecrease(currentValue, amount);
+            propertyInfo.SetValue(this, change, null);
+            return Name + "'s " + stat + (amount > 1 ? "sharply" : "") + " fell!";
         }
 
         public override string ToString()

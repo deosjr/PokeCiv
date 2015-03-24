@@ -15,8 +15,8 @@ namespace PokeCiv.Model.Battle
         public static void handleMove(Battle battle, BattleMove move, bool first)
         {
             battle.message(move.source.Name + " used " + move.move.name + "!");
-            double acc = accStageToModifier(move.source.Accuracy);
-            double evade = accStageToModifier(move.target.Evasion);
+            double acc = accStageToModifier(move.source.AccuracyStat);
+            double evade = accStageToModifier(move.target.EvasionStat);
 
             bool miss = determineHit(battle, move, acc, evade);
             int damage = 0 ;
