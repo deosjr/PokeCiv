@@ -11,11 +11,11 @@ namespace PokeCiv.Model.Battle.Status
     class Burned : NonVolatileCondition
     {
 
-        public override void postAttack(Pokemon pokemon)
+        public override void postAttack(Battle battle, Pokemon pokemon)
         {
             int burnDamage = (int) Math.Ceiling(pokemon.HP / 8.0);
             pokemon.takeDamage(burnDamage);
-            Console.WriteLine(pokemon.Name + " is hurt by its burn!");
+            battle.message(pokemon.Name + " is hurt by its burn!");
         }
 
         public override string getInitMessage()

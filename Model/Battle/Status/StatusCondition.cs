@@ -10,8 +10,8 @@ namespace PokeCiv.Model.Battle.Status
 {
     interface StatusCondition
     {
-        bool preAttack(Pokemon pokemon);
+        bool preAttack(Battle battle, Pokemon pokemon);
 
-        void postAttack(Pokemon pokemon);
+        void postAttack(Battle battle, Pokemon pokemon);
     }
 }

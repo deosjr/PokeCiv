@@ -12,13 +12,13 @@ namespace PokeCiv.Model.Battle
     {
         public static Random random = new Random();
 
-        public static void handleMove(BattleMove move, bool first)
+        public static void handleMove(Battle battle, BattleMove move, bool first)
         {
-            Console.WriteLine(move.source.Name + " used " + move.move.name + "!");
+            battle.message(move.source.Name + " used " + move.move.name + "!");
             double acc = accStageToModifier(move.source.Accuracy);
             double evade = accStageToModifier(move.target.Evasion);
 
-            bool miss = determineHit(move, acc, evade);
+            bool miss = determineHit(battle, move, acc, evade);
             int damage = 0 ;
             double crit, t = 1;
 
@@ -28,19 +28,19 @@ namespace PokeCiv.Model.Battle
                 if (t != 0)
                 {
                     int damageDealt = move.target.takeDamage(damage);
-                    Console.WriteLine(move.target.Name + " takes " + damageDealt + " damage!");
+                    battle.message(move.target.Name + " takes " + damageDealt + " damage!");
                 }
             }
-            MoveFunctions.applyMoveFunction(move, damage, t, miss, first);
+            MoveFunctions.applyMoveFunction(battle, move, damage, t, miss, first);
         }
 
-        private static bool determineHit(BattleMove move, double acc, double evade)
+        private static bool determineHit(Battle battle, BattleMove move, double acc, double evade)
         {
             double p = move.move.accuracy * (acc / evade);
             int r = random.Next(101);
             if (move.move.accuracy != 0 && r > p)
             {
-                Console.WriteLine(move.source.Name + "'s attack missed!");
+                battle.message(move.source.Name + "'s attack missed!");
                 return true;
             }
             return false;

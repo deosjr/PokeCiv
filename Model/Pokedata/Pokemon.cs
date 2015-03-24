@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using PokeCiv.Model.Battle.Status;
+using PokeCiv.Model.Battle;
 
 namespace PokeCiv.Model.Pokedata
 {
@@ -180,17 +181,17 @@ namespace PokeCiv.Model.Pokedata
             return false;
         }
 
-        public void setStatus(string statuscode)
+        public void setStatus(Battle.Battle battle, string statuscode)
         {
             if (NonVolatile == null)
             {
                 NonVolatile = PokemonStatus.getNonVolatile(statuscode);
-                Console.WriteLine(Name + NonVolatile.getInitMessage());
+                battle.message(Name + NonVolatile.getInitMessage());
             }
 
         }
 
-        public void addStatus(string statuscode)
+        public void addStatus(Battle.Battle battle, string statuscode)
         {
 
         }
@@ -200,23 +201,23 @@ namespace PokeCiv.Model.Pokedata
             NonVolatile = null;
         }
 
-        public bool nonVolatilePreAttack()
+        public bool nonVolatilePreAttack(Battle.Battle battle)
         {
-            return NonVolatile.preAttack(this);
+            return NonVolatile.preAttack(battle, this);
         }
 
-        public void nonVolatilePostAttack()
+        public void nonVolatilePostAttack(Battle.Battle battle)
         {
-            NonVolatile.postAttack(this);
+            NonVolatile.postAttack(battle, this);
         }
 
-        public void gainXP(int xp)
+        public void gainXP(Battle.Battle battle, int xp)
         {
             CurrentXP += xp;
-            Console.WriteLine(Name + " gained " + xp + " XP!");
+            battle.message(Name + " gained " + xp + " XP!");
             if (levelUp())
             {
-                Console.WriteLine(Name + " grew to level " + Level.ToString() + "!");
+                battle.message(Name + " grew to level " + Level.ToString() + "!");
             }
         }
 

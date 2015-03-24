@@ -11,15 +11,15 @@ namespace PokeCiv.Model.Battle.Status
     class Frozen : NonVolatileCondition
     {
 
-        public override bool preAttack(Pokemon pokemon)
+        public override bool preAttack(Battle battle, Pokemon pokemon)
         {
             if (CombatMechanics.random.NextDouble() < 0.2)
             {
                 pokemon.clearNonVolatileStatus();
-                Console.WriteLine(pokemon.Name + " thaws!");
+                battle.message(pokemon.Name + " thaws!");
                 return false;
             }
-            Console.WriteLine(pokemon.Name + " is frozen solid!");
+            battle.message(pokemon.Name + " is frozen solid!");
             return true;
         }
 

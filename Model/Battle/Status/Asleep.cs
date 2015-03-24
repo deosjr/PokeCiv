@@ -18,16 +18,16 @@ namespace PokeCiv.Model.Battle.Status
             timer = CombatMechanics.random.Next(1,4);
         }
 
-        public override bool preAttack(Pokemon pokemon)
+        public override bool preAttack(Battle battle, Pokemon pokemon)
         {
             timer--;
             if (timer == 0)
             {
                 pokemon.clearNonVolatileStatus();
-                Console.WriteLine(pokemon.Name + " woke up!");
+                battle.message(pokemon.Name + " woke up!");
                 return false;
             }
-            Console.WriteLine(pokemon.Name + " is fast asleep!");
+            battle.message(pokemon.Name + " is fast asleep!");
             return true;
         }
 

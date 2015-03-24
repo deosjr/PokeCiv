@@ -66,7 +66,7 @@ namespace PokeCiv.Model.Battle
                 {
                     continue;
                 }
-                CombatMechanics.handleMove(move, first);
+                CombatMechanics.handleMove(this, move, first);
                 first = false;
                 if (P1.CurrentHP == 0 || P2.CurrentHP == 0)
                 {
@@ -117,7 +117,7 @@ namespace PokeCiv.Model.Battle
         {
             if (move.source.NonVolatile != null)
             {
-                return move.source.nonVolatilePreAttack();
+                return move.source.nonVolatilePreAttack(this);
             }
 
             return false;
@@ -139,7 +139,7 @@ namespace PokeCiv.Model.Battle
         {
             if (move.source.NonVolatile != null)
             {
-                move.source.nonVolatilePostAttack();
+                move.source.nonVolatilePostAttack(this);
             }
         }
 
@@ -155,7 +155,7 @@ namespace PokeCiv.Model.Battle
             }
             if (P2.CurrentHP == 0 && P1.CurrentHP > 0)
             {
-                Experience.gainXP(P1, P2);
+                Experience.gainXP(this, P1, P2);
             }
         }
 

@@ -56,7 +56,7 @@ namespace PokeCiv.Model.Pokedata
             }
         }
 
-        public static void gainXP(Pokemon p, Pokemon fainted)
+        public static void gainXP(Battle.Battle battle, Pokemon p, Pokemon fainted)
         {
             if (p.Level == 100)
             {
@@ -72,7 +72,7 @@ namespace PokeCiv.Model.Pokedata
             double t = 1.0; // 1.5 if not original owner
 
             int xp = (int) ((a * t * b * L) / (7.0 * s));
-            p.gainXP(xp);
+            p.gainXP(battle, xp);
 
         }
 

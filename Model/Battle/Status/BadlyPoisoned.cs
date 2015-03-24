@@ -18,12 +18,12 @@ namespace PokeCiv.Model.Battle.Status
             duration = 1;
         }
 
-        public override void postAttack(Pokemon pokemon)
+        public override void postAttack(Battle battle, Pokemon pokemon)
         {
             int poisonDamage = (int)Math.Ceiling(pokemon.HP / 16.0);
             pokemon.takeDamage(duration * poisonDamage);
             duration++;
-            Console.WriteLine(pokemon.Name + " is hurt by poison!");
+            battle.message(pokemon.Name + " is hurt by poison!");
         }
 
         public override string getInitMessage()

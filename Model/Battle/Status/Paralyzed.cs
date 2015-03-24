@@ -11,11 +11,11 @@ namespace PokeCiv.Model.Battle.Status
     class Paralyzed : NonVolatileCondition
     {
 
-        public override bool preAttack(Pokemon pokemon) 
+        public override bool preAttack(Battle battle, Pokemon pokemon) 
         {
             if (CombatMechanics.random.NextDouble() < 0.25)
             {
-                Console.WriteLine(pokemon.Name + " is paralyzed! It can't move!");
+                battle.message(pokemon.Name + " is paralyzed! It can't move!");
                 return true;
             }
             return false;

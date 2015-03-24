@@ -11,7 +11,7 @@ namespace PokeCiv.Model.Battle
     class MoveFunctions
     {
 
-        public static void applyMoveFunction(BattleMove m, int damage, double t, bool miss, bool first)
+        public static void applyMoveFunction(Battle battle, BattleMove m, int damage, double t, bool miss, bool first)
         {
             PokemonMove move = m.move;
             Pokemon source = m.source;
@@ -28,7 +28,7 @@ namespace PokeCiv.Model.Battle
                 case "000":
                     return;
                 case "001":
-                    Console.WriteLine("Nothing happens at all.");
+                    battle.message("Nothing happens at all.");
                     return;
                 case "002":
                     // TODO: no type, not recoil
@@ -37,19 +37,19 @@ namespace PokeCiv.Model.Battle
                 case "003":
                     if (!miss)
                     {
-                        target.setStatus("SLP");
+                        target.setStatus(battle, "SLP");
                     }
                     break;
                 case "005":
                     if (addEffect && !miss)
                     {
-                        target.setStatus("PSN");
+                        target.setStatus(battle, "PSN");
                     }
                     break;
                 case "006":
                     if (addEffect && !miss)
                     {
-                        target.setStatus("BPSN");
+                        target.setStatus(battle, "BPSN");
                     }
                     break;
                 case "007":
@@ -57,37 +57,37 @@ namespace PokeCiv.Model.Battle
                     // TODO: Thunder Wave exception
                     if (addEffect)
                     {
-                        target.setStatus("PAR");
+                        target.setStatus(battle, "PAR");
                     }
                     break;
                 case "008":
                     // TODO: Thunder exceptions
                     if (addEffect)
                     {
-                        target.setStatus("PAR");
+                        target.setStatus(battle, "PAR");
                     }
                     break;
                 case "00A":
                     if (addEffect)
                     {
-                        target.setStatus("BRN");
+                        target.setStatus(battle, "BRN");
                     }
                     break;
                 case "00C":
                     if (addEffect)
                     {
-                        target.setStatus("FRZ");
+                        target.setStatus(battle, "FRZ");
                     }
                     break;
                 case "00D":
                     // TODO: Blizzard exceptions
                     if (addEffect)
                     {
-                        target.setStatus("FRZ");
+                        target.setStatus(battle, "FRZ");
                     }
                     break;
                 default:
-                    Console.WriteLine("This move hasn't been implemented yet!");
+                    battle.message("This move hasn't been implemented yet!");
                     break;
             }
         }

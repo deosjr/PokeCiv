@@ -11,11 +11,11 @@ namespace PokeCiv.Model.Battle.Status
     class Poisoned : NonVolatileCondition
     {
 
-        public override void postAttack(Pokemon pokemon)
+        public override void postAttack(Battle battle, Pokemon pokemon)
         {
             int poisonDamage = (int)Math.Ceiling(pokemon.HP / 8.0);
             pokemon.takeDamage(poisonDamage);
-            Console.WriteLine(pokemon.Name + " is hurt by poison!");
+            battle.message(pokemon.Name + " is hurt by poison!");
         }
 
         public override string getInitMessage()

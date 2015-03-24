@@ -10,12 +10,12 @@ namespace PokeCiv.Model.Battle.Status
     public abstract class VolatileCondition : StatusCondition
     {
 
-        public virtual bool preAttack(Pokemon pokemon)
+        public virtual bool preAttack(Battle battle, Pokemon pokemon)
         {
             return false;
         }
 
-        public virtual void postAttack(Pokemon pokemon)
+        public virtual void postAttack(Battle battle, Pokemon pokemon)
         {
 
         }
