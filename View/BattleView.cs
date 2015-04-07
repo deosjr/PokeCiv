@@ -15,6 +15,8 @@ namespace PokeCiv.View
     public partial class BattleView : Form
     {
 
+        public bool waitForInput = true;
+
         private Battle battle;
 
         public BattleView(Battle battle)
@@ -126,12 +128,32 @@ namespace PokeCiv.View
             //status?
             //andere dingen?
 
-            System.Threading.Thread.Sleep(500);
+            while (waitForInput)
+            {
+                //run in around drooling
+            }
+            waitForInput = true;
+
         }
 
         public PokemonMove selectMove()
         {
             return battle.P1.Moves[0].move;
+        }
+
+        private void BattleView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BattleView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void BattleView_MouseClick(object sender, MouseEventArgs e)
+        {
+            waitForInput = false;
         }
 
     }

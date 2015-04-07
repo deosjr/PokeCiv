@@ -319,6 +319,9 @@
             this.Controls.Add(this.battleBack);
             this.Name = "BattleView";
             this.Text = "Combat";
+            this.Load += new System.EventHandler(this.BattleView_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BattleView_KeyPress);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BattleView_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).EndInit();
