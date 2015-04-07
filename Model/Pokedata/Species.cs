@@ -20,7 +20,7 @@ namespace PokeCiv.Model.Pokedata
         public int Speed        { get; private set; }
 
         public List<PokemonType> Types { get; private set; }
-        //public List<???> evolutions;
+        public List<Evolution> Evolutions { get; private set; }
         public Dictionary<int, List<PokemonMove>> MovesLearnable { get; private set; }
 
         public string GrowthRate{ get; private set; }
@@ -35,7 +35,7 @@ namespace PokeCiv.Model.Pokedata
             setTypes(data);
             GrowthRate = data["GrowthRate"];
             BaseXP = Convert.ToInt32(data["BaseEXP"]);
-            //TODO: setEvolutions(data["Evolutions"]);
+            setEvolutions(data["Evolutions"]);
             setMoves(data["Moves"]);
         }
 
@@ -64,7 +64,12 @@ namespace PokeCiv.Model.Pokedata
 
         private void setEvolutions(string evolutions)
         {
-
+            Evolutions = new List<Evolution>();
+            string[] evos = evolutions.Split(',');
+            for (int i = 0; i < evos.Length-1; i += 3 )
+            {
+                Evolutions.Add(new Evolution(evos[i], evos[i+1], evos[i+2]));
+            }
         }
 
         private void setMoves(string moves)

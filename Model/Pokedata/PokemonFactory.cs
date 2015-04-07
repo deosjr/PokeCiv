@@ -63,5 +63,10 @@ namespace PokeCiv.Model.Pokedata
             return new Pokemon(level, species);
         }
 
+        public static Species getSpecies(string name)
+        {
+            return pokemonData[internalNames[name] - 1];
+        }
+
     }
 }

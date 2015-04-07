@@ -61,6 +61,7 @@
     <Compile Include="Model\Battle\Status\StatusCondition.cs" />
     <Compile Include="Model\Battle\Status\VolatileCondition.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Pokedata\Evolution.cs" />
     <Compile Include="Model\Pokedata\Experience.cs" />
     <Compile Include="Model\Pokedata\Move.cs" />
     <Compile Include="Model\Pokedata\PokemonMove.cs" />

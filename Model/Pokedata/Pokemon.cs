@@ -120,6 +120,20 @@ namespace PokeCiv.Model.Pokedata
             }
         }
 
+        private void learnMovesAtLevel()
+        {
+            List<PokemonMove> moves;
+            species.MovesLearnable.TryGetValue(Level, out moves);
+            if (moves == null)
+            {
+                return;
+            }
+            foreach (PokemonMove m in moves)
+            {
+                learnMove(m);
+            }
+        }
+
         private void learnMove(PokemonMove m)
         {
             Move move = new Move(m, m.PP);
@@ -131,6 +145,7 @@ namespace PokeCiv.Model.Pokedata
                     return;
                 }
             }
+            // TODO: Delete one move to make room?
         }
 
         public int takeDamage(int damage)
@@ -216,9 +231,16 @@ namespace PokeCiv.Model.Pokedata
         {
             CurrentXP += xp;
             battle.message(Name + " gained " + xp + " XP!");
-            if (levelUp())
+            while (levelUp())
             {
                 battle.message(Name + " grew to level " + Level.ToString() + "!");
+                string old_name = Name;
+                if (evolve())
+                {
+                    //TODO: let view know that pokemon-image has changed!
+                    battle.message(old_name + " evolved into " + Name + '!');
+                }
+                learnMovesAtLevel();
             }
         }
 
@@ -237,6 +259,21 @@ namespace PokeCiv.Model.Pokedata
                     setXPBoundaries();
                 }
                 return true;
+            }
+            return false;
+        }
+
+        private bool evolve()
+        {
+            //TODO: non-standard evolutions
+            foreach (Evolution e in species.Evolutions) {
+                if (e.type == "Level" && Convert.ToInt32(e.info) == Level)
+                {
+                    species = PokemonFactory.getSpecies(e.name);
+                    calculateStats();
+                    Name = species.Name;
+                    return true;
+                }
             }
             return false;
         }
