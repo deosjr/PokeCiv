@@ -91,12 +91,16 @@ namespace PokeCiv.View
             //moves buttons
             if (p1.Moves[0] != null)
                 me.MovesButton1.Text = p1.Moves[0].move.ToString();
+                me.labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString();
             if (p1.Moves[1] != null)
                 me.MovesButton2.Text = p1.Moves[1].move.ToString();
+                me.labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString();
             if (p1.Moves[2] != null)
                 me.MovesButton3.Text = p1.Moves[2].move.ToString();
+                 me.labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString();
             if (p1.Moves[3] != null)
                 me.MovesButton4.Text = p1.Moves[3].move.ToString();
+                 me.labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString();
         }
 
 
@@ -125,13 +129,37 @@ namespace PokeCiv.View
                 BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Value = battle.P1.CurrentXP - battle.P1.PreviousXPLevelReq; }));
             }
 
+            if (labelPP_move1.InvokeRequired)
+            {
+                labelPP_move1.Invoke(new MethodInvoker(delegate { labelPP_move1.Text = "PP " + battle.P1.Moves[0].currentPP.ToString() + "/" + battle.P1.Moves[0].totalPP.ToString(); }));
+            }
+
+            if (labelPP_move2.InvokeRequired)
+            {
+                labelPP_move2.Invoke(new MethodInvoker(delegate { labelPP_move2.Text = "PP " + battle.P1.Moves[1].currentPP.ToString() + "/" + battle.P1.Moves[1].totalPP.ToString(); }));
+            }
+
+            if (labelPP_move3.InvokeRequired)
+            {
+                labelPP_move3.Invoke(new MethodInvoker(delegate { labelPP_move3.Text = "PP " + battle.P1.Moves[2].currentPP.ToString() + "/" + battle.P1.Moves[2].totalPP.ToString(); }));
+            }
+
+            if (labelPP_move4.InvokeRequired)
+            {
+                labelPP_move4.Invoke(new MethodInvoker(delegate { labelPP_move4.Text = "PP " + battle.P1.Moves[3].currentPP.ToString() + "/" + battle.P1.Moves[3].totalPP.ToString(); }));
+            }
+
+
+
             //TODO: lvl update
-            //status?
-            //andere dingen?
+            //hp numbers
+            //pp numbers
+            //pokemon name
+            //alle mf-ing images
 
             while (waitForInput)
             {
-                //run in around drooling
+                //have the cpu run around drooling
             }
             waitForInput = true;
 

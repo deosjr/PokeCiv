@@ -51,10 +51,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.battleBack = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelPP_move1 = new System.Windows.Forms.Label();
+            this.labelPP_move2 = new System.Windows.Forms.Label();
+            this.labelPP_move3 = new System.Windows.Forms.Label();
+            this.labelPP_move4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).BeginInit();
@@ -122,7 +122,7 @@
             // 
             // MovesButton1
             // 
-            this.MovesButton1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.MovesButton1.BackColor = System.Drawing.Color.Red;
             this.MovesButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.MovesButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,45 +319,45 @@
             this.label1.Size = new System.Drawing.Size(0, 22);
             this.label1.TabIndex = 23;
             // 
-            // label2
+            // labelPP_move1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(356, 374);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "PP 20/20";
+            this.labelPP_move1.AutoSize = true;
+            this.labelPP_move1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelPP_move1.Location = new System.Drawing.Point(355, 372);
+            this.labelPP_move1.Name = "labelPP_move1";
+            this.labelPP_move1.Size = new System.Drawing.Size(53, 13);
+            this.labelPP_move1.TabIndex = 24;
+            this.labelPP_move1.Text = "PP 20/20";
             // 
-            // label4
+            // labelPP_move2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(510, 374);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "PP 20/20";
+            this.labelPP_move2.AutoSize = true;
+            this.labelPP_move2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelPP_move2.Location = new System.Drawing.Point(509, 373);
+            this.labelPP_move2.Name = "labelPP_move2";
+            this.labelPP_move2.Size = new System.Drawing.Size(53, 13);
+            this.labelPP_move2.TabIndex = 25;
+            this.labelPP_move2.Text = "PP 35/35";
             // 
-            // label5
+            // labelPP_move3
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(358, 441);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "PP 20/20";
+            this.labelPP_move3.AutoSize = true;
+            this.labelPP_move3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelPP_move3.Location = new System.Drawing.Point(354, 438);
+            this.labelPP_move3.Name = "labelPP_move3";
+            this.labelPP_move3.Size = new System.Drawing.Size(41, 13);
+            this.labelPP_move3.TabIndex = 26;
+            this.labelPP_move3.Text = "PP 5/5";
             // 
-            // label6
+            // labelPP_move4
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(510, 441);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "PP 20/20";
+            this.labelPP_move4.AutoSize = true;
+            this.labelPP_move4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelPP_move4.Location = new System.Drawing.Point(508, 440);
+            this.labelPP_move4.Name = "labelPP_move4";
+            this.labelPP_move4.Size = new System.Drawing.Size(53, 13);
+            this.labelPP_move4.TabIndex = 27;
+            this.labelPP_move4.Text = "PP 10/10";
             // 
             // BattleView
             // 
@@ -365,10 +365,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(570, 466);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelPP_move4);
+            this.Controls.Add(this.labelPP_move3);
+            this.Controls.Add(this.labelPP_move2);
+            this.Controls.Add(this.labelPP_move1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -423,9 +423,9 @@
         private System.Windows.Forms.PictureBox battleBack;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelPP_move1;
+        private System.Windows.Forms.Label labelPP_move2;
+        private System.Windows.Forms.Label labelPP_move3;
+        private System.Windows.Forms.Label labelPP_move4;
     }
 }
