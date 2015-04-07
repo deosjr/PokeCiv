@@ -95,8 +95,18 @@ namespace PokeCiv.Model.Battle
             }
             if (P2.hasPPLeft())
             {
-                p2move = P2.Moves[0].move;
-                P2.Moves[0].currentPP -= 1;
+                bool moveChosen = false;
+                while (!moveChosen)
+                {
+                    int i = CombatMechanics.random.Next(4);
+                    PokemonMove m = P2.Moves[i].move;
+                    if (m != null)
+                    {
+                        p2move = m;
+                        moveChosen = true;
+                        P2.Moves[i].currentPP -= 1;
+                    }
+                }                
             }
 
             List<BattleMove> bmoves = new List<BattleMove>();
