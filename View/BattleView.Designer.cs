@@ -38,8 +38,7 @@
             this.MovesButton2 = new System.Windows.Forms.Button();
             this.MovesButton3 = new System.Windows.Forms.Button();
             this.MovesButton4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.actionTextLabel = new System.Windows.Forms.Label();
             this.BackPokemonHPBar = new System.Windows.Forms.ProgressBar();
             this.FrontPokemonHPBar = new System.Windows.Forms.ProgressBar();
             this.BackPokemonXPBar = new System.Windows.Forms.ProgressBar();
@@ -49,8 +48,8 @@
             this.backFloor = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.battleBack = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.battleBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).BeginInit();
@@ -164,27 +163,16 @@
             this.MovesButton4.Text = "---";
             this.MovesButton4.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // actionTextLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 335);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 32);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "What will";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 370);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 32);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "BULBASAUR do?";
+            this.actionTextLabel.AutoSize = true;
+            this.actionTextLabel.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionTextLabel.ForeColor = System.Drawing.Color.White;
+            this.actionTextLabel.Location = new System.Drawing.Point(2, 309);
+            this.actionTextLabel.Name = "actionTextLabel";
+            this.actionTextLabel.Size = new System.Drawing.Size(180, 32);
+            this.actionTextLabel.TabIndex = 11;
+            this.actionTextLabel.Text = "action text";
             // 
             // BackPokemonHPBar
             // 
@@ -249,7 +237,6 @@
             this.frontFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.frontFloor.TabIndex = 17;
             this.frontFloor.TabStop = false;
-            this.frontFloor.Click += new System.EventHandler(this.frontFloor_Click);
             // 
             // backFloor
             // 
@@ -290,16 +277,6 @@
             this.panel2.Size = new System.Drawing.Size(200, 49);
             this.panel2.TabIndex = 22;
             // 
-            // battleBack
-            // 
-            this.battleBack.Image = ((System.Drawing.Image)(resources.GetObject("battleBack.Image")));
-            this.battleBack.Location = new System.Drawing.Point(-5, -1);
-            this.battleBack.Name = "battleBack";
-            this.battleBack.Size = new System.Drawing.Size(579, 272);
-            this.battleBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.battleBack.TabIndex = 19;
-            this.battleBack.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -312,7 +289,17 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "EXP";
             // 
-            // Combat
+            // battleBack
+            // 
+            this.battleBack.Image = ((System.Drawing.Image)(resources.GetObject("battleBack.Image")));
+            this.battleBack.Location = new System.Drawing.Point(-5, -1);
+            this.battleBack.Name = "battleBack";
+            this.battleBack.Size = new System.Drawing.Size(579, 272);
+            this.battleBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.battleBack.TabIndex = 19;
+            this.battleBack.TabStop = false;
+            // 
+            // BattleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -320,8 +307,7 @@
             this.ClientSize = new System.Drawing.Size(570, 412);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.actionTextLabel);
             this.Controls.Add(this.MovesButton4);
             this.Controls.Add(this.MovesButton3);
             this.Controls.Add(this.MovesButton2);
@@ -331,7 +317,7 @@
             this.Controls.Add(this.frontFloor);
             this.Controls.Add(this.backFloor);
             this.Controls.Add(this.battleBack);
-            this.Name = "Combat";
+            this.Name = "BattleView";
             this.Text = "Combat";
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).EndInit();
@@ -358,8 +344,7 @@
         private System.Windows.Forms.Button MovesButton2;
         private System.Windows.Forms.Button MovesButton3;
         private System.Windows.Forms.Button MovesButton4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label actionTextLabel;
         private System.Windows.Forms.ProgressBar BackPokemonHPBar;
         private System.Windows.Forms.ProgressBar FrontPokemonHPBar;
         private System.Windows.Forms.ProgressBar BackPokemonXPBar;

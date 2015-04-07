@@ -10,6 +10,7 @@ using PokeCiv.View;
 using PokeCiv.Model.Pokedata;
 using PokeCiv.Model;
 using PokeCiv.Model.Battle;
+using System.Threading;
 
 
 namespace PokeCiv
@@ -22,7 +23,7 @@ namespace PokeCiv
            
             Random r = new Random();
 
-            Pokemon p1 = PokemonFactory.getPokemon(10, "RAPIDASH");//r.Next(1, 650));
+            Pokemon p1 = PokemonFactory.getPokemon(10, r.Next(1, 650));
             Pokemon p2 = PokemonFactory.getPokemon(10, r.Next(1, 650));
 
 
@@ -35,12 +36,14 @@ namespace PokeCiv
             BattleView battleview = new BattleView(battle);
             battle.View = battleview;
 
+
+            Thread battleThread = new Thread(battle.fight);
+            battleThread.Start();
+
+            Application.Run(battleview);       
             //Application.Run(new WorldView());
-            //Application.Run(battleview);
 
-            battle.fight();
-
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }

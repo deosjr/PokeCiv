@@ -69,7 +69,7 @@ namespace PokeCiv.View
             me.backPokemonLevel.Text = "lvl " + p1.Level.ToString();
             me.frontPokemonLevel.Text = "lvl " + p2.Level.ToString();
 
-            me.label2.Text = p1.Name + " do?";
+            me.actionTextLabel.Text = "what will " + p1.Name + " do?";
 
             //XPbar
             me.BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq;
@@ -98,8 +98,9 @@ namespace PokeCiv.View
 
         public void message(string msg)
         {
-            Console.WriteLine(msg);
-            Console.ReadLine();
+            var me = this;
+            me.actionTextLabel.Text = msg;
+            System.Threading.Thread.Sleep(1000);
         }
 
         public PokemonMove selectMove()
@@ -107,14 +108,5 @@ namespace PokeCiv.View
             return battle.P1.Moves[0].move;
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frontFloor_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
