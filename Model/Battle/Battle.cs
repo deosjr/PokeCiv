@@ -193,6 +193,7 @@ namespace PokeCiv.Model.Battle
             }
         }
 
+        //send a message and message string to the view to inform the view about updates.
         public void message(string msg)
         {
             View.message(msg);

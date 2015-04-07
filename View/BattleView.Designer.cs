@@ -166,13 +166,13 @@
             // actionTextLabel
             // 
             this.actionTextLabel.AutoSize = true;
-            this.actionTextLabel.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionTextLabel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.actionTextLabel.ForeColor = System.Drawing.Color.White;
             this.actionTextLabel.Location = new System.Drawing.Point(2, 309);
             this.actionTextLabel.Name = "actionTextLabel";
-            this.actionTextLabel.Size = new System.Drawing.Size(180, 32);
+            this.actionTextLabel.Size = new System.Drawing.Size(706, 24);
             this.actionTextLabel.TabIndex = 11;
-            this.actionTextLabel.Text = "action text";
+            this.actionTextLabel.Text = "action text die heel erg lang kan worden met allemaal info";
             // 
             // BackPokemonHPBar
             // 
