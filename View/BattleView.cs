@@ -96,6 +96,8 @@ namespace PokeCiv.View
                 me.MovesButton4.Text = p1.Moves[3].move.ToString();
         }
 
+
+        //The Message cycle, updates the msg, and checks other stats (since a turn has passed)
         public void message(string msg)
         {
             var me = this;
@@ -103,7 +105,12 @@ namespace PokeCiv.View
             me.BackPokemonHPBar.Value = battle.P1.CurrentHP;
 
             me.FrontPokemonHPBar.Value = battle.P2.CurrentHP;
-            System.Threading.Thread.Sleep(1000);
+
+
+            me.BackPokemonXPBar.Maximum = battle.P1.NextXPLevelReq - battle.P1.PreviousXPLevelReq;
+            me.BackPokemonXPBar.Value = battle.P1.CurrentXP - battle.P1.PreviousXPLevelReq;
+
+            System.Threading.Thread.Sleep(750);
         }
 
         public PokemonMove selectMove()
