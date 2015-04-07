@@ -16,6 +16,7 @@ namespace PokeCiv.View
     {
 
         public bool waitForInput = true;
+        public int currentSelectedMove = 0;
 
         private Battle battle;
 
@@ -138,23 +139,54 @@ namespace PokeCiv.View
 
         public PokemonMove selectMove()
         {
-            return battle.P1.Moves[0].move;
+            return battle.P1.Moves[currentSelectedMove].move;
         }
 
-        private void BattleView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BattleView_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
+        //"next"  aka "A" op de gameboy
         private void BattleView_MouseClick(object sender, MouseEventArgs e)
         {
             waitForInput = false;
         }
+
+
+        //Buttons that select moves
+        private void MovesButton1_Click(object sender, EventArgs e)
+        {
+            currentSelectedMove = 0;
+            resetbuttonColors();
+            MovesButton1.BackColor = Color.Red;
+        }
+
+        private void MovesButton2_Click(object sender, EventArgs e)
+        {
+            currentSelectedMove = 1;
+            resetbuttonColors();
+            MovesButton2.BackColor = Color.Red;
+
+        }
+
+        private void MovesButton3_Click(object sender, EventArgs e)
+        {
+            currentSelectedMove = 2;
+            resetbuttonColors();
+            MovesButton3.BackColor = Color.Red;
+        }
+
+        private void MovesButton4_Click(object sender, EventArgs e)
+        {
+            currentSelectedMove = 3;
+            resetbuttonColors();
+            MovesButton4.BackColor = Color.Red;
+        }
+
+       public void resetbuttonColors(){
+ 
+			 MovesButton1.BackColor = Color.PaleGoldenrod;
+             MovesButton2.BackColor = Color.PaleGoldenrod;
+             MovesButton3.BackColor = Color.PaleGoldenrod;
+             MovesButton4.BackColor = Color.PaleGoldenrod;
+        }
+
 
     }
 }
