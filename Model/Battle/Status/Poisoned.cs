@@ -11,6 +11,8 @@ namespace PokeCiv.Model.Battle.Status
     class Poisoned : NonVolatileCondition
     {
 
+        public new string statuscode = "PSN";
+
         public override void postAttack(Battle battle, Pokemon pokemon)
         {
             int poisonDamage = (int)Math.Ceiling(pokemon.HP / 8.0);

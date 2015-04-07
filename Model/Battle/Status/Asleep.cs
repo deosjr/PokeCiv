@@ -12,6 +12,7 @@ namespace PokeCiv.Model.Battle.Status
     {
 
         private int timer;
+        public new string statuscode = "SLP";
 
         public Asleep()
         {

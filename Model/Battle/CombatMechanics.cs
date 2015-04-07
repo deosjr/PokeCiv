@@ -89,6 +89,47 @@ namespace PokeCiv.Model.Battle
 
         private static double checkPower(BattleMove move)
         {
+            switch (move.move.functioncode)
+            {
+                case "07B":
+                    if (move.target.checkNonVolatileStatus("PSN"))
+                    {
+                        return move.move.power * 2;
+                    }
+                    break;
+                case "07C":
+                    if (move.target.checkNonVolatileStatus("PAR"))
+                    {
+                        move.target.clearNonVolatileStatus();
+                        return move.move.power * 2;
+                    }
+                    break;
+                case "07D":
+                    if (move.target.checkNonVolatileStatus("SLP"))
+                    {
+                        move.target.clearNonVolatileStatus();
+                        return move.move.power * 2;
+                    }
+                    break;
+                case "07E":
+                    if (move.target.checkNonVolatileStatus("PSN") || move.target.checkNonVolatileStatus("BRN") || move.target.checkNonVolatileStatus("PAR"))
+                    {
+                        return move.move.power * 2;
+                    }
+                    break;
+                case "07F":
+                    if (move.target.NonVolatile != null)
+                    {
+                        return move.move.power * 2;
+                    }
+                    break;
+                case "08B":
+                    return Math.Floor((move.source.CurrentHP / move.source.HP) * 150.0);
+                case "08C":
+                    return Math.Floor((move.source.CurrentHP / move.source.HP) * 120.0);
+                case "08D":
+                    return Math.Min(Math.Floor((move.target.SpeedStat / move.source.SpeedStat) * 25.0), 150.0);
+            }
             return move.move.power;
         }
 

@@ -11,6 +11,8 @@ namespace PokeCiv.Model.Battle.Status
     class Burned : NonVolatileCondition
     {
 
+        public new string statuscode = "BRN";
+
         public override void postAttack(Battle battle, Pokemon pokemon)
         {
             int burnDamage = (int) Math.Ceiling(pokemon.HP / 8.0);

@@ -11,6 +11,8 @@ namespace PokeCiv.Model.Battle.Status
     class Paralyzed : NonVolatileCondition
     {
 
+        public new string statuscode = "PAR";
+
         public override bool preAttack(Battle battle, Pokemon pokemon) 
         {
             if (CombatMechanics.random.NextDouble() < 0.25)

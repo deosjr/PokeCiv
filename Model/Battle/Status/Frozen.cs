@@ -11,6 +11,8 @@ namespace PokeCiv.Model.Battle.Status
     class Frozen : NonVolatileCondition
     {
 
+        public new string statuscode = "FRZ";
+
         public override bool preAttack(Battle battle, Pokemon pokemon)
         {
             if (CombatMechanics.random.NextDouble() < 0.2)

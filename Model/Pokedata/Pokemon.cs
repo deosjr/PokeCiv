@@ -16,7 +16,7 @@ namespace PokeCiv.Model.Pokedata
         public int Level                { get; private set; }
         public Species species          { get; private set; }
         public string Name              { get; private set; } 
-        public int CurrentHP            { get; private set; }
+        public int CurrentHP            { get; set; }
         public int PreviousXPLevelReq   { get; private set; }
         public int CurrentXP            { get; private set; }
         public int NextXPLevelReq       { get; private set; }
@@ -35,13 +35,13 @@ namespace PokeCiv.Model.Pokedata
         private int IVspdefense;
         private int IVspeed;
 
-        public int AccuracyStat         { get; private set; } 
-        public int EvasionStat          { get; private set; }
-        public int AttackStat           { get; private set; }
-        public int DefenseStat          { get; private set; }
-        public int SPAttackStat         { get; private set; }
-        public int SPDefenseStat        { get; private set; }
-        public int SpeedStat            { get; private set; }
+        public int AccuracyStat         { get; set; } 
+        public int EvasionStat          { get; set; }
+        public int AttackStat           { get; set; }
+        public int DefenseStat          { get; set; }
+        public int SPAttackStat         { get; set; }
+        public int SPDefenseStat        { get; set; }
+        public int SpeedStat            { get; set; }
 
         public Move[] Moves { get; private set; }
         public NonVolatileCondition NonVolatile { get; private set; }
@@ -155,6 +155,11 @@ namespace PokeCiv.Model.Pokedata
             return temp - CurrentHP;
         }
 
+        public void heal(int amount)
+        {
+            CurrentHP = Math.Min(HP, CurrentHP + amount);
+        }
+
         public void fullHeal()
         {
             CurrentHP = HP;
@@ -174,7 +179,7 @@ namespace PokeCiv.Model.Pokedata
             VolatileConditions = new List<VolatileCondition>();
         }
 
-        private void resetStages()
+        public void resetStages()
         {
             AccuracyStat = 0;
             EvasionStat = 0;
@@ -205,6 +210,15 @@ namespace PokeCiv.Model.Pokedata
                 battle.message(Name + NonVolatile.getInitMessage());
             }
 
+        }
+
+        public bool checkNonVolatileStatus(string statuscode)
+        {
+            if (NonVolatile == null)
+            {
+                return false;
+            }
+            return statuscode.Equals(NonVolatile.statuscode);
         }
 
         public void addStatus(Battle.Battle battle, string statuscode)
@@ -299,7 +313,7 @@ namespace PokeCiv.Model.Pokedata
             }
             int change = calculateStatIncrease(currentValue, amount);
             propertyInfo.SetValue(this, change, null);
-            return Name + "'s " + stat + (amount > 1 ? "sharply" : "") + " rose!";
+            return Name + "'s " + stat + (amount > 1 ? " sharply" : "") + " rose!";
         }
 
         public string decreaseStat(string stat, int amount)
@@ -309,7 +323,18 @@ namespace PokeCiv.Model.Pokedata
             int currentValue = (int)propertyInfo.GetValue(this);
             int change = calculateStatDecrease(currentValue, amount);
             propertyInfo.SetValue(this, change, null);
-            return Name + "'s " + stat + (amount > 1 ? "sharply" : "") + " fell!";
+            return Name + "'s " + stat + (amount > 1 ? " sharply" : "") + " fell!";
+        }
+
+        public void swapStats(Pokemon target, string stat)
+        {
+            string statname = stat + "Stat";
+            PropertyInfo propertyInfoSource = this.GetType().GetProperty(statname);
+            PropertyInfo propertyInfoTarget = target.GetType().GetProperty(statname);
+            int sourceStatValue = (int)this.GetType().GetProperty(statname).GetValue(this);
+            int targetStatValue = (int)target.GetType().GetProperty(statname).GetValue(target);
+            propertyInfoSource.SetValue(this, targetStatValue, null);
+            propertyInfoTarget.SetValue(target, sourceStatValue, null);
         }
 
         public override string ToString()

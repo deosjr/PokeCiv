@@ -12,6 +12,7 @@ namespace PokeCiv.Model.Battle.Status
     {
 
         private int duration;
+        public new string statuscode = "BPSN";
 
         public BadlyPoisoned()
         {

@@ -18,6 +18,7 @@ namespace PokeCiv.Model.Battle
             Pokemon target = m.target;
 
             bool addEffect = true;
+            string fail = "But, it failed!";
             if (move.addEffectChance != 0 && CombatMechanics.random.Next(101) > move.addEffectChance)
             {
                 addEffect = false;
@@ -343,8 +344,153 @@ namespace PokeCiv.Model.Battle
                         battle.message(target.decreaseStat("Speed", 2));
                     }
                     break;
+                case "04F":
+                    if (addEffect)
+                    {
+                        battle.message(target.decreaseStat("SPDefense", 2));
+                    }
+                    break;
+                case "050":
+                    if (addEffect)
+                    {
+                        target.resetStages();
+                    }
+                    break;
+                case "051":
+                    if (addEffect)
+                    {
+                        source.resetStages();
+                        target.resetStages();
+                    }
+                    break;
+                case "052":
+                    if (addEffect)
+                    {
+                        source.swapStats(target, "Attack");
+                        source.swapStats(target, "SPAttack");
+                    }
+                    break;
+                case "053":
+                    if (addEffect)
+                    {
+                        source.swapStats(target, "Defense");
+                        source.swapStats(target, "SPDefense");
+                    }
+                    break;
+                case "054":
+                    if (addEffect)
+                    {
+                        source.swapStats(target, "Attack");
+                        source.swapStats(target, "SPAttack");
+                        source.swapStats(target, "Defense");
+                        source.swapStats(target, "SPDefense");
+                        source.swapStats(target, "Accuracy");
+                        source.swapStats(target, "Evasion");
+                        source.swapStats(target, "Speed");
+                    }
+                    break;
+                case "055":
+                    if (addEffect)
+                    {
+                        source.AttackStat = target.AttackStat;
+                        source.SPAttackStat = target.SPAttackStat;
+                        source.DefenseStat = target.DefenseStat;
+                        source.SPDefenseStat = target.SPDefenseStat;
+                        source.AccuracyStat = target.AccuracyStat;
+                        source.EvasionStat = target.EvasionStat;
+                        source.SpeedStat = target.SpeedStat;
+                    }
+                    break;
+                case "06A":
+                    if (t != 0 && !miss)
+                    {
+                        target.takeDamage(20);
+                    }
+                    break;
+                case "06B":
+                    if (t != 0 && !miss)
+                    {
+                        target.takeDamage(40);
+                    }
+                    break;
+                case "06C":
+                    if (t != 0 && !miss)
+                    {
+                        target.takeDamage(target.CurrentHP/2);
+                    }
+                    break;
+                case "06D":
+                    if (t != 0 && !miss)
+                    {
+                        target.takeDamage(source.Level);
+                    }
+                    break;
+                case "06E":
+                    if (t != 0 && !miss)
+                    {
+                        if (source.CurrentHP > target.CurrentHP)
+                        {
+                            battle.message(fail);
+                            break;
+                        }
+                        target.takeDamage(target.CurrentHP - source.CurrentHP);
+                    }
+                    break;
+                case "06F":
+                    if (t != 0 && !miss)
+                    {
+                        target.takeDamage(source.Level * ((CombatMechanics.random.Next(101) + 50) / 100));
+                    }
+                    break;
+                // Affects power, see CombatMechanics.checkPower()
+                case "07B":
+                    break;
+                case "07C":
+                    break;
+                case "07D":
+                    break;
+                case "07E":
+                    break;
+                case "07F":
+                    break;
+                case "080":
+                    break;
+                case "08B":
+                    break;
+                case "08C":
+                    break;
+                case "08D":
+                    break;
+                // End power effects
+
+                case "0D5":
+                    if (source.CurrentHP == source.HP)
+                    {
+                        battle.message(fail);
+                    }
+                    else
+                    {
+                        source.heal(source.HP / 2);
+                    }
+                    break;
+                case "0DD":
+                    source.heal(Math.Min(1, damage / 2));
+                    break;
+                case "0DE":
+                    if (target.checkNonVolatileStatus("SLP"))
+                    {
+                        source.heal(Math.Min(1, damage / 2));
+                    }
+                    else
+                    {
+                        battle.message(fail);
+                    }
+                    break;
+                case "0E0":
+                    source.CurrentHP = 0;
+                    break;
                 default:
-                    battle.message("This move hasn't been implemented yet!");
+                    battle.message("This move effect has not been implemented yet!");
                     break;
             }
         }

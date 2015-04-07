@@ -10,6 +10,8 @@ namespace PokeCiv.Model.Battle.Status
     public abstract class NonVolatileCondition : StatusCondition
     {
 
+        public string statuscode;
+
         public virtual bool preAttack(Battle battle, Pokemon pokemon)
         {
             return false;
