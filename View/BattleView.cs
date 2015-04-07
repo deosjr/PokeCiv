@@ -122,6 +122,9 @@ namespace PokeCiv.View
                 BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Value = battle.P1.CurrentXP - battle.P1.PreviousXPLevelReq; }));
             }
 
+            //lvl update
+            //status?
+            //andere dingen?
 
             System.Threading.Thread.Sleep(500);
         }

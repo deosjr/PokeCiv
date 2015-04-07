@@ -186,6 +186,7 @@ namespace PokeCiv.Model.Battle
         public void message(string msg)
         {
             View.message(msg);
+            Console.WriteLine(msg);
         }
     }
 }
