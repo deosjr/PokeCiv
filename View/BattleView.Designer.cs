@@ -50,6 +50,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.battleBack = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).BeginInit();
@@ -118,61 +119,66 @@
             // MovesButton1
             // 
             this.MovesButton1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.MovesButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.MovesButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton1.Location = new System.Drawing.Point(264, 280);
+            this.MovesButton1.Location = new System.Drawing.Point(261, 326);
             this.MovesButton1.Name = "MovesButton1";
             this.MovesButton1.Size = new System.Drawing.Size(148, 61);
             this.MovesButton1.TabIndex = 6;
             this.MovesButton1.Text = "Tackle";
             this.MovesButton1.UseVisualStyleBackColor = false;
+            this.MovesButton1.Click += new System.EventHandler(this.MovesButton1_Click);
             // 
             // MovesButton2
             // 
             this.MovesButton2.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.MovesButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton2.Location = new System.Drawing.Point(418, 280);
+            this.MovesButton2.Location = new System.Drawing.Point(415, 326);
             this.MovesButton2.Name = "MovesButton2";
             this.MovesButton2.Size = new System.Drawing.Size(148, 61);
             this.MovesButton2.TabIndex = 7;
             this.MovesButton2.Text = "---";
             this.MovesButton2.UseVisualStyleBackColor = false;
+            this.MovesButton2.Click += new System.EventHandler(this.MovesButton2_Click);
             // 
             // MovesButton3
             // 
             this.MovesButton3.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.MovesButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton3.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton3.Location = new System.Drawing.Point(264, 347);
+            this.MovesButton3.Location = new System.Drawing.Point(261, 393);
             this.MovesButton3.Name = "MovesButton3";
             this.MovesButton3.Size = new System.Drawing.Size(148, 61);
             this.MovesButton3.TabIndex = 8;
             this.MovesButton3.Text = "---";
             this.MovesButton3.UseVisualStyleBackColor = false;
+            this.MovesButton3.Click += new System.EventHandler(this.MovesButton3_Click);
             // 
             // MovesButton4
             // 
             this.MovesButton4.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.MovesButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton4.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton4.Location = new System.Drawing.Point(418, 347);
+            this.MovesButton4.Location = new System.Drawing.Point(415, 393);
             this.MovesButton4.Name = "MovesButton4";
             this.MovesButton4.Size = new System.Drawing.Size(148, 61);
             this.MovesButton4.TabIndex = 9;
             this.MovesButton4.Text = "---";
             this.MovesButton4.UseVisualStyleBackColor = false;
+            this.MovesButton4.Click += new System.EventHandler(this.MovesButton4_Click);
             // 
             // actionTextLabel
             // 
             this.actionTextLabel.AutoSize = true;
             this.actionTextLabel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.actionTextLabel.ForeColor = System.Drawing.Color.White;
-            this.actionTextLabel.Location = new System.Drawing.Point(2, 309);
+            this.actionTextLabel.Location = new System.Drawing.Point(0, 288);
             this.actionTextLabel.Name = "actionTextLabel";
-            this.actionTextLabel.Size = new System.Drawing.Size(706, 24);
+            this.actionTextLabel.Size = new System.Drawing.Size(322, 24);
             this.actionTextLabel.TabIndex = 11;
-            this.actionTextLabel.Text = "action text die heel erg lang kan worden met allemaal info";
+            this.actionTextLabel.Text = "Bulbasaur used Leech-Seed!";
             // 
             // BackPokemonHPBar
             // 
@@ -299,12 +305,23 @@
             this.battleBack.TabIndex = 19;
             this.battleBack.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(178, 381);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 22);
+            this.label1.TabIndex = 23;
+            // 
             // BattleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(570, 412);
+            this.ClientSize = new System.Drawing.Size(570, 466);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.actionTextLabel);
@@ -319,8 +336,6 @@
             this.Controls.Add(this.battleBack);
             this.Name = "BattleView";
             this.Text = "Combat";
-            this.Load += new System.EventHandler(this.BattleView_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BattleView_KeyPress);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BattleView_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).EndInit();
@@ -359,5 +374,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox battleBack;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }
