@@ -25,6 +25,7 @@ namespace PokeCiv.Model.Battle
             if (!miss && !move.move.category.Equals("Status"))
             {
                 determineDamage(move, out damage, out crit, out t);
+                effectivenessMessages(battle, crit, t, move.target.Name);
                 if (t != 0)
                 {
                     int damageDealt = move.target.takeDamage(damage);
@@ -149,6 +150,26 @@ namespace PokeCiv.Model.Battle
                 return stage * 0.5 + 1.0;
             }
             return 1.0 / ((-stage * 0.5) + 1.0);
+        }
+
+        private static void effectivenessMessages(Battle battle, double crit, double t, string targetName)
+        {
+            if (crit > 1)
+            {
+                battle.message("Critical hit!");
+            }
+            if (t == 0)
+            {
+                battle.message("It doesn't affect " + targetName + ".");
+            }
+            else if (t > 1)
+            {
+                battle.message("It's super effective!");
+            } 
+            else if (t < 1)
+            {
+                battle.message("It's not very effective..");
+            }
         }
 
     }
