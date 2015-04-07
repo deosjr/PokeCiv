@@ -23,8 +23,8 @@ namespace PokeCiv
            
             Random r = new Random();
 
-            Pokemon p1 = PokemonFactory.getPokemon(10, r.Next(1, 650));
-            Pokemon p2 = PokemonFactory.getPokemon(10, r.Next(1, 650));
+            Pokemon p1 = PokemonFactory.getPokemon(50, r.Next(1, 650));
+            Pokemon p2 = PokemonFactory.getPokemon(40, r.Next(1, 650));
 
 
             Player player1 = new Player("P1");

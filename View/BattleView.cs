@@ -100,17 +100,34 @@ namespace PokeCiv.View
         //The Message cycle, updates the msg, and checks other stats (since a turn has passed)
         public void message(string msg)
         {
-            var me = this;
-            me.actionTextLabel.Text = msg;
-            me.BackPokemonHPBar.Value = battle.P1.CurrentHP;
+ 
+            if (actionTextLabel.InvokeRequired)
+            {
+                actionTextLabel.Invoke(new MethodInvoker(delegate { actionTextLabel.Text = msg; }));
+            }
 
-            me.FrontPokemonHPBar.Value = battle.P2.CurrentHP;
+            if (BackPokemonHPBar.InvokeRequired)
+            {
+                BackPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Value = battle.P1.CurrentHP; }));
+            }
+
+            if (FrontPokemonHPBar.InvokeRequired)
+            {
+                FrontPokemonHPBar.Invoke(new MethodInvoker(delegate { FrontPokemonHPBar.Value = battle.P2.CurrentHP; }));
+            }
+
+            if (BackPokemonXPBar.InvokeRequired)
+            {
+                BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Maximum = battle.P1.NextXPLevelReq - battle.P1.PreviousXPLevelReq; }));
+            }
+
+            if (BackPokemonXPBar.InvokeRequired)
+            {
+                BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Value = battle.P1.CurrentXP - battle.P1.PreviousXPLevelReq; }));
+            }
 
 
-            me.BackPokemonXPBar.Maximum = battle.P1.NextXPLevelReq - battle.P1.PreviousXPLevelReq;
-            me.BackPokemonXPBar.Value = battle.P1.CurrentXP - battle.P1.PreviousXPLevelReq;
-
-            System.Threading.Thread.Sleep(750);
+            System.Threading.Thread.Sleep(500);
         }
 
         public PokemonMove selectMove()
