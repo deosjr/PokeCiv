@@ -119,10 +119,6 @@ namespace PokeCiv.View
             if (BackPokemonXPBar.InvokeRequired)
             {
                 BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Maximum = battle.P1.NextXPLevelReq - battle.P1.PreviousXPLevelReq; }));
-            }
-
-            if (BackPokemonXPBar.InvokeRequired)
-            {
                 BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Value = battle.P1.CurrentXP - battle.P1.PreviousXPLevelReq; }));
             }
 
