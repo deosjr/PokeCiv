@@ -100,6 +100,9 @@ namespace PokeCiv.View
         {
             var me = this;
             me.actionTextLabel.Text = msg;
+            me.BackPokemonHPBar.Value = battle.P1.CurrentHP;
+
+            me.FrontPokemonHPBar.Value = battle.P2.CurrentHP;
             System.Threading.Thread.Sleep(1000);
         }
 
