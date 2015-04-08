@@ -15,10 +15,10 @@ namespace PokeCiv.Model.World
 
         public Map()
         {
-            initTestGrid();
+            GetGrid();
         }
 
-        private void initTestGrid()
+        public Tile[][] GetGrid()
         {
             Tile _ = new Tile();    //empty
             Tile w = new Tile("GRASS");    //grass
@@ -31,6 +31,8 @@ namespace PokeCiv.Model.World
                 new Tile[]{x,_,_,_,_,x},
                 new Tile[]{x,x,x,x,x,x}
             };
+
+            return grid;
         }
 
     }

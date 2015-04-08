@@ -89,11 +89,11 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Routes\Route101.cs">
+    <Compile Include="View\MapRenderer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Routes\Route101.Designer.cs">
-      <DependentUpon>Route101.cs</DependentUpon>
+    <Compile Include="View\MapRenderer.Designer.cs">
+      <DependentUpon>MapRenderer.cs</DependentUpon>
     </Compile>
     <Compile Include="View\WorldView.cs">
       <SubType>Form</SubType>
@@ -113,12 +113,15 @@
     <EmbeddedResource Include="View\BattleView.resx">
       <DependentUpon>BattleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Routes\Route101.resx">
-      <DependentUpon>Route101.cs</DependentUpon>
+    <EmbeddedResource Include="View\MapRenderer.resx">
+      <DependentUpon>MapRenderer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WorldView.resx">
       <DependentUpon>WorldView.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Routes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -40,8 +40,8 @@ namespace PokeCiv
             Thread battleThread = new Thread(battle.fight);
             battleThread.Start();
 
-            Application.Run(battleview);       
-            //Application.Run(new WorldView());
+            //Application.Run(battleview);       
+            Application.Run(new MapRenderer());
 
             Console.ReadKey();
         }

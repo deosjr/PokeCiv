@@ -12,7 +12,7 @@ namespace PokeCiv.Model.World.Tiles
     {
 
         TileItem tileItem;
-        string backgroundID;
+        public string tileType = "_"; //default
 
         public Tile() { }
         public Tile(string itemID)
@@ -21,9 +21,11 @@ namespace PokeCiv.Model.World.Tiles
             {
                 case "GRASS":
                     tileItem = new Grass();
+                    tileType = "W";
                     break;
                 case "BLOCK":
                     tileItem = new Block();
+                    tileType = "X";
                     break;
             }
         }
