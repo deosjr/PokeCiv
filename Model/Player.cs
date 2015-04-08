@@ -13,6 +13,8 @@ namespace PokeCiv.Model
 
         public List<Pokemon> Team { get; private set; }
         public string Name { get; private set; }
+        public int X { get; set; }
+        public int Y { get; set; }
 
         public Player(string name)
         {
@@ -38,6 +40,12 @@ namespace PokeCiv.Model
                 }
             }
             return true;
+        }
+
+        public void setCoordinates(int x, int y)
+        {
+            X = x;
+            Y = y;
         }
 
     }

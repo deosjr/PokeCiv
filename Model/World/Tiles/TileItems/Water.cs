@@ -8,5 +8,11 @@ namespace PokeCiv.Model.World.Tiles.TileItems
 {
     class Water : TileItem
     {
+
+        public Water()
+        {
+            blocks = true;
+        }
+
     }
 }

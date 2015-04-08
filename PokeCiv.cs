@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows.Forms;
-using PokeCiv.View;
 
+using PokeCiv.View;
 using PokeCiv.Model.Pokedata;
 using PokeCiv.Model;
 using PokeCiv.Model.Battle;
-using System.Threading;
+using PokeCiv.Model.World;
 
 
 namespace PokeCiv
@@ -39,6 +40,8 @@ namespace PokeCiv
 
             Thread battleThread = new Thread(battle.fight);
             battleThread.Start();
+
+            Map.setCoordinates(player1, 1, 1);
 
             //Application.Run(battleview);       
             Application.Run(new MapRenderer());

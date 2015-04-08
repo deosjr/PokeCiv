@@ -14,6 +14,8 @@ namespace PokeCiv.Model.World.Tiles
         public int X { get; set; }
         public int Y { get; set; }
 
+        public Player Player { get; set; }
+
         public string tileType = "_"; //default
 
         public Tile() { }
@@ -33,11 +35,16 @@ namespace PokeCiv.Model.World.Tiles
                     tileItem = new Water();
                     tileType = "U";
                     break;
-                case "PLAYER":
-                    tileItem = new PlayerTile();
-                    tileType = "P";
-                    break;
             }
+        }
+
+        public bool blocks()
+        {
+            if (Player != null)
+            {
+                return false;
+            }
+            return tileItem.blocks;
         }
 
     }
