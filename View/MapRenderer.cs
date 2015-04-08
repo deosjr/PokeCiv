@@ -16,8 +16,7 @@ namespace PokeCiv.View
     {
         public MapRenderer()
         {
-            InitializeComponent();
-            
+            InitializeComponent();      
         }
 
         private void MapRenderer_Load(object sender, EventArgs e)
@@ -30,22 +29,18 @@ namespace PokeCiv.View
             Map map = new Map();
             Tile[][] grid = map.GetGrid();
 
-            Console.WriteLine("Loaded Map:");
-
             Point current = new Point(-50, 0);
 
             foreach (var row in grid)
             {              
-                Console.WriteLine();
-                                                                                   
+                                                                                            
                 foreach (var item in row)
                 {
-                    Console.Write(item.tileType);
 
                     //genereer 1 nieuwe picturebox
                     PictureBox pb = new PictureBox();
                     pb.Size = new Size(50,50);
-
+                    
                     //stel hem in op de nieuwe locatie
                     current.X += 50;
                     pb.Location = current;
@@ -63,6 +58,10 @@ namespace PokeCiv.View
                     {
                         pb.ImageLocation = "../../Data/Graphics/Tiles/water.png";
                     }
+                    else if (item.tileType == "P")
+                    {
+                        pb.ImageLocation = "../../Data/Graphics/Tiles/player.png";
+                    }
 
                     //plak hem op de achtergrond
                     mapBackgroundCanvas.Controls.Add(pb);                      
@@ -71,9 +70,9 @@ namespace PokeCiv.View
                 //1 rij omlaag, en links beginnen
                 current.Y += 50;
                 current.X = -50;
-            }
 
-           
+            }
+       
         }
 
     }

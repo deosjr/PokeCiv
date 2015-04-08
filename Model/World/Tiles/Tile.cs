@@ -10,8 +10,10 @@ namespace PokeCiv.Model.World.Tiles
 {
     class Tile
     {
-
         TileItem tileItem;
+        public int X { get; set; }
+        public int Y { get; set; }
+
         public string tileType = "_"; //default
 
         public Tile() { }
@@ -30,6 +32,10 @@ namespace PokeCiv.Model.World.Tiles
                 case "WATER":
                     tileItem = new Water();
                     tileType = "U";
+                    break;
+                case "PLAYER":
+                    tileItem = new PlayerTile();
+                    tileType = "P";
                     break;
             }
         }

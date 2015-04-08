@@ -23,12 +23,13 @@ namespace PokeCiv.Model.World
             Tile _ = new Tile();    
             Tile w = new Tile("GRASS");    
             Tile x = new Tile("BLOCK");
-            Tile u = new Tile("WATER"); 
+            Tile u = new Tile("WATER");
+            Tile p = new Tile("PLAYER"); 
             grid = new Tile[][]{
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x},
                 new Tile[]{x,_,_,_,_,x,x,_,_,_,_,x},
                 new Tile[]{x,_,w,w,_,x,x,_,u,u,_,x},
-                new Tile[]{x,_,w,w,_,_,_,_,u,u,_,x},
+                new Tile[]{x,_,w,w,_,p,_,_,u,u,_,x},
                 new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x}
             };
