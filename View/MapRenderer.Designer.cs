@@ -32,11 +32,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // mapBackgroundCanvas
             // 
             this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, -1);
-            this.mapBackgroundCanvas.Name = "pictureBox1";
-            this.mapBackgroundCanvas.Size = new System.Drawing.Size(755, 450);
+            this.mapBackgroundCanvas.Name = "mapBackgroundCanvas";
+            this.mapBackgroundCanvas.Size = new System.Drawing.Size(126, 112);
             this.mapBackgroundCanvas.TabIndex = 0;
             this.mapBackgroundCanvas.TabStop = false;
             // 
