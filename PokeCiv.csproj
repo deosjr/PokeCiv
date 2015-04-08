@@ -89,6 +89,12 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Routes\Route101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Routes\Route101.Designer.cs">
+      <DependentUpon>Route101.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\WorldView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\BattleView.resx">
       <DependentUpon>BattleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Routes\Route101.resx">
+      <DependentUpon>Route101.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\WorldView.resx">
       <DependentUpon>WorldView.cs</DependentUpon>
