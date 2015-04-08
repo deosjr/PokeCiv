@@ -71,7 +71,11 @@
     <Compile Include="Model\Pokedata\PokemonType.cs" />
     <Compile Include="Model\Pokedata\Species.cs" />
     <Compile Include="Model\Pokedata\Types.cs" />
-    <Compile Include="Model\World\World.cs" />
+    <Compile Include="Model\World\Tiles\Tile.cs" />
+    <Compile Include="Model\World\Map.cs" />
+    <Compile Include="Model\World\Tiles\TileItems\Block.cs" />
+    <Compile Include="Model\World\Tiles\TileItems\Grass.cs" />
+    <Compile Include="Model\World\Tiles\TileItems\TileItem.cs" />
     <Compile Include="PokeCiv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
