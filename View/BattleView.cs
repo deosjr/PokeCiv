@@ -165,9 +165,9 @@ namespace PokeCiv.View
 
         }
 
-        public PokemonMove selectMove()
+        public int selectMove()
         {
-            return battle.P1.Moves[currentSelectedMove].move;
+            return currentSelectedMove;
         }
 
         //"next"  aka "A" op de gameboy

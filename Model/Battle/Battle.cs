@@ -90,8 +90,9 @@ namespace PokeCiv.Model.Battle
             PokemonMove p2move = Moves.getMove("STRUGGLE");
             if (P1.hasPPLeft())
             {
-                p1move = View.selectMove();
-                P1.Moves[0].currentPP -= 1;
+                int moveID = View.selectMove();
+                p1move = P1.Moves[moveID].move;
+                P1.Moves[moveID].currentPP -= 1;
             }
             if (P2.hasPPLeft())
             {
@@ -99,10 +100,10 @@ namespace PokeCiv.Model.Battle
                 while (!moveChosen)
                 {
                     int i = CombatMechanics.random.Next(4);
-                    PokemonMove m = P2.Moves[i].move;
+                    Move m = P2.Moves[i];
                     if (m != null)
                     {
-                        p2move = m;
+                        p2move = m.move;
                         moveChosen = true;
                         P2.Moves[i].currentPP -= 1;
                     }

@@ -29,7 +29,7 @@ namespace PokeCiv.Model.Battle
                 if (t != 0)
                 {
                     int damageDealt = move.target.takeDamage(damage);
-                    battle.message(move.target.Name + " takes " + damageDealt + " damage!");
+                    Console.WriteLine(move.target.Name + " takes " + damageDealt + " damage!");
                 }
             }
             MoveFunctions.applyMoveFunction(battle, move, damage, t, miss, first);
