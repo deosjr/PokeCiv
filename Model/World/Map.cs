@@ -21,8 +21,8 @@ namespace PokeCiv.Model.World
         private void initTestGrid()
         {
             Tile _ = new Tile();    //empty
-            Tile w = new Tile();    //grass
-            Tile x = new Tile();    //block
+            Tile w = new Tile("GRASS");    //grass
+            Tile x = new Tile("BLOCK");    //block
             grid = new Tile[][]{
                 new Tile[]{x,x,x,x,x,x},
                 new Tile[]{x,_,_,_,_,x},
