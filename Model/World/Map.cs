@@ -20,15 +20,16 @@ namespace PokeCiv.Model.World
 
         public Tile[][] GetGrid()
         {
-            Tile _ = new Tile();    //empty
-            Tile w = new Tile("GRASS");    //grass
-            Tile x = new Tile("BLOCK");    //block
+            Tile _ = new Tile();    
+            Tile w = new Tile("GRASS");    
+            Tile x = new Tile("BLOCK");
+            Tile u = new Tile("WATER"); 
             grid = new Tile[][]{
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x},
                 new Tile[]{x,_,_,_,_,x,x,_,_,_,_,x},
-                new Tile[]{x,_,w,w,_,x,x,_,w,w,_,x},
-                new Tile[]{x,_,w,w,_,_,_,_,w,w,_,x},
-                new Tile[]{x,_,_,_,_,_,_,_,w,w,_,x},
+                new Tile[]{x,_,w,w,_,x,x,_,u,u,_,x},
+                new Tile[]{x,_,w,w,_,_,_,_,u,u,_,x},
+                new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x}
             };
 

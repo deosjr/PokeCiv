@@ -34,7 +34,8 @@
             // 
             // mapBackgroundCanvas
             // 
-            this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, -1);
+            this.mapBackgroundCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, 0);
             this.mapBackgroundCanvas.Name = "mapBackgroundCanvas";
             this.mapBackgroundCanvas.Size = new System.Drawing.Size(126, 112);
             this.mapBackgroundCanvas.TabIndex = 0;

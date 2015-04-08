@@ -59,6 +59,10 @@ namespace PokeCiv.View
                     {
                         pb.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
                     }
+                    else if (item.tileType == "U")
+                    {
+                        pb.ImageLocation = "../../Data/Graphics/Tiles/water.png";
+                    }
 
                     //plak hem op de achtergrond
                     mapBackgroundCanvas.Controls.Add(pb);                      
@@ -72,17 +76,5 @@ namespace PokeCiv.View
            
         }
 
-         private void setTiles(Tile item){
-                if (item.tileType == "X")
-                    {
-                        mapBackgroundCanvas.ImageLocation = "../../Data/Graphics/Tiles/block.png";
-                    }
-                    else if (item.tileType == "W")
-                    {
-                        mapBackgroundCanvas.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
-                    }
-
-                    
-            }
     }
 }

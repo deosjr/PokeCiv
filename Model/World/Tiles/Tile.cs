@@ -27,6 +27,10 @@ namespace PokeCiv.Model.World.Tiles
                     tileItem = new Block();
                     tileType = "X";
                     break;
+                case "WATER":
+                    tileItem = new Water();
+                    tileType = "U";
+                    break;
             }
         }
 
