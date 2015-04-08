@@ -17,36 +17,40 @@ namespace PokeCiv.View
         public MapRenderer()
         {
             InitializeComponent();
+            
         }
 
         private void MapRenderer_Load(object sender, EventArgs e)
         {
+
+            //set the canvas to the same size as the background
+            this.mapBackgroundCanvas.Width = this.Width;
+            this.mapBackgroundCanvas.Height = this.Width;
+
             Map map = new Map();
             Tile[][] grid = map.GetGrid();
 
             Console.WriteLine("Loaded Map:");
 
-            Point current = new Point(-50, -50);
-
-            //maak een array van het aantal tiles in het grid
-            PictureBox[] pbAr = new PictureBox[100];
+            Point current = new Point(-50, 0);
 
             foreach (var row in grid)
             {              
                 Console.WriteLine();
-                current.Y += 50;
-                                                             
+                                                                                   
                 foreach (var item in row)
                 {
                     Console.Write(item.tileType);
 
                     //genereer 1 nieuwe picturebox
                     PictureBox pb = new PictureBox();
+                    pb.Size = new Size(50,50);
+
                     //stel hem in op de nieuwe locatie
                     current.X += 50;
                     pb.Location = current;
-                    //verhoog zijn id
-
+ 
+                    //kijken welk plaatje het moet worden (kan later beter)
                     if (item.tileType == "X")
                     {
                         pb.ImageLocation = "../../Data/Graphics/Tiles/block.png";
@@ -56,8 +60,13 @@ namespace PokeCiv.View
                         pb.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
                     }
 
-                    pictureBox1.Controls.Add(pb);                      
+                    //plak hem op de achtergrond
+                    mapBackgroundCanvas.Controls.Add(pb);                      
                 }
+
+                //1 rij omlaag, en links beginnen
+                current.Y += 50;
+                current.X = -50;
             }
 
            
@@ -66,11 +75,11 @@ namespace PokeCiv.View
          private void setTiles(Tile item){
                 if (item.tileType == "X")
                     {
-                        pictureBox1.ImageLocation = "../../Data/Graphics/Tiles/block.png";
+                        mapBackgroundCanvas.ImageLocation = "../../Data/Graphics/Tiles/block.png";
                     }
                     else if (item.tileType == "W")
                     {
-                        pictureBox1.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
+                        mapBackgroundCanvas.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
                     }
 
                     
