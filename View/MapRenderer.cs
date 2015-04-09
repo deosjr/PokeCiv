@@ -98,7 +98,7 @@ namespace PokeCiv.View
 
             BattleView battleView = new BattleView(battle);
             battleView.showView();
-            this.hideView();
+            
         }
 
     }

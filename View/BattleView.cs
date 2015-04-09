@@ -155,11 +155,10 @@ namespace PokeCiv.View
                 BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = battle.P1.CurrentHP + "/" + battle.P1.HP + "HP"; }));
             }
 
-            //TODO: lvl update
-            //hp numbers
-            //pp numbers
+            //TODO: 
+            //lvl update
             //pokemon name
-            //alle mf-ing images
+            //alle mf-ing images bij een pokemon swap
 
             while (waitForInput)
             {
@@ -226,8 +225,8 @@ namespace PokeCiv.View
        {
            Map map = new Map();
            MapRenderer mapRenderer = new MapRenderer(map);
-           mapRenderer.showView();
-           this.hideView();
+           mapRenderer.showView();         
+           //this.hideView();
        }
     }
 }

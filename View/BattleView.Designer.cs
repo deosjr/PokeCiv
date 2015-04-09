@@ -394,6 +394,7 @@
             this.Controls.Add(this.frontFloor);
             this.Controls.Add(this.backFloor);
             this.Controls.Add(this.battleBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BattleView";
             this.Text = "Combat";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BattleView_MouseClick);

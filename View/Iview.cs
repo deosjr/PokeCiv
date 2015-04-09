@@ -15,11 +15,8 @@ namespace PokeCiv.View
         public Iview()
         {
             InitializeComponent();
-
         }
 
-
-        //test for generic interface
         public void hideView()
         {
             this.Close();
