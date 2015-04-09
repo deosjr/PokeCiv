@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.mapBackgroundCanvas = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,11 +42,22 @@
             this.mapBackgroundCanvas.TabIndex = 0;
             this.mapBackgroundCanvas.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Battle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MapRenderer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 449);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.mapBackgroundCanvas);
             this.Name = "MapRenderer";
             this.Text = "Route101";
@@ -58,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox mapBackgroundCanvas;
+        private System.Windows.Forms.Button button1;
     }
 }

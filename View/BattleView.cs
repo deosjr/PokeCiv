@@ -1,5 +1,6 @@
 ﻿using PokeCiv.Model.Battle;
 using PokeCiv.Model.Pokedata;
+using PokeCiv.Model.World;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -220,6 +221,15 @@ namespace PokeCiv.View
              MovesButton3.BackColor = Color.PaleGoldenrod;
              MovesButton4.BackColor = Color.PaleGoldenrod;
         }
+
+       private void button1_Click(object sender, EventArgs e)
+       {
+           Map map = new Map();
+           //map.setCoordinates(player1, 1, 1);
+           MapRenderer mapRenderer = new MapRenderer(map);
+           mapRenderer.Show();
+           this.Hide();
+       }
 
 
     }

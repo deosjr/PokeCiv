@@ -40,12 +40,6 @@ namespace PokeCiv
             battleThread.Start();
             Application.Run(battleview);
 
-            //Map map = new Map();
-            ////map.setCoordinates(player1, 1, 1);
-            //MapRenderer mapRenderer = new MapRenderer(map);
-           // map.View = mapRenderer;
-            //Application.Run(mapRenderer);
-
             Console.ReadKey();
         }
     }

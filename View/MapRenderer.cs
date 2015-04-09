@@ -1,4 +1,7 @@
-﻿using PokeCiv.Model.World;
+﻿using PokeCiv.Model;
+using PokeCiv.Model.Battle;
+using PokeCiv.Model.Pokedata;
+using PokeCiv.Model.World;
 using PokeCiv.Model.World.Tiles;
 using System;
 using System.Collections.Generic;
@@ -76,6 +79,27 @@ namespace PokeCiv.View
 
             }
        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Random r = new Random();
+
+            Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
+            Pokemon p2 = PokemonFactory.getPokemon(40, r.Next(1, 650));
+
+
+            Player player1 = new Player("P1");
+            Player player2 = new Player("P2");
+            player1.AddToTeam(p1);
+            player2.AddToTeam(p2);
+
+            Battle battle = new Battle(player1, player2);
+
+            BattleView battleView = new BattleView(battle);
+            battleView.Show();
+            this.Hide();
         }
 
     }
