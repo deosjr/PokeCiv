@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 using PokeCiv.Model.World.Tiles;
+using PokeCiv.View;
 
 namespace PokeCiv.Model.World
 {
-    class Map
+    public class Map
     {
 
         Tile[][] grid;
+        public MapRenderer View { private get; set; }
 
         public Map()
         {
@@ -39,8 +41,7 @@ namespace PokeCiv.Model.World
         public void setCoordinates(Player player, int x, int y)
         {
             player.setCoordinates(x, y);
-            // set Tile[x,y].player = player
-            // How to access grid? static Map?
+            grid[y][x].Player = player;
         }
 
     }

@@ -36,15 +36,15 @@ namespace PokeCiv
             Battle battle = new Battle(player1, player2);
             BattleView battleview = new BattleView(battle);
             battle.View = battleview;
-
-
             Thread battleThread = new Thread(battle.fight);
             battleThread.Start();
+            //Application.Run(battleview);
 
-            Map.setCoordinates(player1, 1, 1);
-
-            //Application.Run(battleview);       
-            Application.Run(new MapRenderer());
+            Map map = new Map();
+            map.setCoordinates(player1, 1, 1);
+            MapRenderer mapRenderer = new MapRenderer(map);
+            map.View = mapRenderer;
+            Application.Run(mapRenderer);
 
             Console.ReadKey();
         }

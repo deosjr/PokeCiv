@@ -8,7 +8,7 @@ using PokeCiv.Model.World.Tiles.TileItems;
 
 namespace PokeCiv.Model.World.Tiles
 {
-    class Tile
+    public class Tile
     {
         TileItem tileItem;
         public int X { get; set; }

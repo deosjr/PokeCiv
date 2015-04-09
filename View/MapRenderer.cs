@@ -14,9 +14,15 @@ namespace PokeCiv.View
 {
     public partial class MapRenderer : Form
     {
-        public MapRenderer()
+
+        private Map map;
+        private Tile[][] grid;
+
+        public MapRenderer(Map map)
         {
-            InitializeComponent();      
+            InitializeComponent();
+            this.map = map;
+            grid = map.GetGrid();
         }
 
         private void MapRenderer_Load(object sender, EventArgs e)
@@ -24,10 +30,7 @@ namespace PokeCiv.View
 
             //set the canvas to the same size as the background
             this.mapBackgroundCanvas.Width = this.Width;
-            this.mapBackgroundCanvas.Height = this.Width;
-
-            Map map = new Map();
-            Tile[][] grid = map.GetGrid();
+            this.mapBackgroundCanvas.Height = this.Width;            
 
             Point current = new Point(-50, 0);
 
