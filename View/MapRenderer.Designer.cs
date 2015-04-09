@@ -41,6 +41,7 @@
             // 
             // pb_player
             // 
+            this.pb_player.BackColor = System.Drawing.Color.Transparent;
             this.pb_player.Image = ((System.Drawing.Image)(resources.GetObject("pb_player.Image")));
             this.pb_player.Location = new System.Drawing.Point(506, 20);
             this.pb_player.Margin = new System.Windows.Forms.Padding(0);
