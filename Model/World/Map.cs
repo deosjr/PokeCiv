@@ -31,6 +31,9 @@ namespace PokeCiv.Model.World
                 new Tile[]{x,_,_,_,_,x,x,_,_,_,_,x},
                 new Tile[]{x,_,w,w,_,x,x,_,u,u,_,x},
                 new Tile[]{x,_,w,w,_,_,_,_,u,u,_,x},
+                new Tile[]{x,_,w,w,_,_,_,_,u,u,_,x},
+                new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
+                new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
                 new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x}
             };

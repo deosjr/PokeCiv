@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,6 @@ namespace PokeCiv.View
 {
     public partial class MapRenderer : Iview
     {
-
         private Map map;
         private Tile[][] grid;
 
@@ -28,9 +28,24 @@ namespace PokeCiv.View
             grid = map.GetGrid();
         }
 
+
+        //merge the player with the correct floor tile, and draw it over the generated map.
+        public void UpdatePlayer()
+        {
+            //TODO: hardcoded totdat ze makkelijk door sjoerd aan de MapRenderer gegeven worden
+            int playerX = 4;
+            int playerY = 4;
+
+            //positioneer de vloer
+            pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
+            
+            //plak de speler op de vloer
+            pb_playerFloor.Controls.Add(pb_player);
+            pb_player.Location = new Point(0, 0);
+        }
+
         private void MapRenderer_Load(object sender, EventArgs e)
         {
-
             //set the canvas to the same size as the background
             this.mapBackgroundCanvas.Width = this.Width;
             this.mapBackgroundCanvas.Height = this.Width;            
@@ -64,11 +79,7 @@ namespace PokeCiv.View
                     {
                         pb.ImageLocation = "../../Data/Graphics/Tiles/water.png";
                     }
-                    else if (item.tileType == "P")
-                    {
-                        pb.ImageLocation = "../../Data/Graphics/Tiles/player.png";
-                    }
-
+                    
                     //plak hem op de achtergrond
                     mapBackgroundCanvas.Controls.Add(pb);                      
                 }
@@ -76,16 +87,15 @@ namespace PokeCiv.View
                 //1 rij omlaag, en links beginnen
                 current.Y += 50;
                 current.X = -50;
-
             }
 
-            //destroy loading screen
-       
+            UpdatePlayer();
+
         }
 
+        //TODO: remove this method
         private void test_btn_switch2Battle(object sender, EventArgs e)
         {
-
             //REMOVE THIS - TEMP BATTLE \/
             Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
             Pokemon p2 = PokemonFactory.getPokemon(40, "ZAPDOS");
@@ -99,15 +109,16 @@ namespace PokeCiv.View
             //REMOVE THIS - TEMP BATTLE ^
 
             BattleView battleView = new BattleView(battle);
-            battleView.showView();
-            
+            battleView.showView();        
         }
 
+        //TODO: remove this method
         private void test_btn_show_Worldmap(object sender, EventArgs e)
         {
             WorldMap wm = new WorldMap();
             wm.showView();
         }
+
 
     }
 }
