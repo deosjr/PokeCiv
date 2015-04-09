@@ -149,7 +149,10 @@ namespace PokeCiv.View
                 labelPP_move4.Invoke(new MethodInvoker(delegate { labelPP_move4.Text = "PP " + battle.P1.Moves[3].currentPP.ToString() + "/" + battle.P1.Moves[3].totalPP.ToString(); }));
             }
 
-
+            if (BackPokemonHPLabel.InvokeRequired)
+            {
+                BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = battle.P1.CurrentHP + "/" + battle.P2.HP + "HP"; }));
+            }
 
             //TODO: lvl update
             //hp numbers

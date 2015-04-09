@@ -38,13 +38,13 @@ namespace PokeCiv
             battle.View = battleview;
             Thread battleThread = new Thread(battle.fight);
             battleThread.Start();
-            //Application.Run(battleview);
+            Application.Run(battleview);
 
-            Map map = new Map();
-            map.setCoordinates(player1, 1, 1);
-            MapRenderer mapRenderer = new MapRenderer(map);
-            map.View = mapRenderer;
-            Application.Run(mapRenderer);
+            //Map map = new Map();
+            ////map.setCoordinates(player1, 1, 1);
+            //MapRenderer mapRenderer = new MapRenderer(map);
+           // map.View = mapRenderer;
+            //Application.Run(mapRenderer);
 
             Console.ReadKey();
         }
