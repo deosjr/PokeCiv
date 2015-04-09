@@ -396,6 +396,7 @@
             this.Controls.Add(this.battleBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BattleView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Combat";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BattleView_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).EndInit();

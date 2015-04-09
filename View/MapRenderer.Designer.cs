@@ -56,12 +56,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 748);
+            this.ClientSize = new System.Drawing.Size(570, 466);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mapBackgroundCanvas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MapRenderer";
-            this.Text = "Route101";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PokeCiv";
             this.Load += new System.EventHandler(this.MapRenderer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).EndInit();
             this.ResumeLayout(false);
