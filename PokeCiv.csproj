@@ -120,6 +120,9 @@
     <EmbeddedResource Include="View\BattleView.resx">
       <DependentUpon>BattleView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Iview.resx">
+      <DependentUpon>Iview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MapRenderer.resx">
       <DependentUpon>MapRenderer.cs</DependentUpon>
     </EmbeddedResource>
