@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class BattleView : Form
+    public partial class BattleView : Iview
     {
 
         public bool waitForInput = true;
@@ -222,15 +222,12 @@ namespace PokeCiv.View
              MovesButton4.BackColor = Color.PaleGoldenrod;
         }
 
-       private void button1_Click(object sender, EventArgs e)
+       private void test_btn_switch2Map(object sender, EventArgs e)
        {
            Map map = new Map();
-           //map.setCoordinates(player1, 1, 1);
            MapRenderer mapRenderer = new MapRenderer(map);
-           mapRenderer.Show();
-           this.Hide();
+           mapRenderer.showView();
+           this.hideView();
        }
-
-
     }
 }

@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class MapRenderer : Form
+    public partial class MapRenderer : Iview
     {
 
         private Map map;
@@ -81,14 +81,12 @@ namespace PokeCiv.View
        
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void test_btn_switch2Battle(object sender, EventArgs e)
         {
 
-            Random r = new Random();
-
+            //REMOVE THIS - TEMP BATTLE \/
             Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
-            Pokemon p2 = PokemonFactory.getPokemon(40, r.Next(1, 650));
-
+            Pokemon p2 = PokemonFactory.getPokemon(40, "ZAPDOS");
 
             Player player1 = new Player("P1");
             Player player2 = new Player("P2");
@@ -96,10 +94,11 @@ namespace PokeCiv.View
             player2.AddToTeam(p2);
 
             Battle battle = new Battle(player1, player2);
+            //REMOVE THIS - TEMP BATTLE ^
 
             BattleView battleView = new BattleView(battle);
-            battleView.Show();
-            this.Hide();
+            battleView.showView();
+            this.hideView();
         }
 
     }

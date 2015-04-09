@@ -90,6 +90,12 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Iview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Iview.Designer.cs">
+      <DependentUpon>Iview.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MapRenderer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,9 +127,7 @@
       <DependentUpon>WorldView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Routes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
