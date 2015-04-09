@@ -151,7 +151,7 @@ namespace PokeCiv.View
 
             if (BackPokemonHPLabel.InvokeRequired)
             {
-                BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = battle.P1.CurrentHP + "/" + battle.P2.HP + "HP"; }));
+                BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = battle.P1.CurrentHP + "/" + battle.P1.HP + "HP"; }));
             }
 
             //TODO: lvl update
