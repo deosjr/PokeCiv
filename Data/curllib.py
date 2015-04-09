@@ -19,8 +19,14 @@ f.close()
 
 for i, name in names:
 
-	# Eerste 28 zijn binnen, later nog ns proberen
-	if i < 29:
+	# fuck these pokemon in particular :
+	# nidoran male/female 
+	# farfetch'd
+	# mr. mime
+	# mime jr.
+
+	# Eerste zoveel zijn binnen
+	if i <= 439:
 		continue
 
 	url_n = url + "normal/"
@@ -28,25 +34,25 @@ for i, name in names:
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
 
-	time.sleep(2)
+	time.sleep(1)
 
 	url_n = url + "shiny/"
 	f1 = open("Animations/" + str(i).zfill(3) + "s.gif",'wb')
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
 
-	time.sleep(2)
+	time.sleep(1)
 
 	url_n = url + "back-normal/"
 	f1 = open("Animations/" + str(i).zfill(3) + "b.gif",'wb')
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
 
-	time.sleep(2)
+	time.sleep(1)
 
 	url_n = url + "back-shiny/"
 	f1 = open("Animations/" + str(i).zfill(3) + "sb.gif",'wb')
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
 
-	time.sleep(2)
+	time.sleep(1)
