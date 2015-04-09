@@ -78,6 +78,8 @@ namespace PokeCiv.View
                 current.X = -50;
 
             }
+
+            //destroy loading screen
        
         }
 
@@ -99,6 +101,12 @@ namespace PokeCiv.View
             BattleView battleView = new BattleView(battle);
             battleView.showView();
             
+        }
+
+        private void test_btn_show_Worldmap(object sender, EventArgs e)
+        {
+            WorldMap wm = new WorldMap();
+            wm.showView();
         }
 
     }

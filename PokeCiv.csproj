@@ -102,11 +102,11 @@
     <Compile Include="View\MapRenderer.Designer.cs">
       <DependentUpon>MapRenderer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\WorldView.cs">
+    <Compile Include="View\WorldMap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\WorldView.Designer.cs">
-      <DependentUpon>WorldView.cs</DependentUpon>
+    <Compile Include="View\WorldMap.Designer.cs">
+      <DependentUpon>WorldMap.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="View\MapRenderer.resx">
       <DependentUpon>MapRenderer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\WorldView.resx">
-      <DependentUpon>WorldView.cs</DependentUpon>
+    <EmbeddedResource Include="View\WorldMap.resx">
+      <DependentUpon>WorldMap.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -21,13 +21,12 @@ namespace PokeCiv
         [STAThread]
         static void Main(string[] args)
         {
-           
-            Random r = new Random();
 
+            //Debug values
+            Random r = new Random();
             Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
             Pokemon p2 = PokemonFactory.getPokemon(40, r.Next(1, 650));
-
-
+         
             Player player1 = new Player("P1");
             Player player2 = new Player("P2");
             player1.AddToTeam(p1);
@@ -36,10 +35,13 @@ namespace PokeCiv
             Battle battle = new Battle(player1, player2);
             BattleView battleview = new BattleView(battle);
             battle.View = battleview;
+
+
             Thread battleThread = new Thread(battle.fight);
             battleThread.Start();
             Application.Run(battleview);
 
+   
             Console.ReadKey();
         }
     }

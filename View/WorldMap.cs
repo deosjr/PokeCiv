@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PokeCiv.Model.World;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class WorldView : Form
+    public partial class WorldMap : Iview
     {
-        public WorldView()
+        public WorldMap()
         {
 
             //removing scrollbars
@@ -61,6 +62,13 @@ namespace PokeCiv.View
             }
 
             this.AutoScrollPosition = position;
+        }
+
+        private void test_btn_back_to_world_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            
         }
     }
 }

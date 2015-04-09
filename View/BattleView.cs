@@ -223,10 +223,7 @@ namespace PokeCiv.View
 
        private void test_btn_switch2Map(object sender, EventArgs e)
        {
-           Map map = new Map();
-           MapRenderer mapRenderer = new MapRenderer(map);
-           mapRenderer.showView();         
-           //this.hideView();
+           this.Close();      
        }
     }
 }
