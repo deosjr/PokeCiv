@@ -1,5 +1,6 @@
 import urllib2
 import os
+import time
 
 url = "http://img.pokemondb.net/sprites/black-white/anim/"
 
@@ -27,17 +28,25 @@ for i, name in names:
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
 
+	time.sleep(2)
+
 	url_n = url + "shiny/"
 	f1 = open("Animations/" + str(i).zfill(3) + "s.gif",'wb')
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
+
+	time.sleep(2)
 
 	url_n = url + "back-normal/"
 	f1 = open("Animations/" + str(i).zfill(3) + "b.gif",'wb')
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
 
+	time.sleep(2)
+
 	url_n = url + "back-shiny/"
 	f1 = open("Animations/" + str(i).zfill(3) + "sb.gif",'wb')
 	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
 	f1.close()
+
+	time.sleep(2)
