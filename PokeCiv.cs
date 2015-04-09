@@ -24,7 +24,7 @@ namespace PokeCiv
            
             Random r = new Random();
 
-            Pokemon p1 = PokemonFactory.getPokemon(50, "GENGAR");
+            Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
             Pokemon p2 = PokemonFactory.getPokemon(40, r.Next(1, 650));
 
 

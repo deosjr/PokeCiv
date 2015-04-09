@@ -54,8 +54,8 @@ namespace PokeCiv.View
             backImageBattlePokemon.Location = new Point(0, 0);
 
             //Pokemon Images
-            me.backImageBattlePokemon.ImageLocation = "../../Data/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
-            me.frontImageBattlePokemon.ImageLocation = "../../Data/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
+            me.backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
+            me.frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
 
             //backgrond Image
             me.battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";
@@ -186,6 +186,7 @@ namespace PokeCiv.View
             currentSelectedMove = 0;
             resetbuttonColors();
             MovesButton1.BackColor = Color.Red;
+            waitForInput = false;
         }
 
         private void MovesButton2_Click(object sender, EventArgs e)
@@ -193,7 +194,7 @@ namespace PokeCiv.View
             currentSelectedMove = 1;
             resetbuttonColors();
             MovesButton2.BackColor = Color.Red;
-
+            waitForInput = false;
         }
 
         private void MovesButton3_Click(object sender, EventArgs e)
@@ -201,6 +202,7 @@ namespace PokeCiv.View
             currentSelectedMove = 2;
             resetbuttonColors();
             MovesButton3.BackColor = Color.Red;
+            waitForInput = false;
         }
 
         private void MovesButton4_Click(object sender, EventArgs e)
@@ -208,6 +210,7 @@ namespace PokeCiv.View
             currentSelectedMove = 3;
             resetbuttonColors();
             MovesButton4.BackColor = Color.Red;
+            waitForInput = false;
         }
 
        public void resetbuttonColors(){
