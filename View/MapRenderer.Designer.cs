@@ -43,7 +43,7 @@
             // 
             this.pb_player.BackColor = System.Drawing.Color.Transparent;
             this.pb_player.Image = ((System.Drawing.Image)(resources.GetObject("pb_player.Image")));
-            this.pb_player.Location = new System.Drawing.Point(506, 20);
+            this.pb_player.Location = new System.Drawing.Point(179, 110);
             this.pb_player.Margin = new System.Windows.Forms.Padding(0);
             this.pb_player.Name = "pb_player";
             this.pb_player.Size = new System.Drawing.Size(50, 50);
@@ -75,14 +75,14 @@
             this.mapBackgroundCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, 0);
             this.mapBackgroundCanvas.Name = "mapBackgroundCanvas";
-            this.mapBackgroundCanvas.Size = new System.Drawing.Size(115, 70);
+            this.mapBackgroundCanvas.Size = new System.Drawing.Size(441, 278);
             this.mapBackgroundCanvas.TabIndex = 0;
             this.mapBackgroundCanvas.TabStop = false;
             // 
             // pb_playerFloor
             // 
             this.pb_playerFloor.Image = ((System.Drawing.Image)(resources.GetObject("pb_playerFloor.Image")));
-            this.pb_playerFloor.Location = new System.Drawing.Point(444, 20);
+            this.pb_playerFloor.Location = new System.Drawing.Point(108, 110);
             this.pb_playerFloor.Margin = new System.Windows.Forms.Padding(0);
             this.pb_playerFloor.Name = "pb_playerFloor";
             this.pb_playerFloor.Size = new System.Drawing.Size(50, 50);
