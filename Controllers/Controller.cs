@@ -18,7 +18,7 @@ namespace PokeCiv.Controllers
     public class Controller
     {
 
-        public Iview View { private get; set; }
+        public IView View { private get; set; }
         public Battle Battle { private get; set; }
         public Map Map { private get; set; }
         public Player Player { get; set; }
