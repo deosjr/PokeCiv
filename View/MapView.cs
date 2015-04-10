@@ -62,7 +62,6 @@ namespace PokeCiv.View
 
                 foreach (var item in row)
                 {
-
                     //genereer 1 nieuwe picturebox
                     PictureBox pb = new PictureBox();
                     pb.Size = new Size(50, 50);
@@ -71,19 +70,21 @@ namespace PokeCiv.View
                     current.X += 50;
                     pb.Location = current;
 
-                    //kijken welk plaatje het moet worden (kan later beter)
-                    if (item.tileType == "X")
-                    {
-                        pb.ImageLocation = "../../Data/Graphics/Tiles/block.png";
-                    }
-                    else if (item.tileType == "W")
-                    {
-                        pb.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
-                    }
-                    else if (item.tileType == "U")
-                    {
-                        pb.ImageLocation = "../../Data/Graphics/Tiles/water.png";
-                    }
+                    ////kijken welk plaatje het moet worden (kan later beter)
+                    //if (item.tileType == "X")
+                    //{
+                    //    pb.ImageLocation = "../../Data/Graphics/Tiles/block.png";
+                    //}
+                    //else if (item.tileType == "W")
+                    //{
+                    //    pb.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
+                    //}
+                    //else if (item.tileType == "U")
+                    //{
+                    //    pb.ImageLocation = "../../Data/Graphics/Tiles/water.png";
+                    //}
+
+                    pb.ImageLocation = getTileImage(item);
 
                     //plak hem op de achtergrond
                     mapBackgroundCanvas.Controls.Add(pb);
@@ -122,6 +123,26 @@ namespace PokeCiv.View
                 Console.WriteLine("RIGHT");
                 Control.playerMoveRight();
             }
+        }
+
+        private string getTileImage(Tile item)
+        {
+            var tileImageSrc = "";
+
+            if (item.tileType == "X")
+            {
+                 tileImageSrc = "../../Data/Graphics/Tiles/block.png";
+            }
+            else if (item.tileType == "W")
+            {
+                 tileImageSrc = "../../Data/Graphics/Tiles/gras.png";
+            }
+            else if (item.tileType == "U")
+            {
+                 tileImageSrc = "../../Data/Graphics/Tiles/water.png";
+            }
+
+            return tileImageSrc;
         }
     }
 }
