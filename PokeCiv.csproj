@@ -90,11 +90,11 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Iview.cs">
+    <Compile Include="View\IView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Iview.Designer.cs">
-      <DependentUpon>Iview.cs</DependentUpon>
+    <Compile Include="View\IView.Designer.cs">
+      <DependentUpon>IView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MapView.cs">
       <SubType>Form</SubType>
@@ -120,8 +120,8 @@
     <EmbeddedResource Include="View\BattleView.resx">
       <DependentUpon>BattleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Iview.resx">
-      <DependentUpon>Iview.cs</DependentUpon>
+    <EmbeddedResource Include="View\IView.resx">
+      <DependentUpon>IView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MapView.resx">
       <DependentUpon>MapView.cs</DependentUpon>
