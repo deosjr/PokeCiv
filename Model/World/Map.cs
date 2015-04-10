@@ -37,10 +37,12 @@ namespace PokeCiv.Model.World
                 new string[]{x,_,w,w,_,_,_,_,u,u,_,x},
                 new string[]{x,_,w,w,_,_,_,_,u,u,_,x},
                 new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
-                new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
+                new string[]{x,_,_,_,u,u,u,u,u,u,_,x},
                 new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
                 new string[]{x,x,x,x,x,x,x,x,x,x,x,x}
             };
+
+            //TODO: have the [i] in tale (9 & 12) now calculated dynamicly by .lenght() stuff
             Grid = new Tile[9][];
 
             for (int Y = 0; Y < 9; Y++)
@@ -87,6 +89,8 @@ namespace PokeCiv.Model.World
         {
             // TODO: do we check x,y < 0 and > gridsize? 
             // or just block it with boundaries always as in Pokemon?
+            //A: Always make visible obstacles, like in the game, makes for much clearer maps.
+            //no blocks usaly is a path to the next zone (e.a. safari zone)
             return !Grid[y][x].blocks();
         }
 
