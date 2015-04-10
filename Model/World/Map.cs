@@ -61,7 +61,7 @@ namespace PokeCiv.Model.World
 
         private bool playerCanMove(int x, int y)
         {
-            return Grid[y][x].blocks();
+            return !Grid[y][x].blocks();
         }
 
     }

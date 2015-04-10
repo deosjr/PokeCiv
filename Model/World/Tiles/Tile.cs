@@ -42,6 +42,10 @@ namespace PokeCiv.Model.World.Tiles
         {
             if (Player != null)
             {
+                return true;
+            }
+            if (tileItem == null)
+            {
                 return false;
             }
             return tileItem.blocks;
