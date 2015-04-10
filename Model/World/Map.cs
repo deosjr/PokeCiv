@@ -6,29 +6,30 @@ using System.Threading.Tasks;
 
 using PokeCiv.Model.World.Tiles;
 using PokeCiv.View;
+using PokeCiv.Controllers;
 
 namespace PokeCiv.Model.World
 {
     public class Map
     {
 
-        Tile[][] grid;
+        public Tile[][] Grid { get; private set; }
         public MapView View { private get; set; }
-        public Player Player { get; set; }
+        public Controller Control { private get; set; }
 
-        public Map(Player player)
+        public Map(Controller control)
         {
-            Player = player;
-            GetGrid();
+            Control = control;
+            SetGrid();
         }
 
-        public Tile[][] GetGrid()
+        public void SetGrid()
         {
-            Tile _ = new Tile();    
-            Tile w = new Tile("GRASS");    
+            Tile _ = new Tile();
+            Tile w = new Tile("GRASS");
             Tile x = new Tile("BLOCK");
-            Tile u = new Tile("WATER"); 
-            grid = new Tile[][]{
+            Tile u = new Tile("WATER");
+            Grid = new Tile[][]{
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x},
                 new Tile[]{x,_,_,_,_,x,x,_,_,_,_,x},
                 new Tile[]{x,_,w,w,_,x,x,_,u,u,_,x},
@@ -39,15 +40,13 @@ namespace PokeCiv.Model.World
                 new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
                 new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x}
             };
-
-            return grid;
         }
 
         public void setPlayerCoordinates(int x, int y)
         {
-            grid[Player.Y][Player.X].Player = null;
-            Player.setCoordinates(x, y);
-            grid[y][x].Player = Player;
+            Grid[Control.Player.Y][Control.Player.X].Player = null;
+            Control.Player.setCoordinates(x, y);
+            Grid[y][x].Player = Control.Player;
         }
 
     }

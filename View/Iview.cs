@@ -31,5 +31,9 @@ namespace PokeCiv.View
         {
             this.Close();
         }
+
+        public virtual void message(string msg) { }
+
+        public virtual int selectMove() { return 0; }
     }
 }
