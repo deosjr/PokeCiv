@@ -1,7 +1,4 @@
-﻿using PokeCiv.Model.Battle;
-using PokeCiv.Model.Pokedata;
-using PokeCiv.Model.World;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using PokeCiv.Controllers;
+using PokeCiv.Model.Battle;
+using PokeCiv.Model.Pokedata;
+using PokeCiv.Model.World;
+
 namespace PokeCiv.View
 {
-    public partial class BattleView : Iview
+    public partial class BattleView : IView
     {
 
         public bool waitForInput = true;
         public int currentSelectedMove = 0;
+        public Controller Control { private get; set; }
 
         private Battle battle;
 
@@ -106,7 +109,7 @@ namespace PokeCiv.View
 
 
         //The Message cycle, updates the msg, and checks other stats (since a turn has passed)
-        public void message(string msg)
+        public override void message(string msg)
         {
  
             if (actionTextLabel.InvokeRequired)
@@ -168,7 +171,7 @@ namespace PokeCiv.View
 
         }
 
-        public int selectMove()
+        public override int selectMove()
         {
             return currentSelectedMove;
         }
