@@ -49,5 +49,20 @@ namespace PokeCiv.Model.World
             Grid[y][x].Player = Control.Player;
         }
 
+        public bool playerMove(int xdiff, int ydiff)
+        {
+            bool canMove = playerCanMove(Control.Player.X + xdiff, Control.Player.Y + ydiff);
+            if (canMove)
+            {
+                setPlayerCoordinates(Control.Player.X + xdiff, Control.Player.Y + ydiff);
+            }
+            return canMove;
+        }
+
+        private bool playerCanMove(int x, int y)
+        {
+            return Grid[y][x].blocks();
+        }
+
     }
 }

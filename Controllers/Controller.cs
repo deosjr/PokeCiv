@@ -48,5 +48,37 @@ namespace PokeCiv.Controllers
             Application.Run(View);
         }
 
+        public void playerMoveUp()
+        {
+            if (Map.playerMove(0, -1))
+            {
+                //TODO: View.redraw() oid ?
+            }
+        }
+
+        public void playerMoveDown()
+        {
+            if (Map.playerMove(0, 1))
+            {
+                //TODO: View.redraw() oid ?
+            }
+        }
+
+        public void playerMoveLeft()
+        {
+            if (Map.playerMove(-1, 0))
+            {
+                //TODO: View.redraw() oid ?
+            }
+        }
+
+        public void playerMoveRight()
+        {
+            if (Map.playerMove(1, 0))
+            {
+                //TODO: View.redraw() oid ?
+            }
+        }
+
     }
 }
