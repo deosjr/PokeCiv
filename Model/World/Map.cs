@@ -23,23 +23,47 @@ namespace PokeCiv.Model.World
             SetGrid();
         }
 
+        // VERY UGLY right now, but will be prettier when mapgeneration gets done
         public void SetGrid()
         {
-            Tile _ = new Tile();
-            Tile w = new Tile("GRASS");
-            Tile x = new Tile("BLOCK");
-            Tile u = new Tile("WATER");
-            Grid = new Tile[][]{
-                new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x},
-                new Tile[]{x,_,_,_,_,x,x,_,_,_,_,x},
-                new Tile[]{x,_,w,w,_,x,x,_,u,u,_,x},
-                new Tile[]{x,_,w,w,_,_,_,_,u,u,_,x},
-                new Tile[]{x,_,w,w,_,_,_,_,u,u,_,x},
-                new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
-                new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
-                new Tile[]{x,_,_,_,_,_,_,_,u,u,_,x},
-                new Tile[]{x,x,x,x,x,x,x,x,x,x,x,x}
+            string _ = "_";
+            string w = "w";
+            string x = "x";
+            string u = "u";
+            string[][] ascii = new string[][]{
+                new string[]{x,x,x,x,x,x,x,x,x,x,x,x},
+                new string[]{x,_,_,_,_,x,x,_,_,_,_,x},
+                new string[]{x,_,w,w,_,x,x,_,u,u,_,x},
+                new string[]{x,_,w,w,_,_,_,_,u,u,_,x},
+                new string[]{x,_,w,w,_,_,_,_,u,u,_,x},
+                new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
+                new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
+                new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
+                new string[]{x,x,x,x,x,x,x,x,x,x,x,x}
             };
+            Grid = new Tile[9][];
+
+            for (int Y = 0; Y < 9; Y++)
+            {
+                Grid[Y] = new Tile[12];
+                for (int X = 0; X < 12; X++)
+                {
+                    switch (ascii[Y][X]) {
+                        case "_":
+                            Grid[Y][X] = new Tile();
+                            break;
+                        case "w":
+                            Grid[Y][X] = new Tile("GRASS");
+                            break;
+                        case "x":
+                            Grid[Y][X] = new Tile("BLOCK");
+                            break;
+                        case "u":
+                            Grid[Y][X] = new Tile("WATER");
+                            break;
+                    }
+                }
+            }
         }
 
         public void setPlayerCoordinates(int x, int y)
@@ -61,6 +85,8 @@ namespace PokeCiv.Model.World
 
         private bool playerCanMove(int x, int y)
         {
+            // TODO: do we check x,y < 0 and > gridsize? 
+            // or just block it with boundaries always as in Pokemon?
             return !Grid[y][x].blocks();
         }
 

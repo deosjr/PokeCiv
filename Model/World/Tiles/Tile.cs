@@ -15,10 +15,10 @@ namespace PokeCiv.Model.World.Tiles
         public int Y { get; set; }
 
         public Player Player { get; set; }
-
         public string tileType = "_"; //default
 
         public Tile() { }
+
         public Tile(string itemID)
         {
             switch (itemID)
