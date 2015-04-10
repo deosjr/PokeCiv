@@ -53,7 +53,7 @@ namespace PokeCiv.Controllers
             if (Map.playerMove(0, -1))
             {
                 View.UpdatePlayer();
-                Console.WriteLine("ctrl-left");
+                Console.WriteLine("ctrl-up");
             }
         }
 

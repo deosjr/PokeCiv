@@ -103,13 +103,14 @@ namespace PokeCiv.View
         {
             if (e.KeyValue == 40)
             {
-                Console.WriteLine("UP");
-                Control.playerMoveUp();
+                Console.WriteLine("DOWN");
+                Control.playerMoveDown();
             }
             else if (e.KeyValue == 38)
             {
-                Console.WriteLine("DOWN");
-                Control.playerMoveDown();
+                Console.WriteLine("UP");
+                Control.playerMoveUp();
+                
             }
             else if (e.KeyValue == 37)
             {
