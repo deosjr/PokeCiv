@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PokeCiv.Model.Battle; // TODO: remove this dependency
+
 namespace PokeCiv.Model.Pokedata
 {
     public class Moves
@@ -15,6 +17,7 @@ namespace PokeCiv.Model.Pokedata
         static Moves()
         {
             loadMoves();
+            printMovesImplemented();
         }
 
         private static void loadMoves()
@@ -39,6 +42,15 @@ namespace PokeCiv.Model.Pokedata
         public static PokemonMove getMove(int id)
         {
             return moves[id - 1];
+        }
+
+        // DEBUG:
+        private static void printMovesImplemented()
+        {
+            foreach (PokemonMove m in moves)
+            {
+                Console.WriteLine(m.name + " " + MoveFunctions.isImplemented(m.internalName));
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace PokeCiv.Model.Pokedata
     {
 
         public int id;
+        public string internalName;
         public string name;
         public string functioncode;
         public int power;
@@ -22,6 +23,7 @@ namespace PokeCiv.Model.Pokedata
         public PokemonMove(string[] data)
         {
             id = Convert.ToInt32(data[0]);
+            internalName = data[1];
             name = data[2];
             functioncode = data[3];
             power = Convert.ToInt32(data[4]);
