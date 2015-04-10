@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using PokeCiv.Model.Pokedata;
 using PokeCiv.View;
-using PokeCiv.Controllers;
 
 namespace PokeCiv.Model.Battle
 {
@@ -18,7 +17,7 @@ namespace PokeCiv.Model.Battle
         public Pokemon P1 { get; private set; }
         public Pokemon P2 { get; private set; }
         public string BattleType { get; private set; }
-        public Controller Control { private get; set; }
+        public BattleView View { private get; set; }
 
         public Battle(Player p1, Player p2)
         {
@@ -91,7 +90,7 @@ namespace PokeCiv.Model.Battle
             PokemonMove p2move = Moves.getMove("STRUGGLE");
             if (P1.hasPPLeft())
             {
-                int moveID = Control.selectMove();
+                int moveID = View.selectMove();
                 p1move = P1.Moves[moveID].move;
                 P1.Moves[moveID].currentPP -= 1;
             }
@@ -198,7 +197,7 @@ namespace PokeCiv.Model.Battle
         //send a message and message string to the view to inform the view about updates.
         public void message(string msg)
         {
-            Control.message(msg);
+            View.message(msg);
             Console.WriteLine(msg);
         }
     }

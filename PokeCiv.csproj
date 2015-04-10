@@ -46,7 +46,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Model\Battle\Battle.cs" />
     <Compile Include="Model\Battle\BattleMove.cs" />
     <Compile Include="Model\Battle\CombatMechanics.cs" />
@@ -91,11 +90,11 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\IView.cs">
+    <Compile Include="View\Iview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\IView.Designer.cs">
-      <DependentUpon>IView.cs</DependentUpon>
+    <Compile Include="View\Iview.Designer.cs">
+      <DependentUpon>Iview.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MapView.cs">
       <SubType>Form</SubType>
@@ -121,8 +120,8 @@
     <EmbeddedResource Include="View\BattleView.resx">
       <DependentUpon>BattleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\IView.resx">
-      <DependentUpon>IView.cs</DependentUpon>
+    <EmbeddedResource Include="View\Iview.resx">
+      <DependentUpon>Iview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MapView.resx">
       <DependentUpon>MapView.cs</DependentUpon>

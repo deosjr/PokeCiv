@@ -12,7 +12,6 @@ using PokeCiv.Model.Pokedata;
 using PokeCiv.Model;
 using PokeCiv.Model.Battle;
 using PokeCiv.Model.World;
-using PokeCiv.Controllers;
 
 
 namespace PokeCiv
@@ -33,13 +32,11 @@ namespace PokeCiv
             player1.AddToTeam(p1);
             player2.AddToTeam(p2);
 
-            Controller c = new Controller(player1);
-            Map m = new Map(c);
+            Map m = new Map(player1);
             m.setPlayerCoordinates(3, 3);
-            c.Map = m;
-            MapView mv = new MapView(c);
-            c.View = mv;
-            c.runView();
+            MapView mr = new MapView(m);
+
+            Application.Run(mr);
 
             Console.ReadKey();
         }

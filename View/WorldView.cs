@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class WorldView : IView
+    public partial class WorldView : Iview
     {
         public WorldView()
         {

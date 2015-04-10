@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class IView : Form
+    public partial class Iview : Form
     {
-        public IView()
+        public Iview()
         {
             InitializeComponent();
         }
@@ -31,9 +31,5 @@ namespace PokeCiv.View
         {
             this.Close();
         }
-
-        public virtual void message(string msg) { }
-
-        public virtual int selectMove() { return 0; }
     }
 }

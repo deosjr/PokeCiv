@@ -1,4 +1,9 @@
-﻿using System;
+﻿using PokeCiv.Model;
+using PokeCiv.Model.Battle;
+using PokeCiv.Model.Pokedata;
+using PokeCiv.Model.World;
+using PokeCiv.Model.World.Tiles;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,31 +14,25 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using PokeCiv.Model;
-using PokeCiv.Model.Battle;
-using PokeCiv.Model.Pokedata;
-using PokeCiv.Model.World;
-using PokeCiv.Model.World.Tiles;
-using PokeCiv.Controllers;
-
 namespace PokeCiv.View
 {
-    public partial class MapView : IView
+    public partial class MapView : Iview
     {
-        public Controller Control { private get; set; }
-        Tile[][] grid;
+        private Map map;
+        private Tile[][] grid;
 
-        public MapView(Controller c)
+        public MapView(Map map)
         {
-            Control = c;
-            grid = Control.GetGrid();
+            InitializeComponent();
+            this.map = map;
+            grid = map.GetGrid();
         }
 
         //merge the player with the correct floor tile, and draw it over the generated map.
         public void UpdatePlayer()
         {
-            int playerX = Control.Player.X;
-            int playerY = Control.Player.Y;
+            int playerX = map.Player.X;
+            int playerY = map.Player.Y;
 
             //positioneer de vloer
             pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
@@ -46,7 +45,7 @@ namespace PokeCiv.View
             pb_player.Location = new Point(0, 0);
         }
 
-        private void MapView_Load(object sender, EventArgs e)
+        private void MapRenderer_Load(object sender, EventArgs e)
         {
             UpdatePlayer();
 
