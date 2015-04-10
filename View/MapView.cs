@@ -31,7 +31,7 @@ namespace PokeCiv.View
         }
 
         //merge the player with the correct floor tile, and draw it over the generated map.
-        public void UpdatePlayer()
+        public override void UpdatePlayer()
         {
             int playerX = Control.Player.X;
             int playerY = Control.Player.Y;
@@ -96,6 +96,31 @@ namespace PokeCiv.View
 
             
 
+        }
+
+
+        private void MapView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 40)
+            {
+                Console.WriteLine("UP");
+                Control.playerMoveUp();
+            }
+            else if (e.KeyValue == 38)
+            {
+                Console.WriteLine("DOWN");
+                Control.playerMoveDown();
+            }
+            else if (e.KeyValue == 37)
+            {
+                Console.WriteLine("LEFT");
+                Control.playerMoveLeft();
+            }
+            else if (e.KeyValue == 39)
+            {
+                Console.WriteLine("RIGHT");
+                Control.playerMoveRight();
+            }
         }
     }
 }

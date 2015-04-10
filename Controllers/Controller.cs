@@ -52,7 +52,8 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(0, -1))
             {
-                //TODO: View.redraw() oid ?
+                View.UpdatePlayer();
+                Console.WriteLine("UP");
             }
         }
 
@@ -60,7 +61,8 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(0, 1))
             {
-                //TODO: View.redraw() oid ?
+                View.UpdatePlayer();
+                Console.WriteLine("UP");
             }
         }
 
@@ -68,7 +70,8 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(-1, 0))
             {
-                //TODO: View.redraw() oid ?
+                View.UpdatePlayer();
+                Console.WriteLine("UP");
             }
         }
 
@@ -76,7 +79,8 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(1, 0))
             {
-                //TODO: View.redraw() oid ?
+                View.UpdatePlayer();
+                Console.WriteLine("UP");
             }
         }
 

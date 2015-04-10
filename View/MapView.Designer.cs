@@ -79,6 +79,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PokeCiv";
             this.Load += new System.EventHandler(this.MapView_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapView_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).EndInit();
