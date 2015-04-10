@@ -59,46 +59,25 @@ namespace PokeCiv.View
 
             foreach (var row in grid)
             {
-
                 foreach (var item in row)
                 {
                     //genereer 1 nieuwe picturebox
                     PictureBox pb = new PictureBox();
                     pb.Size = new Size(50, 50);
-
                     //stel hem in op de nieuwe locatie
                     current.X += 50;
                     pb.Location = current;
-
-                    ////kijken welk plaatje het moet worden (kan later beter)
-                    //if (item.tileType == "X")
-                    //{
-                    //    pb.ImageLocation = "../../Data/Graphics/Tiles/block.png";
-                    //}
-                    //else if (item.tileType == "W")
-                    //{
-                    //    pb.ImageLocation = "../../Data/Graphics/Tiles/gras.png";
-                    //}
-                    //else if (item.tileType == "U")
-                    //{
-                    //    pb.ImageLocation = "../../Data/Graphics/Tiles/water.png";
-                    //}
-
+                    //load the correct img
                     pb.ImageLocation = getTileImage(item);
-
                     //plak hem op de achtergrond
                     mapBackgroundCanvas.Controls.Add(pb);
                 }
-
                 //1 rij omlaag, en links beginnen
                 current.Y += 50;
                 current.X = -50;
             }
-
-            
-
+        
         }
-
 
         private void MapView_KeyDown(object sender, KeyEventArgs e)
         {
