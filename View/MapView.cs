@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class MapView : Iview
+    public partial class MapView : IView
     {
         private Map map;
         private Tile[][] grid;

@@ -1,6 +1,6 @@
 ﻿namespace PokeCiv.View
 {
-    partial class Iview
+    partial class IView
     {
         /// <summary>
         /// Required designer variable.

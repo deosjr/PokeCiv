@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class BattleView : Iview
+    public partial class BattleView : IView
     {
 
         public bool waitForInput = true;
