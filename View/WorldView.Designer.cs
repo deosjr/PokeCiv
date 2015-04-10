@@ -1,6 +1,6 @@
 ﻿namespace PokeCiv.View
 {
-    partial class WorldMap
+    partial class WorldView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldMap));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldView));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.test_btn_back_to_world = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();

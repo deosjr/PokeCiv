@@ -16,12 +16,12 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class MapRenderer : Iview
+    public partial class MapView : Iview
     {
         private Map map;
         private Tile[][] grid;
 
-        public MapRenderer(Map map)
+        public MapView(Map map)
         {
             InitializeComponent();
             this.map = map;
@@ -31,9 +31,8 @@ namespace PokeCiv.View
         //merge the player with the correct floor tile, and draw it over the generated map.
         public void UpdatePlayer()
         {
-            //TODO: hardcoded totdat ze makkelijk door sjoerd aan de MapRenderer gegeven worden
-            int playerX = 3;
-            int playerY = 3;
+            int playerX = map.Player.X;
+            int playerY = map.Player.Y;
 
             //positioneer de vloer
             pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
@@ -96,34 +95,5 @@ namespace PokeCiv.View
             
 
         }
-
-        //TODO: remove this method
-        private void test_btn_switch2Battle(object sender, EventArgs e)
-        {
-            //REMOVE THIS - TEMP BATTLE \/
-            Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
-            Pokemon p2 = PokemonFactory.getPokemon(40, "ZAPDOS");
-
-            Player player1 = new Player("P1");
-            Player player2 = new Player("P2");
-            player1.AddToTeam(p1);
-            player2.AddToTeam(p2);
-
-            Battle battle = new Battle(player1, player2);
-            //REMOVE THIS - TEMP BATTLE ^
-
-            BattleView battleView = new BattleView(battle);
-            battleView.showView();
-        }
-
-        //TODO: remove this method
-        private void test_btn_show_Worldmap(object sender, EventArgs e)
-        {
-            WorldMap wm = new WorldMap();
-            wm.showView();
-        }
-
-
     }
-
 }

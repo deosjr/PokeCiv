@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PokeCiv.View
 {
-    public partial class WorldMap : Iview
+    public partial class WorldView : Iview
     {
-        public WorldMap()
+        public WorldView()
         {
 
             //removing scrollbars

@@ -96,17 +96,17 @@
     <Compile Include="View\Iview.Designer.cs">
       <DependentUpon>Iview.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MapRenderer.cs">
+    <Compile Include="View\MapView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MapRenderer.Designer.cs">
-      <DependentUpon>MapRenderer.cs</DependentUpon>
+    <Compile Include="View\MapView.Designer.cs">
+      <DependentUpon>MapView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\WorldMap.cs">
+    <Compile Include="View\WorldView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\WorldMap.Designer.cs">
-      <DependentUpon>WorldMap.cs</DependentUpon>
+    <Compile Include="View\WorldView.Designer.cs">
+      <DependentUpon>WorldView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -123,11 +123,11 @@
     <EmbeddedResource Include="View\Iview.resx">
       <DependentUpon>Iview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MapRenderer.resx">
-      <DependentUpon>MapRenderer.cs</DependentUpon>
+    <EmbeddedResource Include="View\MapView.resx">
+      <DependentUpon>MapView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\WorldMap.resx">
-      <DependentUpon>WorldMap.cs</DependentUpon>
+    <EmbeddedResource Include="View\WorldView.resx">
+      <DependentUpon>WorldView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

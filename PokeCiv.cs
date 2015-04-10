@@ -32,17 +32,9 @@ namespace PokeCiv
             player1.AddToTeam(p1);
             player2.AddToTeam(p2);
 
-            Battle battle = new Battle(player1, player2);
-            BattleView battleview = new BattleView(battle);
-            battle.View = battleview;
-
-
-            Thread battleThread = new Thread(battle.fight);
-            battleThread.Start();
-            //Application.Run(battleview);
-
-            Map m = new Map();
-            MapRenderer mr = new MapRenderer(m);
+            Map m = new Map(player1);
+            m.setPlayerCoordinates(3, 3);
+            MapView mr = new MapView(m);
 
             Application.Run(mr);
 

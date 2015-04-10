@@ -13,10 +13,12 @@ namespace PokeCiv.Model.World
     {
 
         Tile[][] grid;
-        public MapRenderer View { private get; set; }
+        public MapView View { private get; set; }
+        public Player Player { get; set; }
 
-        public Map()
+        public Map(Player player)
         {
+            Player = player;
             GetGrid();
         }
 
@@ -41,10 +43,11 @@ namespace PokeCiv.Model.World
             return grid;
         }
 
-        public void setCoordinates(Player player, int x, int y)
+        public void setPlayerCoordinates(int x, int y)
         {
-            player.setCoordinates(x, y);
-            grid[y][x].Player = player;
+            grid[Player.Y][Player.X].Player = null;
+            Player.setCoordinates(x, y);
+            grid[y][x].Player = Player;
         }
 
     }
