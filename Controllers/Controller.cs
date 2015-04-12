@@ -50,11 +50,11 @@ namespace PokeCiv.Controllers
 
         public void playerMoveUp()
         {
-            //if (Map.playerMove(0, -1))
-            //{
+           if (Map.playerMove(0, -1))
+           {
                 View.UpdatePlayer();
                 Console.WriteLine("ctrl-up");
-           // }
+           }
         }
 
         public void playerMoveDown()
