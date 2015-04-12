@@ -55,7 +55,6 @@
             this.labelPP_move2 = new System.Windows.Forms.Label();
             this.labelPP_move3 = new System.Windows.Forms.Label();
             this.labelPP_move4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.backImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).BeginInit();
@@ -360,23 +359,12 @@
             this.labelPP_move4.TabIndex = 27;
             this.labelPP_move4.Text = "PP 10/10";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(150, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "MAP";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.test_btn_switch2Map);
-            // 
             // BattleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(570, 466);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelPP_move4);
             this.Controls.Add(this.labelPP_move3);
             this.Controls.Add(this.labelPP_move2);
@@ -394,7 +382,6 @@
             this.Controls.Add(this.frontFloor);
             this.Controls.Add(this.backFloor);
             this.Controls.Add(this.battleBack);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BattleView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Combat";
@@ -441,6 +428,5 @@
         private System.Windows.Forms.Label labelPP_move2;
         private System.Windows.Forms.Label labelPP_move3;
         private System.Windows.Forms.Label labelPP_move4;
-        private System.Windows.Forms.Button button1;
     }
 }

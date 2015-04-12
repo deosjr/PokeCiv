@@ -224,9 +224,5 @@ namespace PokeCiv.View
              MovesButton4.BackColor = Color.PaleGoldenrod;
         }
 
-       private void test_btn_switch2Map(object sender, EventArgs e)
-       {
-           this.Close();      
-       }
     }
 }

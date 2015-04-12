@@ -22,29 +22,13 @@ namespace PokeCiv.View
     {
         public Controller Control { private get; set; }
         Tile[][] grid;
+        public string facingSide = "DOWN";
 
         public MapView(Controller c)
         {
             InitializeComponent();
             Control = c;
             grid = Control.GetGrid();
-        }
-
-        //merge the player with the correct floor tile, and draw it over the generated map.
-        public override void UpdatePlayer()
-        {
-            int playerX = Control.Player.X;
-            int playerY = Control.Player.Y;
-
-            //positioneer de vloer
-            pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
-
-            //TODO: load the correct tile from the grid
-            //pb_playerFloor.ImageLocation = // DE GOEDE TILE!!
-
-            //plak de speler op de vloer
-            pb_playerFloor.Controls.Add(pb_player);
-            pb_player.Location = new Point(0, 0);
         }
 
         private void MapView_Load(object sender, EventArgs e)
@@ -79,28 +63,51 @@ namespace PokeCiv.View
         
         }
 
+        //merge the player with the correct floor tile, and draw it over the generated map.
+        public override void UpdatePlayer()
+        {
+            int playerX = Control.Player.X;
+            int playerY = Control.Player.Y;
+
+            //positioneer de vloer
+            pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
+
+            //TODO: load the correct tile from the grid
+            //pb_playerFloor.ImageLocation = "../../Data/Graphics/Tiles/water.png";
+
+
+            //TODO: draai de speler goed bij
+            pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";
+
+            //plak de speler op de vloer
+            pb_playerFloor.Controls.Add(pb_player);
+            pb_player.Location = new Point(0, 0);                 
+        }
+
         private void MapView_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 40)
             {
-                Console.WriteLine("DOWN");
+                facingSide = "DOWN";
                 Control.playerMoveDown();
+                
             }
             else if (e.KeyValue == 38)
             {
-                Console.WriteLine("UP");
+                facingSide = "UP";
                 Control.playerMoveUp();
                 
             }
             else if (e.KeyValue == 37)
             {
-                Console.WriteLine("LEFT");
+                facingSide = "LEFT";
                 Control.playerMoveLeft();
+                
             }
             else if (e.KeyValue == 39)
             {
-                Console.WriteLine("RIGHT");
-                Control.playerMoveRight();
+                facingSide = "RIGHT";
+                Control.playerMoveRight();               
             }
         }
 

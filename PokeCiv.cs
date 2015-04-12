@@ -38,7 +38,7 @@ namespace PokeCiv
             c.Map = m;
             MapView mv = new MapView(c);
             c.View = mv;
-            //c.runView();
+            c.runView();
 
             Battle battle = new Battle(c, player1, player2);
             BattleView battleview = new BattleView(battle);
@@ -46,10 +46,12 @@ namespace PokeCiv
             battleThread.Start();
             c.Battle = battle;
             c.View = battleview;
-            c.runView();
 
+            //c.runView();
 
-            Console.ReadKey();
+           
+           Console.ReadKey();
+
         }
     }
 }

@@ -18,6 +18,8 @@ namespace PokeCiv.Controllers
     public class Controller
     {
 
+        public BattleView battleView { get; set; }
+        public MapView mapView { get; set; }
         public IView View { private get; set; }
         public Battle Battle { private get; set; }
         public Map Map { private get; set; }
@@ -36,6 +38,18 @@ namespace PokeCiv.Controllers
         public int selectMove()
         {
             return View.selectMove();
+        }
+
+        public void switchFromBattleToMap()
+        {
+            battleView.Hide();
+            mapView.Show();
+        }
+
+        public void switchFromMapToBattle()
+        {
+            battleView.Show();
+            mapView.Hide();
         }
 
         public Tile[][] GetGrid()
