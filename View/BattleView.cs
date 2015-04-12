@@ -58,8 +58,8 @@ namespace PokeCiv.View
             backImageBattlePokemon.Location = new Point(0, 0);
 
             //Pokemon Images
-            me.backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "bs.gif";
-            me.frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + "s.gif";
+            me.backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
+            me.frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
 
             //backgrond Image
             me.battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";

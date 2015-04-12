@@ -17,7 +17,7 @@ namespace PokeCiv.Model.Pokedata
         static Moves()
         {
             loadMoves();
-            printMovesImplemented();
+            //printMovesImplemented();
         }
 
         private static void loadMoves()
