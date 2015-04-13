@@ -19,10 +19,12 @@ namespace PokeCiv.Model.World
         public Tile[][] Grid { get; private set; }
         public MapView View { private get; set; }
         public Controller Control { private get; set; }
+        public string mapType;
 
-        public Map(Controller control)
+        public Map(Controller control, string type)
         {
             Control = control;
+            mapType = type;
             SetGrid();
         }
 

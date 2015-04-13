@@ -20,14 +20,14 @@ namespace PokeCiv.Model.Battle
         public string BattleType { get; private set; }
         public Controller Control { private get; set; }
 
-        public Battle(Controller c, Player p1, Player p2)
+        public Battle(Controller c, Player p1, Player p2, string mapType)
         {
             Control = c;
             player1 = p1;
             player2 = p2;
             P1 = getFirstHealthy(player1);
             P2 = getFirstHealthy(player2);
-            BattleType = "IndoorA"; // For now
+            BattleType = mapType;
         }
 
         public void fight()

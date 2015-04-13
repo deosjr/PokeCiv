@@ -29,7 +29,7 @@ namespace PokeCiv
             player1.AddToTeam(p1);
 
             Controller c = new Controller(player1);
-            Map m = new Map(c);
+            Map m = new Map(c, "Field");
             m.setPlayerCoordinates(9, 7);
             c.Map = m;
             c.pokedexView = new PokedexView(c);

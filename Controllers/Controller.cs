@@ -55,7 +55,7 @@ namespace PokeCiv.Controllers
         public void switchFromMapToBattle(Player opponent)
         {
             mapView.Hide();
-            Battle = new Battle(this, Player, opponent);
+            Battle = new Battle(this, Player, opponent, Map.mapType);
             battleView = new BattleView(Battle);
             currentView = battleView;
             new Thread(runView).Start();
