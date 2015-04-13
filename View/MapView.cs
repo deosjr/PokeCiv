@@ -93,7 +93,6 @@ namespace PokeCiv.View
             //draai de speler goed bij
             pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";
             
-
             //plak de speler op de vloer
             pb_playerFloor.Controls.Add(pb_player);
             pb_player.Location = new Point(0, 0);                 
