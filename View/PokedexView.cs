@@ -42,16 +42,16 @@ namespace PokeCiv.View
             PokemonListBox.DisplayMember = "Name";
         }
 
-        private void pokedexToMapButton_Click(object sender, EventArgs e)
-        {
-            Control.switchFromPokedexToMap();
-        }
-
         private void PokemonListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             pokedexPokemonImage.ImageLocation = "../../Data/Graphics/Animations/" + ((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0') + ".gif";
             string s = ((Species)PokemonListBox.SelectedItem).Name;
             Console.WriteLine(s);
+        }
+
+        private void pokedexToMapButton_Click(object sender, EventArgs e)
+        {
+            Control.switchFromPokedexToMap();
         }
     }
 }
