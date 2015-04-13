@@ -18,7 +18,7 @@ namespace PokeCiv.Model.World.Tiles.TileItems
         {
             if (Mechanics.random.NextDouble() < 0.15)
             {
-                Pokemon wild = PokemonFactory.getPokemon(40, Mechanics.random.Next(1, 650));
+                Pokemon wild = PokemonFactory.getPokemon(25, Mechanics.random.Next(1, 650));
                 wildPokemon.ClearTeam();
                 wildPokemon.AddToTeam(wild);
                 c.switchFromMapToBattle(wildPokemon);

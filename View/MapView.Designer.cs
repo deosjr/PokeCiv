@@ -56,6 +56,7 @@
             this.mapBackgroundCanvas.Size = new System.Drawing.Size(441, 278);
             this.mapBackgroundCanvas.TabIndex = 0;
             this.mapBackgroundCanvas.TabStop = false;
+            this.mapBackgroundCanvas.Click += new System.EventHandler(this.mapBackgroundCanvas_Click);
             // 
             // pb_playerFloor
             // 

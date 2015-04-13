@@ -158,5 +158,11 @@ namespace PokeCiv.View
 
             return tileImageSrc;
         }
+
+        private void mapBackgroundCanvas_Click(object sender, EventArgs e)
+        {
+            Control.switchFromMapToPokeDex();
+        }
+
     }
 }

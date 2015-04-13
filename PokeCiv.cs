@@ -32,13 +32,14 @@ namespace PokeCiv
             Map m = new Map(c);
             m.setPlayerCoordinates(12, 12);
             c.Map = m;
+            c.pokedexView = new PokedexView(c);
             // Bij het switchen van Map, haalt MapView n nieuwe map van Controller?
             // of maken we dan n nieuwe MapView aan? (in het laatste geval, new MapView(m) )
             MapView mv = new MapView(c);
             c.mapView = mv;
             c.currentView = mv;
             new Thread(c.runView).Start();
-           
+       
            Console.ReadKey();
 
         }

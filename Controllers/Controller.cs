@@ -21,6 +21,7 @@ namespace PokeCiv.Controllers
 
         public BattleView battleView { get; set; }
         public MapView mapView { get; set; }
+        public PokedexView pokedexView { get; set; }
         public IView currentView { private get; set; }
         public Battle Battle { private get; set; }
         public Map Map { private get; set; }
@@ -59,6 +60,22 @@ namespace PokeCiv.Controllers
             currentView = battleView;
             new Thread(runView).Start();
             Battle.fight();
+        }
+
+        public void switchFromMapToPokeDex()
+        {          
+            pokedexView.Show();
+            currentView = pokedexView;
+        }
+
+        public void switchFromPokedexToMap()
+        {
+            if (pokedexView.InvokeRequired)
+            {
+                pokedexView.Invoke(new MethodInvoker(delegate { pokedexView.Close(); }));
+            }
+            mapView.Show();
+            currentView = mapView;
         }
 
         public Tile[][] GetGrid()
