@@ -35,17 +35,23 @@ namespace PokeCiv.View
             ArrayList pokemonList = new ArrayList();
             for (int i = 1; i < 650; i++)
             {
-                pokemonList.Add(PokemonFactory.getPokemon(25, i));
+                pokemonList.Add(PokemonFactory.getSpecies(i));
             }
             
             PokemonListBox.DataSource = pokemonList;
             PokemonListBox.DisplayMember = "Name";
-            PokemonListBox.ValueMember = "Name";
         }
 
         private void pokedexToMapButton_Click(object sender, EventArgs e)
         {
             Control.switchFromPokedexToMap();
+        }
+
+        private void PokemonListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pokedexPokemonImage.ImageLocation = "../../Data/Graphics/Animations/" + ((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0') + ".gif";
+            string s = ((Species)PokemonListBox.SelectedItem).Name;
+            Console.WriteLine(s);
         }
     }
 }

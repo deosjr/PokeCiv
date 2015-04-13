@@ -120,4 +120,23 @@
   <metadata name="pokedexViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAAd0SU1FB9cMExQwNk9gO4EAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41
+        LjEwMPRyoQAAAqpJREFUeF7t28tt21AQhlGX4XbSQpYpIW24jZShbUpwC166hGwVSLkD0JOhROrBS0rn
+        AP8m4UMGP4CRgbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsJQf37/tT60dBvdRRTdcOwxu
+        Iwd2Tj6+XQYuk4M6Jx/fLgPT5ICula/XbgO1HMy18vXabeCrCOT999txtxbXFSIlAdLF6+vr/rD9n4+v
+        u7V0/bhv+xg8KwHSxWh4edeqrjmYEJ+UAOlicnhjO6c6Z8KE+CQESBf//ZqliKDn/JrmwQmQrq5+9S40
+        r+IHJUC6iAf66/3ty94/d8dVEfTc58fuOK/iByFAuhoLMK+Koefic7cfg60SIF3EK6yK7dSqGHrMq3jj
+        BEhXU1+9Y6uiOLV8/q2+5HgVb5QA6WqpAKtzh6vOmTMBbpQA6eLSLx+xua/O6hrDVeccFveJ48bu68vI
+        xgiQrpZ69cZySOeuk4/LyyFGgF7FGyFAuooHFQ9uLJBYfuD32rnPkRfnCXBjBEhXOcBhBD1XRXZqEawA
+        N0aAdBUPai3/+ShCqiKbsvg5BLgRAmQV4oFVUSy5awMU3kYJkK7iwfX+MnJpgG+7n8cJcKMESFfx4OIf
+        8RFiryCryIaL4GK+fGycAFmFHOLY7h1oXDeHNjbhPQgB0tW5AKuHf1g+bhjnlOXz86p7HhZ/L8AHIUBW
+        IYdYPfxqcfxSE96DEiCrEA+4iu3UqlhuOeE9CQGyCnNDrKK5xYT3pATIKkQAsSq+w6p4Llm+X/sYPKsc
+        RBXfYVVMlyzfr30M+CcHUkU0Z/l67TZQy8FUUc1Zvl67DUyTA5q7dhm4TBXVnLXLAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA3M9+vzfrtvIPzZbZ/uUv5cM0zmGnLRgAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

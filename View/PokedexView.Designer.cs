@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PokedexView));
             this.PokemonListBox = new System.Windows.Forms.ListBox();
             this.pokedexViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokedexToMapButton = new System.Windows.Forms.Button();
+            this.pokedexPokemonImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).BeginInit();
             this.SuspendLayout();
             // 
             // PokemonListBox
@@ -42,9 +45,10 @@
             this.PokemonListBox.FormattingEnabled = true;
             this.PokemonListBox.Location = new System.Drawing.Point(12, 12);
             this.PokemonListBox.Name = "PokemonListBox";
-            this.PokemonListBox.Size = new System.Drawing.Size(120, 381);
+            this.PokemonListBox.Size = new System.Drawing.Size(152, 381);
             this.PokemonListBox.TabIndex = 1;
             this.PokemonListBox.ValueMember = "BackColor";
+            this.PokemonListBox.SelectedIndexChanged += new System.EventHandler(this.PokemonListBox_SelectedIndexChanged);
             // 
             // pokedexToMapButton
             // 
@@ -56,18 +60,32 @@
             this.pokedexToMapButton.UseVisualStyleBackColor = true;
             this.pokedexToMapButton.Click += new System.EventHandler(this.pokedexToMapButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pokedexPokemonImage.BackColor = System.Drawing.Color.White;
+            this.pokedexPokemonImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pokedexPokemonImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pokedexPokemonImage.Location = new System.Drawing.Point(379, 32);
+            this.pokedexPokemonImage.Name = "pictureBox1";
+            this.pokedexPokemonImage.Size = new System.Drawing.Size(151, 151);
+            this.pokedexPokemonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pokedexPokemonImage.TabIndex = 3;
+            this.pokedexPokemonImage.TabStop = false;
+            // 
             // PokedexView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(554, 428);
+            this.Controls.Add(this.pokedexPokemonImage);
             this.Controls.Add(this.pokedexToMapButton);
             this.Controls.Add(this.PokemonListBox);
             this.Name = "PokedexView";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.PokedexView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -77,6 +95,7 @@
         private System.Windows.Forms.ListBox PokemonListBox;
         private System.Windows.Forms.BindingSource pokedexViewBindingSource;
         private System.Windows.Forms.Button pokedexToMapButton;
+        private System.Windows.Forms.PictureBox pokedexPokemonImage;
 
     }
 }

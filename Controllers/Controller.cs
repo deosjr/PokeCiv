@@ -70,10 +70,10 @@ namespace PokeCiv.Controllers
 
         public void switchFromPokedexToMap()
         {
-            if (pokedexView.InvokeRequired)
-            {
+            //if (pokedexView.InvokeRequired)
+            //{
                 pokedexView.Invoke(new MethodInvoker(delegate { pokedexView.Close(); }));
-            }
+            //}
             mapView.Show();
             currentView = mapView;
         }
