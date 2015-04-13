@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ using PokeCiv.Model;
 
 namespace PokeCiv.Controllers
 {
-    // This Controller handles messages between Model and View
+    // This Controller handles exchanges between Model and View
     public class Controller
     {
 
@@ -42,16 +43,22 @@ namespace PokeCiv.Controllers
 
         public void switchFromBattleToMap()
         {
-            battleView.Hide();
+            if (battleView.InvokeRequired)
+            {
+                battleView.Invoke(new MethodInvoker(delegate { battleView.Close(); }));
+            }            
             mapView.Show();
             currentView = mapView;
         }
 
-        public void switchFromMapToBattle()
+        public void switchFromMapToBattle(Player opponent)
         {
             mapView.Hide();
-            battleView.Show();
+            Battle = new Battle(this, Player, opponent);
+            battleView = new BattleView(Battle);
             currentView = battleView;
+            new Thread(runView).Start();
+            Battle.fight();
         }
 
         public Tile[][] GetGrid()
@@ -91,7 +98,7 @@ namespace PokeCiv.Controllers
                 Tile currentTile = Map.Grid[Player.Y][Player.X];
                 mapView.UpdatePlayer(currentTile);
                 Console.WriteLine(debug);
-                currentTile.stepOn();
+                currentTile.stepOn(this);
             }
         }
 

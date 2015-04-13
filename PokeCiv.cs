@@ -23,30 +23,21 @@ namespace PokeCiv
         {
 
             //Debug values
-            Random r = new Random();
+            //Random r = Mechanics.random;
             Pokemon p1 = PokemonFactory.getPokemon(50, "ZAPDOS");
-            Pokemon p2 = PokemonFactory.getPokemon(40, r.Next(1, 650));
-         
             Player player1 = new Player("P1");
-            Player player2 = new Player("P2");
             player1.AddToTeam(p1);
-            player2.AddToTeam(p2);
 
             Controller c = new Controller(player1);
             Map m = new Map(c);
             m.setPlayerCoordinates(3, 3);
             c.Map = m;
+            // Bij het switchen van Map, haalt MapView n nieuwe map van Controller?
+            // of maken we dan n nieuwe MapView aan? (in het laatste geval, new MapView(m) )
             MapView mv = new MapView(c);
             c.mapView = mv;
             c.currentView = mv;
-            c.runView();
-
-            Battle battle = new Battle(c, player1, player2);
-            BattleView battleview = new BattleView(battle);
-            Thread battleThread = new Thread(battle.fight);
-            battleThread.Start();
-            c.Battle = battle;
-
+            new Thread(c.runView).Start();
            
            Console.ReadKey();
 
