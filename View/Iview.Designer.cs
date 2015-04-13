@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(554, 428);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iview";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IView_KeyDown);
             this.ResumeLayout(false);

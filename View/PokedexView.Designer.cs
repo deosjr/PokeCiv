@@ -30,35 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PokedexView));
-            this.PokemonListBox = new System.Windows.Forms.ListBox();
             this.pokedexViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pokedexToMapButton = new System.Windows.Forms.Button();
             this.pokedexPokemonImage = new System.Windows.Forms.PictureBox();
+            this.pokedexToMapButton = new System.Windows.Forms.Button();
+            this.PokemonListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PokemonListBox
-            // 
-            this.PokemonListBox.DataSource = this.pokedexViewBindingSource;
-            this.PokemonListBox.DisplayMember = "Location";
-            this.PokemonListBox.FormattingEnabled = true;
-            this.PokemonListBox.Location = new System.Drawing.Point(178, 246);
-            this.PokemonListBox.Name = "PokemonListBox";
-            this.PokemonListBox.Size = new System.Drawing.Size(191, 160);
-            this.PokemonListBox.TabIndex = 1;
-            this.PokemonListBox.ValueMember = "BackColor";
-            this.PokemonListBox.SelectedIndexChanged += new System.EventHandler(this.PokemonListBox_SelectedIndexChanged);
-            // 
-            // pokedexToMapButton
-            // 
-            this.pokedexToMapButton.Location = new System.Drawing.Point(467, 383);
-            this.pokedexToMapButton.Name = "pokedexToMapButton";
-            this.pokedexToMapButton.Size = new System.Drawing.Size(75, 23);
-            this.pokedexToMapButton.TabIndex = 2;
-            this.pokedexToMapButton.Text = "To Map";
-            this.pokedexToMapButton.UseVisualStyleBackColor = true;
-            this.pokedexToMapButton.Click += new System.EventHandler(this.pokedexToMapButton_Click);
             // 
             // pokedexPokemonImage
             // 
@@ -71,6 +49,30 @@
             this.pokedexPokemonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pokedexPokemonImage.TabIndex = 3;
             this.pokedexPokemonImage.TabStop = false;
+            // 
+            // pokedexToMapButton
+            // 
+            this.pokedexToMapButton.Location = new System.Drawing.Point(471, 392);
+            this.pokedexToMapButton.Name = "pokedexToMapButton";
+            this.pokedexToMapButton.Size = new System.Drawing.Size(75, 23);
+            this.pokedexToMapButton.TabIndex = 2;
+            this.pokedexToMapButton.Text = "To Map";
+            this.pokedexToMapButton.UseVisualStyleBackColor = true;
+            this.pokedexToMapButton.Click += new System.EventHandler(this.pokedexToMapButton_Click);
+            // 
+            // PokemonListBox
+            // 
+            this.PokemonListBox.BackColor = System.Drawing.Color.PeachPuff;
+            this.PokemonListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PokemonListBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PokemonListBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.PokemonListBox.FormattingEnabled = true;
+            this.PokemonListBox.ItemHeight = 19;
+            this.PokemonListBox.Location = new System.Drawing.Point(181, 257);
+            this.PokemonListBox.Name = "PokemonListBox";
+            this.PokemonListBox.Size = new System.Drawing.Size(183, 133);
+            this.PokemonListBox.TabIndex = 1;
+            this.PokemonListBox.SelectedIndexChanged += new System.EventHandler(this.PokemonListBox_SelectedIndexChanged);
             // 
             // PokedexView
             // 

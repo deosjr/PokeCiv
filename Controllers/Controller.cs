@@ -65,6 +65,7 @@ namespace PokeCiv.Controllers
         public void switchFromMapToPokeDex()
         {          
             pokedexView.Show();
+            mapView.Hide();
             currentView = pokedexView;
         }
 
@@ -72,9 +73,10 @@ namespace PokeCiv.Controllers
         {
             //if (pokedexView.InvokeRequired)
             //{
-                pokedexView.Invoke(new MethodInvoker(delegate { pokedexView.Close(); }));
+             //   pokedexView.Invoke(new MethodInvoker(delegate { pokedexView.Close(); }));
             //}
             mapView.Show();
+            pokedexView.Hide();
             currentView = mapView;
         }
 
