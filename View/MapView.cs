@@ -32,14 +32,14 @@ namespace PokeCiv.View
             //removing scrollbars
             this.HorizontalScroll.Maximum = 0;
             this.VerticalScroll.Maximum = 0;
-            //this.AutoScroll = false; //for now
-            //this.VerticalScroll.Visible = false;
-            //this.HorizontalScroll.Visible = false;
+            this.AutoScroll = false; //for now
+            this.VerticalScroll.Visible = false;
+            this.HorizontalScroll.Visible = false;
             this.AutoScroll = true; //and re-enable
 
             InitializeComponent();
 
-            this.mapBackgroundCanvas.Size = new Size(5000, 5000);
+            //this.mapBackgroundCanvas.Size = new Size(5000, 5000);
 
             Control = c;
             grid = Control.GetGrid();
@@ -48,11 +48,10 @@ namespace PokeCiv.View
         private void MapView_Load(object sender, EventArgs e)
         {
             UpdatePlayer(Control.GetGrid()[Control.Player.Y][Control.Player.X]);
-            //this.AutoScrollPosition = new Point(0, 0);
 
             //set the canvas to the same size as the background
-            this.mapBackgroundCanvas.Width = this.Width;
-            this.mapBackgroundCanvas.Height = this.Width;
+            this.mapBackgroundCanvas.Width = 5000;
+            this.mapBackgroundCanvas.Height = 5000;
 
             Point current = new Point(-gridSizePixels, 0);
 
@@ -97,7 +96,7 @@ namespace PokeCiv.View
             pb_playerFloor.Location = new Point(playerX * gridSizePixels, playerY * gridSizePixels);
 
             //positioneer de scrollview
-            position = new Point((playerX * gridSizePixels)- (this.Width/2), (playerY * gridSizePixels) - (this.Height));
+            position = new Point((playerX * gridSizePixels) -250, (playerY * gridSizePixels) -250);
             this.AutoScrollPosition = position;
 
             //set the correct img        
