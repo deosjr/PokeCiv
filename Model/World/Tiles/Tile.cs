@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using PokeCiv.Model.World.Tiles.TileItems;
+using PokeCiv.Controllers;
 
 namespace PokeCiv.Model.World.Tiles
 {
@@ -51,11 +52,11 @@ namespace PokeCiv.Model.World.Tiles
             return tileItem.blocks;
         }
 
-        public void stepOn()
+        public void stepOn(Controller c)
         {
             if (tileItem != null)
             {
-                tileItem.stepOn();
+                tileItem.stepOn(c);
             }
         }
 
