@@ -31,24 +31,38 @@ namespace PokeCiv.Model.World
             string x = "x";
             string u = "u";
             string[][] ascii = new string[][]{
-                new string[]{x,x,x,x,x,x,x,x,x,x,x,x},
-                new string[]{x,_,_,_,_,x,x,_,_,_,_,x},
-                new string[]{x,_,w,w,_,x,x,_,u,u,_,x},
-                new string[]{x,_,w,w,_,_,_,_,u,u,_,x},
-                new string[]{x,_,w,w,_,_,_,_,u,u,_,x},
-                new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
-                new string[]{x,_,_,_,u,u,u,u,u,u,_,x},
-                new string[]{x,_,_,_,_,_,_,_,u,u,_,x},
-                new string[]{x,x,x,x,x,x,x,x,x,x,x,x}
+                new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x},
+                new string[]{x,_,_,_,_,x,x,_,_,_,_,x,_,_,_,_,w,w,_,_,_,_,x,w},
+                new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,_,_,w,w,_,_,_,_,x,w,u},
+                new string[]{x,_,w,w,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,w,w,_,_,_,_,_,_,_,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,x,_,_,_,_,_,_,_,_,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,x,w,_,_,x,x,x,x,w,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,w,w,w,_,x,x,w,_,_,w,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,w,w,w,w,w,w,w,_,_,w,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,w,w,_,w,w,w,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,_,_,_,w,w,w,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,x},
+                new string[]{x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,_,_,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,w},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,x},
+                new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x}
             };
 
-            //TODO: have the [i] in tale (9 & 12) now calculated dynamicly by .lenght() stuff
-            Grid = new Tile[9][];
+            //TODO: have the [i] in Tile (23 & 12) now calculated dynamicly by .lenght() stuff
+            Grid = new Tile[23][];
 
-            for (int Y = 0; Y < 9; Y++)
+            for (int Y = 0; Y < 23; Y++)
             {
-                Grid[Y] = new Tile[12];
-                for (int X = 0; X < 12; X++)
+                Grid[Y] = new Tile[24];
+                for (int X = 0; X < 24; X++)
                 {
                     switch (ascii[Y][X]) {
                         case "_":
