@@ -30,15 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // Iview
+            // IView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 428);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Iview";
+            this.Name = "IView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Iview";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IView_KeyDown);
             this.ResumeLayout(false);
 
         }
