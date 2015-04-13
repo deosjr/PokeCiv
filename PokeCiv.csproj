@@ -93,11 +93,6 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="View\PokedexView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,17 +123,6 @@
     <None Include="Properties\DataSources\PokeCiv.Model.Mechanics.datasource" />
     <None Include="Properties\DataSources\PokeCiv.Model.Player.datasource" />
     <None Include="Properties\DataSources\PokeCiv.View.PokedexView.datasource" />
-    <None Include="View\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="View\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="View\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
