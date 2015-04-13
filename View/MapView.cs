@@ -104,28 +104,38 @@ namespace PokeCiv.View
             if (e.KeyValue == 40)
             {
                 facingSide = "DOWN";
-                Control.playerMoveDown();
-                backgroundLocation.Y -= gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                if (Control.playerMoveDown())
+                {
+                    backgroundLocation.Y -= gridSizePixels;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
             }
             else if (e.KeyValue == 38)
             {
                 facingSide = "UP";
-                Control.playerMoveUp();
-                backgroundLocation.Y += gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                if (Control.playerMoveUp())
+                {
+                    backgroundLocation.Y += gridSizePixels;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
             }
             else if (e.KeyValue == 37)
             {
                 facingSide = "LEFT";
-                backgroundLocation.X += gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                if (Control.playerMoveLeft())
+                {
+                    backgroundLocation.X += gridSizePixels;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
             }
             else if (e.KeyValue == 39)
             {
                 facingSide = "RIGHT";
-                backgroundLocation.X -= gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                if (Control.playerMoveRight())
+                {
+                    backgroundLocation.X -= gridSizePixels;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
             }
 
         }

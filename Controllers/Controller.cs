@@ -90,27 +90,27 @@ namespace PokeCiv.Controllers
             Application.Run(currentView);
         }
 
-        public void playerMoveUp()
+        public bool playerMoveUp()
         {
-            playerMove(0, -1, "ctrl-up");
+            return playerMove(0, -1, "ctrl-up");
         }
 
-        public void playerMoveDown()
+        public bool playerMoveDown()
         {
-            playerMove(0, 1, "ctrl-down");
+            return playerMove(0, 1, "ctrl-down");
         }
 
-        public void playerMoveLeft()
+        public bool playerMoveLeft()
         {
-            playerMove(-1, 0, "ctrl-left");
+            return playerMove(-1, 0, "ctrl-left");
         }
 
-        public void playerMoveRight()
+        public bool playerMoveRight()
         {
-            playerMove(1, 0, "ctrl-right");
+            return playerMove(1, 0, "ctrl-right");
         }
 
-        private void playerMove(int xdiff, int ydiff, string debug)
+        private bool playerMove(int xdiff, int ydiff, string debug)
         {
             if (Map.playerMove(xdiff, ydiff))
             {
@@ -118,7 +118,9 @@ namespace PokeCiv.Controllers
                 mapView.UpdatePlayer(currentTile);
                 Console.WriteLine(debug);
                 currentTile.stepOn(this);
+                return true;
             }
+            return false;
         }
 
     }
