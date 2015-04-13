@@ -23,20 +23,12 @@ namespace PokeCiv.View
         public Controller Control { private get; set; }
         Tile[][] grid;
         public string facingSide = "DOWN";
-        public int gridSizePixels = 25;
-        Point position = new Point(0, 0);
+        public int gridSizePixels = 40;
+        public Point backgroundLocation = new Point(0, 0);
 
         public MapView(Controller c)
         {
-
-            //removing scrollbars
-            this.HorizontalScroll.Maximum = 0;
-            this.VerticalScroll.Maximum = 0;
-            this.AutoScroll = false; //for now
-            this.VerticalScroll.Visible = false;
-            this.HorizontalScroll.Visible = false;
-            this.AutoScroll = true; //and re-enable
-
+         
             InitializeComponent();
 
             //this.mapBackgroundCanvas.Size = new Size(5000, 5000);
@@ -93,21 +85,14 @@ namespace PokeCiv.View
             pb_playerFloor.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //positioneer de vloer
-            pb_playerFloor.Location = new Point(playerX * gridSizePixels, playerY * gridSizePixels);
+            pb_playerFloor.Location = new Point(5 * gridSizePixels, 5 * gridSizePixels);
             
-            //TEST fixed dead center
-            //pb_playerFloor.Location = new Point(12 * gridSizePixels, 12 * gridSizePixels);
-
-
-            //positioneer de scrollview
-            //position = new Point((playerX * gridSizePixels) - (this.Width / 2), (playerY * gridSizePixels) - (this.Width / 2));
-            //this.AutoScrollPosition = position;
-
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
             
             //draai de speler goed bij
             pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";
+            
 
             //plak de speler op de vloer
             pb_playerFloor.Controls.Add(pb_player);
@@ -119,22 +104,28 @@ namespace PokeCiv.View
             if (e.KeyValue == 40)
             {
                 facingSide = "DOWN";
-                Control.playerMoveDown();   
+                Control.playerMoveDown();
+                backgroundLocation.Y -= gridSizePixels;
+                mapBackgroundCanvas.Location = backgroundLocation;
             }
             else if (e.KeyValue == 38)
             {
                 facingSide = "UP";
-                Control.playerMoveUp();  
+                Control.playerMoveUp();
+                backgroundLocation.Y += gridSizePixels;
+                mapBackgroundCanvas.Location = backgroundLocation;
             }
             else if (e.KeyValue == 37)
             {
                 facingSide = "LEFT";
-                Control.playerMoveLeft();              
+                backgroundLocation.X += gridSizePixels;
+                mapBackgroundCanvas.Location = backgroundLocation;
             }
             else if (e.KeyValue == 39)
             {
                 facingSide = "RIGHT";
-                Control.playerMoveRight();
+                backgroundLocation.X -= gridSizePixels;
+                mapBackgroundCanvas.Location = backgroundLocation;
             }
 
         }
