@@ -41,8 +41,15 @@ namespace PokeCiv.Model.Battle
 
             setBattleReady();
 
-            message(player2.Name + " wants to fight!");
-            message(player2.Name + " sent out " + P2.Name + "!");
+            if(player2.Name.Equals("WILD_POKEMON"))
+            {
+                message("A wild " + player2.Team.ElementAt(0).Name + " appeared!");
+            }
+            else
+            {
+                message(player2.Name + " wants to fight!");
+                message(player2.Name + " sent out " + P2.Name + "!");
+            }
             message("Go, " + P1.Name + "!");
 
             while (!(player1.BlackOut() || player2.BlackOut()))

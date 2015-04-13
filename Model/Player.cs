@@ -30,6 +30,11 @@ namespace PokeCiv.Model
             }
         }
 
+        public void ClearTeam()
+        {
+            Team = new List<Pokemon>();
+        }
+
         public bool BlackOut()
         {
             foreach (Pokemon p in Team)

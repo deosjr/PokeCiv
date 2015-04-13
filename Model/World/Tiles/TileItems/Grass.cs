@@ -12,15 +12,17 @@ namespace PokeCiv.Model.World.Tiles.TileItems
     class Grass : TileItem
     {
 
+        Player wildPokemon = new Player("WILD_POKEMON");
+
         public override void stepOn(Controller c)
         {
             if (Mechanics.random.NextDouble() < 0.15)
             {
                 Console.WriteLine("A wild Pokemon appears!");
-                Pokemon p2 = PokemonFactory.getPokemon(40, Mechanics.random.Next(1, 650));
-                Player player2 = new Player("P2");
-                player2.AddToTeam(p2);
-                c.switchFromMapToBattle(player2);
+                Pokemon wild = PokemonFactory.getPokemon(40, Mechanics.random.Next(1, 650));
+                wildPokemon.ClearTeam();
+                wildPokemon.AddToTeam(wild);
+                c.switchFromMapToBattle(wildPokemon);
             }
         }
 
