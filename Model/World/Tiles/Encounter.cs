@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PokeCiv.Model.Pokedata;
+
 namespace PokeCiv.Model.World.Tiles
 {
     class Encounter
@@ -20,6 +22,11 @@ namespace PokeCiv.Model.World.Tiles
             this.minlevel = minlevel;
             this.maxlevel = maxlevel;
             this.p = p;
+        }
+
+        public Pokemon getPokemon()
+        {
+            return PokemonFactory.getPokemon(Mechanics.random.Next(minlevel, maxlevel + 1), speciesName);
         }
 
     }

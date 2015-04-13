@@ -34,9 +34,8 @@ namespace PokeCiv.Model.World.Tiles.TileItems
                 {
                     if (r < e.p + temp)
                     {
-                        Pokemon wild = PokemonFactory.getPokemon(Mechanics.random.Next(e.minlevel, e.maxlevel + 1), e.speciesName);
                         wildPokemon.ClearTeam();
-                        wildPokemon.AddToTeam(wild);
+                        wildPokemon.AddToTeam(e.getPokemon());
                         c.switchFromMapToBattle(wildPokemon);
                         break;
                     }
