@@ -68,5 +68,10 @@ namespace PokeCiv.Model.Pokedata
             return pokemonData[internalNames[name] - 1];
         }
 
+        public static Species getSpecies(int id)
+        {
+            return pokemonData[id - 1];
+        }
+
     }
 }

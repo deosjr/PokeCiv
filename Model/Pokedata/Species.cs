@@ -27,6 +27,12 @@ namespace PokeCiv.Model.Pokedata
         public int BaseXP       { get; private set; }
         //public int EP;
 
+        public string Pokedex   { get; private set; }
+        public string Color     { get; private set; }
+        public string Kind      { get; private set; }
+        public double Height    { get; private set; }
+        public double Weight    { get; private set; }
+
         public Species(Dictionary<string, string> data)
         {
             Name = data["Name"];
@@ -37,6 +43,11 @@ namespace PokeCiv.Model.Pokedata
             BaseXP = Convert.ToInt32(data["BaseEXP"]);
             setEvolutions(data["Evolutions"]);
             setMoves(data["Moves"]);
+            Pokedex = data["Pokedex"];
+            Color = data["Color"];
+            Kind = data["Kind"];
+            Height = Convert.ToDouble(data["Height"]);
+            Weight = Convert.ToDouble(data["Weight"]);
         }
 
         private void setBaseStats(string stats)

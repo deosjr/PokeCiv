@@ -18,7 +18,6 @@ namespace PokeCiv.Model.World.Tiles.TileItems
         {
             if (Mechanics.random.NextDouble() < 0.15)
             {
-                Console.WriteLine("A wild Pokemon appears!");
                 Pokemon wild = PokemonFactory.getPokemon(40, Mechanics.random.Next(1, 650));
                 wildPokemon.ClearTeam();
                 wildPokemon.AddToTeam(wild);
