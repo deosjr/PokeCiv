@@ -23,6 +23,7 @@ namespace PokeCiv.View
         public Controller Control { private get; set; }
         Tile[][] grid;
         public string facingSide = "DOWN";
+        public int gridSizePixels = 15;
 
         public MapView(Controller c)
         {
@@ -39,7 +40,7 @@ namespace PokeCiv.View
             this.mapBackgroundCanvas.Width = this.Width;
             this.mapBackgroundCanvas.Height = this.Width;
 
-            Point current = new Point(-50, 0);
+            Point current = new Point(-gridSizePixels, 0);
 
             foreach (var row in grid)
             {
@@ -47,18 +48,19 @@ namespace PokeCiv.View
                 {
                     //genereer 1 nieuwe picturebox
                     PictureBox pb = new PictureBox();
-                    pb.Size = new Size(50, 50);
+                    pb.Size = new Size(gridSizePixels, gridSizePixels);
                     //stel hem in op de nieuwe locatie
-                    current.X += 50;
+                    current.X += gridSizePixels;
                     pb.Location = current;
-                    //load the correct img
+                    //set the correct img
                     pb.ImageLocation = getTileImage(item);
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
                     //plak hem op de achtergrond
                     mapBackgroundCanvas.Controls.Add(pb);
                 }
                 //1 rij omlaag, en links beginnen
-                current.Y += 50;
-                current.X = -50;
+                current.Y += gridSizePixels;
+                current.X = -gridSizePixels;
             }
         
         }
@@ -69,13 +71,21 @@ namespace PokeCiv.View
             int playerX = Control.Player.X;
             int playerY = Control.Player.Y;
 
+            //stel ze in op dezelfde schaal
+            pb_player.Width = gridSizePixels;
+            pb_player.Height = gridSizePixels;
+            pb_player.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb_playerFloor.Width = gridSizePixels;
+            pb_playerFloor.Height = gridSizePixels;
+            pb_playerFloor.SizeMode = PictureBoxSizeMode.StretchImage;
+
             //positioneer de vloer
-            pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
+            pb_playerFloor.Location = new Point(playerX * gridSizePixels, playerY * gridSizePixels);
 
-            //load the correct tile from the grid
+            //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
-
-            //TODO: draai de speler goed bij
+            
+            //draai de speler goed bij
             pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";
 
             //plak de speler op de vloer
