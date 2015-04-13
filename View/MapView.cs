@@ -93,7 +93,6 @@ namespace PokeCiv.View
             //draai de speler goed bij
             pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";
             
-
             //plak de speler op de vloer
             pb_playerFloor.Controls.Add(pb_player);
             pb_player.Location = new Point(0, 0);                 
@@ -105,27 +104,41 @@ namespace PokeCiv.View
             {
                 facingSide = "DOWN";
                 Control.playerMoveDown();
-                backgroundLocation.Y -= gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                for (int i = 0; i < gridSizePixels; i++)
+                {
+                   backgroundLocation.Y -= 1;
+                mapBackgroundCanvas.Location = backgroundLocation; 
+                }
+
             }
             else if (e.KeyValue == 38)
             {
                 facingSide = "UP";
                 Control.playerMoveUp();
-                backgroundLocation.Y += gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                for (int i = 0; i < gridSizePixels; i++)
+                {
+                    backgroundLocation.Y += 1;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
             }
             else if (e.KeyValue == 37)
             {
                 facingSide = "LEFT";
-                backgroundLocation.X += gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                for (int i = 0; i < gridSizePixels; i++)
+                {
+                    backgroundLocation.X += 1;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
+
             }
             else if (e.KeyValue == 39)
             {
                 facingSide = "RIGHT";
-                backgroundLocation.X -= gridSizePixels;
-                mapBackgroundCanvas.Location = backgroundLocation;
+                for (int i = 0; i < gridSizePixels; i++)
+                {
+                    backgroundLocation.X -= 1;
+                    mapBackgroundCanvas.Location = backgroundLocation;
+                }
             }
 
         }
