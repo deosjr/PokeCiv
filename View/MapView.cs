@@ -85,13 +85,13 @@ namespace PokeCiv.View
             pb_playerFloor.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //positioneer de vloer
-            pb_playerFloor.Location = new Point(5 * gridSizePixels, 5 * gridSizePixels);
+            //TODO: 9x7 is het absolute midden, dus moet ook aangepast kunnen worden
+            pb_playerFloor.Location = new Point(9 * gridSizePixels, 7 * gridSizePixels);
             
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
             
-            //draai de speler goed bij
-            pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";
+            
             
             //plak de speler op de vloer
             pb_playerFloor.Controls.Add(pb_player);
@@ -103,6 +103,7 @@ namespace PokeCiv.View
             if (e.KeyValue == 40)
             {
                 facingSide = "DOWN";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveDown())
                 {
                     backgroundLocation.Y -= gridSizePixels;
@@ -112,6 +113,7 @@ namespace PokeCiv.View
             else if (e.KeyValue == 38)
             {
                 facingSide = "UP";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveUp())
                 {
                     backgroundLocation.Y += gridSizePixels;
@@ -121,6 +123,7 @@ namespace PokeCiv.View
             else if (e.KeyValue == 37)
             {
                 facingSide = "LEFT";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveLeft())
                 {
                     backgroundLocation.X += gridSizePixels;
@@ -130,6 +133,7 @@ namespace PokeCiv.View
             else if (e.KeyValue == 39)
             {
                 facingSide = "RIGHT";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveRight())
                 {
                     backgroundLocation.X -= gridSizePixels;

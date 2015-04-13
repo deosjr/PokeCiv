@@ -196,7 +196,7 @@ namespace PokeCiv.View
         {
             currentSelectedMove = 0;
             resetbuttonColors();
-            MovesButton1.BackColor = Color.Red;
+            MovesButton1.BackColor = Color.DarkCyan;
             waitForInput = false;
         }
 
@@ -204,7 +204,7 @@ namespace PokeCiv.View
         {
             currentSelectedMove = 1;
             resetbuttonColors();
-            MovesButton2.BackColor = Color.Red;
+            MovesButton2.BackColor = Color.DarkCyan;
             waitForInput = false;
         }
 
@@ -212,7 +212,7 @@ namespace PokeCiv.View
         {
             currentSelectedMove = 2;
             resetbuttonColors();
-            MovesButton3.BackColor = Color.Red;
+            MovesButton3.BackColor = Color.DarkCyan;
             waitForInput = false;
         }
 
@@ -220,7 +220,7 @@ namespace PokeCiv.View
         {
             currentSelectedMove = 3;
             resetbuttonColors();
-            MovesButton4.BackColor = Color.Red;
+            MovesButton4.BackColor = Color.DarkCyan;
             waitForInput = false;
         }
 

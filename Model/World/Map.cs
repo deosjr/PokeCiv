@@ -40,8 +40,8 @@ namespace PokeCiv.Model.World
                 new string[]{x,_,w,w,_,_,_,_,_,u,u,u,_,_,_,_,_,_,_,_,_,x,_,u},
                 new string[]{x,_,w,w,_,_,_,_,u,u,u,u,_,_,_,x,x,_,_,_,_,x,_,u},
                 new string[]{x,_,_,_,_,_,_,_,u,u,u,_,_,_,_,x,x,_,_,_,_,x,_,u},
-                new string[]{x,x,_,_,_,_,_,_,u,u,u,_,_,_,_,x,x,_,_,_,_,x,_,u},
-                new string[]{x,x,_,_,_,_,_,_,u,u,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,x,_,_,_,_,_,_,w,w,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,x,_,_,_,_,_,_,w,w,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
                 new string[]{x,x,w,_,_,x,x,x,x,w,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
                 new string[]{x,w,w,w,_,x,x,w,_,_,w,_,_,_,_,_,_,_,_,_,_,x,_,u},
                 new string[]{x,w,w,w,w,w,w,w,_,_,w,_,_,_,_,_,_,_,_,_,_,x,_,u},
@@ -53,8 +53,8 @@ namespace PokeCiv.Model.World
                 new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
                 new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
                 new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,w},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,x,_,_,_,_,_,_,_,_,x,_,u},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,x,_,_,_,_,_,_,_,_,x,_,w},
                 new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,x},
                 new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x}
             };

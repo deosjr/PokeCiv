@@ -111,12 +111,6 @@
     <Compile Include="View\MapView.Designer.cs">
       <DependentUpon>MapView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\WorldView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\WorldView.Designer.cs">
-      <DependentUpon>WorldView.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -140,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PokedexView.resx">
       <DependentUpon>PokedexView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\WorldView.resx">
-      <DependentUpon>WorldView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

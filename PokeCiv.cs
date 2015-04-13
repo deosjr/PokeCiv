@@ -30,7 +30,7 @@ namespace PokeCiv
 
             Controller c = new Controller(player1);
             Map m = new Map(c);
-            m.setPlayerCoordinates(5, 5);
+            m.setPlayerCoordinates(9, 7);
             c.Map = m;
             c.pokedexView = new PokedexView(c);
             // Bij het switchen van Map, haalt MapView n nieuwe map van Controller?
