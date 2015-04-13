@@ -49,6 +49,8 @@ namespace PokeCiv.Model.Battle
             {
                 battleLoop();
             }
+
+            Control.switchFromBattleToMap();
         }
 
         private void battleLoop()
