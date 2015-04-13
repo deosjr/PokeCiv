@@ -64,37 +64,32 @@ namespace PokeCiv.Controllers
 
         public void playerMoveUp()
         {
-           if (Map.playerMove(0, -1))
-           {
-                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
-                Console.WriteLine("ctrl-up");
-           }
+            playerMove(0, -1, "ctrl-up");
         }
 
         public void playerMoveDown()
         {
-            if (Map.playerMove(0, 1))
-            {
-                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
-                Console.WriteLine("ctrl-down");
-            }
+            playerMove(0, 1, "ctrl-down");
         }
 
         public void playerMoveLeft()
         {
-            if (Map.playerMove(-1, 0))
-            {
-                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
-                Console.WriteLine("ctrl-left");
-            }
+            playerMove(-1, 0, "ctrl-left");
         }
 
         public void playerMoveRight()
         {
-            if (Map.playerMove(1, 0))
+            playerMove(1, 0, "ctrl-right");
+        }
+
+        private void playerMove(int xdiff, int ydiff, string debug)
+        {
+            if (Map.playerMove(xdiff, ydiff))
             {
-                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
-                Console.WriteLine("ctrl-right");
+                Tile currentTile = Map.Grid[Player.Y][Player.X];
+                View.UpdatePlayer(currentTile);
+                Console.WriteLine(debug);
+                currentTile.stepOn();
             }
         }
 

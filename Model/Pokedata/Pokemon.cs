@@ -71,7 +71,7 @@ namespace PokeCiv.Model.Pokedata
 
         private void generateIV()
         {
-            Random r = new Random();
+            Random r = Mechanics.random;
             IVHP = r.Next(33);
             IVattack = r.Next(33);
             IVdefense = r.Next(33);

@@ -16,7 +16,7 @@ namespace PokeCiv.Model.Battle.Status
 
         public Asleep()
         {
-            timer = CombatMechanics.random.Next(1,4);
+            timer = Mechanics.random.Next(1,4);
         }
 
         public override bool preAttack(Battle battle, Pokemon pokemon)

@@ -10,7 +10,6 @@ namespace PokeCiv.Model.Battle
 {
     class CombatMechanics
     {
-        public static Random random = new Random();
 
         public static void handleMove(Battle battle, BattleMove move, bool first)
         {
@@ -38,7 +37,7 @@ namespace PokeCiv.Model.Battle
         private static bool determineHit(Battle battle, BattleMove move, double acc, double evade)
         {
             double p = move.move.accuracy * (acc / evade);
-            int r = random.Next(101);
+            int r = Mechanics.random.Next(101);
             if (move.move.accuracy != 0 && r > p)
             {
                 battle.message(move.source.Name + "'s attack missed!");
@@ -64,7 +63,7 @@ namespace PokeCiv.Model.Battle
             T = Types.effectiveness(move.move.type, move.target.species.Types);
             Crit = 1.0; //TODO
             double other = 1.0; //TODO
-            double rand = 1.0 - 0.15 * random.NextDouble();
+            double rand = 1.0 - 0.15 * Mechanics.random.NextDouble();
             double Mod = STAB * T * Crit * other * rand;
             damage = (int) Math.Max(1, Math.Round((((2.0 * L + 10.0) / 250.0) * (A/D) * B + 2.0) * Mod));
             

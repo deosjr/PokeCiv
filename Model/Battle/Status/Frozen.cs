@@ -15,7 +15,7 @@ namespace PokeCiv.Model.Battle.Status
 
         public override bool preAttack(Battle battle, Pokemon pokemon)
         {
-            if (CombatMechanics.random.NextDouble() < 0.2)
+            if (Mechanics.random.NextDouble() < 0.2)
             {
                 pokemon.clearNonVolatileStatus();
                 battle.message(pokemon.Name + " thaws!");

@@ -101,7 +101,7 @@ namespace PokeCiv.Model.Battle
                 bool moveChosen = false;
                 while (!moveChosen)
                 {
-                    int i = CombatMechanics.random.Next(4);
+                    int i = Mechanics.random.Next(4);
                     Move m = P2.Moves[i];
                     if (m != null)
                     {

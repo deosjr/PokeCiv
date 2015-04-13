@@ -51,5 +51,13 @@ namespace PokeCiv.Model.World.Tiles
             return tileItem.blocks;
         }
 
+        public void stepOn()
+        {
+            if (tileItem != null)
+            {
+                tileItem.stepOn();
+            }
+        }
+
     }
 }

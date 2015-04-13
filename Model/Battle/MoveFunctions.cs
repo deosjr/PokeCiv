@@ -19,7 +19,7 @@ namespace PokeCiv.Model.Battle
 
             bool addEffect = true;
             string fail = "But, it failed!";
-            if (move.addEffectChance != 0 && CombatMechanics.random.Next(101) > move.addEffectChance)
+            if (move.addEffectChance != 0 && Mechanics.random.Next(101) > move.addEffectChance)
             {
                 addEffect = false;
             }
@@ -439,7 +439,7 @@ namespace PokeCiv.Model.Battle
                 case "06F":
                     if (t != 0 && !miss)
                     {
-                        target.takeDamage(source.Level * ((CombatMechanics.random.Next(101) + 50) / 100));
+                        target.takeDamage(source.Level * ((Mechanics.random.Next(101) + 50) / 100));
                     }
                     break;
                 // Affects power, see CombatMechanics.checkPower()

@@ -11,7 +11,7 @@ namespace PokeCiv.Model.World.Tiles.TileItems
 
         public bool blocks = false;
 
-        public void stepOn() { }
+        public virtual void stepOn() { }
 
     }
 }

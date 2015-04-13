@@ -15,7 +15,7 @@ namespace PokeCiv.Model.Battle.Status
 
         public override bool preAttack(Battle battle, Pokemon pokemon) 
         {
-            if (CombatMechanics.random.NextDouble() < 0.25)
+            if (Mechanics.random.NextDouble() < 0.25)
             {
                 battle.message(pokemon.Name + " is paralyzed! It can't move!");
                 return true;
