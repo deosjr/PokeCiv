@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using PokeCiv.Model.World.Tiles;
+
 namespace PokeCiv.View
 {
     public partial class IView : Form
@@ -34,7 +36,7 @@ namespace PokeCiv.View
 
         public virtual void message(string msg) { }
 
-        public virtual void UpdatePlayer() { }
+        public virtual void UpdatePlayer(Tile tile) { }
 
         public virtual int selectMove() { return 0; }
     }

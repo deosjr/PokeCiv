@@ -33,7 +33,7 @@ namespace PokeCiv.View
 
         private void MapView_Load(object sender, EventArgs e)
         {
-            UpdatePlayer();
+            UpdatePlayer(Control.GetGrid()[Control.Player.Y][Control.Player.X]);
 
             //set the canvas to the same size as the background
             this.mapBackgroundCanvas.Width = this.Width;
@@ -64,7 +64,7 @@ namespace PokeCiv.View
         }
 
         //merge the player with the correct floor tile, and draw it over the generated map.
-        public override void UpdatePlayer()
+        public override void UpdatePlayer(Tile tile)
         {
             int playerX = Control.Player.X;
             int playerY = Control.Player.Y;
@@ -72,9 +72,8 @@ namespace PokeCiv.View
             //positioneer de vloer
             pb_playerFloor.Location = new Point(playerX * 50, playerY * 50);
 
-            //TODO: load the correct tile from the grid
-            //pb_playerFloor.ImageLocation = "../../Data/Graphics/Tiles/water.png";
-
+            //load the correct tile from the grid
+            pb_playerFloor.ImageLocation = getTileImage(tile);
 
             //TODO: draai de speler goed bij
             pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_"+ facingSide +".png";

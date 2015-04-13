@@ -66,7 +66,7 @@ namespace PokeCiv.Controllers
         {
            if (Map.playerMove(0, -1))
            {
-                View.UpdatePlayer();
+                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
                 Console.WriteLine("ctrl-up");
            }
         }
@@ -75,7 +75,7 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(0, 1))
             {
-                View.UpdatePlayer();
+                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
                 Console.WriteLine("ctrl-down");
             }
         }
@@ -84,7 +84,7 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(-1, 0))
             {
-                View.UpdatePlayer();
+                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
                 Console.WriteLine("ctrl-left");
             }
         }
@@ -93,7 +93,7 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(1, 0))
             {
-                View.UpdatePlayer();
+                View.UpdatePlayer(Map.Grid[Player.Y][Player.X]);
                 Console.WriteLine("ctrl-right");
             }
         }
