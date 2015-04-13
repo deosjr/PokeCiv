@@ -23,11 +23,24 @@ namespace PokeCiv.View
         public Controller Control { private get; set; }
         Tile[][] grid;
         public string facingSide = "DOWN";
-        public int gridSizePixels = 15;
+        public int gridSizePixels = 25;
+        Point position = new Point(0, 0);
 
         public MapView(Controller c)
         {
+
+            //removing scrollbars
+            this.HorizontalScroll.Maximum = 0;
+            this.VerticalScroll.Maximum = 0;
+            //this.AutoScroll = false; //for now
+            //this.VerticalScroll.Visible = false;
+            //this.HorizontalScroll.Visible = false;
+            this.AutoScroll = true; //and re-enable
+
             InitializeComponent();
+
+            this.mapBackgroundCanvas.Size = new Size(5000, 5000);
+
             Control = c;
             grid = Control.GetGrid();
         }
@@ -35,6 +48,7 @@ namespace PokeCiv.View
         private void MapView_Load(object sender, EventArgs e)
         {
             UpdatePlayer(Control.GetGrid()[Control.Player.Y][Control.Player.X]);
+            //this.AutoScrollPosition = new Point(0, 0);
 
             //set the canvas to the same size as the background
             this.mapBackgroundCanvas.Width = this.Width;
@@ -82,6 +96,10 @@ namespace PokeCiv.View
             //positioneer de vloer
             pb_playerFloor.Location = new Point(playerX * gridSizePixels, playerY * gridSizePixels);
 
+            //positioneer de scrollview
+            position = new Point((playerX * gridSizePixels)- (this.Width/2), (playerY * gridSizePixels) - (this.Height));
+            this.AutoScrollPosition = position;
+
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
             
@@ -98,26 +116,24 @@ namespace PokeCiv.View
             if (e.KeyValue == 40)
             {
                 facingSide = "DOWN";
-                Control.playerMoveDown();
-                
+                Control.playerMoveDown();   
             }
             else if (e.KeyValue == 38)
             {
                 facingSide = "UP";
-                Control.playerMoveUp();
-                
+                Control.playerMoveUp();  
             }
             else if (e.KeyValue == 37)
             {
                 facingSide = "LEFT";
-                Control.playerMoveLeft();
-                
+                Control.playerMoveLeft();              
             }
             else if (e.KeyValue == 39)
             {
                 facingSide = "RIGHT";
-                Control.playerMoveRight();               
+                Control.playerMoveRight();
             }
+
         }
 
         private string getTileImage(Tile item)
