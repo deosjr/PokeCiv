@@ -20,7 +20,7 @@ namespace PokeCiv.Controllers
 
         public BattleView battleView { get; set; }
         public MapView mapView { get; set; }
-        public IView View { private get; set; }
+        public IView currentView { private get; set; }
         public Battle Battle { private get; set; }
         public Map Map { private get; set; }
         public Player Player { get; set; }
@@ -32,24 +32,26 @@ namespace PokeCiv.Controllers
 
         public void message(string msg)
         {
-            View.message(msg);
+            currentView.message(msg);
         }
 
         public int selectMove()
         {
-            return View.selectMove();
+            return battleView.selectMove();
         }
 
         public void switchFromBattleToMap()
         {
             battleView.Hide();
             mapView.Show();
+            currentView = mapView;
         }
 
         public void switchFromMapToBattle()
         {
-            battleView.Show();
             mapView.Hide();
+            battleView.Show();
+            currentView = battleView;
         }
 
         public Tile[][] GetGrid()
@@ -59,7 +61,7 @@ namespace PokeCiv.Controllers
 
         public void runView()
         {
-            Application.Run(View);
+            Application.Run(currentView);
         }
 
         public void playerMoveUp()
@@ -87,7 +89,7 @@ namespace PokeCiv.Controllers
             if (Map.playerMove(xdiff, ydiff))
             {
                 Tile currentTile = Map.Grid[Player.Y][Player.X];
-                View.UpdatePlayer(currentTile);
+                mapView.UpdatePlayer(currentTile);
                 Console.WriteLine(debug);
                 currentTile.stepOn();
             }

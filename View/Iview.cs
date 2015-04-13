@@ -35,9 +35,5 @@ namespace PokeCiv.View
         }
 
         public virtual void message(string msg) { }
-
-        public virtual void UpdatePlayer(Tile tile) { }
-
-        public virtual int selectMove() { return 0; }
     }
 }

@@ -37,7 +37,8 @@ namespace PokeCiv
             m.setPlayerCoordinates(3, 3);
             c.Map = m;
             MapView mv = new MapView(c);
-            c.View = mv;
+            c.mapView = mv;
+            c.currentView = mv;
             c.runView();
 
             Battle battle = new Battle(c, player1, player2);
@@ -45,9 +46,6 @@ namespace PokeCiv
             Thread battleThread = new Thread(battle.fight);
             battleThread.Start();
             c.Battle = battle;
-            c.View = battleview;
-
-            //c.runView();
 
            
            Console.ReadKey();

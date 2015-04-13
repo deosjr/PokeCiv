@@ -64,7 +64,7 @@ namespace PokeCiv.View
         }
 
         //merge the player with the correct floor tile, and draw it over the generated map.
-        public override void UpdatePlayer(Tile tile)
+        public void UpdatePlayer(Tile tile)
         {
             int playerX = Control.Player.X;
             int playerY = Control.Player.Y;

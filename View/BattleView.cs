@@ -171,7 +171,7 @@ namespace PokeCiv.View
 
         }
 
-        public override int selectMove()
+        public int selectMove()
         {
             return currentSelectedMove;
         }
