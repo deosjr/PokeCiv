@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 using PokeCiv.Model.World.Tiles;
 using PokeCiv.View;
 using PokeCiv.Controllers;
+using PokeCiv.Model.World.Tiles.TileItems;
+
 
 namespace PokeCiv.Model.World
 {
@@ -56,26 +59,36 @@ namespace PokeCiv.Model.World
                 new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x}
             };
 
-            //TODO: have the [i] in Tile (23 & 12) now calculated dynamicly by .lenght() stuff
+            //TODO: have the [i] in Tile (23 & 24) now calculated dynamicly by .length() stuff
             Grid = new Tile[23][];
+
+            // encounters = {0.45: ("PIDGEY", 2, 4), 0.3:("RATTATA",2,2), 0.2:("SENTRET",3,3), 0.05:("FURRET",6,6)}
+            ArrayList testWildPokemon = new ArrayList();
+            testWildPokemon.Add(new Encounter("PIDGEY", 2, 4, 0.45));
+            testWildPokemon.Add(new Encounter("RATTATA", 2, 2, 0.3));
+            testWildPokemon.Add(new Encounter("SENTRET", 3, 3, 0.2));
+            testWildPokemon.Add(new Encounter("FURRET", 6, 6, 0.05));
 
             for (int Y = 0; Y < 23; Y++)
             {
                 Grid[Y] = new Tile[24];
                 for (int X = 0; X < 24; X++)
                 {
+                    Grid[Y][X] = new Tile();
                     switch (ascii[Y][X]) {
                         case "_":
-                            Grid[Y][X] = new Tile();
                             break;
                         case "w":
-                            Grid[Y][X] = new Tile("GRASS");
+                            Grid[Y][X].tileItem = new Grass(testWildPokemon, 0.1);
+                            Grid[Y][X].tileType = "W";
                             break;
                         case "x":
-                            Grid[Y][X] = new Tile("BLOCK");
+                            Grid[Y][X].tileItem = new Block();
+                            Grid[Y][X].tileType = "X";
                             break;
                         case "u":
-                            Grid[Y][X] = new Tile("WATER");
+                            Grid[Y][X].tileItem = new Water();
+                            Grid[Y][X].tileType = "U";
                             break;
                     }
                 }

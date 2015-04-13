@@ -8,7 +8,7 @@ using PokeCiv.Controllers;
 
 namespace PokeCiv.Model.World.Tiles.TileItems
 {
-    abstract class TileItem
+    public abstract class TileItem
     {
 
         public bool blocks = false;

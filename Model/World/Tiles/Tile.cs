@@ -11,7 +11,7 @@ namespace PokeCiv.Model.World.Tiles
 {
     public class Tile
     {
-        TileItem tileItem;
+        public TileItem tileItem;
         public int X { get; set; }
         public int Y { get; set; }
 
@@ -19,25 +19,6 @@ namespace PokeCiv.Model.World.Tiles
         public string tileType = "_"; //default
 
         public Tile() { }
-
-        public Tile(string itemID)
-        {
-            switch (itemID)
-            {
-                case "GRASS":
-                    tileItem = new Grass();
-                    tileType = "W";
-                    break;
-                case "BLOCK":
-                    tileItem = new Block();
-                    tileType = "X";
-                    break;
-                case "WATER":
-                    tileItem = new Water();
-                    tileType = "U";
-                    break;
-            }
-        }
 
         public bool blocks()
         {
