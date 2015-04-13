@@ -60,7 +60,7 @@
             // 
             // pb_playerFloor
             // 
-            this.pb_playerFloor.Image = ((System.Drawing.Image)(resources.GetObject("pb_playerFloor.Image")));
+            this.pb_playerFloor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pb_playerFloor.Location = new System.Drawing.Point(108, 110);
             this.pb_playerFloor.Margin = new System.Windows.Forms.Padding(0);
             this.pb_playerFloor.Name = "pb_playerFloor";
@@ -77,7 +77,6 @@
             this.Controls.Add(this.pb_player);
             this.Controls.Add(this.mapBackgroundCanvas);
             this.Name = "MapView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PokeCiv";
             this.Load += new System.EventHandler(this.MapView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapView_KeyDown);
