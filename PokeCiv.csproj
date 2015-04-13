@@ -92,6 +92,12 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PokedexView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PokedexView.Designer.cs">
+      <DependentUpon>PokedexView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\IView.cs">
       <SubType>Form</SubType>
     </Compile>

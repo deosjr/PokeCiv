@@ -23,7 +23,7 @@ namespace PokeCiv.View
         public Controller Control { private get; set; }
         Tile[][] grid;
         public string facingSide = "DOWN";
-        public int gridSizePixels = 50;
+        public int gridSizePixels = 25;
         Point position = new Point(0, 0);
 
         public MapView(Controller c)
@@ -93,15 +93,15 @@ namespace PokeCiv.View
             pb_playerFloor.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //positioneer de vloer
-            //pb_playerFloor.Location = new Point(playerX * gridSizePixels, playerY * gridSizePixels);
+            pb_playerFloor.Location = new Point(playerX * gridSizePixels, playerY * gridSizePixels);
             
             //TEST fixed dead center
-            pb_playerFloor.Location = new Point(12 * gridSizePixels, 12 * gridSizePixels);
+            //pb_playerFloor.Location = new Point(12 * gridSizePixels, 12 * gridSizePixels);
 
 
             //positioneer de scrollview
-            position = new Point((playerX * gridSizePixels) - (this.Width / 2), (playerY * gridSizePixels) - (this.Width / 2));
-            this.AutoScrollPosition = position;
+            //position = new Point((playerX * gridSizePixels) - (this.Width / 2), (playerY * gridSizePixels) - (this.Width / 2));
+            //this.AutoScrollPosition = position;
 
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
