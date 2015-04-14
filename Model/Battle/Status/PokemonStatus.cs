@@ -23,6 +23,7 @@ namespace PokeCiv.Model.Battle.Status
             singletons.Add("PSN", new Poisoned());
 
             singletons.Add("FLINCH", new Flinch());
+            singletons.Add("RECHARGE", new Recharge());
         }
 
         public static NonVolatileCondition getNonVolatile(string id)
