@@ -67,10 +67,7 @@ namespace PokeCiv.Model.World
 
             // encounters = {0.45: ("PIDGEY", 2, 4), 0.3:("RATTATA",2,2), 0.2:("SENTRET",3,3), 0.05:("FURRET",6,6)}
             ArrayList testWildPokemon = new ArrayList();
-            testWildPokemon.Add(new Encounter("PIDGEY", 2, 4, 0.45));
-            testWildPokemon.Add(new Encounter("RATTATA", 2, 2, 0.3));
-            testWildPokemon.Add(new Encounter("SENTRET", 3, 3, 0.2));
-            testWildPokemon.Add(new Encounter("FURRET", 6, 6, 0.05));
+            testWildPokemon.Add(new Encounter("MAGIKARP", 20, 20, 1.0));
 
             for (int Y = 0; Y < 23; Y++)
             {

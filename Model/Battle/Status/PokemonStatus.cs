@@ -44,6 +44,10 @@ namespace PokeCiv.Model.Battle.Status
 
         public static VolatileCondition getVolatile(string id)
         {
+            if (id.Equals("CONFUSION"))
+            {
+                return new Confusion();
+            }
             StatusCondition condition;
             singletons.TryGetValue(id, out condition);
             return (VolatileCondition) condition;
