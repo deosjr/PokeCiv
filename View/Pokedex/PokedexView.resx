@@ -124,7 +124,7 @@
   <data name="type1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAApoAAAFNCAYAAACg38/1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAeZtJREFUeF7tnXd4VOW3tn8KKvbeRQUUC9hQUZEO0qsISlFEmoKAIL0LKFKkiKL0
+        wgAADsIBFShKgAAAeZtJREFUeF7tnXd4VOW3tn8KKvbeRQUUC9hQUZEO0qsISlFEmoKAIL0LKFKkiKL0
         3nvvnQQCBAi9995Cx3Kub33reScTJnFlSBuSwHNf1/PXOSds37Pf51579p49/yOEEEIIIYQQQgghhBBC
         CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBC
         CCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBC
@@ -649,7 +649,7 @@
   <data name="type2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAApoAAAFNCAYAAACg38/1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAcxJJREFUeF7tnXd4VWW6vo+jjmUcewGVLkXEwtgdEcvYC9hQEcWx68ygo46Kbey9
+        wgAADsIBFShKgAAAcxJJREFUeF7tnXd4VWW6vo+jjmUcewGVLkXEwtgdEcvYC9hQEcWx68ygo46Kbey9
         gPQOSUiABNJDCAkBQkggEEroEHqH0Kue83t/7/Ot7GQT32wTIITs/dzX9fxzznVhzjrf99zvt/baa/8P
         IYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEII
         IYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEII
@@ -1146,7 +1146,7 @@
   <data name="pokedexPokemonImage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAAd0SU1FB9cMExQwNk9gO4EAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41
+        wgAADsIBFShKgAAAAAd0SU1FB9cMExQwNk9gO4EAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41
         LjEwMPRyoQAAAqpJREFUeF7t28tt21AQhlGX4XbSQpYpIW24jZShbUpwC166hGwVSLkD0JOhROrBS0rn
         AP8m4UMGP4CRgbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsJQf37/tT60dBvdRRTdcOwxu
         Iwd2Tj6+XQYuk4M6Jx/fLgPT5ICula/XbgO1HMy18vXabeCrCOT999txtxbXFSIlAdLF6+vr/rD9n4+v
@@ -1164,7 +1164,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA4QAAAJ9CAYAAABtpLxeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAAFxIAABcSAWef0lIAAP+WSURBVHhe7J0FeFTX2kYZSzLJ
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAAFxEAABcRAcom8z8AAP+WSURBVHhe7J0FeFTX2kYZSzLJ
         xHUyEnd39wRtKdSg7k69pd5Sd3f3ljotUopboUBxd6vLvf+V2m3L+3/7JJMGOqXATEIS3vU868nMSRhC
         Ws6Zxd5n7z6EkL8GAKWUUnpQSQghhJAOyMXRIAaKUWIMpZRS2oONbDNcDBGDRIvo23bZI4QQQoiL8PDw
         0Lq6ur4nnnji1RdccMFzF1988auUUkppT/X8889/esSIEY+fc845D5xxxhm3nXLKKdcfe+yxlw4aNOik

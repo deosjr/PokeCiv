@@ -1,6 +1,7 @@
 ﻿using PokeCiv.Controllers;
 using PokeCiv.Model;
 using PokeCiv.Model.Pokedata;
+using PokeCiv.View.Pokedex;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -99,6 +100,13 @@ namespace PokeCiv.View
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show(pokedexInfoString);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           // pokemonNr
+            PokedexStatsView pdstats = new PokedexStatsView(((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0'));
+            pdstats.Show();
         }
 
     }
