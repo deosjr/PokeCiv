@@ -2,7 +2,7 @@ import urllib2
 import os
 import time
 
-url = "http://img.pokemondb.net/sprites/black-white/anim/"
+url = "http://img.pokemondb.net/artwork/"
 
 f = open("pokemon.txt", 'r')
 
@@ -25,34 +25,37 @@ for i, name in names:
 	# mr. mime
 	# mime jr.
 
-	# Eerste zoveel zijn binnen
-	if i <= 439:
-		continue
+	if i == 29:
+		name = "nidoran-f"
+	elif i == 32:
+		name = "nidoran-m"
+	elif i == 83:
+		name = "farfetchd"
+	elif i == 122:
+		name = "mr-mime"
+	elif i == 439:
+		name = "mime-jr"
 
-	url_n = url + "normal/"
-	f1 = open("Animations/" + str(i).zfill(3) + ".gif",'wb')
-	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
-	f1.close()
+	# fuck deoxys and his forms
+	if i == 386:
+		name = "deoxys-normal"
+	# and fuck Wormadam. Thats not even a real pokemon
+	elif i == 413:
+		name = "wormadam-plant"
+	# srsly fuck forms
+	elif i == 479:
+		name = "rotom-normal"
+	elif i == 487:
+		name = "giratina-altered"
+	elif i == 492:
+		name = "shaymin-land"
+	elif i == 555:
+		name = "darmanitan-standard"
+	elif i == 648:
+		name = "meloetta-aria"
 
-	time.sleep(1)
-
-	url_n = url + "shiny/"
-	f1 = open("Animations/" + str(i).zfill(3) + "s.gif",'wb')
-	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
-	f1.close()
-
-	time.sleep(1)
-
-	url_n = url + "back-normal/"
-	f1 = open("Animations/" + str(i).zfill(3) + "b.gif",'wb')
-	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
-	f1.close()
-
-	time.sleep(1)
-
-	url_n = url + "back-shiny/"
-	f1 = open("Animations/" + str(i).zfill(3) + "sb.gif",'wb')
-	f1.write( urllib2.urlopen(url_n + name + ".gif").read() )
+	f1 = open("Graphics/Artwork/" + str(i).zfill(3) + ".jpg",'wb')
+	f1.write( urllib2.urlopen(url + name.lower() + ".jpg").read() )
 	f1.close()
 
 	time.sleep(1)
