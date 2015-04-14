@@ -504,25 +504,8 @@ namespace PokeCiv.Model.Battle
                 case "0C0":
                     if (!miss)
                     {
-                        // TODO: refactor with a simple function?
-                        int times = 0;
-                        double p = Mechanics.random.NextDouble();
-                        if (p < 1 / 3.0)
-                        {
-                            times = 2;
-                        }
-                        else if (p < 2 / 3.0)
-                        {
-                            times = 3;
-                        }
-                        else if (p < 5 / 6.0)
-                        {
-                            times = 4;
-                        }
-                        else
-                        {
-                            times = 5;
-                        }
+                        // Linear fit to (0,2)(1,2)(2,3)(3,3)(4,4)(5,5)
+                        int times = (int)Math.Round( 0.6 * Mechanics.random.Next(6) + 1.666667);
                         for (int i = 0; i < times-1; i++)
                         {
                             CombatMechanics.dealDamage(battle, m);
