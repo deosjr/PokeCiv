@@ -58,7 +58,8 @@
     <Compile Include="Model\Battle\Status\NonVolatile\NonVolatileCondition.cs" />
     <Compile Include="Model\Battle\Status\NonVolatile\Paralyzed.cs" />
     <Compile Include="Model\Battle\Status\NonVolatile\Poisoned.cs" />
-	<Compile Include="Model\Battle\Status\Volatile\Flinch.cs" />
+    <Compile Include="Model\Battle\Status\Volatile\Confusion.cs" />
+    <Compile Include="Model\Battle\Status\Volatile\Flinch.cs" />
     <Compile Include="Model\Battle\Status\PokemonStatus.cs" />
     <Compile Include="Model\Battle\Status\StatusCondition.cs" />
     <Compile Include="Model\Battle\Status\Volatile\VolatileCondition.cs" />

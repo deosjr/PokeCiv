@@ -46,7 +46,7 @@ namespace PokeCiv.Model.Battle
             return false;
         }
 
-        private static void determineDamage(BattleMove move, out int damage, out double Crit, out double T)
+        public static void determineDamage(BattleMove move, out int damage, out double Crit, out double T)
         {
             int attack, attackStat, defense, defenseStat;
             normalOrSpecialAttack(move, out attack, out attackStat, out defense, out defenseStat);

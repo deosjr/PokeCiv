@@ -109,6 +109,12 @@ namespace PokeCiv.Model.Battle
                         }
                     }
                     break;
+                case "013":
+                    if (addEffect)
+                    {
+                        target.addStatus(battle, "CONFUSION");
+                    }
+                    break;
                 case "01C":
                     if (addEffect)
                     {
@@ -521,7 +527,7 @@ namespace PokeCiv.Model.Battle
         {
             string code = Moves.getMove(movename).functioncode;
             string[] notImplemented = { 
-                                          "004", "009", "00B", "00E", "00F", 
+                                          "004", "009", "00B",
                                           "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "01A", "01B",
                                           "021", "023", "028",
                                           "031", "034", "037", "03A", "03D",
