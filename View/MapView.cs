@@ -30,9 +30,6 @@ namespace PokeCiv.View
         {
          
             InitializeComponent();
-
-            //this.mapBackgroundCanvas.Size = new Size(5000, 5000);
-
             Control = c;
             grid = Control.GetGrid();
         }
@@ -42,8 +39,7 @@ namespace PokeCiv.View
             UpdatePlayer(Control.GetGrid()[Control.Player.Y][Control.Player.X]);
 
             //set the canvas to the same size as the background
-            this.mapBackgroundCanvas.Width = 5000;
-            this.mapBackgroundCanvas.Height = 5000;
+            this.mapBackgroundCanvas.Size = new Size(5000, 5000);
 
             Point current = new Point(-gridSizePixels, 0);
 
@@ -106,9 +102,20 @@ namespace PokeCiv.View
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveDown())
                 {
+                    //backgroundLocation.Y -= gridSizePixels;
+                   // mapBackgroundCanvas.Location = backgroundLocation;
+
+                    for (int iter = 0; iter < 8; iter++)
+                    {
+                        mapBackgroundCanvas.Location = new Point(mapBackgroundCanvas.Left, mapBackgroundCanvas.Top - 5);
+                    }
                     backgroundLocation.Y -= gridSizePixels;
-                    mapBackgroundCanvas.Location = backgroundLocation;
+
+
                 }
+
+
+
             }
             else if (e.KeyValue == 38)
             {
@@ -116,8 +123,13 @@ namespace PokeCiv.View
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveUp())
                 {
+                   
+                    for (int iter = 0; iter < 10; iter++)
+                    {
+                        mapBackgroundCanvas.Location = new Point(mapBackgroundCanvas.Left, mapBackgroundCanvas.Top + 4);
+                    }
+
                     backgroundLocation.Y += gridSizePixels;
-                    mapBackgroundCanvas.Location = backgroundLocation;
                 }
             }
             else if (e.KeyValue == 37)
