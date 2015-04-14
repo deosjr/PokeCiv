@@ -170,9 +170,12 @@ namespace PokeCiv.View
             return tileImageSrc;
         }
 
-        private void mapBackgroundCanvas_Click(object sender, EventArgs e)
+        private void MapView_KeyUp(object sender, KeyEventArgs e)
         {
-            Control.switchFromMapToPokeDex();
+            if (e.KeyCode == Keys.Q)
+            {
+                Control.switchFromMapToPokeDex();
+            }
         }
 
     }

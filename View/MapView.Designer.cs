@@ -56,7 +56,6 @@
             this.mapBackgroundCanvas.Size = new System.Drawing.Size(441, 278);
             this.mapBackgroundCanvas.TabIndex = 0;
             this.mapBackgroundCanvas.TabStop = false;
-            this.mapBackgroundCanvas.Click += new System.EventHandler(this.mapBackgroundCanvas_Click);
             // 
             // pb_playerFloor
             // 
@@ -80,6 +79,7 @@
             this.Text = "PokeCiv";
             this.Load += new System.EventHandler(this.MapView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapView_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MapView_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).EndInit();
