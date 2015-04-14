@@ -37,6 +37,10 @@
             this.pokedex_info = new System.Windows.Forms.TextBox();
             this.type2 = new System.Windows.Forms.PictureBox();
             this.type1 = new System.Windows.Forms.PictureBox();
+            this.pokedex_info_btn = new System.Windows.Forms.Button();
+            this.pokemon_kind_lbl = new System.Windows.Forms.Label();
+            this.pokedex_height_lbl = new System.Windows.Forms.Label();
+            this.pokedex_weight_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.type2)).BeginInit();
@@ -46,7 +50,6 @@
             // pokedexPokemonImage
             // 
             this.pokedexPokemonImage.BackColor = System.Drawing.Color.Transparent;
-            this.pokedexPokemonImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pokedexPokemonImage.Image = ((System.Drawing.Image)(resources.GetObject("pokedexPokemonImage.Image")));
             this.pokedexPokemonImage.Location = new System.Drawing.Point(178, 27);
             this.pokedexPokemonImage.Name = "pokedexPokemonImage";
@@ -88,7 +91,7 @@
             this.pokedex_info.Location = new System.Drawing.Point(427, 12);
             this.pokedex_info.Multiline = true;
             this.pokedex_info.Name = "pokedex_info";
-            this.pokedex_info.Size = new System.Drawing.Size(115, 188);
+            this.pokedex_info.Size = new System.Drawing.Size(115, 172);
             this.pokedex_info.TabIndex = 6;
             this.pokedex_info.Text = "Bulbasaur can be seen napping in bright sunlight.\r\nThere is a seed on its back. \r" +
     "\nBy soaking up the sun\'s rays, the seed grows progressively larger.";
@@ -108,12 +111,60 @@
             // 
             this.type1.BackColor = System.Drawing.Color.Transparent;
             this.type1.Image = ((System.Drawing.Image)(resources.GetObject("type1.Image")));
-            this.type1.Location = new System.Drawing.Point(171, 150);
+            this.type1.Location = new System.Drawing.Point(173, 150);
             this.type1.Name = "type1";
             this.type1.Size = new System.Drawing.Size(73, 35);
             this.type1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.type1.TabIndex = 8;
             this.type1.TabStop = false;
+            // 
+            // pokedex_info_btn
+            // 
+            this.pokedex_info_btn.BackColor = System.Drawing.Color.Transparent;
+            this.pokedex_info_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pokedex_info_btn.Location = new System.Drawing.Point(329, 202);
+            this.pokedex_info_btn.Name = "pokedex_info_btn";
+            this.pokedex_info_btn.Size = new System.Drawing.Size(75, 23);
+            this.pokedex_info_btn.TabIndex = 9;
+            this.pokedex_info_btn.Text = "Info";
+            this.pokedex_info_btn.UseVisualStyleBackColor = false;
+            this.pokedex_info_btn.Click += new System.EventHandler(this.pokedex_info_btn_Click);
+            // 
+            // pokemon_kind_lbl
+            // 
+            this.pokemon_kind_lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pokemon_kind_lbl.AutoSize = true;
+            this.pokemon_kind_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.pokemon_kind_lbl.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pokemon_kind_lbl.ForeColor = System.Drawing.Color.White;
+            this.pokemon_kind_lbl.Location = new System.Drawing.Point(180, 31);
+            this.pokemon_kind_lbl.Name = "pokemon_kind_lbl";
+            this.pokemon_kind_lbl.Size = new System.Drawing.Size(168, 15);
+            this.pokemon_kind_lbl.TabIndex = 10;
+            this.pokemon_kind_lbl.Text = "The tiny turtle Pokemon";
+            this.pokemon_kind_lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pokedex_height_lbl
+            // 
+            this.pokedex_height_lbl.AutoSize = true;
+            this.pokedex_height_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.pokedex_height_lbl.ForeColor = System.Drawing.Color.White;
+            this.pokedex_height_lbl.Location = new System.Drawing.Point(326, 120);
+            this.pokedex_height_lbl.Name = "pokedex_height_lbl";
+            this.pokedex_height_lbl.Size = new System.Drawing.Size(33, 13);
+            this.pokedex_height_lbl.TabIndex = 11;
+            this.pokedex_height_lbl.Text = "0.7 m";
+            // 
+            // pokedex_weight_lbl
+            // 
+            this.pokedex_weight_lbl.AutoSize = true;
+            this.pokedex_weight_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.pokedex_weight_lbl.ForeColor = System.Drawing.Color.White;
+            this.pokedex_weight_lbl.Location = new System.Drawing.Point(326, 133);
+            this.pokedex_weight_lbl.Name = "pokedex_weight_lbl";
+            this.pokedex_weight_lbl.Size = new System.Drawing.Size(34, 13);
+            this.pokedex_weight_lbl.TabIndex = 12;
+            this.pokedex_weight_lbl.Text = "10 kg";
             // 
             // PokedexView
             // 
@@ -123,6 +174,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(554, 428);
+            this.Controls.Add(this.pokedex_weight_lbl);
+            this.Controls.Add(this.pokedex_height_lbl);
+            this.Controls.Add(this.pokemon_kind_lbl);
+            this.Controls.Add(this.pokedex_info_btn);
             this.Controls.Add(this.type1);
             this.Controls.Add(this.type2);
             this.Controls.Add(this.pokedex_info);
@@ -151,6 +206,10 @@
         private System.Windows.Forms.TextBox pokedex_info;
         private System.Windows.Forms.PictureBox type2;
         private System.Windows.Forms.PictureBox type1;
+        private System.Windows.Forms.Button pokedex_info_btn;
+        private System.Windows.Forms.Label pokemon_kind_lbl;
+        private System.Windows.Forms.Label pokedex_height_lbl;
+        private System.Windows.Forms.Label pokedex_weight_lbl;
 
     }
 }

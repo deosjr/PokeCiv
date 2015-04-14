@@ -22,7 +22,6 @@ namespace PokeCiv.View
     {
         public Controller Control { private get; set; }
         Tile[][] grid;
-        public string facingSide = "DOWN";
         public int gridSizePixels = 40;
         public Point backgroundLocation = new Point(0, 0);
 
