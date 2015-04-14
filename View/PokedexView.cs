@@ -44,14 +44,27 @@ namespace PokeCiv.View
 
         private void PokemonListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //set image
             pokedexPokemonImage.ImageLocation = "../../Data/Graphics/Animations/" + ((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0') + ".gif";
-            string s = ((Species)PokemonListBox.SelectedItem).Name;
-            Console.WriteLine(s);
+            //set info text
+            pokedex_info.Text = ((Species)PokemonListBox.SelectedItem).Pokedex;
+                   
+            //set types
+            var a = ((Species)PokemonListBox.SelectedItem).Types.ToArray();
+            type1.ImageLocation = "../../Data/Graphics/Types/" + a[0].name +".png";
+            //Set a 2th type if avaiable
+            if(a.Length > 1){
+            type2.ImageLocation = "../../Data/Graphics/Types/" + a[1].name + ".png";
+            }
+            else
+            {
+                type2.ImageLocation = "";
+            }
         }
 
-        private void pokedexToMapButton_Click(object sender, EventArgs e)
+        private void pokedex_back_toMap_btn_Click(object sender, EventArgs e)
         {
-            Control.switchFromPokedexToMap();
+            Control.switchFromPokedexToMap(); 
         }
     }
 }

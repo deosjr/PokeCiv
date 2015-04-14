@@ -9,7 +9,7 @@ namespace PokeCiv.Model.Pokedata
     public class PokemonType
     {
 
-        private string name;
+        public string name;
         public List<PokemonType> weaknesses = new List<PokemonType>();
         public List<PokemonType> resistances = new List<PokemonType>();
         public List<PokemonType> immunities = new List<PokemonType>();

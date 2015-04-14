@@ -32,10 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PokedexView));
             this.pokedexViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pokedexPokemonImage = new System.Windows.Forms.PictureBox();
-            this.pokedexToMapButton = new System.Windows.Forms.Button();
             this.PokemonListBox = new System.Windows.Forms.ListBox();
+            this.pokedex_back_toMap_btn = new System.Windows.Forms.Button();
+            this.pokedex_info = new System.Windows.Forms.TextBox();
+            this.type2 = new System.Windows.Forms.PictureBox();
+            this.type1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.type2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.type1)).BeginInit();
             this.SuspendLayout();
             // 
             // pokedexPokemonImage
@@ -49,16 +54,6 @@
             this.pokedexPokemonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pokedexPokemonImage.TabIndex = 3;
             this.pokedexPokemonImage.TabStop = false;
-            // 
-            // pokedexToMapButton
-            // 
-            this.pokedexToMapButton.Location = new System.Drawing.Point(471, 392);
-            this.pokedexToMapButton.Name = "pokedexToMapButton";
-            this.pokedexToMapButton.Size = new System.Drawing.Size(75, 23);
-            this.pokedexToMapButton.TabIndex = 2;
-            this.pokedexToMapButton.Text = "To Map";
-            this.pokedexToMapButton.UseVisualStyleBackColor = true;
-            this.pokedexToMapButton.Click += new System.EventHandler(this.pokedexToMapButton_Click);
             // 
             // PokemonListBox
             // 
@@ -74,6 +69,52 @@
             this.PokemonListBox.TabIndex = 1;
             this.PokemonListBox.SelectedIndexChanged += new System.EventHandler(this.PokemonListBox_SelectedIndexChanged);
             // 
+            // pokedex_back_toMap_btn
+            // 
+            this.pokedex_back_toMap_btn.BackColor = System.Drawing.Color.Transparent;
+            this.pokedex_back_toMap_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.pokedex_back_toMap_btn.Location = new System.Drawing.Point(131, 202);
+            this.pokedex_back_toMap_btn.Name = "pokedex_back_toMap_btn";
+            this.pokedex_back_toMap_btn.Size = new System.Drawing.Size(75, 23);
+            this.pokedex_back_toMap_btn.TabIndex = 4;
+            this.pokedex_back_toMap_btn.Text = "Close";
+            this.pokedex_back_toMap_btn.UseVisualStyleBackColor = false;
+            this.pokedex_back_toMap_btn.Click += new System.EventHandler(this.pokedex_back_toMap_btn_Click);
+            // 
+            // pokedex_info
+            // 
+            this.pokedex_info.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pokedex_info.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pokedex_info.Location = new System.Drawing.Point(427, 12);
+            this.pokedex_info.Multiline = true;
+            this.pokedex_info.Name = "pokedex_info";
+            this.pokedex_info.Size = new System.Drawing.Size(115, 188);
+            this.pokedex_info.TabIndex = 6;
+            this.pokedex_info.Text = "Bulbasaur can be seen napping in bright sunlight.\r\nThere is a seed on its back. \r" +
+    "\nBy soaking up the sun\'s rays, the seed grows progressively larger.";
+            // 
+            // type2
+            // 
+            this.type2.BackColor = System.Drawing.Color.Transparent;
+            this.type2.Image = ((System.Drawing.Image)(resources.GetObject("type2.Image")));
+            this.type2.Location = new System.Drawing.Point(297, 149);
+            this.type2.Name = "type2";
+            this.type2.Size = new System.Drawing.Size(76, 35);
+            this.type2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.type2.TabIndex = 7;
+            this.type2.TabStop = false;
+            // 
+            // type1
+            // 
+            this.type1.BackColor = System.Drawing.Color.Transparent;
+            this.type1.Image = ((System.Drawing.Image)(resources.GetObject("type1.Image")));
+            this.type1.Location = new System.Drawing.Point(171, 150);
+            this.type1.Name = "type1";
+            this.type1.Size = new System.Drawing.Size(73, 35);
+            this.type1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.type1.TabIndex = 8;
+            this.type1.TabStop = false;
+            // 
             // PokedexView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,8 +123,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(554, 428);
+            this.Controls.Add(this.type1);
+            this.Controls.Add(this.type2);
+            this.Controls.Add(this.pokedex_info);
+            this.Controls.Add(this.pokedex_back_toMap_btn);
             this.Controls.Add(this.pokedexPokemonImage);
-            this.Controls.Add(this.pokedexToMapButton);
             this.Controls.Add(this.PokemonListBox);
             this.DoubleBuffered = true;
             this.Name = "PokedexView";
@@ -91,7 +135,10 @@
             this.Load += new System.EventHandler(this.PokedexView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.type2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.type1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -99,8 +146,11 @@
 
         private System.Windows.Forms.ListBox PokemonListBox;
         private System.Windows.Forms.BindingSource pokedexViewBindingSource;
-        private System.Windows.Forms.Button pokedexToMapButton;
         private System.Windows.Forms.PictureBox pokedexPokemonImage;
+        private System.Windows.Forms.Button pokedex_back_toMap_btn;
+        private System.Windows.Forms.TextBox pokedex_info;
+        private System.Windows.Forms.PictureBox type2;
+        private System.Windows.Forms.PictureBox type1;
 
     }
 }
