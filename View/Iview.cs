@@ -41,5 +41,13 @@ namespace PokeCiv.View
         {
             Console.WriteLine("iView keyhandler");
         }
+
+        private void IView_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Q)
+            {
+                //Control.switchFromMapToPokeDex();
+            }
+        }
     }
 }

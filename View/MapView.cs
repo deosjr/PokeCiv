@@ -104,40 +104,36 @@ namespace PokeCiv.View
 
         private void MapView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == 40)
+            if(e.KeyCode == Keys.Down)
             {
-                facingSide = "DOWN";
-                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_DOWN.png";
                 if (Control.playerMoveDown())
                 {
                    backgroundLocation.Y -= gridSizePixels;
                    mapBackgroundCanvas.Location = backgroundLocation;
                 }
             }
-            else if (e.KeyValue == 38)
+            else if (e.KeyCode == Keys.Up)
             {
-                facingSide = "UP";
-                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_UP.png";
                 if (Control.playerMoveUp())
                 {
                     backgroundLocation.Y += gridSizePixels;
                     mapBackgroundCanvas.Location = backgroundLocation;
                 }
             }
-            else if (e.KeyValue == 37)
+            else if (e.KeyCode == Keys.Left)
             {
-                facingSide = "LEFT";
-                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_LEFT.png";
                 if (Control.playerMoveLeft())
                 {
                     backgroundLocation.X += gridSizePixels;
                     mapBackgroundCanvas.Location = backgroundLocation;
                 }
             }
-            else if (e.KeyValue == 39)
+            else if (e.KeyCode == Keys.Right)
             {
-                facingSide = "RIGHT";
-                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
+                pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_RIGHT.png";
                 if (Control.playerMoveRight())
                 {
                     backgroundLocation.X -= gridSizePixels;

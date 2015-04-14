@@ -41,6 +41,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iview";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IView_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.IView_KeyUp);
             this.ResumeLayout(false);
 
         }
