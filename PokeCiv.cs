@@ -35,7 +35,7 @@ namespace PokeCiv
             Controller c = new Controller(player1);
             Map m = new Map(c, "Field");
             //TODO: un-hardcode this
-            m.setPlayerCoordinates(9, 7);
+            m.setPlayerCoordinates(8, 6);
             c.Map = m;
             c.pokedexView = new PokedexView(c);
             //TODO: dit commentaar opruimen als Sjoerd t gelezen heeft

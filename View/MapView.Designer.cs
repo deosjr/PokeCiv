@@ -71,7 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 520);
+            this.ClientSize = new System.Drawing.Size(600, 440);
             this.Controls.Add(this.pb_playerFloor);
             this.Controls.Add(this.pb_player);
             this.Controls.Add(this.mapBackgroundCanvas);
