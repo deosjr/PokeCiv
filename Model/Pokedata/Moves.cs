@@ -17,7 +17,7 @@ namespace PokeCiv.Model.Pokedata
         static Moves()
         {
             loadMoves();
-            //printMovesImplemented();
+            printMovesImplemented();
         }
 
         private static void loadMoves()
@@ -47,10 +47,17 @@ namespace PokeCiv.Model.Pokedata
         // DEBUG:
         private static void printMovesImplemented()
         {
+            int implemented = 0;
+            int numMoves = 0;
             foreach (PokemonMove m in moves)
             {
-                Console.WriteLine(m.name + " " + MoveFunctions.isImplemented(m.internalName));
+                numMoves++;
+                if (MoveFunctions.isImplemented(m.internalName))
+                {
+                    implemented++;
+                }
             }
+            Console.WriteLine("Percentage of moves implemented: " + (implemented / (double)numMoves));
         }
     }
 }

@@ -491,6 +491,9 @@ namespace PokeCiv.Model.Battle
                     break;
                 // End power effects
 
+                case "0A5":
+                    // Has an exception in determineHit
+                    break;
                 case "0BD":
                     if (!miss)
                     {
