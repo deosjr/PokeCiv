@@ -71,10 +71,6 @@ namespace PokeCiv.Controllers
 
         public void switchFromPokedexToMap()
         {
-            //if (pokedexView.InvokeRequired)
-            //{
-             //   pokedexView.Invoke(new MethodInvoker(delegate { pokedexView.Close(); }));
-            //}
             mapView.Show();
             pokedexView.Hide();
             currentView = mapView;
@@ -92,31 +88,30 @@ namespace PokeCiv.Controllers
 
         public bool playerMoveUp()
         {
-            return playerMove(0, -1, "ctrl-up");
+            return playerMove(0, -1);
         }
 
         public bool playerMoveDown()
         {
-            return playerMove(0, 1, "ctrl-down");
+            return playerMove(0, 1);
         }
 
         public bool playerMoveLeft()
         {
-            return playerMove(-1, 0, "ctrl-left");
+            return playerMove(-1, 0);
         }
 
         public bool playerMoveRight()
         {
-            return playerMove(1, 0, "ctrl-right");
+            return playerMove(1, 0);
         }
 
-        private bool playerMove(int xdiff, int ydiff, string debug)
+        private bool playerMove(int xdiff, int ydiff)
         {
             if (Map.playerMove(xdiff, ydiff))
             {
                 Tile currentTile = Map.Grid[Player.Y][Player.X];
                 mapView.UpdatePlayer(currentTile);
-                Console.WriteLine(debug);
                 currentTile.stepOn(this);
                 return true;
             }

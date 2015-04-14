@@ -118,10 +118,6 @@ namespace PokeCiv.Model.World
 
         private bool playerCanMove(int x, int y)
         {
-            // TODO: do we check x,y < 0 and > gridsize? 
-            // or just block it with boundaries always as in Pokemon?
-            //A: Always make visible obstacles, like in the game, makes for much clearer maps.
-            //no blocks usaly is a path to the next zone (e.a. safari zone)
             return !Grid[y][x].blocks();
         }
 

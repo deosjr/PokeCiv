@@ -162,9 +162,6 @@ namespace PokeCiv.View
                 case "B":
                     tileImageSrc = "../../Data/Graphics/Tiles/bush.png";
                     break;
-                //case "_":
-                   // tileImageSrc = "../../Data/Graphics/Tiles/lowgrass" + Mechanics.random.Next(1, 3) + ".png";
-                   // break;
             }
 
             return tileImageSrc;

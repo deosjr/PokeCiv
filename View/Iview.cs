@@ -39,15 +39,8 @@ namespace PokeCiv.View
         //TODO: place as mutch GENERIC keyboard and mouse events here
         private void IView_KeyDown(object sender, KeyEventArgs e)
         {
-            Console.WriteLine("iView keyhandler");
+            //Console.WriteLine("iView keyhandler");
         }
 
-        private void IView_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Q)
-            {
-                //Control.switchFromMapToPokeDex();
-            }
-        }
     }
 }
