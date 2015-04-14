@@ -47,17 +47,25 @@ namespace PokeCiv.View
             {
                 foreach (var item in row)
                 {
-                    //genereer 1 nieuwe picturebox
-                    PictureBox pb = new PictureBox();
-                    pb.Size = new Size(gridSizePixels, gridSizePixels);
-                    //stel hem in op de nieuwe locatie
-                    current.X += gridSizePixels;
-                    pb.Location = current;
-                    //set the correct img
-                    pb.ImageLocation = getTileImage(item);
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                    //plak hem op de achtergrond
-                    mapBackgroundCanvas.Controls.Add(pb);
+                    //als t geen leeg vakje is
+                    if (item.tileType != "_") {
+                        //genereer 1 nieuwe picturebox
+                        PictureBox pb = new PictureBox();
+                        pb.Size = new Size(gridSizePixels, gridSizePixels);
+                        //stel hem in op de nieuwe locatie
+                        current.X += gridSizePixels;
+                        pb.Location = current;
+                        //set the correct img
+                        pb.ImageLocation = getTileImage(item);
+                        pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                        //plak hem op de achtergrond
+                        mapBackgroundCanvas.Controls.Add(pb);
+                    }
+                    else
+                    {
+                        //wel de cursor verschuiven na een leeg vakje
+                        current.X += gridSizePixels;
+                    }
                 }
                 //1 rij omlaag, en links beginnen
                 current.Y += gridSizePixels;
@@ -146,7 +154,7 @@ namespace PokeCiv.View
             switch (item.tileType)
             {
                 case "X":
-                    tileImageSrc = "../../Data/Graphics/Tiles/block.png";
+                    tileImageSrc = "../../Data/Graphics/Tiles/block"+Mechanics.random.Next(1,4)+".png";
                     break;
                 case "W":
                     tileImageSrc = "../../Data/Graphics/Tiles/gras.png";
@@ -157,6 +165,9 @@ namespace PokeCiv.View
                 case "B":
                     tileImageSrc = "../../Data/Graphics/Tiles/bush.png";
                     break;
+                //case "_":
+                   // tileImageSrc = "../../Data/Graphics/Tiles/lowgrass" + Mechanics.random.Next(1, 3) + ".png";
+                   // break;
             }
 
             return tileImageSrc;
