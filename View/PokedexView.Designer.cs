@@ -34,13 +34,14 @@
             this.pokedexPokemonImage = new System.Windows.Forms.PictureBox();
             this.PokemonListBox = new System.Windows.Forms.ListBox();
             this.pokedex_back_toMap_btn = new System.Windows.Forms.Button();
-            this.pokedex_info = new System.Windows.Forms.TextBox();
             this.type2 = new System.Windows.Forms.PictureBox();
             this.type1 = new System.Windows.Forms.PictureBox();
             this.pokedex_info_btn = new System.Windows.Forms.Button();
             this.pokemon_kind_lbl = new System.Windows.Forms.Label();
             this.pokedex_height_lbl = new System.Windows.Forms.Label();
             this.pokedex_weight_lbl = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pokedexPokemonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.type2)).BeginInit();
@@ -74,27 +75,17 @@
             // 
             // pokedex_back_toMap_btn
             // 
-            this.pokedex_back_toMap_btn.BackColor = System.Drawing.Color.Transparent;
-            this.pokedex_back_toMap_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.pokedex_back_toMap_btn.Location = new System.Drawing.Point(131, 202);
+            this.pokedex_back_toMap_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pokedex_back_toMap_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pokedex_back_toMap_btn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pokedex_back_toMap_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pokedex_back_toMap_btn.Location = new System.Drawing.Point(127, 202);
             this.pokedex_back_toMap_btn.Name = "pokedex_back_toMap_btn";
-            this.pokedex_back_toMap_btn.Size = new System.Drawing.Size(75, 23);
+            this.pokedex_back_toMap_btn.Size = new System.Drawing.Size(57, 23);
             this.pokedex_back_toMap_btn.TabIndex = 4;
             this.pokedex_back_toMap_btn.Text = "Close";
-            this.pokedex_back_toMap_btn.UseVisualStyleBackColor = false;
+            this.pokedex_back_toMap_btn.UseVisualStyleBackColor = true;
             this.pokedex_back_toMap_btn.Click += new System.EventHandler(this.pokedex_back_toMap_btn_Click);
-            // 
-            // pokedex_info
-            // 
-            this.pokedex_info.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pokedex_info.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pokedex_info.Location = new System.Drawing.Point(427, 12);
-            this.pokedex_info.Multiline = true;
-            this.pokedex_info.Name = "pokedex_info";
-            this.pokedex_info.Size = new System.Drawing.Size(115, 172);
-            this.pokedex_info.TabIndex = 6;
-            this.pokedex_info.Text = "Bulbasaur can be seen napping in bright sunlight.\r\nThere is a seed on its back. \r" +
-    "\nBy soaking up the sun\'s rays, the seed grows progressively larger.";
             // 
             // type2
             // 
@@ -120,14 +111,16 @@
             // 
             // pokedex_info_btn
             // 
-            this.pokedex_info_btn.BackColor = System.Drawing.Color.Transparent;
-            this.pokedex_info_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.pokedex_info_btn.Location = new System.Drawing.Point(329, 202);
+            this.pokedex_info_btn.BackColor = System.Drawing.Color.Red;
+            this.pokedex_info_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pokedex_info_btn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pokedex_info_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pokedex_info_btn.Location = new System.Drawing.Point(202, 202);
             this.pokedex_info_btn.Name = "pokedex_info_btn";
-            this.pokedex_info_btn.Size = new System.Drawing.Size(75, 23);
+            this.pokedex_info_btn.Size = new System.Drawing.Size(57, 23);
             this.pokedex_info_btn.TabIndex = 9;
-            this.pokedex_info_btn.Text = "Info";
-            this.pokedex_info_btn.UseVisualStyleBackColor = false;
+            this.pokedex_info_btn.Text = "Evolution";
+            this.pokedex_info_btn.UseVisualStyleBackColor = true;
             this.pokedex_info_btn.Click += new System.EventHandler(this.pokedex_info_btn_Click);
             // 
             // pokemon_kind_lbl
@@ -166,21 +159,49 @@
             this.pokedex_weight_lbl.TabIndex = 12;
             this.pokedex_weight_lbl.Text = "10 kg";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(352, 202);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Stats";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Cyan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(277, 202);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(57, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Info";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // PokedexView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(554, 428);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pokedex_weight_lbl);
             this.Controls.Add(this.pokedex_height_lbl);
             this.Controls.Add(this.pokemon_kind_lbl);
             this.Controls.Add(this.pokedex_info_btn);
             this.Controls.Add(this.type1);
             this.Controls.Add(this.type2);
-            this.Controls.Add(this.pokedex_info);
             this.Controls.Add(this.pokedex_back_toMap_btn);
             this.Controls.Add(this.pokedexPokemonImage);
             this.Controls.Add(this.PokemonListBox);
@@ -210,6 +231,8 @@
         private System.Windows.Forms.Label pokemon_kind_lbl;
         private System.Windows.Forms.Label pokedex_height_lbl;
         private System.Windows.Forms.Label pokedex_weight_lbl;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
 
     }
 }

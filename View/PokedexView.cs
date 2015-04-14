@@ -18,7 +18,8 @@ namespace PokeCiv.View
     public partial class PokedexView : IView
     {
         public Controller Control { private get; set; }
-        public string infoString = "";
+        public string evolveString = "";
+        public string pokedexInfoString = "";
         public PokedexView()
         {
             InitializeComponent();
@@ -47,11 +48,9 @@ namespace PokeCiv.View
             //set image
             pokedexPokemonImage.ImageLocation = "../../Data/Graphics/Animations/" + ((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0') + ".gif";
             //set info text
-            pokedex_info.Text = ((Species)PokemonListBox.SelectedItem).Pokedex;
-             //set kind
+            pokedexInfoString = ((Species)PokemonListBox.SelectedItem).Pokedex;
+            //set labels
             pokemon_kind_lbl.Text = "The " + ((Species)PokemonListBox.SelectedItem).Kind + " Pokemon";
-
-            //set height n weight
             pokedex_height_lbl.Text = ((Species)PokemonListBox.SelectedItem).Height / 10 + "m";
             pokedex_weight_lbl.Text = ((Species)PokemonListBox.SelectedItem).Weight + "kg";
 
@@ -69,25 +68,20 @@ namespace PokeCiv.View
             }
 
             //bouw een nieuwe infostring
-                infoString = "";
+                evolveString = "";
                 var evolutionsArray = ((Species)PokemonListBox.SelectedItem).Evolutions.ToArray();
                 if (evolutionsArray.Length > 0)
                 {
-                    infoString += "Evolves into: " + evolutionsArray[0].name;
-                    infoString += System.Environment.NewLine;
+                    evolveString += "Evolves into: " + evolutionsArray[0].name;
+                    evolveString += System.Environment.NewLine;
                     
-                    infoString += "By";
+                    evolveString += "By";
                     int result;
                     bool isNumeric = Int32.TryParse(evolutionsArray[0].info, out result);
-                    if (isNumeric) { infoString += " reaching level"; }
-                    infoString += " : " + evolutionsArray[0].info;
-                    infoString += System.Environment.NewLine;
-                }
-                
-
-
-
-
+                    if (isNumeric) { evolveString += " reaching level"; }
+                    evolveString += " : " + evolutionsArray[0].info;
+                    evolveString += System.Environment.NewLine;
+                }             
         }
 
         private void pokedex_back_toMap_btn_Click(object sender, EventArgs e)
@@ -97,7 +91,12 @@ namespace PokeCiv.View
 
         private void pokedex_info_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(infoString);
+            MessageBox.Show(evolveString);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(pokedexInfoString);
         }
 
     }
