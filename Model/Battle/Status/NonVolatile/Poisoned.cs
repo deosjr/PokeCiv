@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using PokeCiv.Model.Pokedata;
 
-namespace PokeCiv.Model.Battle.Status
+namespace PokeCiv.Model.Battle.Status.NonVolatile
 {
     class Poisoned : NonVolatileCondition
     {

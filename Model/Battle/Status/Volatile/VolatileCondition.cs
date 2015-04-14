@@ -5,7 +5,7 @@ using System.Text;
 
 using PokeCiv.Model.Pokedata;
 
-namespace PokeCiv.Model.Battle.Status
+namespace PokeCiv.Model.Battle.Status.Volatile
 {
     public abstract class VolatileCondition : StatusCondition
     {

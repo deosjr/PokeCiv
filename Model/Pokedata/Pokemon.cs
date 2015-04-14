@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using PokeCiv.Model.Battle.Status;
+using PokeCiv.Model.Battle.Status.NonVolatile;
+using PokeCiv.Model.Battle.Status.Volatile;
 using PokeCiv.Model.Battle;
 using System.Reflection;
 

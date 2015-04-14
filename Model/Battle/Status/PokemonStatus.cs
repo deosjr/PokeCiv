@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using PokeCiv.Model.Battle.Status.NonVolatile;
+using PokeCiv.Model.Battle.Status.Volatile;
+
 namespace PokeCiv.Model.Battle.Status
 {
     // Singleton pattern
