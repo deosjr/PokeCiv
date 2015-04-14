@@ -39,7 +39,7 @@ namespace PokeCiv.View
             
             //set the canvas to grid size
             //TODO make this dynamic
-            this.mapBackgroundCanvas.Size = new Size(3000, 3000);
+            this.mapBackgroundCanvas.Size = new Size(1200, 1200);
 
             Point current = new Point(-gridSizePixels, 0);
 
@@ -112,7 +112,7 @@ namespace PokeCiv.View
                    backgroundLocation.Y -= gridSizePixels;
                    mapBackgroundCanvas.Location = backgroundLocation;
                 }
-            }
+            }               
             else if (e.KeyCode == Keys.Up)
             {
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_UP.png";

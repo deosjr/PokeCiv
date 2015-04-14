@@ -97,10 +97,16 @@
     <Compile Include="View\BattleView.Designer.cs">
       <DependentUpon>BattleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PokedexView.cs">
+    <Compile Include="View\Pokedex\PokedexEvolutionView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PokedexView.Designer.cs">
+    <Compile Include="View\Pokedex\PokedexEvolutionView.Designer.cs">
+      <DependentUpon>PokedexEvolutionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pokedex\PokedexView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pokedex\PokedexView.Designer.cs">
       <DependentUpon>PokedexView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\IView.cs">
@@ -136,7 +142,10 @@
     <EmbeddedResource Include="View\MapView.resx">
       <DependentUpon>MapView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PokedexView.resx">
+    <EmbeddedResource Include="View\Pokedex\PokedexEvolutionView.resx">
+      <DependentUpon>PokedexEvolutionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pokedex\PokedexView.resx">
       <DependentUpon>PokedexView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

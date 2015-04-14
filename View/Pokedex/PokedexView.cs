@@ -91,7 +91,9 @@ namespace PokeCiv.View
 
         private void pokedex_info_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(evolveString);
+
+            PokedexEvolutionView pdev = new PokedexEvolutionView(evolveString);
+            pdev.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
