@@ -37,14 +37,14 @@ namespace PokeCiv.Model.World
             string u = "u";
             string b = "b";
             string[][] ascii = new string[][]{
-                new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x},
-                new string[]{x,_,_,_,_,x,x,_,_,_,_,x,_,b,_,_,w,w,_,_,_,_,x,w},
-                new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,b,_,w,w,_,_,_,_,x,w,u},
-                new string[]{x,_,w,w,_,_,_,_,_,u,u,u,_,b,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,w,w,_,_,_,_,u,u,u,u,_,b,_,x,x,_,_,_,_,x,_,u},
-                new string[]{x,_,_,_,_,_,_,_,u,u,u,_,_,b,_,x,x,_,_,_,_,x,_,u},
-                new string[]{x,x,_,_,_,_,_,_,w,w,w,_,_,b,_,x,x,_,_,_,_,x,_,u},
-                new string[]{x,x,_,_,_,_,_,_,w,w,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
+                new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,_,_,_,_,_},
+                new string[]{x,_,_,_,_,x,x,_,_,_,_,x,_,b,_,_,w,w,_,b,_,_,_,_},
+                new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,b,_,w,w,_,_,_,b,_,_,_},
+                new string[]{x,_,w,w,_,_,_,_,_,u,u,u,_,b,_,_,_,_,_,_,_,b,_,_},
+                new string[]{x,_,w,w,_,_,_,_,u,u,u,u,_,b,_,x,x,_,_,_,_,u,u,_},
+                new string[]{x,_,_,_,_,_,_,_,u,u,u,_,_,b,_,x,x,_,_,_,_,u,u,u},
+                new string[]{x,x,_,_,_,_,_,_,w,w,w,_,_,b,_,x,x,_,_,_,_,_,_,u},
+                new string[]{x,x,_,_,_,b,b,b,w,w,w,_,_,_,_,x,x,_,_,_,_,_,_,u},
                 new string[]{x,x,w,_,_,x,x,x,x,w,w,_,_,_,_,x,x,_,_,_,_,x,_,u},
                 new string[]{x,w,w,w,_,x,x,w,_,_,w,_,_,_,_,_,_,_,_,_,_,x,_,u},
                 new string[]{x,w,w,w,w,w,w,w,_,_,w,_,_,_,_,_,_,_,_,_,_,x,_,u},
@@ -52,14 +52,14 @@ namespace PokeCiv.Model.World
                 new string[]{x,_,_,_,_,w,w,w,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,x},
                 new string[]{x,x,_,_,_,_,_,_,_,_,_,_,_,u,u,_,_,_,_,_,_,x,_,u},
                 new string[]{x,x,_,_,_,_,b,b,b,b,b,_,_,u,u,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,_,_,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,x,_,_,_,_,_,_,_,_,x,_,u},
-                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,x,_,_,_,_,_,_,_,_,x,_,w},
-                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,x,_,x},
-                new string[]{x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x}
+                new string[]{x,_,_,_,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,u,u,u},
+                new string[]{x,_,w,w,_,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,u,u,u},
+                new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,u,u,u},
+                new string[]{x,_,w,w,x,x,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,u,u,u},
+                new string[]{x,_,_,_,_,_,_,_,_,_,_,_,x,_,_,_,_,_,_,_,_,u,u,_},
+                new string[]{u,u,u,_,_,_,_,u,_,_,_,_,x,_,_,_,_,_,_,_,_,b,_,_},
+                new string[]{_,u,u,u,_,_,u,u,_,_,_,_,_,_,_,_,_,_,_,_,_,b,_,_},
+                new string[]{_,_,_,u,u,u,u,x,x,x,x,x,x,x,x,x,x,x,x,x,x,b,_,_}
             };
 
             //TODO: have the [i] in Tile (23 & 24) now calculated dynamicly by .length() stuff
