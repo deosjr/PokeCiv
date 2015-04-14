@@ -28,8 +28,15 @@ namespace PokeCiv.Model.Battle
             MoveFunctions.applyMoveFunction(battle, move, damage, t, miss, first);
         }
 
+        // Returns true if attack misses
         private static bool determineHit(Battle battle, BattleMove move, double acc, double evade)
         {
+            // Always hit exceptions:
+            if (move.move.functioncode.Equals("0A5"))
+            {
+                return false;
+            }
+
             double p = move.move.accuracy * (acc / evade);
             int r = Mechanics.random.Next(101);
             if (move.move.accuracy != 0 && r > p)
