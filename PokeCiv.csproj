@@ -62,6 +62,7 @@
     <Compile Include="Model\Battle\Status\Volatile\Flinch.cs" />
     <Compile Include="Model\Battle\Status\PokemonStatus.cs" />
     <Compile Include="Model\Battle\Status\StatusCondition.cs" />
+    <Compile Include="Model\Battle\Status\Volatile\Recharge.cs" />
     <Compile Include="Model\Battle\Status\Volatile\VolatileCondition.cs" />
     <Compile Include="Model\Mechanics.cs" />
     <Compile Include="Model\Player.cs" />
