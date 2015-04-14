@@ -44,26 +44,7 @@ namespace PokeCiv
             c.currentView = mv;
             new Thread(c.runView).Start();
 
-            // Debug: moves implemented
-            for (int i = 1; i < 650; i++ )
-            {
-                Species species = PokemonFactory.getSpecies(i);
-                int level = 0;
-                var sorted = from entry in species.MovesLearnable orderby entry.Key ascending select entry;
-                Console.WriteLine();
-                Console.Write(species.Name);
-                foreach (KeyValuePair<int, List<PokemonMove>> kv in sorted)
-                {
-                    foreach(PokemonMove move in kv.Value)
-                    {
-                        if (!MoveFunctions.isImplemented(move.internalName))
-                        {
-                            Console.Write(move.internalName + ":" + kv.Key);
-                        }
-                    }
-                }
-            }
-           Console.ReadKey();
+            Console.ReadKey();
 
         }
     }

@@ -15,12 +15,12 @@ namespace PokeCiv.Model.Battle
         public PokemonMove move;
         public int speed;
 
-        public BattleMove(Pokemon source, Pokemon target, PokemonMove move, int speed)
+        public BattleMove(Pokemon source, Pokemon target, PokemonMove move)
         {
             this.source = source;
             this.target = target;
             this.move = move;
-            this.speed = speed;
+            this.speed = (int)(source.Speed * CombatMechanics.statStageToModifier(source.SpeedStat));
         }
 
     }

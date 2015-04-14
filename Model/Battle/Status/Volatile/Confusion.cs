@@ -35,7 +35,7 @@ namespace PokeCiv.Model.Battle.Status.Volatile
                 int damage = 0;
                 double Crit, T;
                 // TODO: TYPELESS ATTACK
-                BattleMove move = new BattleMove(pokemon, pokemon, Moves.getMove("POUND"), 0);
+                BattleMove move = new BattleMove(pokemon, pokemon, Moves.getMove("POUND"));
                 CombatMechanics.determineDamage(move, out damage, out Crit, out T);
                 pokemon.takeDamage(damage);
                 return true;

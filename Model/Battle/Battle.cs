@@ -122,9 +122,8 @@ namespace PokeCiv.Model.Battle
             }
 
             List<BattleMove> bmoves = new List<BattleMove>();
-            // TODO: speed should be modified by speedStat
-            bmoves.Add(new BattleMove(P1, P2, p1move, P1.Speed));
-            bmoves.Add(new BattleMove(P2, P1, p2move, P2.Speed));
+            bmoves.Add(new BattleMove(P1, P2, p1move));
+            bmoves.Add(new BattleMove(P2, P1, p2move));
             return sortBySpeed(bmoves);
         }
 
