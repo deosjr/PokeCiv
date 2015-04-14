@@ -102,20 +102,9 @@ namespace PokeCiv.View
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveDown())
                 {
-                    //backgroundLocation.Y -= gridSizePixels;
-                   // mapBackgroundCanvas.Location = backgroundLocation;
-
-                    for (int iter = 0; iter < 8; iter++)
-                    {
-                        mapBackgroundCanvas.Location = new Point(mapBackgroundCanvas.Left, mapBackgroundCanvas.Top - 5);
-                    }
-                    backgroundLocation.Y -= gridSizePixels;
-
-
+                   backgroundLocation.Y -= gridSizePixels;
+                   mapBackgroundCanvas.Location = backgroundLocation;
                 }
-
-
-
             }
             else if (e.KeyValue == 38)
             {
@@ -123,13 +112,8 @@ namespace PokeCiv.View
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_" + facingSide + ".png";
                 if (Control.playerMoveUp())
                 {
-                   
-                    for (int iter = 0; iter < 10; iter++)
-                    {
-                        mapBackgroundCanvas.Location = new Point(mapBackgroundCanvas.Left, mapBackgroundCanvas.Top + 4);
-                    }
-
                     backgroundLocation.Y += gridSizePixels;
+                    mapBackgroundCanvas.Location = backgroundLocation;
                 }
             }
             else if (e.KeyValue == 37)
@@ -159,17 +143,20 @@ namespace PokeCiv.View
         {
             var tileImageSrc = "";
 
-            if (item.tileType == "X")
+            switch (item.tileType)
             {
-                 tileImageSrc = "../../Data/Graphics/Tiles/block.png";
-            }
-            else if (item.tileType == "W")
-            {
-                 tileImageSrc = "../../Data/Graphics/Tiles/gras.png";
-            }
-            else if (item.tileType == "U")
-            {
-                 tileImageSrc = "../../Data/Graphics/Tiles/water.png";
+                case "X":
+                    tileImageSrc = "../../Data/Graphics/Tiles/block.png";
+                    break;
+                case "W":
+                    tileImageSrc = "../../Data/Graphics/Tiles/gras.png";
+                    break;
+                case "U":
+                    tileImageSrc = "../../Data/Graphics/Tiles/water.png";
+                    break;
+                case "B":
+                    tileImageSrc = "../../Data/Graphics/Tiles/bush.png";
+                    break;
             }
 
             return tileImageSrc;
