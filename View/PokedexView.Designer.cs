@@ -224,7 +224,6 @@
         private System.Windows.Forms.BindingSource pokedexViewBindingSource;
         private System.Windows.Forms.PictureBox pokedexPokemonImage;
         private System.Windows.Forms.Button pokedex_back_toMap_btn;
-        private System.Windows.Forms.TextBox pokedex_info;
         private System.Windows.Forms.PictureBox type2;
         private System.Windows.Forms.PictureBox type1;
         private System.Windows.Forms.Button pokedex_info_btn;

@@ -173,6 +173,7 @@ namespace PokeCiv.View
 
             while (waitForInput)
             {
+                System.Threading.Thread.Sleep(10);
                 //have the cpu run around drooling
             }
             waitForInput = true;
