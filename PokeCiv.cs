@@ -34,11 +34,14 @@ namespace PokeCiv
 
             Controller c = new Controller(player1);
             Map m = new Map(c, "Field");
+            //TODO: un-hardcode this
             m.setPlayerCoordinates(9, 7);
             c.Map = m;
             c.pokedexView = new PokedexView(c);
+            //TODO: dit commentaar opruimen als Sjoerd t gelezen heeft
             // Bij het switchen van Map, haalt MapView n nieuwe map van Controller?
             // of maken we dan n nieuwe MapView aan? (in het laatste geval, new MapView(m) )
+            //A : bij t switchen van map, laad je een niew grid in de bestaande mapView
             MapView mv = new MapView(c);
             c.mapView = mv;
             c.currentView = mv;
