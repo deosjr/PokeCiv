@@ -13,7 +13,7 @@ namespace PokeCiv.Model.Battle.Status
     class PokemonStatus
     {
 
-        private static Dictionary<string, NonVolatileCondition> singletons = new Dictionary<string, NonVolatileCondition>();
+        private static Dictionary<string, StatusCondition> singletons = new Dictionary<string, StatusCondition>();
 
         static PokemonStatus()
         {
@@ -35,9 +35,9 @@ namespace PokeCiv.Model.Battle.Status
             {
                 return new BadlyPoisoned();
             } 
-            NonVolatileCondition condition;
+            StatusCondition condition;
             singletons.TryGetValue(id, out condition);
-            return condition;
+            return (NonVolatileCondition) condition;
         }
 
         public static VolatileCondition getVolatile(string id)

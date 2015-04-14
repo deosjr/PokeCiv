@@ -13,5 +13,7 @@ namespace PokeCiv.Model.Battle.Status
         bool preAttack(Battle battle, Pokemon pokemon);
 
         void postAttack(Battle battle, Pokemon pokemon);
+
+        string getInitMessage();
     }
 }

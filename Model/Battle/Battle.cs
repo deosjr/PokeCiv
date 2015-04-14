@@ -137,12 +137,7 @@ namespace PokeCiv.Model.Battle
         // return true if source is not allowed to attack
         private bool handleStatusPreAttack(BattleMove move)
         {
-            if (move.source.NonVolatile != null)
-            {
-                return move.source.nonVolatilePreAttack(this);
-            }
-
-            return false;
+            return move.source.handleStatusPreAttack(this);
         }
 
         private void handlePostAttack(List<BattleMove> bmoves)
@@ -159,10 +154,7 @@ namespace PokeCiv.Model.Battle
 
         private void handleStatusPostAttack(BattleMove move)
         {
-            if (move.source.NonVolatile != null)
-            {
-                move.source.nonVolatilePostAttack(this);
-            }
+            move.source.handleStatusPostAttack(this);
         }
 
         private void onFainted()

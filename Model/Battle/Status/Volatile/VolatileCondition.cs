@@ -19,5 +19,7 @@ namespace PokeCiv.Model.Battle.Status.Volatile
         {
 
         }
+
+        public abstract string getInitMessage();
     }
 }
