@@ -52,9 +52,9 @@
             // 
             this.pokedexPokemonImage.BackColor = System.Drawing.Color.Transparent;
             this.pokedexPokemonImage.Image = ((System.Drawing.Image)(resources.GetObject("pokedexPokemonImage.Image")));
-            this.pokedexPokemonImage.Location = new System.Drawing.Point(178, 27);
+            this.pokedexPokemonImage.Location = new System.Drawing.Point(197, 28);
             this.pokedexPokemonImage.Name = "pokedexPokemonImage";
-            this.pokedexPokemonImage.Size = new System.Drawing.Size(191, 151);
+            this.pokedexPokemonImage.Size = new System.Drawing.Size(200, 151);
             this.pokedexPokemonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pokedexPokemonImage.TabIndex = 3;
             this.pokedexPokemonImage.TabStop = false;
@@ -67,9 +67,9 @@
             this.PokemonListBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.PokemonListBox.FormattingEnabled = true;
             this.PokemonListBox.ItemHeight = 19;
-            this.PokemonListBox.Location = new System.Drawing.Point(181, 257);
+            this.PokemonListBox.Location = new System.Drawing.Point(204, 260);
             this.PokemonListBox.Name = "PokemonListBox";
-            this.PokemonListBox.Size = new System.Drawing.Size(183, 133);
+            this.PokemonListBox.Size = new System.Drawing.Size(189, 152);
             this.PokemonListBox.TabIndex = 1;
             this.PokemonListBox.SelectedIndexChanged += new System.EventHandler(this.PokemonListBox_SelectedIndexChanged);
             // 
@@ -79,9 +79,9 @@
             this.pokedex_back_toMap_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pokedex_back_toMap_btn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pokedex_back_toMap_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pokedex_back_toMap_btn.Location = new System.Drawing.Point(127, 202);
+            this.pokedex_back_toMap_btn.Location = new System.Drawing.Point(140, 209);
             this.pokedex_back_toMap_btn.Name = "pokedex_back_toMap_btn";
-            this.pokedex_back_toMap_btn.Size = new System.Drawing.Size(57, 23);
+            this.pokedex_back_toMap_btn.Size = new System.Drawing.Size(68, 23);
             this.pokedex_back_toMap_btn.TabIndex = 4;
             this.pokedex_back_toMap_btn.Text = "Close";
             this.pokedex_back_toMap_btn.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             // 
             this.type2.BackColor = System.Drawing.Color.Transparent;
             this.type2.Image = ((System.Drawing.Image)(resources.GetObject("type2.Image")));
-            this.type2.Location = new System.Drawing.Point(297, 149);
+            this.type2.Location = new System.Drawing.Point(325, 151);
             this.type2.Name = "type2";
             this.type2.Size = new System.Drawing.Size(76, 35);
             this.type2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -102,7 +102,7 @@
             // 
             this.type1.BackColor = System.Drawing.Color.Transparent;
             this.type1.Image = ((System.Drawing.Image)(resources.GetObject("type1.Image")));
-            this.type1.Location = new System.Drawing.Point(173, 150);
+            this.type1.Location = new System.Drawing.Point(188, 150);
             this.type1.Name = "type1";
             this.type1.Size = new System.Drawing.Size(73, 35);
             this.type1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,9 +115,9 @@
             this.pokedex_info_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pokedex_info_btn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pokedex_info_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pokedex_info_btn.Location = new System.Drawing.Point(202, 202);
+            this.pokedex_info_btn.Location = new System.Drawing.Point(215, 209);
             this.pokedex_info_btn.Name = "pokedex_info_btn";
-            this.pokedex_info_btn.Size = new System.Drawing.Size(57, 23);
+            this.pokedex_info_btn.Size = new System.Drawing.Size(68, 23);
             this.pokedex_info_btn.TabIndex = 9;
             this.pokedex_info_btn.Text = "Evolution";
             this.pokedex_info_btn.UseVisualStyleBackColor = true;
@@ -130,19 +130,19 @@
             this.pokemon_kind_lbl.BackColor = System.Drawing.Color.Transparent;
             this.pokemon_kind_lbl.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pokemon_kind_lbl.ForeColor = System.Drawing.Color.White;
-            this.pokemon_kind_lbl.Location = new System.Drawing.Point(180, 31);
+            this.pokemon_kind_lbl.Location = new System.Drawing.Point(214, 35);
             this.pokemon_kind_lbl.Name = "pokemon_kind_lbl";
             this.pokemon_kind_lbl.Size = new System.Drawing.Size(168, 15);
             this.pokemon_kind_lbl.TabIndex = 10;
             this.pokemon_kind_lbl.Text = "The tiny turtle Pokemon";
-            this.pokemon_kind_lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pokemon_kind_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pokedex_height_lbl
             // 
             this.pokedex_height_lbl.AutoSize = true;
             this.pokedex_height_lbl.BackColor = System.Drawing.Color.Transparent;
             this.pokedex_height_lbl.ForeColor = System.Drawing.Color.White;
-            this.pokedex_height_lbl.Location = new System.Drawing.Point(326, 120);
+            this.pokedex_height_lbl.Location = new System.Drawing.Point(362, 121);
             this.pokedex_height_lbl.Name = "pokedex_height_lbl";
             this.pokedex_height_lbl.Size = new System.Drawing.Size(33, 13);
             this.pokedex_height_lbl.TabIndex = 11;
@@ -153,7 +153,7 @@
             this.pokedex_weight_lbl.AutoSize = true;
             this.pokedex_weight_lbl.BackColor = System.Drawing.Color.Transparent;
             this.pokedex_weight_lbl.ForeColor = System.Drawing.Color.White;
-            this.pokedex_weight_lbl.Location = new System.Drawing.Point(326, 133);
+            this.pokedex_weight_lbl.Location = new System.Drawing.Point(359, 135);
             this.pokedex_weight_lbl.Name = "pokedex_weight_lbl";
             this.pokedex_weight_lbl.Size = new System.Drawing.Size(34, 13);
             this.pokedex_weight_lbl.TabIndex = 12;
@@ -165,9 +165,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(352, 202);
+            this.button1.Location = new System.Drawing.Point(373, 209);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 23);
+            this.button1.Size = new System.Drawing.Size(68, 23);
             this.button1.TabIndex = 14;
             this.button1.Text = "Stats";
             this.button1.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(277, 202);
+            this.button2.Location = new System.Drawing.Point(298, 209);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 23);
+            this.button2.Size = new System.Drawing.Size(68, 23);
             this.button2.TabIndex = 13;
             this.button2.Text = "Info";
             this.button2.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(554, 428);
+            this.ClientSize = new System.Drawing.Size(600, 440);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pokedex_weight_lbl);

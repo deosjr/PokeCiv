@@ -89,8 +89,8 @@ namespace PokeCiv.View
             pb_playerFloor.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //positioneer de vloer
-            //TODO: 9x7 is het absolute midden, dus moet ook aangepast kunnen worden
-            pb_playerFloor.Location = new Point(9 * gridSizePixels, 7 * gridSizePixels);
+            //TODO: 8x6 is het absolute midden, dus moet ook aangepast kunnen worden
+            pb_playerFloor.Location = new Point(8 * gridSizePixels, 6 * gridSizePixels);
             
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
