@@ -87,6 +87,28 @@ namespace PokeCiv.Model.Battle
                         target.setStatus(battle, "FRZ");
                     }
                     break;
+                case "00E":
+                    if (addEffect)
+                    {
+                        if (first && Mechanics.random.NextDouble() < 0.1)
+                        {
+                            target.addStatus(battle, "FLINCH");
+                        }
+                        if (Mechanics.random.NextDouble() < 0.1)
+                        {
+                            target.setStatus(battle, "FRZ");
+                        }
+                    }
+                    break;
+                case "00F":
+                    if (addEffect)
+                    {
+                        if (first)
+                        {
+                            target.addStatus(battle, "FLINCH");
+                        }
+                    }
+                    break;
                 case "01C":
                     if (addEffect)
                     {

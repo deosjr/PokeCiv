@@ -228,7 +228,16 @@ namespace PokeCiv.Model.Pokedata
             VolatileCondition volatileCondition = PokemonStatus.getVolatile(statuscode);
             // TODO: only add if we dont have this condition yet
             VolatileConditions.Add(volatileCondition);
-            battle.message(Name + volatileCondition.getInitMessage());
+            string msg = volatileCondition.getInitMessage();
+            if (!msg.Equals(""))
+            {
+                battle.message(Name + volatileCondition.getInitMessage());
+            }
+        }
+
+        public void removeVolatileStatus(VolatileCondition volatileCondition)
+        {
+            VolatileConditions.Remove(volatileCondition);
         }
 
         public void clearNonVolatileStatus()
@@ -244,7 +253,15 @@ namespace PokeCiv.Model.Pokedata
             {
                 halt = NonVolatile.preAttack(battle, this);
             }
-            // TODO: handle Volatiles
+            // TODO: sort by priority
+            foreach (VolatileCondition v in VolatileConditions.ToArray())
+            {
+                if (halt)
+                {
+                    break;
+                }
+                halt = v.preAttack(battle, this);
+            }
             return halt;
         }
 
@@ -254,7 +271,11 @@ namespace PokeCiv.Model.Pokedata
             {
                 NonVolatile.postAttack(battle, this);
             }
-            // TODO: handle Volatiles
+            // TODO: sort by priority
+            foreach (VolatileCondition v in VolatileConditions.ToArray())
+            {
+                v.postAttack(battle, this);
+            }
         }
 
         public void gainXP(Battle.Battle battle, int xp)

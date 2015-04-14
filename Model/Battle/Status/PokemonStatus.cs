@@ -21,6 +21,8 @@ namespace PokeCiv.Model.Battle.Status
             singletons.Add("FRZ", new Frozen());
             singletons.Add("BRN", new Burned());
             singletons.Add("PSN", new Poisoned());
+
+            singletons.Add("FLINCH", new Flinch());
         }
 
         public static NonVolatileCondition getNonVolatile(string id)
@@ -42,7 +44,9 @@ namespace PokeCiv.Model.Battle.Status
 
         public static VolatileCondition getVolatile(string id)
         {
-            throw new NotImplementedException();
+            StatusCondition condition;
+            singletons.TryGetValue(id, out condition);
+            return (VolatileCondition) condition;
         }
 
     }

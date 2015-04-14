@@ -10,6 +10,8 @@ namespace PokeCiv.Model.Battle.Status.Volatile
     public abstract class VolatileCondition : StatusCondition
     {
 
+        public int priority = 0;
+
         public virtual bool preAttack(Battle battle, Pokemon pokemon)
         {
             return false;
@@ -20,6 +22,9 @@ namespace PokeCiv.Model.Battle.Status.Volatile
 
         }
 
-        public abstract string getInitMessage();
+        public virtual string getInitMessage()
+        {
+            return "";
+        }
     }
 }
