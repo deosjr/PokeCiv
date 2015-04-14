@@ -491,6 +491,42 @@ namespace PokeCiv.Model.Battle
                     break;
                 // End power effects
 
+                case "0BD":
+                    if (!miss)
+                    {
+                        CombatMechanics.dealDamage(battle, m);
+                        battle.message("Hit 2 times!");
+                    }
+                    break;
+                case "0C0":
+                    if (!miss)
+                    {
+                        // TODO: refactor with a simple function?
+                        int times = 0;
+                        double p = Mechanics.random.NextDouble();
+                        if (p < 1 / 3.0)
+                        {
+                            times = 2;
+                        }
+                        else if (p < 2 / 3.0)
+                        {
+                            times = 3;
+                        }
+                        else if (p < 5 / 6.0)
+                        {
+                            times = 4;
+                        }
+                        else
+                        {
+                            times = 5;
+                        }
+                        for (int i = 0; i < times-1; i++)
+                        {
+                            CombatMechanics.dealDamage(battle, m);
+                        }
+                        battle.message("Hit " + times + " times!");
+                    }
+                    break;
                 case "0C2":
                     if (!miss)
                     {
@@ -544,8 +580,8 @@ namespace PokeCiv.Model.Battle
                                           "081", "082", "083", "084", "085", "086", "087", "088", "089", "08A", "08E", "08F",
                                           "090", "091", "092", "093", "094", "095", "096", "097", "098", "099", "09A", "09B", "09C", "09D", "09E", "09F",
                                           "0A0", "0A1", "0A2", "0A3", "0A4", "0A5", "0A6", "0A7", "0A8", "0A9", "0AA", "0AB", "0AC", "0AD", "0AE", "0AF",
-                                          "0B0", "0B1", "0B2", "0B3", "0B4", "0B5", "0B6", "0B7", "0B8", "0B9", "0BA", "0BB", "0BC", "0BD", "0BE", "0BF",
-                                          "0C0", "0C1", "0C3", "0C4", "0C5", "0C6", "0C7", "0C8", "0C9", "0CA", "0CB", "0CC", "0CD", "0CE", "0CF",
+                                          "0B0", "0B1", "0B2", "0B3", "0B4", "0B5", "0B6", "0B7", "0B8", "0B9", "0BA", "0BB", "0BC", "0BE", "0BF",
+                                          "0C1", "0C3", "0C4", "0C5", "0C6", "0C7", "0C8", "0C9", "0CA", "0CB", "0CC", "0CD", "0CE", "0CF",
                                           "0D0", "0D1", "0D2", "0D3", "0D4", "0D6", "0D7", "0D8", "0D9", "0DA", "0DB", "0DC", "0DF",
                                           "0E0", "0E1", "0E2", "0E3", "0E4", "0E5", "0E6", "0E7", "0E8", "0E9", "0EA", "0EB", "0EC", "0ED", "0EE", "0EF",
                                           "0F0", "0F1", "0F2", "0F3", "0F4", "0F5", "0F6", "0F7", "0F8", "0F9", "0FA", "0FB", "0FC", "0FD", "0FE", "0FF",

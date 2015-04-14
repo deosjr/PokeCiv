@@ -24,7 +24,7 @@ namespace PokeCiv
 
             //Debug values
             //Random r = Mechanics.random;
-            Pokemon p1 = PokemonFactory.getPokemon(20, "NINETALES");
+            Pokemon p1 = PokemonFactory.getPokemon(20, "BEEDRILL");
             Player player1 = new Player("P1");
             player1.AddToTeam(p1);
 

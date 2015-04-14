@@ -18,18 +18,12 @@ namespace PokeCiv.Model.Battle
             double evade = accStageToModifier(move.target.EvasionStat);
 
             bool miss = determineHit(battle, move, acc, evade);
-            int damage = 0 ;
-            double crit, t = 1;
+            int damage = 0;
+            double t = 1;
 
             if (!miss && !move.move.category.Equals("Status"))
             {
-                determineDamage(move, out damage, out crit, out t);
-                effectivenessMessages(battle, crit, t, move.target.Name);
-                if (t != 0)
-                {
-                    int damageDealt = move.target.takeDamage(damage);
-                    Console.WriteLine(move.target.Name + " takes " + damageDealt + " damage!");
-                }
+                damage = dealDamage(battle, move, out t);
             }
             MoveFunctions.applyMoveFunction(battle, move, damage, t, miss, first);
         }
@@ -67,6 +61,35 @@ namespace PokeCiv.Model.Battle
             double Mod = STAB * T * Crit * other * rand;
             damage = (int) Math.Max(1, Math.Round((((2.0 * L + 10.0) / 250.0) * (A/D) * B + 2.0) * Mod));
             
+        }
+
+        public static int dealDamage(Battle battle, BattleMove move)
+        {
+            int damage = 0;
+            double crit, t = 1;
+            determineDamage(move, out damage, out crit, out t);
+            effectivenessMessages(battle, crit, t, move.target.Name);
+            if (t != 0)
+            {
+                damage = move.target.takeDamage(damage);
+                Console.WriteLine(move.target.Name + " takes " + damage + " damage!");
+            }
+            return damage;
+        }
+
+        public static int dealDamage(Battle battle, BattleMove move, out double t)
+        {
+            int damage = 0;
+            double crit = 1;
+            t = 1;
+            determineDamage(move, out damage, out crit, out t);
+            effectivenessMessages(battle, crit, t, move.target.Name);
+            if (t != 0)
+            {
+                damage = move.target.takeDamage(damage);
+                Console.WriteLine(move.target.Name + " takes " + damage + " damage!");
+            }
+            return damage;
         }
 
         private static void normalOrSpecialAttack(BattleMove move, out int attack, out int attackStat, out int defense, out int defenseStat)
