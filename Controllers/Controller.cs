@@ -11,6 +11,7 @@ using PokeCiv.Model.Battle;
 using PokeCiv.Model.World;
 using PokeCiv.Model.World.Tiles;
 using PokeCiv.Model;
+using PokeCiv.Model.Pokedata;
 
 
 namespace PokeCiv.Controllers
@@ -40,6 +41,15 @@ namespace PokeCiv.Controllers
         public int selectMove()
         {
             return battleView.selectMove();
+        }
+
+        public Pokemon switchPokemon()
+        {
+            if (Player.BlackOut())
+            {
+                return null;
+            }
+            return battleView.switchPokemon();
         }
 
         public void switchFromBattleToMap()

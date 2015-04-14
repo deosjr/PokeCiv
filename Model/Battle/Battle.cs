@@ -162,14 +162,24 @@ namespace PokeCiv.Model.Battle
             if (P2.CurrentHP == 0)
             {
                 message(P2.Name + " fainted!");
+                if (P1.CurrentHP > 0)
+                {
+                    Experience.gainXP(this, P1, P2);
+                }
+                P2 = getFirstHealthy(player2);
+                if (P2 != null)
+                {
+                    message(player2.Name + " sent out " + P2.Name + "!");
+                }
             }
             if (P1.CurrentHP == 0)
             {
                 message(P1.Name + " fainted!");
-            }
-            if (P2.CurrentHP == 0 && P1.CurrentHP > 0)
-            {
-                Experience.gainXP(this, P1, P2);
+                P1 = Control.switchPokemon();
+                if (P1 != null)
+                {
+                    message("Go, " + P1.Name + "!");
+                }
             }
         }
 

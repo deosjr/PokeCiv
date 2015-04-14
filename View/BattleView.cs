@@ -184,6 +184,11 @@ namespace PokeCiv.View
             return currentSelectedMove;
         }
 
+        public Pokemon switchPokemon()
+        {
+            throw new NotImplementedException();
+        }
+
         //"next"  aka "A" op de gameboy
         private void BattleView_MouseClick(object sender, MouseEventArgs e)
         {
