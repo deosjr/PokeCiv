@@ -23,13 +23,23 @@ namespace PokeCiv.View
         public Controller Control { private get; set; }
 
         private Battle battle;
+        private Pokemon ready2Switch;
 
         public BattleView(Battle battle)
         {
             InitializeComponent();
             this.battle = battle;
+
+            listBox1.DataSource = battle.player1.Team;
+            listBox1.DisplayMember = "Name";
+
+            
+
             drawOnce();
+
+            //hide interface items that are unused for now
             groupBox_moves.Hide();
+           // select_pkmn_panel.Hide();
         }
 
         private void drawOnce()
@@ -189,7 +199,15 @@ namespace PokeCiv.View
         public Pokemon switchPokemon()
         {
             //weten welke je mag selecteren
-            throw new NotImplementedException();
+            
+
+            if (select_pkmn_panel.InvokeRequired)
+            {
+                select_pkmn_panel.Invoke(new MethodInvoker(delegate { select_pkmn_panel.Show(); }));            
+            }
+            
+
+            return ready2Switch;
         }
 
         //"next"  aka "A" op de gameboy
@@ -247,6 +265,16 @@ namespace PokeCiv.View
        private void battle_fight(object sender, EventArgs e)
        {
            groupBox_moves.Show();
+       }
+
+       private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+       {
+           ready2Switch = ((Pokemon)listBox1.SelectedItem);
+       }
+
+       private void hide_select_pokemon_panel(object sender, EventArgs e)
+       {
+           this.Hide();
        }
 
     }

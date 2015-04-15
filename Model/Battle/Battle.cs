@@ -13,8 +13,8 @@ namespace PokeCiv.Model.Battle
     public class Battle
     {
 
-        private Player player1;
-        private Player player2;
+        public Player player1;
+        public Player player2;
         public Pokemon P1 { get; private set; }
         public Pokemon P2 { get; private set; }
         public string BattleType { get; private set; }
