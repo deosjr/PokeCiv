@@ -38,7 +38,6 @@ namespace PokeCiv.View
             UpdatePlayer(Control.GetGrid()[Control.Player.Y, Control.Player.X]);
             
             //set the canvas to grid size
-            //TODO make this dynamic
             this.mapBackgroundCanvas.Size = new Size(grid.GetLength(0) * gridSizePixels, grid.GetLength(1) * gridSizePixels);
 
             Point current = new Point(-gridSizePixels, 0);
@@ -95,9 +94,7 @@ namespace PokeCiv.View
             
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
-            
-            
-            
+                                
             //plak de speler op de vloer
             pb_playerFloor.Controls.Add(pb_player);
             pb_player.Location = new Point(0, 0);                 
@@ -159,6 +156,17 @@ namespace PokeCiv.View
             {
                 Control.switchFromMapToPokeDex();
             }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                panel1.Show();             
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+            this.Activate();
         }
 
     }
