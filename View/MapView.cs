@@ -44,7 +44,7 @@ namespace PokeCiv.View
             //set the canvas to grid size
             this.mapBackgroundCanvas.Size = new Size(grid.GetLength(0) * gridSizePixels, grid.GetLength(1) * gridSizePixels);
 
-            Point current = new Point(-gridSizePixels, -gridSizePixels);
+            Point current = new Point(0, -gridSizePixels);
 
             for (int i = 0; i < grid.GetLength(0); i++)
             {
@@ -56,9 +56,9 @@ namespace PokeCiv.View
                         //genereer 1 nieuwe picturebox
                         PictureBox pb = new PictureBox();
                         pb.Size = new Size(gridSizePixels, gridSizePixels);
-                                            
+                        //stel locatie in                    
                         pb.Location = current;
-                        //stel hem in op de current locatie 
+                        //verschuif daarna cursor 
                         current.X += gridSizePixels;
                         //set the correct img
                         pb.ImageLocation = getTileImage(item);
