@@ -10,11 +10,11 @@ namespace PokeCiv.Model.World
     {
         public static string[] generateASCIIMap(int playerX, int playerY)
         {
-            int iterations = 25;
+            int iterations = 15;
             double openness = 0.3;
             double grass = 0.2;
-            int sizeX = 51;
-            int sizeY = 51;
+            int sizeX = 40;
+            int sizeY = 40;
 
             //TODO: rework fill, it slows the game down to a chrash
             char FILL = '$';

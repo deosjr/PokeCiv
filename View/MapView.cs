@@ -106,11 +106,7 @@ namespace PokeCiv.View
 
         private void MapView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down)
-            {
 
-                MapView_KeyUp(sender,  e);
-            }
         }
 
         private string getTileImage(Tile tile)
@@ -126,7 +122,6 @@ namespace PokeCiv.View
         {
             if (e.KeyCode == Keys.Enter)
             {
-
                     start_menu_panel.Show();
                     start_menu_panel.Focus();
             }

@@ -24,29 +24,29 @@ namespace PokeCiv.Model.World.Tiles.TileItems
             imageSrc = "../../Data/Graphics/Tiles/gras.png";
         }
             
-        //public override void stepOn(Controller c)
-        //{
-        //    if (Mechanics.random.NextDouble() < p)
-        //    {
-        //        double r = Mechanics.random.NextDouble();
-        //        double temp = 0.0;
+        public override void stepOn(Controller c)
+        {
+            if (Mechanics.random.NextDouble() < p)
+            {
+                double r = Mechanics.random.NextDouble();
+                double temp = 0.0;
 
-        //        foreach (Encounter e in encounters)
-        //        {
-        //            if (r < e.p + temp)
-        //            {
-        //                wildPokemon.ClearTeam();
-        //                wildPokemon.AddToTeam(e.getPokemon());
-        //                c.switchFromMapToBattle(wildPokemon);
-        //                break;
-        //            }
-        //            else
-        //            {
-        //                temp += e.p;
-        //            }
-        //        }
-        //    }
-        //}
+                foreach (Encounter e in encounters)
+                {
+                    if (r < e.p + temp)
+                    {
+                        wildPokemon.ClearTeam();
+                        wildPokemon.AddToTeam(e.getPokemon());
+                        c.switchFromMapToBattle(wildPokemon);
+                        break;
+                    }
+                    else
+                    {
+                        temp += e.p;
+                    }
+                }
+            }
+        }
 
     }
 }
