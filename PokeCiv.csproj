@@ -76,6 +76,7 @@
     <Compile Include="Model\Pokedata\PokemonType.cs" />
     <Compile Include="Model\Pokedata\Species.cs" />
     <Compile Include="Model\Pokedata\Types.cs" />
+    <Compile Include="Model\World\CaveGeneration.cs" />
     <Compile Include="Model\World\Tiles\Encounter.cs" />
     <Compile Include="Model\World\Tiles\Tile.cs" />
     <Compile Include="Model\World\Map.cs" />
