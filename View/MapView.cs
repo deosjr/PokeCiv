@@ -39,7 +39,7 @@ namespace PokeCiv.View
             
             //set the canvas to grid size
             //TODO make this dynamic
-            this.mapBackgroundCanvas.Size = new Size(1200, 1200);
+            this.mapBackgroundCanvas.Size = new Size(grid.GetLength(0) * gridSizePixels, grid.GetLength(1) * gridSizePixels);
 
             Point current = new Point(-gridSizePixels, 0);
 
