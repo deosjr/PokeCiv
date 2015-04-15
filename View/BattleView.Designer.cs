@@ -142,6 +142,7 @@
             // 
             this.FrontPokemonHPBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.FrontPokemonHPBar.Location = new System.Drawing.Point(3, 24);
+            this.FrontPokemonHPBar.Maximum = 10000;
             this.FrontPokemonHPBar.Name = "FrontPokemonHPBar";
             this.FrontPokemonHPBar.Size = new System.Drawing.Size(192, 10);
             this.FrontPokemonHPBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -204,6 +205,7 @@
             // 
             this.BackPokemonHPBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.BackPokemonHPBar.Location = new System.Drawing.Point(4, 20);
+            this.BackPokemonHPBar.Maximum = 10000;
             this.BackPokemonHPBar.Name = "BackPokemonHPBar";
             this.BackPokemonHPBar.Size = new System.Drawing.Size(190, 10);
             this.BackPokemonHPBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;

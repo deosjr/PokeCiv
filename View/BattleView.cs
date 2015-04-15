@@ -12,6 +12,7 @@ using PokeCiv.Controllers;
 using PokeCiv.Model.Battle;
 using PokeCiv.Model.Pokedata;
 using PokeCiv.Model.World;
+using System.Collections;
 
 namespace PokeCiv.View
 {
@@ -30,10 +31,9 @@ namespace PokeCiv.View
             InitializeComponent();
             this.battle = battle;
 
+            //vul het teamscherm met je pokemons
             listBox1.DataSource = battle.player1.Team;
             listBox1.DisplayMember = "Name";
-
-            
 
             drawOnce();
 
@@ -44,86 +44,130 @@ namespace PokeCiv.View
 
         private void drawOnce()
         {
-            var me = this;
-
             //lazy fetching of pkmns
             Pokemon p1 = battle.P1;
             Pokemon p2 = battle.P2;
 
             //Nesting all pictures inside each other for transparancy
  
-            //add both floors to the background
-            battleBack.Controls.Add(frontFloor);
-            battleBack.Controls.Add(backFloor);
+            //add both floors to the background         
+            if (battleBack.InvokeRequired)
+            {
+                battleBack.Invoke(new MethodInvoker(delegate { battleBack.Controls.Add(frontFloor); }));
+                battleBack.Invoke(new MethodInvoker(delegate { battleBack.Controls.Add(backFloor); }));
+            }
+            else
+            {
+                battleBack.Controls.Add(frontFloor);
+                battleBack.Controls.Add(backFloor);
+            }
 
             //then add the pokemons to the floors
-            frontFloor.Controls.Add(frontImageBattlePokemon);
-            backFloor.Controls.Add(backImageBattlePokemon);
+           // frontFloor.Controls.Add(frontImageBattlePokemon);
+          //  backFloor.Controls.Add(backImageBattlePokemon);
 
             //set the floors to transparent, the pokemons will inherrit this
-            frontFloor.BackColor = Color.Transparent;
-            backFloor.BackColor = Color.Transparent;
+        //    frontFloor.BackColor = Color.Transparent;
+        //    backFloor.BackColor = Color.Transparent;
 
             //reset the startpoints of the pokemons (relative to the floors)
-            frontImageBattlePokemon.Location = new Point(0, 0);
-            backImageBattlePokemon.Location = new Point(0, 0);
+        //    frontImageBattlePokemon.Location = new Point(0, 0);
+        //    backImageBattlePokemon.Location = new Point(0, 0);
 
-            //Pokemon Images
-            me.backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
-            me.frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
+            //Pokemon Images           
+            if (backImageBattlePokemon.InvokeRequired)
+            {
+                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif"; }));
+                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif"; }));          
+            }
+            else
+            {
+                backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
+                frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
+            }
 
             //backgrond Image
-            me.battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";
+            //battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";
 
             //floors
-            me.frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.BattleType + ".png";
-            me.backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.BattleType + ".png";
+            //frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.BattleType + ".png";
+            //backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.BattleType + ".png";
 
             //Pokemon names
-            me.backPokemonName.Text = p1.Name;
-            me.fontPokemonName.Text = p2.Name;
+            //backPokemonName.Text = p1.Name;
+            //fontPokemonName.Text = p2.Name;
 
             //Pokemon Levels
-            me.backPokemonLevel.Text = "lvl " + p1.Level.ToString();
-            me.frontPokemonLevel.Text = "lvl " + p2.Level.ToString();
+            //backPokemonLevel.Text = "lvl " + p1.Level.ToString();
+            //frontPokemonLevel.Text = "lvl " + p2.Level.ToString();
 
-            me.actionTextLabel.Text = "what will " + p1.Name + " do?";
-
+            if (actionTextLabel.InvokeRequired)
+            {
+                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { actionTextLabel.Text = "what will " + p1.Name + " do?"; }));
+            }else{
+                actionTextLabel.Text = "what will " + p1.Name + " do?";
+            }
+            
             //XPbar
-            me.BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq;
-            me.BackPokemonXPBar.Value = p1.CurrentXP - p1.PreviousXPLevelReq;
+            //BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq;
+            //BackPokemonXPBar.Value = p1.CurrentXP - p1.PreviousXPLevelReq;
 
             //HPBars
-            me.BackPokemonHPBar.Maximum = p1.HP;
-            me.BackPokemonHPBar.Value = p1.CurrentHP;
+            //BackPokemonHPBar.Maximum = p1.HP;
+            //BackPokemonHPBar.Value = p1.CurrentHP;
 
-            me.FrontPokemonHPBar.Maximum = p2.HP;
-            me.FrontPokemonHPBar.Value = p2.CurrentHP;
+            //FrontPokemonHPBar.Maximum = p2.HP;
+            //FrontPokemonHPBar.Value = p2.CurrentHP;
 
             //Own Pokemon HP Label
-            me.BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
+            //BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
 
             //moves buttons
-            if (p1.Moves[0] != null)
-            {
-                me.MovesButton1.Text = p1.Moves[0].move.ToString();
-                me.labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString();
+            if (MovesButton1.InvokeRequired){              
+                    MovesButton1.Invoke(new MethodInvoker(delegate { MovesButton1.Text = p1.Moves[0].move.ToString(); }));
+                    labelPP_move1.Invoke(new MethodInvoker(delegate { labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString(); }));
             }
-            if (p1.Moves[1] != null)
+            else
             {
-                me.MovesButton2.Text = p1.Moves[1].move.ToString();
-                me.labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString();
+                if (p1.Moves[0] != null)
+                {
+                    MovesButton1.Text = p1.Moves[0].move.ToString();
+                    labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString();
+                }
+
             }
-            if (p1.Moves[2] != null)
+            if (MovesButton2.InvokeRequired)
             {
-                me.MovesButton3.Text = p1.Moves[2].move.ToString();
-                me.labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString();
+                MovesButton2.Invoke(new MethodInvoker(delegate { MovesButton2.Text = p1.Moves[1].move.ToString(); }));
+                labelPP_move2.Invoke(new MethodInvoker(delegate { labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString(); }));
             }
-            if (p1.Moves[3] != null)
+            else
             {
-                me.MovesButton4.Text = p1.Moves[3].move.ToString();
-                me.labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString();
+                if (p1.Moves[1] != null)
+                {
+                    MovesButton2.Text = p1.Moves[1].move.ToString();
+                    labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString();
+                }
+
             }
+
+
+            //if (p1.Moves[1] != null)
+            //{
+            //    MovesButton2.Text = p1.Moves[1].move.ToString();
+            //    labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString();
+            //}
+            //if (p1.Moves[2] != null)
+            //{
+            //    MovesButton3.Text = p1.Moves[2].move.ToString();
+            //    labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString();
+            //}
+            //if (p1.Moves[3] != null)
+            //{
+            //    MovesButton4.Text = p1.Moves[3].move.ToString();
+            //    labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString();
+            //}
+            
         }
 
 
