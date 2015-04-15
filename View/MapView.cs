@@ -156,11 +156,6 @@ namespace PokeCiv.View
 
         private void MapView_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Q)
-            {
-                Control.switchFromMapToPokeDex();
-            }
-
             if (e.KeyCode == Keys.Enter)
             {
 
@@ -173,6 +168,11 @@ namespace PokeCiv.View
         {
             start_menu_panel.Hide();
             this.Focus();
+        }
+
+        private void startmenu_pokedex_btn(object sender, EventArgs e)
+        {
+            Control.switchFromMapToPokeDex();
         }
 
     }
