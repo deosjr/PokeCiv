@@ -95,7 +95,7 @@ namespace PokeCiv.View
 
             //positioneer de vloer
             //TODO: 8x6 is het absolute midden, dus moet ook aangepast kunnen worden
-            pb_playerFloor.Location = new Point(26 * gridSizePixels, 26 * gridSizePixels);
+            pb_playerFloor.Location = new Point(8 * gridSizePixels, 6 * gridSizePixels);
             
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
