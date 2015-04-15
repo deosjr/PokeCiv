@@ -29,6 +29,7 @@ namespace PokeCiv.View
             InitializeComponent();
             this.battle = battle;
             drawOnce();
+            groupBox_moves.Hide();
         }
 
         private void drawOnce()
@@ -187,6 +188,7 @@ namespace PokeCiv.View
 
         public Pokemon switchPokemon()
         {
+            //weten welke je mag selecteren
             throw new NotImplementedException();
         }
 
@@ -204,6 +206,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton1.BackColor = Color.DarkCyan;
             waitForInput = false;
+            groupBox_moves.Hide();
         }
 
         private void MovesButton2_Click(object sender, EventArgs e)
@@ -212,6 +215,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton2.BackColor = Color.DarkCyan;
             waitForInput = false;
+            groupBox_moves.Hide();
         }
 
         private void MovesButton3_Click(object sender, EventArgs e)
@@ -220,6 +224,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton3.BackColor = Color.DarkCyan;
             waitForInput = false;
+            groupBox_moves.Hide();
         }
 
         private void MovesButton4_Click(object sender, EventArgs e)
@@ -228,6 +233,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton4.BackColor = Color.DarkCyan;
             waitForInput = false;
+            groupBox_moves.Hide();
         }
 
        public void resetbuttonColors(){
@@ -237,6 +243,11 @@ namespace PokeCiv.View
              MovesButton3.BackColor = Color.PaleGoldenrod;
              MovesButton4.BackColor = Color.PaleGoldenrod;
         }
+
+       private void battle_fight(object sender, EventArgs e)
+       {
+           groupBox_moves.Show();
+       }
 
     }
 }

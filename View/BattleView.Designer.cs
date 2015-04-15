@@ -48,13 +48,19 @@
             this.actionTextLabel = new System.Windows.Forms.Label();
             this.MovesButton4 = new System.Windows.Forms.Button();
             this.MovesButton3 = new System.Windows.Forms.Button();
-            this.MovesButton2 = new System.Windows.Forms.Button();
-            this.MovesButton1 = new System.Windows.Forms.Button();
             this.frontImageBattlePokemon = new System.Windows.Forms.PictureBox();
             this.backImageBattlePokemon = new System.Windows.Forms.PictureBox();
             this.frontFloor = new System.Windows.Forms.PictureBox();
             this.backFloor = new System.Windows.Forms.PictureBox();
             this.battleBack = new System.Windows.Forms.PictureBox();
+            this.groupBox_moves = new System.Windows.Forms.GroupBox();
+            this.MovesButton1 = new System.Windows.Forms.Button();
+            this.MovesButton2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
@@ -62,13 +68,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backFloor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.battleBack)).BeginInit();
+            this.groupBox_moves.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelPP_move4
             // 
             this.labelPP_move4.AutoSize = true;
-            this.labelPP_move4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.labelPP_move4.Location = new System.Drawing.Point(527, 454);
+            this.labelPP_move4.BackColor = System.Drawing.Color.Transparent;
+            this.labelPP_move4.Location = new System.Drawing.Point(167, 94);
             this.labelPP_move4.Name = "labelPP_move4";
             this.labelPP_move4.Size = new System.Drawing.Size(53, 13);
             this.labelPP_move4.TabIndex = 27;
@@ -77,8 +85,8 @@
             // labelPP_move3
             // 
             this.labelPP_move3.AutoSize = true;
-            this.labelPP_move3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.labelPP_move3.Location = new System.Drawing.Point(373, 452);
+            this.labelPP_move3.BackColor = System.Drawing.Color.Transparent;
+            this.labelPP_move3.Location = new System.Drawing.Point(16, 94);
             this.labelPP_move3.Name = "labelPP_move3";
             this.labelPP_move3.Size = new System.Drawing.Size(41, 13);
             this.labelPP_move3.TabIndex = 26;
@@ -87,8 +95,8 @@
             // labelPP_move2
             // 
             this.labelPP_move2.AutoSize = true;
-            this.labelPP_move2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.labelPP_move2.Location = new System.Drawing.Point(528, 387);
+            this.labelPP_move2.BackColor = System.Drawing.Color.Transparent;
+            this.labelPP_move2.Location = new System.Drawing.Point(167, 25);
             this.labelPP_move2.Name = "labelPP_move2";
             this.labelPP_move2.Size = new System.Drawing.Size(53, 13);
             this.labelPP_move2.TabIndex = 25;
@@ -97,8 +105,8 @@
             // labelPP_move1
             // 
             this.labelPP_move1.AutoSize = true;
-            this.labelPP_move1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.labelPP_move1.Location = new System.Drawing.Point(374, 386);
+            this.labelPP_move1.BackColor = System.Drawing.Color.Transparent;
+            this.labelPP_move1.Location = new System.Drawing.Point(17, 25);
             this.labelPP_move1.Name = "labelPP_move1";
             this.labelPP_move1.Size = new System.Drawing.Size(53, 13);
             this.labelPP_move1.TabIndex = 24;
@@ -260,9 +268,9 @@
             this.MovesButton4.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.MovesButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton4.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton4.Location = new System.Drawing.Point(525, 409);
+            this.MovesButton4.Location = new System.Drawing.Point(170, 110);
             this.MovesButton4.Name = "MovesButton4";
-            this.MovesButton4.Size = new System.Drawing.Size(148, 61);
+            this.MovesButton4.Size = new System.Drawing.Size(140, 50);
             this.MovesButton4.TabIndex = 9;
             this.MovesButton4.Text = "---";
             this.MovesButton4.UseVisualStyleBackColor = false;
@@ -273,40 +281,13 @@
             this.MovesButton3.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.MovesButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MovesButton3.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton3.Location = new System.Drawing.Point(371, 409);
+            this.MovesButton3.Location = new System.Drawing.Point(16, 110);
             this.MovesButton3.Name = "MovesButton3";
-            this.MovesButton3.Size = new System.Drawing.Size(148, 61);
+            this.MovesButton3.Size = new System.Drawing.Size(140, 50);
             this.MovesButton3.TabIndex = 8;
             this.MovesButton3.Text = "---";
             this.MovesButton3.UseVisualStyleBackColor = false;
             this.MovesButton3.Click += new System.EventHandler(this.MovesButton3_Click);
-            // 
-            // MovesButton2
-            // 
-            this.MovesButton2.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.MovesButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MovesButton2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton2.Location = new System.Drawing.Point(525, 342);
-            this.MovesButton2.Name = "MovesButton2";
-            this.MovesButton2.Size = new System.Drawing.Size(148, 61);
-            this.MovesButton2.TabIndex = 7;
-            this.MovesButton2.Text = "---";
-            this.MovesButton2.UseVisualStyleBackColor = false;
-            this.MovesButton2.Click += new System.EventHandler(this.MovesButton2_Click);
-            // 
-            // MovesButton1
-            // 
-            this.MovesButton1.BackColor = System.Drawing.Color.DarkCyan;
-            this.MovesButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.MovesButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MovesButton1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovesButton1.Location = new System.Drawing.Point(371, 342);
-            this.MovesButton1.Name = "MovesButton1";
-            this.MovesButton1.Size = new System.Drawing.Size(148, 61);
-            this.MovesButton1.TabIndex = 6;
-            this.MovesButton1.Text = "Tackle";
-            this.MovesButton1.UseVisualStyleBackColor = false;
-            this.MovesButton1.Click += new System.EventHandler(this.MovesButton1_Click);
             // 
             // frontImageBattlePokemon
             // 
@@ -359,24 +340,133 @@
             this.battleBack.TabIndex = 19;
             this.battleBack.TabStop = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox_moves.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.groupBox_moves.Controls.Add(this.labelPP_move4);
+            this.groupBox_moves.Controls.Add(this.labelPP_move3);
+            this.groupBox_moves.Controls.Add(this.labelPP_move2);
+            this.groupBox_moves.Controls.Add(this.MovesButton4);
+            this.groupBox_moves.Controls.Add(this.labelPP_move1);
+            this.groupBox_moves.Controls.Add(this.MovesButton1);
+            this.groupBox_moves.Controls.Add(this.MovesButton2);
+            this.groupBox_moves.Controls.Add(this.MovesButton3);
+            this.groupBox_moves.Location = new System.Drawing.Point(340, 342);
+            this.groupBox_moves.Name = "groupBox1";
+            this.groupBox_moves.Size = new System.Drawing.Size(328, 166);
+            this.groupBox_moves.TabIndex = 28;
+            this.groupBox_moves.TabStop = false;
+            this.groupBox_moves.Text = "Moves";
+            // 
+            // MovesButton1
+            // 
+            this.MovesButton1.BackColor = System.Drawing.Color.DarkCyan;
+            this.MovesButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.MovesButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MovesButton1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovesButton1.Location = new System.Drawing.Point(16, 41);
+            this.MovesButton1.Name = "MovesButton1";
+            this.MovesButton1.Size = new System.Drawing.Size(140, 50);
+            this.MovesButton1.TabIndex = 6;
+            this.MovesButton1.Text = "Tackle";
+            this.MovesButton1.UseVisualStyleBackColor = false;
+            this.MovesButton1.Click += new System.EventHandler(this.MovesButton1_Click);
+            // 
+            // MovesButton2
+            // 
+            this.MovesButton2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.MovesButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MovesButton2.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovesButton2.Location = new System.Drawing.Point(170, 41);
+            this.MovesButton2.Name = "MovesButton2";
+            this.MovesButton2.Size = new System.Drawing.Size(140, 50);
+            this.MovesButton2.TabIndex = 7;
+            this.MovesButton2.Text = "---";
+            this.MovesButton2.UseVisualStyleBackColor = false;
+            this.MovesButton2.Click += new System.EventHandler(this.MovesButton2_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 342);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(318, 166);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Make a move";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(8, 94);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(142, 61);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "Pokemon";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button6.Enabled = false;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(168, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(142, 61);
+            this.button6.TabIndex = 29;
+            this.button6.Text = "Bag";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button3.Enabled = false;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(168, 94);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(142, 61);
+            this.button3.TabIndex = 28;
+            this.button3.Text = "Run";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(8, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 61);
+            this.button5.TabIndex = 28;
+            this.button5.Text = "Fight";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.battle_fight);
+            // 
             // BattleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(680, 520);
-            this.Controls.Add(this.labelPP_move4);
-            this.Controls.Add(this.labelPP_move3);
-            this.Controls.Add(this.labelPP_move2);
-            this.Controls.Add(this.labelPP_move1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox_moves);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.actionTextLabel);
-            this.Controls.Add(this.MovesButton4);
-            this.Controls.Add(this.MovesButton3);
-            this.Controls.Add(this.MovesButton2);
-            this.Controls.Add(this.MovesButton1);
             this.Controls.Add(this.frontImageBattlePokemon);
             this.Controls.Add(this.backImageBattlePokemon);
             this.Controls.Add(this.frontFloor);
@@ -394,6 +484,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.frontFloor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backFloor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.battleBack)).EndInit();
+            this.groupBox_moves.ResumeLayout(false);
+            this.groupBox_moves.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,8 +499,6 @@
         private System.Windows.Forms.Label backPokemonName;
         private System.Windows.Forms.Label fontPokemonName;
         private System.Windows.Forms.Label frontPokemonLevel;
-        private System.Windows.Forms.Button MovesButton1;
-        private System.Windows.Forms.Button MovesButton2;
         private System.Windows.Forms.Button MovesButton3;
         private System.Windows.Forms.Button MovesButton4;
         private System.Windows.Forms.Label actionTextLabel;
@@ -427,5 +518,13 @@
         private System.Windows.Forms.Label labelPP_move2;
         private System.Windows.Forms.Label labelPP_move3;
         private System.Windows.Forms.Label labelPP_move4;
+        private System.Windows.Forms.GroupBox groupBox_moves;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button MovesButton1;
+        private System.Windows.Forms.Button MovesButton2;
     }
 }
