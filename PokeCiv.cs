@@ -25,7 +25,7 @@ namespace PokeCiv
             //Debug values
             //Random r = Mechanics.random;
             Player player1 = new Player("P1");
-            player1.AddToTeam(PokemonFactory.getPokemon(20, "CHARMANDER"));
+            player1.AddToTeam(PokemonFactory.getPokemon(20, "ZAPDOS"));
             player1.AddToTeam(PokemonFactory.getPokemon(20, "SQUIRTLE"));
             player1.AddToTeam(PokemonFactory.getPokemon(20, "BULBASAUR"));
             player1.AddToTeam(PokemonFactory.getPokemon(20, "NINETALES"));
@@ -38,10 +38,6 @@ namespace PokeCiv
             m.setPlayerCoordinates(8, 6);
             c.Map = m;
             c.pokedexView = new PokedexView(c);
-            //TODO: dit commentaar opruimen als Sjoerd t gelezen heeft
-            // Bij het switchen van Map, haalt MapView n nieuwe map van Controller?
-            // of maken we dan n nieuwe MapView aan? (in het laatste geval, new MapView(m) )
-            //A : bij t switchen van map, laad je een niew grid in de bestaande mapView
             MapView mv = new MapView(c);
             c.mapView = mv;
             c.currentView = mv;

@@ -280,8 +280,8 @@ namespace PokeCiv.Model.Pokedata
 
         public void gainXP(Battle.Battle battle, int xp)
         {
-            CurrentXP += xp;
             battle.message(Name + " gained " + xp + " XP!");
+            CurrentXP += xp;
             while (levelUp())
             {
                 battle.message(Name + " grew to level " + Level.ToString() + "!");
