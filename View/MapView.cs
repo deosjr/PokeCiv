@@ -31,6 +31,10 @@ namespace PokeCiv.View
             InitializeComponent();
             Control = c;
             grid = Control.GetGrid();
+
+            //hide het menu, en focus op de map
+            start_menu_panel.Hide();
+            this.Focus();
         }
 
         private void MapView_Load(object sender, EventArgs e)
@@ -159,13 +163,15 @@ namespace PokeCiv.View
 
             if (e.KeyCode == Keys.Enter)
             {
-                panel1.Show();             
+
+                    start_menu_panel.Show();
+                    start_menu_panel.Focus();
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void close_menu_button(object sender, EventArgs e)
         {
-            panel1.Hide();
+            start_menu_panel.Hide();
             this.Focus();
         }
 

@@ -32,7 +32,7 @@
             this.pb_player = new System.Windows.Forms.PictureBox();
             this.mapBackgroundCanvas = new System.Windows.Forms.PictureBox();
             this.pb_playerFloor = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.start_menu_panel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.start_menu_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pb_player
@@ -79,20 +79,20 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(401, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 400);
-            this.panel1.TabIndex = 5;
-            this.panel1.TabStop = true;
+            this.start_menu_panel.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.start_menu_panel.Controls.Add(this.button8);
+            this.start_menu_panel.Controls.Add(this.button7);
+            this.start_menu_panel.Controls.Add(this.button6);
+            this.start_menu_panel.Controls.Add(this.button5);
+            this.start_menu_panel.Controls.Add(this.button4);
+            this.start_menu_panel.Controls.Add(this.button3);
+            this.start_menu_panel.Controls.Add(this.button2);
+            this.start_menu_panel.Controls.Add(this.button1);
+            this.start_menu_panel.Location = new System.Drawing.Point(401, 42);
+            this.start_menu_panel.Name = "panel1";
+            this.start_menu_panel.Size = new System.Drawing.Size(200, 400);
+            this.start_menu_panel.TabIndex = 5;
+            this.start_menu_panel.TabStop = true;
             // 
             // button8
             // 
@@ -104,7 +104,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "X";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.close_menu_button);
             // 
             // button7
             // 
@@ -174,7 +174,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 440);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.start_menu_panel);
             this.Controls.Add(this.pb_playerFloor);
             this.Controls.Add(this.pb_player);
             this.Controls.Add(this.mapBackgroundCanvas);
@@ -186,7 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.start_menu_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,7 +196,7 @@
         private System.Windows.Forms.PictureBox mapBackgroundCanvas;
         private System.Windows.Forms.PictureBox pb_player;
         private System.Windows.Forms.PictureBox pb_playerFloor;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel start_menu_panel;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
