@@ -206,7 +206,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton1.BackColor = Color.DarkCyan;
             waitForInput = false;
-            groupBox_moves.Hide();
+
         }
 
         private void MovesButton2_Click(object sender, EventArgs e)
@@ -215,7 +215,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton2.BackColor = Color.DarkCyan;
             waitForInput = false;
-            groupBox_moves.Hide();
+
         }
 
         private void MovesButton3_Click(object sender, EventArgs e)
@@ -224,7 +224,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton3.BackColor = Color.DarkCyan;
             waitForInput = false;
-            groupBox_moves.Hide();
+
         }
 
         private void MovesButton4_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace PokeCiv.View
             resetbuttonColors();
             MovesButton4.BackColor = Color.DarkCyan;
             waitForInput = false;
-            groupBox_moves.Hide();
+
         }
 
        public void resetbuttonColors(){
