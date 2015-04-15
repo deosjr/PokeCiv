@@ -11,6 +11,7 @@ namespace PokeCiv.Model.World.Tiles.TileItems
 
         public Block(){
             blocks = true;
+            imageSrc = "../../Data/Graphics/Tiles/block" + Mechanics.random.Next(1, 4) + ".png";
         }
         
     }

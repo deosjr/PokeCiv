@@ -66,7 +66,7 @@ namespace PokeCiv.Model.World
 
             // encounters = {0.45: ("PIDGEY", 2, 4), 0.3:("RATTATA",2,2), 0.2:("SENTRET",3,3), 0.05:("FURRET",6,6)}
             ArrayList testWildPokemon = new ArrayList();
-            testWildPokemon.Add(new Encounter("MAGIKARP", 20, 20, 1.0));
+            testWildPokemon.Add(new Encounter("KAKUNA", 20, 20, 1.0));
 
             for (int Y = 0; Y < ascii.GetLength(0); Y++)
             {
@@ -89,7 +89,8 @@ namespace PokeCiv.Model.World
                             Grid[Y,X].tileType = "U";
                             break;
                         case "b":
-                            Grid[Y,X].tileItem = new Bush();
+                            Grid[Y,X].tileItem = new Block();
+                            Grid[Y, X].tileItem.imageSrc = "../../Data/Graphics/Tiles/bush.png";
                             Grid[Y,X].tileType = "B";
                             break;
                     }

@@ -13,6 +13,8 @@ namespace PokeCiv.Model.World.Tiles.TileItems
 
         public bool blocks = false;
 
+        public string imageSrc;
+
         public virtual void stepOn(Controller c) { }
 
     }

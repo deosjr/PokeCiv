@@ -144,27 +144,13 @@ namespace PokeCiv.View
 
         }
 
-        private string getTileImage(Tile item)
+        private string getTileImage(Tile tile)
         {
-            var tileImageSrc = "";
-
-            switch (item.tileType)
+            if (tile.tileItem == null)
             {
-                case "X":
-                    tileImageSrc = "../../Data/Graphics/Tiles/block"+Mechanics.random.Next(1,4)+".png";
-                    break;
-                case "W":
-                    tileImageSrc = "../../Data/Graphics/Tiles/gras.png";
-                    break;
-                case "U":
-                    tileImageSrc = "../../Data/Graphics/Tiles/water.png";
-                    break;
-                case "B":
-                    tileImageSrc = "../../Data/Graphics/Tiles/bush.png";
-                    break;
+                return "";
             }
-
-            return tileImageSrc;
+            return tile.tileItem.imageSrc;
         }
 
         private void MapView_KeyUp(object sender, KeyEventArgs e)
