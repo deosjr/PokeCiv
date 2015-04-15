@@ -204,6 +204,7 @@ namespace PokeCiv.View
                 select_pkmn_panel.Invoke(new MethodInvoker(delegate { select_pkmn_panel.Show(); }));            
             }
 
+            //TODO: misklikken chrased de boel hier! later fixen
             while (waitForInput)
             {
                 //have the cpu run around drooling
@@ -211,6 +212,7 @@ namespace PokeCiv.View
                 System.Threading.Thread.Sleep(10);
             }
             waitForInput = true;
+            drawOnce();
 
             return ready2Switch;
         }
