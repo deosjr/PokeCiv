@@ -39,7 +39,7 @@ namespace PokeCiv.View
 
             //hide interface items that are unused for now
             groupBox_moves.Hide();
-           // select_pkmn_panel.Hide();
+            select_pkmn_panel.Hide();
         }
 
         private void drawOnce()
@@ -274,7 +274,7 @@ namespace PokeCiv.View
 
        private void hide_select_pokemon_panel(object sender, EventArgs e)
        {
-           this.Hide();
+           select_pkmn_panel.Hide();
        }
 
     }
