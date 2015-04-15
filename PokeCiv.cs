@@ -38,32 +38,32 @@ namespace PokeCiv
             Controller c = new Controller(player1);
             Map m = new Map(c, "Field");
 
-            //string[] ascii = CaveGeneration.generateASCIIMap(8, 6);
-            string[] ascii = new string[]{
-                "xxxxxxxxxxxxxxxxxxx     ",
-                "x    xx    x b  ww b    ",
-                "x ww xx      b ww   b   ",
-                "x ww     uuu b       b  ",
-                "x ww    uuuu b xx    uu ",
-                "x       uuu  b xx    uuu",
-                "xx      www  b xx      u",
-                "xx   bbbwww    xx      u",
-                "xxw  xxxxww    xx    x u",
-                "xwww xxw  w          x u",
-                "xwwwwwww  w bbb      x u",
-                "x ww www     b       x u",
-                "x    www     b       x x",
-                "xx           uu      x u",
-                "xx    bbbbb  uu      x u",
-                "x    xx              uuu",
-                "x ww xx              uuu",
-                "x wwxx               uuu",
-                "x wwxx               uuu",
-                "x           x        uu ",
-                "uuu    u    x        b  ",
-                " uuu  uu             b  ",
-                "   uuuuxxxxxxxxxxxxxxb  "
-            };
+            string[] ascii = CaveGeneration.generateASCIIMap(8, 6);
+            //string[] ascii = new string[]{
+            //    "xxxxxxxxxxxxxxxxxxx     ",
+            //    "x    xx    x b  ww b    ",
+            //    "x ww xx      b ww   b   ",
+            //    "x ww     uuu b       b  ",
+            //    "x ww    uuuu b xx    uu ",
+            //    "x       uuu  b xx    uuu",
+            //    "xx      www  b xxww    u",
+            //    "xx   bbbwww  b xxww    u",
+            //    "xxw  xxxxww  b xxww  x u",
+            //    "xwww xxw  w wwwwwww  x u",
+            //    "xwwwwwww  w bbbwwwww x u",
+            //    "x ww www     bwwwwww x u",
+            //    "x    www     bwwwwww x x",
+            //    "xx           uuwwwww x u",
+            //    "xx    bbbbb  uuwwwww x u",
+            //    "x    xx        wwwww uuu",
+            //    "x ww xx        wwwww uuu",
+            //    "x wwxx      wwwwwwww uuu",
+            //    "x wwxx               uuu",
+            //    "x           x        uu ",
+            //    "uuu    u    xwwwwwww b  ",
+            //    " uuu  uu     wwwwwww b  ",
+            //    "   uuuuxxxxxxxxxxxxxxb  "
+            //};
 
             Dictionary<Char, TileItem> lookup = new Dictionary<char, TileItem>();
             // encounters = {0.45: ("PIDGEY", 2, 4), 0.3:("RATTATA",2,2), 0.2:("SENTRET",3,3), 0.05:("FURRET",6,6)}

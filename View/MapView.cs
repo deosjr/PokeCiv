@@ -22,7 +22,7 @@ namespace PokeCiv.View
     {
         public Controller Control { private get; set; }
         Tile[,] grid;
-        public int gridSizePixels = 40;
+        public int gridSizePixels = 16;
         public Point backgroundLocation = new Point(0, 0);
 
         public MapView(Controller c)
@@ -44,7 +44,7 @@ namespace PokeCiv.View
             //set the canvas to grid size
             this.mapBackgroundCanvas.Size = new Size(grid.GetLength(0) * gridSizePixels, grid.GetLength(1) * gridSizePixels);
 
-            Point current = new Point(-gridSizePixels, 0);
+            Point current = new Point(-gridSizePixels, -gridSizePixels);
 
             for (int i = 0; i < grid.GetLength(0); i++)
             {
@@ -56,9 +56,10 @@ namespace PokeCiv.View
                         //genereer 1 nieuwe picturebox
                         PictureBox pb = new PictureBox();
                         pb.Size = new Size(gridSizePixels, gridSizePixels);
-                        //stel hem in op de nieuwe locatie
-                        current.X += gridSizePixels;
+                                            
                         pb.Location = current;
+                        //stel hem in op de current locatie 
+                        current.X += gridSizePixels;
                         //set the correct img
                         pb.ImageLocation = getTileImage(item);
                         pb.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -94,7 +95,7 @@ namespace PokeCiv.View
 
             //positioneer de vloer
             //TODO: 8x6 is het absolute midden, dus moet ook aangepast kunnen worden
-            pb_playerFloor.Location = new Point(8 * gridSizePixels, 6 * gridSizePixels);
+            pb_playerFloor.Location = new Point(26 * gridSizePixels, 26 * gridSizePixels);
             
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
