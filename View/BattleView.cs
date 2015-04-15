@@ -63,16 +63,43 @@ namespace PokeCiv.View
             }
 
             //then add the pokemons to the floors
-           // frontFloor.Controls.Add(frontImageBattlePokemon);
-          //  backFloor.Controls.Add(backImageBattlePokemon);
+            if (battleBack.InvokeRequired)
+            {
+                battleBack.Invoke(new MethodInvoker(delegate { frontFloor.Controls.Add(frontImageBattlePokemon); }));
+                battleBack.Invoke(new MethodInvoker(delegate { backFloor.Controls.Add(backImageBattlePokemon); }));
+            }
+            else
+            {
+                frontFloor.Controls.Add(frontImageBattlePokemon);
+                backFloor.Controls.Add(backImageBattlePokemon);
+            }
 
             //set the floors to transparent, the pokemons will inherrit this
-        //    frontFloor.BackColor = Color.Transparent;
-        //    backFloor.BackColor = Color.Transparent;
+            if (frontFloor.InvokeRequired || backFloor.InvokeRequired)
+            {
+                frontFloor.Invoke(new MethodInvoker(delegate { frontFloor.BackColor = Color.Transparent; }));
+                backFloor.Invoke(new MethodInvoker(delegate { backFloor.BackColor = Color.Transparent; }));
+            }
+            else
+            {
+                frontFloor.BackColor = Color.Transparent;
+                backFloor.BackColor = Color.Transparent;
+            }
 
             //reset the startpoints of the pokemons (relative to the floors)
-        //    frontImageBattlePokemon.Location = new Point(0, 0);
-        //    backImageBattlePokemon.Location = new Point(0, 0);
+            if (frontFloor.InvokeRequired || backFloor.InvokeRequired)
+            {
+                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.Location = new Point(0, 0); }));
+                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.Location = new Point(0, 0); }));
+            }
+            else
+            {
+                frontImageBattlePokemon.Location = new Point(0, 0);
+                backImageBattlePokemon.Location = new Point(0, 0);
+            }
+
+
+
 
             //Pokemon Images           
             if (backImageBattlePokemon.InvokeRequired)
@@ -123,10 +150,13 @@ namespace PokeCiv.View
             //BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
 
             //moves buttons
-            if (MovesButton1.InvokeRequired){              
+            if (MovesButton1.InvokeRequired){
+                if (p1.Moves[0] != null)
+                {
                     MovesButton1.Invoke(new MethodInvoker(delegate { MovesButton1.Text = p1.Moves[0].move.ToString(); }));
                     labelPP_move1.Invoke(new MethodInvoker(delegate { labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString(); }));
-            }
+                }
+             }
             else
             {
                 if (p1.Moves[0] != null)
@@ -138,8 +168,11 @@ namespace PokeCiv.View
             }
             if (MovesButton2.InvokeRequired)
             {
+                if (p1.Moves[1] != null)
+                {
                 MovesButton2.Invoke(new MethodInvoker(delegate { MovesButton2.Text = p1.Moves[1].move.ToString(); }));
                 labelPP_move2.Invoke(new MethodInvoker(delegate { labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString(); }));
+                }
             }
             else
             {
@@ -151,6 +184,7 @@ namespace PokeCiv.View
 
             }
 
+            //TODO: nog tread delegaten
 
             //if (p1.Moves[1] != null)
             //{
@@ -220,12 +254,7 @@ namespace PokeCiv.View
             {
                 BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = battle.P1.CurrentHP + "/" + battle.P1.HP + "HP"; }));
             }
-
-            //TODO: 
-            //lvl update
-            //pokemon name
-            //alle mf-ing images bij een pokemon swap
-
+          
             while (waitForInput)
             {
                 //have the cpu run around drooling
@@ -257,6 +286,11 @@ namespace PokeCiv.View
             }
             waitForInput = true;
             drawOnce();
+
+
+                backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + ready2Switch.species.ID.ToString().PadLeft(3, '0') + "b.gif";
+                frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + ready2Switch.species.ID.ToString().PadLeft(3, '0') + ".gif";
+            
 
             return ready2Switch;
         }
