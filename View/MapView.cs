@@ -22,7 +22,7 @@ namespace PokeCiv.View
     {
         public Controller Control { private get; set; }
         Tile[,] grid;
-        public int gridSizePixels = 16;
+        public int gridSizePixels = 32;
         public Point backgroundLocation = new Point(0, 0);
 
         public MapView(Controller c)
@@ -44,7 +44,7 @@ namespace PokeCiv.View
             //set the canvas to grid size
             this.mapBackgroundCanvas.Size = new Size(grid.GetLength(0) * gridSizePixels, grid.GetLength(1) * gridSizePixels);
 
-            Point current = new Point(-gridSizePixels, 0);
+            Point current = new Point(0, -gridSizePixels);
 
             for (int i = 0; i < grid.GetLength(0); i++)
             {
@@ -55,10 +55,11 @@ namespace PokeCiv.View
                     if (item.tileItem != null) {
                         //genereer 1 nieuwe picturebox
                         PictureBox pb = new PictureBox();
-                        pb.Size = new Size(gridSizePixels, gridSizePixels);
-                        //stel locatie in  
-                        current.X += gridSizePixels;
+                        pb.Size = new Size(gridSizePixels, gridSizePixels);                                            
+                        //stel hem in op de nieuwe locatie
                         pb.Location = current;
+                        //verschuif de cursor
+                        current.X += gridSizePixels;                       
                         //set the correct img
                         pb.ImageLocation = getTileImage(item);
                         pb.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -93,8 +94,8 @@ namespace PokeCiv.View
             pb_playerFloor.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //positioneer de vloer
-            //TODO: 8x6 is het absolute midden, dus moet ook aangepast kunnen worden
-            pb_playerFloor.Location = new Point(8 * gridSizePixels, 6 * gridSizePixels);
+            //TODO: dit doorgeven bij t laden
+            pb_playerFloor.Location = new Point(7 * gridSizePixels, 5 * gridSizePixels);
             
             //set the correct img        
             pb_playerFloor.ImageLocation = getTileImage(tile);
@@ -106,15 +107,41 @@ namespace PokeCiv.View
 
         private void MapView_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                start_menu_panel.Show();
+                start_menu_panel.Focus();
+            }
+        }
+
+        private string getTileImage(Tile tile)
+        {
+            if (tile.tileItem == null)
+            {
+                return "";
+            }
+            return tile.tileItem.imageSrc;
+        }
+
+        private void MapView_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                    start_menu_panel.Show();
+                    start_menu_panel.Focus();
+            }
+
+            if (e.KeyCode == Keys.Down)
             {
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_DOWN.png";
                 if (Control.playerMoveDown())
                 {
-                   backgroundLocation.Y -= gridSizePixels;
-                   mapBackgroundCanvas.Location = backgroundLocation;
+                    backgroundLocation.Y -= gridSizePixels;
+                    mapBackgroundCanvas.Location = backgroundLocation;
                 }
-            }               
+            }
             else if (e.KeyCode == Keys.Up)
             {
                 pb_player.ImageLocation = "../../Data/Graphics/Tiles/player_UP.png";
@@ -141,26 +168,6 @@ namespace PokeCiv.View
                     backgroundLocation.X -= gridSizePixels;
                     mapBackgroundCanvas.Location = backgroundLocation;
                 }
-            }
-
-        }
-
-        private string getTileImage(Tile tile)
-        {
-            if (tile.tileItem == null)
-            {
-                return "";
-            }
-            return tile.tileItem.imageSrc;
-        }
-
-        private void MapView_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
-                    start_menu_panel.Show();
-                    start_menu_panel.Focus();
             }
         }
 
