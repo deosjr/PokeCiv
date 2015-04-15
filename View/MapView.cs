@@ -49,7 +49,7 @@ namespace PokeCiv.View
                 {
                     Tile item = grid[i, j];
                     //als t geen leeg vakje is
-                    if (item.tileType != "_") {
+                    if (item.tileItem != null) {
                         //genereer 1 nieuwe picturebox
                         PictureBox pb = new PictureBox();
                         pb.Size = new Size(gridSizePixels, gridSizePixels);
