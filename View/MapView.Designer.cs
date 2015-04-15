@@ -86,9 +86,9 @@
             this.start_menu_panel.Controls.Add(this.button3);
             this.start_menu_panel.Controls.Add(this.button2);
             this.start_menu_panel.Controls.Add(this.button1);
-            this.start_menu_panel.Location = new System.Drawing.Point(399, 65);
+            this.start_menu_panel.Location = new System.Drawing.Point(410, 12);
             this.start_menu_panel.Name = "start_menu_panel";
-            this.start_menu_panel.Size = new System.Drawing.Size(202, 377);
+            this.start_menu_panel.Size = new System.Drawing.Size(178, 337);
             this.start_menu_panel.TabIndex = 5;
             this.start_menu_panel.TabStop = true;
             // 
@@ -97,7 +97,7 @@
             this.button8.BackColor = System.Drawing.Color.White;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(18, 324);
+            this.button8.Location = new System.Drawing.Point(4, 293);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(169, 39);
             this.button8.TabIndex = 7;
@@ -110,7 +110,7 @@
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.Enabled = false;
             this.button6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(17, 276);
+            this.button6.Location = new System.Drawing.Point(3, 245);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(170, 42);
             this.button6.TabIndex = 5;
@@ -122,7 +122,7 @@
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(17, 228);
+            this.button5.Location = new System.Drawing.Point(3, 197);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(170, 42);
             this.button5.TabIndex = 4;
@@ -134,7 +134,7 @@
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(17, 180);
+            this.button4.Location = new System.Drawing.Point(3, 149);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(170, 42);
             this.button4.TabIndex = 3;
@@ -146,7 +146,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(17, 132);
+            this.button3.Location = new System.Drawing.Point(3, 101);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 42);
             this.button3.TabIndex = 2;
@@ -158,7 +158,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(17, 84);
+            this.button2.Location = new System.Drawing.Point(3, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 42);
             this.button2.TabIndex = 1;
@@ -169,7 +169,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(17, 34);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 42);
             this.button1.TabIndex = 0;
