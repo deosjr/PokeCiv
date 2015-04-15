@@ -62,7 +62,8 @@
             this.mapBackgroundCanvas.BackColor = System.Drawing.Color.LightGreen;
             this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, 0);
             this.mapBackgroundCanvas.Name = "mapBackgroundCanvas";
-            this.mapBackgroundCanvas.Size = new System.Drawing.Size(441, 278);
+            this.mapBackgroundCanvas.Size = new System.Drawing.Size(349, 278);
+            this.mapBackgroundCanvas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.mapBackgroundCanvas.TabIndex = 0;
             this.mapBackgroundCanvas.TabStop = false;
             // 
