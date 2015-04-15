@@ -86,7 +86,7 @@ namespace PokeCiv.Controllers
             currentView = mapView;
         }
 
-        public Tile[][] GetGrid()
+        public Tile[,] GetGrid()
         {
             return Map.Grid;
         }
@@ -120,7 +120,7 @@ namespace PokeCiv.Controllers
         {
             if (Map.playerMove(xdiff, ydiff))
             {
-                Tile currentTile = Map.Grid[Player.Y][Player.X];
+                Tile currentTile = Map.Grid[Player.Y, Player.X];
                 mapView.UpdatePlayer(currentTile);
                 currentTile.stepOn(this);
                 return true;

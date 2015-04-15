@@ -21,7 +21,7 @@ namespace PokeCiv.View
     public partial class MapView : IView
     {
         public Controller Control { private get; set; }
-        Tile[][] grid;
+        Tile[,] grid;
         public int gridSizePixels = 40;
         public Point backgroundLocation = new Point(0, 0);
 
@@ -35,7 +35,7 @@ namespace PokeCiv.View
 
         private void MapView_Load(object sender, EventArgs e)
         {
-            UpdatePlayer(Control.GetGrid()[Control.Player.Y][Control.Player.X]);
+            UpdatePlayer(Control.GetGrid()[Control.Player.Y, Control.Player.X]);
             
             //set the canvas to grid size
             //TODO make this dynamic
@@ -43,10 +43,11 @@ namespace PokeCiv.View
 
             Point current = new Point(-gridSizePixels, 0);
 
-            foreach (var row in grid)
+            for (int i = 0; i < grid.GetLength(0); i++)
             {
-                foreach (var item in row)
+                for (int j = 0; j < grid.GetLength(1); j++)
                 {
+                    Tile item = grid[i, j];
                     //als t geen leeg vakje is
                     if (item.tileType != "_") {
                         //genereer 1 nieuwe picturebox
