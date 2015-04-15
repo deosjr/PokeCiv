@@ -40,6 +40,7 @@ namespace PokeCiv.View
             //hide interface items that are unused for now
             groupBox_moves.Hide();
             select_pkmn_panel.Hide();
+            send_out_button.Enabled = false;
         }
 
         private void drawOnce()
@@ -149,15 +150,40 @@ namespace PokeCiv.View
             }
             
             //XPbar
-            //BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq;
-            //BackPokemonXPBar.Value = p1.CurrentXP - p1.PreviousXPLevelReq;
+            if (BackPokemonHPBar.InvokeRequired)
+            {
+                BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq; }));
+                BackPokemonXPBar.Invoke(new MethodInvoker(delegate { BackPokemonXPBar.Value = p1.CurrentXP - p1.PreviousXPLevelReq; }));
+            }
+            else
+            {
+                BackPokemonXPBar.Maximum = p1.NextXPLevelReq - p1.PreviousXPLevelReq;
+                BackPokemonXPBar.Value = p1.CurrentXP - p1.PreviousXPLevelReq;
+            }
+
 
             //HPBars
-            //BackPokemonHPBar.Maximum = p1.HP;
-            //BackPokemonHPBar.Value = p1.CurrentHP;
+            if (BackPokemonHPBar.InvokeRequired)
+            {
+                BackPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Maximum = p1.HP; }));
+                BackPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Value = p1.CurrentHP; }));
+            }
+            else
+            {
+                BackPokemonHPBar.Maximum = p1.HP;
+                BackPokemonHPBar.Value = p1.CurrentHP;
+            }
 
-            //FrontPokemonHPBar.Maximum = p2.HP;
-            //FrontPokemonHPBar.Value = p2.CurrentHP;
+            if (FrontPokemonHPBar.InvokeRequired)
+            {
+                FrontPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Maximum = p2.HP; }));
+                FrontPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Value = p2.CurrentHP; }));
+            }
+            else
+            {
+                FrontPokemonHPBar.Maximum = p2.HP;
+                FrontPokemonHPBar.Value = p2.CurrentHP;
+            }
 
             //Own Pokemon HP Label
             if (BackPokemonHPLabel.InvokeRequired)
@@ -392,7 +418,16 @@ namespace PokeCiv.View
 
        private void list_select_pokemon_SelectedIndexChanged(object sender, EventArgs e)
        {
-           ready2Switch = ((Pokemon)listBox1.SelectedItem);
+           if (((Pokemon)listBox1.SelectedItem).CurrentHP < 1)
+           {
+               send_out_button.Enabled = false;
+           }
+           else
+           {
+               ready2Switch = ((Pokemon)listBox1.SelectedItem);
+               send_out_button.Enabled = true;
+           }
+
        }
 
        private void hide_select_pokemon_panel(object sender, EventArgs e)

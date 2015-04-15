@@ -62,7 +62,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.select_pkmn_panel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.send_out_button = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -463,23 +463,24 @@
             // 
             // select_pkmn_panel
             // 
-            this.select_pkmn_panel.BackColor = System.Drawing.Color.Red;
-            this.select_pkmn_panel.Controls.Add(this.button1);
+            this.select_pkmn_panel.BackColor = System.Drawing.Color.Bisque;
+            this.select_pkmn_panel.Controls.Add(this.send_out_button);
             this.select_pkmn_panel.Controls.Add(this.listBox1);
             this.select_pkmn_panel.Location = new System.Drawing.Point(220, 231);
             this.select_pkmn_panel.Name = "select_pkmn_panel";
             this.select_pkmn_panel.Size = new System.Drawing.Size(245, 181);
             this.select_pkmn_panel.TabIndex = 30;
             // 
-            // button1
+            // send_out_button
             // 
-            this.button1.Location = new System.Drawing.Point(152, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Send out!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.hide_select_pokemon_panel);
+            this.send_out_button.Enabled = false;
+            this.send_out_button.Location = new System.Drawing.Point(152, 29);
+            this.send_out_button.Name = "send_out_button";
+            this.send_out_button.Size = new System.Drawing.Size(75, 23);
+            this.send_out_button.TabIndex = 1;
+            this.send_out_button.Text = "Send out!";
+            this.send_out_button.UseVisualStyleBackColor = true;
+            this.send_out_button.Click += new System.EventHandler(this.hide_select_pokemon_panel);
             // 
             // listBox1
             // 
@@ -564,7 +565,7 @@
         private System.Windows.Forms.Button MovesButton1;
         private System.Windows.Forms.Button MovesButton2;
         private System.Windows.Forms.Panel select_pkmn_panel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button send_out_button;
         private System.Windows.Forms.ListBox listBox1;
     }
 }
