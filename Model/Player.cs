@@ -13,13 +13,16 @@ namespace PokeCiv.Model
 
         public List<Pokemon> Team { get; private set; }
         public string Name { get; private set; }
+
         public int X { get; set; }
         public int Y { get; set; }
+        public string Facing { get; set; }
 
         public Player(string name)
         {
             Name = name;
             Team = new List<Pokemon>();
+            Facing = "DOWN";
         }
 
         public void AddToTeam(Pokemon pokemon)

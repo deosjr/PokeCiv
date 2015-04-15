@@ -98,26 +98,27 @@ namespace PokeCiv.Controllers
 
         public bool playerMoveUp()
         {
-            return playerMove(0, -1);
+            return playerMove(0, -1, "UP");
         }
 
         public bool playerMoveDown()
         {
-            return playerMove(0, 1);
+            return playerMove(0, 1, "DOWN");
         }
 
         public bool playerMoveLeft()
         {
-            return playerMove(-1, 0);
+            return playerMove(-1, 0, "LEFT");
         }
 
         public bool playerMoveRight()
         {
-            return playerMove(1, 0);
+            return playerMove(1, 0, "RIGHT");
         }
 
-        private bool playerMove(int xdiff, int ydiff)
+        private bool playerMove(int xdiff, int ydiff, string facing)
         {
+            Player.Facing = facing;
             if (Map.playerMove(xdiff, ydiff))
             {
                 Tile currentTile = Map.Grid[Player.Y, Player.X];
