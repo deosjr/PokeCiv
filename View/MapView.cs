@@ -22,7 +22,7 @@ namespace PokeCiv.View
     {
         public Controller Control { private get; set; }
         Tile[,] grid;
-        public int gridSizePixels = 32;
+        public int gridSizePixels = 40;
         public Point backgroundLocation = new Point(0, 0);
 
         public MapView(Controller c)
@@ -43,7 +43,6 @@ namespace PokeCiv.View
             
             //set the canvas to grid size
             this.mapBackgroundCanvas.Size = new Size(grid.GetLength(0) * gridSizePixels, grid.GetLength(1) * gridSizePixels);
-
             Point current = new Point(0, -gridSizePixels);
 
             for (int i = 0; i < grid.GetLength(0); i++)
@@ -107,11 +106,10 @@ namespace PokeCiv.View
 
         private void MapView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Down)
             {
 
-                start_menu_panel.Show();
-                start_menu_panel.Focus();
+                MapView_KeyUp(sender,  e);
             }
         }
 
