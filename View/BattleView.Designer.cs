@@ -464,14 +464,14 @@
             this.select_pkmn_panel.BackColor = System.Drawing.Color.Red;
             this.select_pkmn_panel.Controls.Add(this.button1);
             this.select_pkmn_panel.Controls.Add(this.listBox1);
-            this.select_pkmn_panel.Location = new System.Drawing.Point(141, 115);
+            this.select_pkmn_panel.Location = new System.Drawing.Point(220, 231);
             this.select_pkmn_panel.Name = "select_pkmn_panel";
-            this.select_pkmn_panel.Size = new System.Drawing.Size(411, 334);
+            this.select_pkmn_panel.Size = new System.Drawing.Size(245, 181);
             this.select_pkmn_panel.TabIndex = 30;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 49);
+            this.button1.Location = new System.Drawing.Point(152, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -482,11 +482,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(14, 49);
+            this.listBox1.Location = new System.Drawing.Point(13, 29);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 160);
+            this.listBox1.Size = new System.Drawing.Size(120, 82);
             this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.list_select_pokemon_SelectedIndexChanged);
             // 
             // BattleView
             // 

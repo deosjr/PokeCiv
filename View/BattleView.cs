@@ -23,7 +23,7 @@ namespace PokeCiv.View
         public Controller Control { private get; set; }
 
         private Battle battle;
-        private Pokemon ready2Switch;
+        public Pokemon ready2Switch;
 
         public BattleView(Battle battle)
         {
@@ -197,20 +197,25 @@ namespace PokeCiv.View
         }
 
         public Pokemon switchPokemon()
-        {
-            //weten welke je mag selecteren
-            
-
+        {          
+            //open het panel om de variable "ready2Switch" te setten.
             if (select_pkmn_panel.InvokeRequired)
             {
                 select_pkmn_panel.Invoke(new MethodInvoker(delegate { select_pkmn_panel.Show(); }));            
             }
-            
+
+            while (waitForInput)
+            {
+                //have the cpu run around drooling
+                //Must sleep the thead to prevent 100% cpu load on this thread
+                System.Threading.Thread.Sleep(10);
+            }
+            waitForInput = true;
 
             return ready2Switch;
         }
 
-        //"next"  aka "A" op de gameboy
+        //"next" aka "A" op de gameboy
         private void BattleView_MouseClick(object sender, MouseEventArgs e)
         {
             waitForInput = false;
@@ -267,7 +272,7 @@ namespace PokeCiv.View
            groupBox_moves.Show();
        }
 
-       private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+       private void list_select_pokemon_SelectedIndexChanged(object sender, EventArgs e)
        {
            ready2Switch = ((Pokemon)listBox1.SelectedItem);
        }
