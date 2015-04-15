@@ -98,9 +98,6 @@ namespace PokeCiv.View
                 backImageBattlePokemon.Location = new Point(0, 0);
             }
 
-
-
-
             //Pokemon Images           
             if (backImageBattlePokemon.InvokeRequired)
             {
@@ -114,15 +111,31 @@ namespace PokeCiv.View
             }
 
             //backgrond Image
-            //battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";
-
+            if (battleBack.InvokeRequired)
+            {
+                battleBack.Invoke(new MethodInvoker(delegate { battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png"; }));
+            }
+            else
+            {
+                battleBack.ImageLocation = "../../Data/Graphics/Battlebacks/battlebg" + battle.BattleType + ".png";
+            }
             //floors
             //frontFloor.ImageLocation = "../../Data/Graphics/Battlebacks/enemybase" + battle.BattleType + ".png";
             //backFloor.ImageLocation = "../../Data/Graphics/Battlebacks/playerbase" + battle.BattleType + ".png";
 
             //Pokemon names
-            //backPokemonName.Text = p1.Name;
-            //fontPokemonName.Text = p2.Name;
+            if (backPokemonName.InvokeRequired || fontPokemonName.InvokeRequired)
+            {
+                backPokemonName.Invoke(new MethodInvoker(delegate { backPokemonName.Text = p1.Name; }));
+                fontPokemonName.Invoke(new MethodInvoker(delegate { fontPokemonName.Text = p2.Name; }));
+            
+            }
+            else
+            {
+                backPokemonName.Text = p1.Name;
+                fontPokemonName.Text = p2.Name;
+            }
+            
 
             //Pokemon Levels
             //backPokemonLevel.Text = "lvl " + p1.Level.ToString();
@@ -147,9 +160,18 @@ namespace PokeCiv.View
             //FrontPokemonHPBar.Value = p2.CurrentHP;
 
             //Own Pokemon HP Label
-            //BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
+            if (BackPokemonHPLabel.InvokeRequired)
+            {
+                BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP"; }));
+            }
+            else
+            {
+                BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
+            }
 
             //moves buttons
+            #region 4 move buttons
+            
             if (MovesButton1.InvokeRequired){
                 if (p1.Moves[0] != null)
                 {
@@ -183,25 +205,42 @@ namespace PokeCiv.View
                 }
 
             }
+            if (MovesButton3.InvokeRequired)
+            {
+                if (p1.Moves[2] != null)
+                {
+                    MovesButton3.Invoke(new MethodInvoker(delegate { MovesButton3.Text = p1.Moves[2].move.ToString(); }));
+                    labelPP_move3.Invoke(new MethodInvoker(delegate { labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString(); }));
+                }
+            }
+            else
+            {
+                if (p1.Moves[2] != null)
+                {
+                    MovesButton3.Text = p1.Moves[2].move.ToString();
+                    labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString();
+                }
 
-            //TODO: nog tread delegaten
+            }
+            if (MovesButton4.InvokeRequired)
+            {
+                if (p1.Moves[3] != null)
+                {
+                    MovesButton4.Invoke(new MethodInvoker(delegate { MovesButton4.Text = p1.Moves[3].move.ToString(); }));
+                    labelPP_move4.Invoke(new MethodInvoker(delegate { labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString(); }));
+                }
+            }
+            else
+            {
+                if (p1.Moves[3] != null)
+                {
+                    MovesButton4.Text = p1.Moves[3].move.ToString();
+                    labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString();
+                }
 
-            //if (p1.Moves[1] != null)
-            //{
-            //    MovesButton2.Text = p1.Moves[1].move.ToString();
-            //    labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString();
-            //}
-            //if (p1.Moves[2] != null)
-            //{
-            //    MovesButton3.Text = p1.Moves[2].move.ToString();
-            //    labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString();
-            //}
-            //if (p1.Moves[3] != null)
-            //{
-            //    MovesButton4.Text = p1.Moves[3].move.ToString();
-            //    labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString();
-            //}
-            
+            }
+
+            #endregion
         }
 
 
@@ -287,11 +326,10 @@ namespace PokeCiv.View
             waitForInput = true;
             drawOnce();
 
+            //TODO: dit hierneerzetten is een hotfix voor een race conditie 
+            backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + ready2Switch.species.ID.ToString().PadLeft(3, '0') + "b.gif";
 
-                backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + ready2Switch.species.ID.ToString().PadLeft(3, '0') + "b.gif";
-                frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + ready2Switch.species.ID.ToString().PadLeft(3, '0') + ".gif";
-            
-
+       
             return ready2Switch;
         }
 
