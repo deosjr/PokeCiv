@@ -180,5 +180,11 @@ namespace PokeCiv.View
             Console.WriteLine(msg);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TeamView tv = new TeamView(Control);
+            tv.ShowDialog();
+        }
+
     }
 }
