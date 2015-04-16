@@ -63,6 +63,24 @@ namespace PokeCiv.Controllers
             teamView = new TeamView(this);
             Pokemon newPokemon = teamView.switchPokemon();
             continueBattle(opponent, newPokemon, oppPokemon);
+            message("Go, " + newPokemon.Name + "!");
+        }
+
+        public void opponentSwitchPokemon(Player opponent)
+        {
+            if (opponent.BlackOut())
+            {
+                switchFromBattleToMap();
+                return;
+            }
+            Pokemon ownPokemon = Battle.P1;
+            Pokemon oppPokemon = Battle.getFirstHealthy(opponent);
+            if (battleView.InvokeRequired)
+            {
+                battleView.Invoke(new MethodInvoker(delegate { battleView.Close(); }));
+            }
+            continueBattle(opponent, ownPokemon, oppPokemon);
+            message(opponent.Name + " sent out " + oppPokemon.Name + "!");
         }
 
         public void switchFromBattleToMap()

@@ -31,6 +31,7 @@ namespace PokeCiv.Model.Battle
 
             if (start)
             {
+                setBattleReady();
                 if (player2.Name.Equals("WILD_POKEMON"))
                 {
                     message("A wild " + player2.Team.ElementAt(0).Name + " appeared!");
@@ -40,21 +41,16 @@ namespace PokeCiv.Model.Battle
                     message(player2.Name + " wants to fight!");
                     message(player2.Name + " sent out " + P2.Name + "!");
                 }
+                message("Go, " + P1.Name + "!");
             }
         }
 
         public void fight()
         {
-
-            setBattleReady();
-            message("Go, " + P1.Name + "!");
-
-            while (!(player1.BlackOut() || player2.BlackOut()))
+            while (true)
             {
                 battleLoop();
             }
-
-            Control.switchFromBattleToMap();
         }
 
         private void battleLoop()
@@ -162,11 +158,7 @@ namespace PokeCiv.Model.Battle
                 {
                     Experience.gainXP(this, P1, P2);
                 }
-                P2 = getFirstHealthy(player2);
-                if (P2 != null)
-                {
-                    message(player2.Name + " sent out " + P2.Name + "!");
-                }
+                Control.opponentSwitchPokemon(player2);
             }
             if (P1.CurrentHP == 0)
             {
