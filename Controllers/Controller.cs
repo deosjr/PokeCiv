@@ -23,6 +23,7 @@ namespace PokeCiv.Controllers
         public BattleView battleView { get; set; }
         public MapView mapView { get; set; }
         public PokedexView pokedexView { get; set; }
+        public TeamView teamView { get; set; }
         public IView currentView { private get; set; }
         public Battle Battle { private get; set; }
         public Map Map { private get; set; }
@@ -43,13 +44,25 @@ namespace PokeCiv.Controllers
             return battleView.selectMove();
         }
 
-        public Pokemon switchPokemon()
+        public void switchPokemon()
         {
             if (Player.BlackOut())
             {
-                return null;
+                switchFromBattleToMap();
+                return;
             }
-            return battleView.switchPokemon();
+            // This now hard-terminates the battle while its still running.
+            // Could this be done more elegantly?
+            // TODO: battle-wide parameters such as weather, leech seed etc need to be passed
+            Player opponent = Battle.player2;
+            Pokemon oppPokemon = Battle.P2;
+            if (battleView.InvokeRequired)
+            {
+                battleView.Invoke(new MethodInvoker(delegate { battleView.Close(); }));
+            }
+            teamView = new TeamView(this);
+            Pokemon newPokemon = teamView.switchPokemon();
+            continueBattle(opponent, newPokemon, oppPokemon);
         }
 
         public void switchFromBattleToMap()
@@ -65,7 +78,7 @@ namespace PokeCiv.Controllers
                 string oldName = p.Name;
                 if (p.evolve())
                 {
-                    currentView.message(oldName + " evolved into " + p.Name + "!");
+                    message(oldName + " evolved into " + p.Name + "!");
                 }
             }
         }
@@ -73,11 +86,7 @@ namespace PokeCiv.Controllers
         public void switchFromMapToBattle(Player opponent)
         {
             mapView.Hide();
-            Battle = new Battle(this, Player, opponent, Map.mapType);
-            battleView = new BattleView(Battle);
-            currentView = battleView;
-            new Thread(runView).Start();
-            Battle.fight();
+            startBattle(opponent);
         }
 
         public void switchFromMapToPokeDex()
@@ -92,6 +101,31 @@ namespace PokeCiv.Controllers
             mapView.Show();
             pokedexView.Hide();
             currentView = mapView;
+        }
+
+        private void startBattle(Player opponent)
+        {
+            Pokemon p1 = Battle.getFirstHealthy(Player);
+            if (p1 == null)
+            {
+                message("You don't have any pokemon!");
+                return;
+            }
+            Pokemon p2 = Battle.getFirstHealthy(opponent);
+            Battle = new Battle(this, Player, opponent, p1, p2, Map.mapType, true);
+            battleView = new BattleView(Battle);
+            currentView = battleView;
+            new Thread(runView).Start();
+            Battle.fight();
+        }
+
+        private void continueBattle(Player opponent, Pokemon p1, Pokemon p2)
+        {
+            Battle = new Battle(this, Player, opponent, p1, p2, Map.mapType, false);
+            battleView = new BattleView(Battle);
+            currentView = battleView;
+            new Thread(runView).Start();
+            Battle.fight();
         }
 
         public Tile[,] GetGrid()

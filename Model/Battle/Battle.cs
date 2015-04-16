@@ -20,36 +20,33 @@ namespace PokeCiv.Model.Battle
         public string BattleType { get; private set; }
         public Controller Control { private get; set; }
 
-        public Battle(Controller c, Player p1, Player p2, string mapType)
+        public Battle(Controller c, Player pl1, Player pl2, Pokemon p1, Pokemon p2, string mapType, bool start)
         {
             Control = c;
-            player1 = p1;
-            player2 = p2;
-            P1 = getFirstHealthy(player1);
-            P2 = getFirstHealthy(player2);
+            player1 = pl1;
+            player2 = pl2;
+            P1 = p1;
+            P2 = p2;
             BattleType = mapType;
+
+            if (start)
+            {
+                if (player2.Name.Equals("WILD_POKEMON"))
+                {
+                    message("A wild " + player2.Team.ElementAt(0).Name + " appeared!");
+                }
+                else
+                {
+                    message(player2.Name + " wants to fight!");
+                    message(player2.Name + " sent out " + P2.Name + "!");
+                }
+            }
         }
 
         public void fight()
         {
 
-            if (P1 == null)
-            {
-                message("You don't have any pokemon!");
-                return;
-            }
-
             setBattleReady();
-
-            if(player2.Name.Equals("WILD_POKEMON"))
-            {
-                message("A wild " + player2.Team.ElementAt(0).Name + " appeared!");
-            }
-            else
-            {
-                message(player2.Name + " wants to fight!");
-                message(player2.Name + " sent out " + P2.Name + "!");
-            }
             message("Go, " + P1.Name + "!");
 
             while (!(player1.BlackOut() || player2.BlackOut()))
@@ -174,15 +171,11 @@ namespace PokeCiv.Model.Battle
             if (P1.CurrentHP == 0)
             {
                 message(P1.Name + " fainted!");
-                P1 = Control.switchPokemon();
-                if (P1 != null)
-                {
-                    message("Go, " + P1.Name + "!");
-                }
+                Control.switchPokemon();
             }
         }
 
-        private Pokemon getFirstHealthy(Player player)
+        public static Pokemon getFirstHealthy(Player player)
         {
             foreach (Pokemon p in player.Team)
             {
