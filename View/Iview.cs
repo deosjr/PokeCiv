@@ -21,7 +21,7 @@ namespace PokeCiv.View
 
         public void hideView()
         {
-            this.Close();
+            this.Hide();
         }
 
         public void showView()
