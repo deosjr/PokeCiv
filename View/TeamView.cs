@@ -41,9 +41,10 @@ namespace PokeCiv.View
         {
             switch2thispokemon = currently_selected_pokemon;
             currently_selected_pokemon = null;
-            this.Close();
+            
             //tell the controller to continue its work
             Control.continuebattle(switch2thispokemon);
+            this.Close();
         }
 
     }
