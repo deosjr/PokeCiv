@@ -20,6 +20,8 @@ namespace PokeCiv.Model.Battle
         public string BattleType { get; private set; }
         public Controller Control { private get; set; }
 
+        private bool loop = true;
+
         public Battle(Controller c, Player pl1, Player pl2, Pokemon p1, Pokemon p2, string mapType)
         {
             Control = c;
@@ -47,7 +49,7 @@ namespace PokeCiv.Model.Battle
                 message("Go, " + P1.Name + "!");
             }
 
-            while (true)
+            while (loop)
             {
                 battleLoop();
             }
@@ -158,11 +160,13 @@ namespace PokeCiv.Model.Battle
                 {
                     Experience.gainXP(this, P1, P2);
                 }
+                loop = false;
                 Control.opponentSwitchPokemon(player2);
             }
             if (P1.CurrentHP == 0)
             {
                 message(P1.Name + " fainted!");
+                loop = false;
                 Control.switchPokemon();
             }
         }
