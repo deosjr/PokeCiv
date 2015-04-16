@@ -59,14 +59,17 @@ namespace PokeCiv.Controllers
             {
                 battleView.Invoke(new MethodInvoker(delegate { battleView.closeView(); }));
             }
+
+            //open a team view, and do notting.
             teamView = new TeamView(this);
-            teamView.Show();
+            teamView.ShowDialog();
+            //teamView.Show();
             
         }
 
+        //tell the controller that you are done. so no wait loop is required
         public void continuebattle(Pokemon newPokemon)
         {
-            //Pokemon newPokemon = teamView.switchPokemon();
             Player opponent = Battle.player2;
             Pokemon oppPokemon = Battle.P2;
 

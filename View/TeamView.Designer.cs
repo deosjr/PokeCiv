@@ -33,7 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // team_listbox
             // 
             this.team_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.team_listbox.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -48,7 +48,7 @@
             "Snow",
             "Charizard"});
             this.team_listbox.Location = new System.Drawing.Point(35, 47);
-            this.team_listbox.Name = "listBox1";
+            this.team_listbox.Name = "team_listbox";
             this.team_listbox.Size = new System.Drawing.Size(174, 204);
             this.team_listbox.TabIndex = 0;
             this.team_listbox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);

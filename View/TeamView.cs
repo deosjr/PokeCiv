@@ -32,11 +32,6 @@ namespace PokeCiv.View
             team_listbox.DisplayMember = "Name";
         }
 
-        public Pokemon switchPokemon(){
-
-            return switch2thispokemon;
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             currently_selected_pokemon = ((Pokemon)team_listbox.SelectedItem);
@@ -46,8 +41,10 @@ namespace PokeCiv.View
         {
             switch2thispokemon = currently_selected_pokemon;
             currently_selected_pokemon = null;
-            this.hideView();
+            this.Close();
+            //tell the controller to continue its work
             Control.continuebattle(switch2thispokemon);
         }
+
     }
 }

@@ -318,9 +318,10 @@ namespace PokeCiv.View
             {
                 //have the cpu run around drooling
                 //Must sleep the thead to prevent 100% cpu load on this thread
-                System.Threading.Thread.Sleep(10);              
+                    System.Threading.Thread.Sleep(10);
             }
             waitForInput = true;
+            
         }
 
         public int selectMove()
