@@ -130,20 +130,20 @@ namespace PokeCiv.Controllers
                 return;
             }
             Pokemon p2 = Battle.getFirstHealthy(opponent);
-            Battle = new Battle(this, Player, opponent, p1, p2, Map.mapType, true);
+            Battle = new Battle(this, Player, opponent, p1, p2, Map.mapType);
             battleView = new BattleView(Battle);
             currentView = battleView;
             new Thread(runView).Start();
-            Battle.fight();
+            Battle.fight(true);
         }
 
         private void continueBattle(Player opponent, Pokemon p1, Pokemon p2)
         {
-            Battle = new Battle(this, Player, opponent, p1, p2, Map.mapType, false);
+            Battle = new Battle(this, Player, opponent, p1, p2, Map.mapType);
             battleView = new BattleView(Battle);
             currentView = battleView;
             new Thread(runView).Start();
-            Battle.fight();
+            Battle.fight(false);
         }
 
         public Tile[,] GetGrid()

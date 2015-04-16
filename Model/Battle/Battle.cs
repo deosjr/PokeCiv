@@ -20,7 +20,7 @@ namespace PokeCiv.Model.Battle
         public string BattleType { get; private set; }
         public Controller Control { private get; set; }
 
-        public Battle(Controller c, Player pl1, Player pl2, Pokemon p1, Pokemon p2, string mapType, bool start)
+        public Battle(Controller c, Player pl1, Player pl2, Pokemon p1, Pokemon p2, string mapType)
         {
             Control = c;
             player1 = pl1;
@@ -28,7 +28,10 @@ namespace PokeCiv.Model.Battle
             P1 = p1;
             P2 = p2;
             BattleType = mapType;
+        }
 
+        public void fight(bool start)
+        {
             if (start)
             {
                 setBattleReady();
@@ -43,10 +46,7 @@ namespace PokeCiv.Model.Battle
                 }
                 message("Go, " + P1.Name + "!");
             }
-        }
 
-        public void fight()
-        {
             while (true)
             {
                 battleLoop();
