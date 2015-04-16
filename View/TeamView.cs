@@ -15,7 +15,6 @@ namespace PokeCiv.View
 {
     public partial class TeamView : IView
     {
-        private Battle battle;
         public Controller Control { private get; set; }
 
         public TeamView(Controller c)
@@ -27,7 +26,7 @@ namespace PokeCiv.View
 
         private void TeamView_Load(object sender, EventArgs e)
         {
-            listBox1.DataSource = battle.player1.Team;
+            listBox1.DataSource = Control.Player.Team;
             listBox1.DisplayMember = "Name";
         }
 
