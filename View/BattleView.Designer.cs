@@ -358,7 +358,6 @@
             this.groupBox_moves.Size = new System.Drawing.Size(335, 184);
             this.groupBox_moves.TabIndex = 28;
             this.groupBox_moves.TabStop = false;
-            this.groupBox_moves.Text = "Moves";
             // 
             // MovesButton1
             // 
@@ -394,12 +393,11 @@
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 342);
+            this.groupBox2.Location = new System.Drawing.Point(336, 342);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 166);
+            this.groupBox2.Size = new System.Drawing.Size(339, 184);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Make a move";
             // 
             // button4
             // 
@@ -408,7 +406,7 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(8, 94);
+            this.button4.Location = new System.Drawing.Point(8, 107);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(142, 61);
             this.button4.TabIndex = 29;
@@ -422,7 +420,7 @@
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(168, 21);
+            this.button6.Location = new System.Drawing.Point(184, 21);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(142, 61);
             this.button6.TabIndex = 29;
@@ -436,7 +434,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(168, 94);
+            this.button3.Location = new System.Drawing.Point(184, 107);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(142, 61);
             this.button3.TabIndex = 28;
