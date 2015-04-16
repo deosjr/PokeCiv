@@ -30,11 +30,20 @@ namespace PokeCiv.View
         {
             team_listbox.DataSource = Control.Player.Team;
             team_listbox.DisplayMember = "Name";
+            button1.Enabled = false;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             currently_selected_pokemon = ((Pokemon)team_listbox.SelectedItem);
+            if (currently_selected_pokemon.CurrentHP < 1)
+            {
+                button1.Enabled = false;
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void sendOut_btn(object sender, EventArgs e)
@@ -45,6 +54,7 @@ namespace PokeCiv.View
             //tell the controller to continue its work
             Control.continuebattle(switch2thispokemon);
             this.Close();
+            button1.Enabled = false;
         }
 
     }
