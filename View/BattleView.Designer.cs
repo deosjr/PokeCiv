@@ -61,8 +61,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.select_pkmn_panel = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frontImageBattlePokemon)).BeginInit();
@@ -72,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.battleBack)).BeginInit();
             this.groupBox_moves.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.select_pkmn_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelPP_move4
@@ -460,30 +457,12 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.battle_fight);
             // 
-            // select_pkmn_panel
-            // 
-            this.select_pkmn_panel.BackColor = System.Drawing.Color.Bisque;
-            this.select_pkmn_panel.Controls.Add(this.listBox1);
-            this.select_pkmn_panel.Location = new System.Drawing.Point(210, 196);
-            this.select_pkmn_panel.Name = "select_pkmn_panel";
-            this.select_pkmn_panel.Size = new System.Drawing.Size(245, 181);
-            this.select_pkmn_panel.TabIndex = 30;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 29);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 82);
-            this.listBox1.TabIndex = 0;
-            // 
             // BattleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(680, 538);
-            this.Controls.Add(this.select_pkmn_panel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox_moves);
             this.Controls.Add(this.label1);
@@ -510,7 +489,6 @@
             this.groupBox_moves.ResumeLayout(false);
             this.groupBox_moves.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.select_pkmn_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,7 +528,5 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button MovesButton1;
         private System.Windows.Forms.Button MovesButton2;
-        private System.Windows.Forms.Panel select_pkmn_panel;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

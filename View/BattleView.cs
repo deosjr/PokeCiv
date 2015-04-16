@@ -31,15 +31,11 @@ namespace PokeCiv.View
             InitializeComponent();
             this.battle = battle;
 
-            //vul het teamscherm met je pokemons
-            listBox1.DataSource = battle.player1.Team;
-            listBox1.DisplayMember = "Name";
-
             drawOnce();
 
             //hide interface items that are unused for now
             groupBox_moves.Hide();
-            select_pkmn_panel.Hide();
+
         }
 
         private void drawOnce()
@@ -333,30 +329,6 @@ namespace PokeCiv.View
             return currentSelectedMove;
         }
 
-        public Pokemon switchPokemon()
-        {          
-            //open het panel om de variable "ready2Switch" te setten.
-            if (select_pkmn_panel.InvokeRequired)
-            {
-                select_pkmn_panel.Invoke(new MethodInvoker(delegate { select_pkmn_panel.Show(); }));            
-            }
-
-            //TODO: misklikken chrased de boel hier! later fixen
-            while (waitForInput)
-            {
-                //have the cpu run around drooling
-                //Must sleep the thead to prevent 100% cpu load on this thread
-                System.Threading.Thread.Sleep(10);
-            }
-            waitForInput = true;
-            drawOnce();
-
-            //TODO: dit hierneerzetten is een hotfix voor een race conditie 
-            backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + ready2Switch.species.ID.ToString().PadLeft(3, '0') + "b.gif";
-
-       
-            return ready2Switch;
-        }
 
         //"next" aka "A" op de gameboy
         private void BattleView_MouseClick(object sender, MouseEventArgs e)
@@ -415,10 +387,6 @@ namespace PokeCiv.View
            groupBox_moves.Show();
        }
 
-       private void hide_select_pokemon_panel(object sender, EventArgs e)
-       {
-           select_pkmn_panel.Hide();
-       }
 
     }
 }
