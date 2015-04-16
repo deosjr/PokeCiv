@@ -40,7 +40,6 @@ namespace PokeCiv.View
             //hide interface items that are unused for now
             groupBox_moves.Hide();
             select_pkmn_panel.Hide();
-            send_out_button.Enabled = false;
         }
 
         private void drawOnce()
@@ -414,20 +413,6 @@ namespace PokeCiv.View
        private void battle_fight(object sender, EventArgs e)
        {
            groupBox_moves.Show();
-       }
-
-       private void list_select_pokemon_SelectedIndexChanged(object sender, EventArgs e)
-       {
-           if (((Pokemon)listBox1.SelectedItem).CurrentHP < 1)
-           {
-               send_out_button.Enabled = false;
-           }
-           else
-           {
-               ready2Switch = ((Pokemon)listBox1.SelectedItem);
-               send_out_button.Enabled = true;
-           }
-
        }
 
        private void hide_select_pokemon_panel(object sender, EventArgs e)

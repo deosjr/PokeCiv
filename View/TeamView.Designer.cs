@@ -82,6 +82,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "TeamView";
             this.Text = "TeamView";
+            this.Load += new System.EventHandler(this.TeamView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

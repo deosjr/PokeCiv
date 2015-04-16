@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PokeCiv.Controllers;
+using PokeCiv.Model.Battle;
+using PokeCiv.Model.Pokedata;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,24 @@ namespace PokeCiv.View
 {
     public partial class TeamView : IView
     {
-        public TeamView()
+        private Battle battle;
+        public Controller Control { private get; set; }
+
+        public TeamView(Controller c)
         {
+
+            Control = c;
             InitializeComponent();
+        }
+
+        private void TeamView_Load(object sender, EventArgs e)
+        {
+            listBox1.DataSource = battle.player1.Team;
+            listBox1.DisplayMember = "Name";
+        }
+
+        public Pokemon switchPokemon(){
+            throw new NotImplementedException();
         }
     }
 }

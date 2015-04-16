@@ -62,7 +62,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.select_pkmn_panel = new System.Windows.Forms.Panel();
-            this.send_out_button = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -464,23 +463,11 @@
             // select_pkmn_panel
             // 
             this.select_pkmn_panel.BackColor = System.Drawing.Color.Bisque;
-            this.select_pkmn_panel.Controls.Add(this.send_out_button);
             this.select_pkmn_panel.Controls.Add(this.listBox1);
             this.select_pkmn_panel.Location = new System.Drawing.Point(210, 196);
             this.select_pkmn_panel.Name = "select_pkmn_panel";
             this.select_pkmn_panel.Size = new System.Drawing.Size(245, 181);
             this.select_pkmn_panel.TabIndex = 30;
-            // 
-            // send_out_button
-            // 
-            this.send_out_button.Enabled = false;
-            this.send_out_button.Location = new System.Drawing.Point(152, 29);
-            this.send_out_button.Name = "send_out_button";
-            this.send_out_button.Size = new System.Drawing.Size(75, 23);
-            this.send_out_button.TabIndex = 1;
-            this.send_out_button.Text = "Send out!";
-            this.send_out_button.UseVisualStyleBackColor = true;
-            this.send_out_button.Click += new System.EventHandler(this.hide_select_pokemon_panel);
             // 
             // listBox1
             // 
@@ -489,7 +476,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 82);
             this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.list_select_pokemon_SelectedIndexChanged);
             // 
             // BattleView
             // 
@@ -565,7 +551,6 @@
         private System.Windows.Forms.Button MovesButton1;
         private System.Windows.Forms.Button MovesButton2;
         private System.Windows.Forms.Panel select_pkmn_panel;
-        private System.Windows.Forms.Button send_out_button;
         private System.Windows.Forms.ListBox listBox1;
     }
 }
