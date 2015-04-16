@@ -58,10 +58,11 @@ namespace PokeCiv.Controllers
             Pokemon oppPokemon = Battle.P2;
             if (battleView.InvokeRequired)
             {
-                battleView.Invoke(new MethodInvoker(delegate { battleView.Close(); }));
+                battleView.Invoke(new MethodInvoker(delegate { battleView.closeView(); }));
             }
             teamView = new TeamView(this);
             Pokemon newPokemon = teamView.switchPokemon();
+            teamView.closeView();
             continueBattle(opponent, newPokemon, oppPokemon);
             message("Go, " + newPokemon.Name + "!");
         }
@@ -77,7 +78,7 @@ namespace PokeCiv.Controllers
             Pokemon oppPokemon = Battle.getFirstHealthy(opponent);
             if (battleView.InvokeRequired)
             {
-                battleView.Invoke(new MethodInvoker(delegate { battleView.Close(); }));
+                battleView.Invoke(new MethodInvoker(delegate { battleView.closeView(); }));
             }
             continueBattle(opponent, ownPokemon, oppPokemon);
             message(opponent.Name + " sent out " + oppPokemon.Name + "!");
@@ -87,7 +88,7 @@ namespace PokeCiv.Controllers
         {
             if (battleView.InvokeRequired)
             {
-                battleView.Invoke(new MethodInvoker(delegate { battleView.Close(); }));
+                battleView.Invoke(new MethodInvoker(delegate { battleView.closeView(); }));
             }            
             mapView.Show();
             currentView = mapView;
@@ -103,21 +104,21 @@ namespace PokeCiv.Controllers
 
         public void switchFromMapToBattle(Player opponent)
         {
-            mapView.Hide();
+            mapView.hideView();
             startBattle(opponent);
         }
 
         public void switchFromMapToPokeDex()
         {          
-            pokedexView.Show();
-            mapView.Hide();
+            pokedexView.showView();
+            mapView.hideView();
             currentView = pokedexView;
         }
 
         public void switchFromPokedexToMap()
         {
-            mapView.Show();
-            pokedexView.Hide();
+            mapView.showView();
+            pokedexView.hideView();
             currentView = mapView;
         }
 
