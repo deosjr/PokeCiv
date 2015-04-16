@@ -61,8 +61,9 @@ namespace PokeCiv.Controllers
                 battleView.Invoke(new MethodInvoker(delegate { battleView.closeView(); }));
             }
             teamView = new TeamView(this);
+            teamView.Show();
             Pokemon newPokemon = teamView.switchPokemon();
-            teamView.closeView();
+            //teamView.closeView();
             continueBattle(opponent, newPokemon, oppPokemon);
             message("Go, " + newPokemon.Name + "!");
         }

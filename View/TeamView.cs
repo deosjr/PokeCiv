@@ -31,7 +31,9 @@ namespace PokeCiv.View
         }
 
         public Pokemon switchPokemon(){
-            throw new NotImplementedException();
+
+            //hoe ga je hier de goede aan hangen dan
+            return Control.Player.Team[1];
         }
     }
 }
