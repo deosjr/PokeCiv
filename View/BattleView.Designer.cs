@@ -466,7 +466,7 @@
             this.select_pkmn_panel.BackColor = System.Drawing.Color.Bisque;
             this.select_pkmn_panel.Controls.Add(this.send_out_button);
             this.select_pkmn_panel.Controls.Add(this.listBox1);
-            this.select_pkmn_panel.Location = new System.Drawing.Point(220, 231);
+            this.select_pkmn_panel.Location = new System.Drawing.Point(210, 196);
             this.select_pkmn_panel.Name = "select_pkmn_panel";
             this.select_pkmn_panel.Size = new System.Drawing.Size(245, 181);
             this.select_pkmn_panel.TabIndex = 30;
