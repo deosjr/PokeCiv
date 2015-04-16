@@ -54,16 +54,22 @@ namespace PokeCiv.Controllers
             // This now hard-terminates the battle while its still running.
             // Could this be done more elegantly?
             // TODO: battle-wide parameters such as weather, leech seed etc need to be passed
-            Player opponent = Battle.player2;
-            Pokemon oppPokemon = Battle.P2;
+            
             if (battleView.InvokeRequired)
             {
                 battleView.Invoke(new MethodInvoker(delegate { battleView.closeView(); }));
             }
             teamView = new TeamView(this);
             teamView.Show();
-            Pokemon newPokemon = teamView.switchPokemon();
-            //teamView.closeView();
+            
+        }
+
+        public void continuebattle(Pokemon newPokemon)
+        {
+            //Pokemon newPokemon = teamView.switchPokemon();
+            Player opponent = Battle.player2;
+            Pokemon oppPokemon = Battle.P2;
+
             continueBattle(opponent, newPokemon, oppPokemon);
             message("Go, " + newPokemon.Name + "!");
         }

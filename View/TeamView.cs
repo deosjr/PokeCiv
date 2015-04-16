@@ -16,6 +16,8 @@ namespace PokeCiv.View
     public partial class TeamView : IView
     {
         public Controller Control { private get; set; }
+        private Pokemon switch2thispokemon;
+        private Pokemon currently_selected_pokemon = null;
 
         public TeamView(Controller c)
         {
@@ -26,14 +28,26 @@ namespace PokeCiv.View
 
         private void TeamView_Load(object sender, EventArgs e)
         {
-            listBox1.DataSource = Control.Player.Team;
-            listBox1.DisplayMember = "Name";
+            team_listbox.DataSource = Control.Player.Team;
+            team_listbox.DisplayMember = "Name";
         }
 
         public Pokemon switchPokemon(){
 
-            //hoe ga je hier de goede aan hangen dan
-            return Control.Player.Team[1];
+            return switch2thispokemon;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currently_selected_pokemon = ((Pokemon)team_listbox.SelectedItem);
+        }
+
+        private void sendOut_btn(object sender, EventArgs e)
+        {
+            switch2thispokemon = currently_selected_pokemon;
+            currently_selected_pokemon = null;
+            this.hideView();
+            Control.continuebattle(switch2thispokemon);
         }
     }
 }

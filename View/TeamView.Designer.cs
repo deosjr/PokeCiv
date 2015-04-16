@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.team_listbox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listBox1.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 34;
-            this.listBox1.Items.AddRange(new object[] {
+            this.team_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.team_listbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.team_listbox.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.team_listbox.FormattingEnabled = true;
+            this.team_listbox.ItemHeight = 34;
+            this.team_listbox.Items.AddRange(new object[] {
             "You",
             "Know",
             "Nottin",
             "John",
             "Snow",
             "Charizard"});
-            this.listBox1.Location = new System.Drawing.Point(35, 47);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(174, 204);
-            this.listBox1.TabIndex = 0;
+            this.team_listbox.Location = new System.Drawing.Point(35, 47);
+            this.team_listbox.Name = "listBox1";
+            this.team_listbox.Size = new System.Drawing.Size(174, 204);
+            this.team_listbox.TabIndex = 0;
+            this.team_listbox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Send Out!";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.sendOut_btn);
             // 
             // TeamView
             // 
@@ -79,7 +81,7 @@
             this.ClientSize = new System.Drawing.Size(600, 440);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.team_listbox);
             this.Name = "TeamView";
             this.Text = "TeamView";
             this.Load += new System.EventHandler(this.TeamView_Load);
@@ -90,7 +92,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox team_listbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
     }
