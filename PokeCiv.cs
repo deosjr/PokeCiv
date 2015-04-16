@@ -86,6 +86,13 @@ namespace PokeCiv
             c.currentView = mv;
             new Thread(c.runView).Start();
 
+            //Hardcoded enemy
+            Player enemy = new Player("Team Rocket Grunt");
+            enemy.AddToTeam(PokemonFactory.getPokemon(10, "ZUBAT"));
+            enemy.AddToTeam(PokemonFactory.getPokemon(10, "KOFFING"));
+            enemy.AddToTeam(PokemonFactory.getPokemon(10, "EKANS"));
+            c.switchFromMapToBattle(enemy);
+
             Console.ReadKey();
 
         }
