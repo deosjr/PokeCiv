@@ -285,12 +285,6 @@ namespace PokeCiv.Model.Pokedata
             while (levelUp())
             {
                 battle.message(Name + " grew to level " + Level.ToString() + "!");
-                string old_name = Name;
-                if (evolve())
-                {
-                    //TODO: let view know that pokemon-image has changed!
-                    battle.message(old_name + " evolved into " + Name + '!');
-                }
                 learnMovesAtLevel();
             }
         }
@@ -314,7 +308,7 @@ namespace PokeCiv.Model.Pokedata
             return false;
         }
 
-        private bool evolve()
+        public bool evolve()
         {
             //TODO: non-standard evolutions
             foreach (Evolution e in species.Evolutions) {

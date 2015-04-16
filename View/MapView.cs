@@ -175,5 +175,10 @@ namespace PokeCiv.View
             Control.switchFromMapToPokeDex();
         }
 
+        public override void message(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+
     }
 }

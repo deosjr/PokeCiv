@@ -60,6 +60,14 @@ namespace PokeCiv.Controllers
             }            
             mapView.Show();
             currentView = mapView;
+            foreach (Pokemon p in Player.Team)
+            {
+                string oldName = p.Name;
+                if (p.evolve())
+                {
+                    currentView.message(oldName + " evolved into " + p.Name + "!");
+                }
+            }
         }
 
         public void switchFromMapToBattle(Player opponent)
