@@ -54,7 +54,7 @@ for i, name in names:
 	elif i == 648:
 		name = "meloetta-aria"
 
-	f1 = open("Graphics/Artwork/" + str(i).zfill(3) + ".gif",'wb')
+	f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + ".gif",'wb')
 	f1.write( urllib2.urlopen(url + name.lower() + ".gif").read() )
 	f1.close()
 
