@@ -35,21 +35,27 @@ namespace PokeCiv.View
             //TODO: check for out of bounds
             progressBar1.Maximum = Control.Player.Team[0].HP;
             progressBar1.Value = Control.Player.Team[0].CurrentHP;
+            poke_mini1.ImageLocation = "../../Data/Graphics/Icons/" + Control.Player.Team[0].species.ID.ToString().PadLeft(3, '0') + ".png";
 
             progressBar2.Maximum = Control.Player.Team[1].HP;
             progressBar2.Value = Control.Player.Team[1].CurrentHP;
+            poke_mini2.ImageLocation = "../../Data/Graphics/Icons/" + Control.Player.Team[1].species.ID.ToString().PadLeft(3, '0') + ".png";
 
             progressBar3.Maximum = Control.Player.Team[2].HP;
             progressBar3.Value = Control.Player.Team[2].CurrentHP;
+            poke_mini3.ImageLocation = "../../Data/Graphics/Icons/" + Control.Player.Team[2].species.ID.ToString().PadLeft(3, '0') + ".png";
 
             progressBar4.Maximum = Control.Player.Team[3].HP;
             progressBar4.Value = Control.Player.Team[3].CurrentHP;
+            poke_mini4.ImageLocation = "../../Data/Graphics/Icons/" + Control.Player.Team[3].species.ID.ToString().PadLeft(3, '0') + ".png";
 
             progressBar5.Maximum = Control.Player.Team[4].HP;
             progressBar5.Value = Control.Player.Team[4].CurrentHP;
+            poke_mini5.ImageLocation = "../../Data/Graphics/Icons/" + Control.Player.Team[4].species.ID.ToString().PadLeft(3, '0') + ".png";
 
             progressBar6.Maximum = Control.Player.Team[5].HP;
             progressBar6.Value = Control.Player.Team[5].CurrentHP;
+            poke_mini6.ImageLocation = "../../Data/Graphics/Icons/" + Control.Player.Team[5].species.ID.ToString().PadLeft(3, '0') + ".png";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +85,11 @@ namespace PokeCiv.View
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

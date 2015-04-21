@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapView));
-            this.pb_player = new System.Windows.Forms.PictureBox();
-            this.mapBackgroundCanvas = new System.Windows.Forms.PictureBox();
-            this.pb_playerFloor = new System.Windows.Forms.PictureBox();
             this.start_menu_panel = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -40,42 +37,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pb_playerFloor = new System.Windows.Forms.PictureBox();
+            this.pb_player = new System.Windows.Forms.PictureBox();
+            this.mapBackgroundCanvas = new System.Windows.Forms.PictureBox();
+            this.start_menu_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).BeginInit();
-            this.start_menu_panel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pb_player
-            // 
-            this.pb_player.BackColor = System.Drawing.Color.Transparent;
-            this.pb_player.Image = ((System.Drawing.Image)(resources.GetObject("pb_player.Image")));
-            this.pb_player.Location = new System.Drawing.Point(179, 110);
-            this.pb_player.Margin = new System.Windows.Forms.Padding(0);
-            this.pb_player.Name = "pb_player";
-            this.pb_player.Size = new System.Drawing.Size(50, 50);
-            this.pb_player.TabIndex = 3;
-            this.pb_player.TabStop = false;
-            // 
-            // mapBackgroundCanvas
-            // 
-            this.mapBackgroundCanvas.BackColor = System.Drawing.Color.LightGreen;
-            this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, 0);
-            this.mapBackgroundCanvas.Name = "mapBackgroundCanvas";
-            this.mapBackgroundCanvas.Size = new System.Drawing.Size(349, 278);
-            this.mapBackgroundCanvas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.mapBackgroundCanvas.TabIndex = 0;
-            this.mapBackgroundCanvas.TabStop = false;
-            // 
-            // pb_playerFloor
-            // 
-            this.pb_playerFloor.BackColor = System.Drawing.Color.LightGreen;
-            this.pb_playerFloor.Location = new System.Drawing.Point(108, 110);
-            this.pb_playerFloor.Margin = new System.Windows.Forms.Padding(0);
-            this.pb_playerFloor.Name = "pb_playerFloor";
-            this.pb_playerFloor.Size = new System.Drawing.Size(50, 50);
-            this.pb_playerFloor.TabIndex = 4;
-            this.pb_playerFloor.TabStop = false;
             // 
             // start_menu_panel
             // 
@@ -178,6 +147,37 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.startmenu_pokedex_btn);
             // 
+            // pb_playerFloor
+            // 
+            this.pb_playerFloor.BackColor = System.Drawing.Color.LightGreen;
+            this.pb_playerFloor.Location = new System.Drawing.Point(108, 110);
+            this.pb_playerFloor.Margin = new System.Windows.Forms.Padding(0);
+            this.pb_playerFloor.Name = "pb_playerFloor";
+            this.pb_playerFloor.Size = new System.Drawing.Size(50, 50);
+            this.pb_playerFloor.TabIndex = 4;
+            this.pb_playerFloor.TabStop = false;
+            // 
+            // pb_player
+            // 
+            this.pb_player.BackColor = System.Drawing.Color.Transparent;
+            this.pb_player.Image = ((System.Drawing.Image)(resources.GetObject("pb_player.Image")));
+            this.pb_player.Location = new System.Drawing.Point(179, 110);
+            this.pb_player.Margin = new System.Windows.Forms.Padding(0);
+            this.pb_player.Name = "pb_player";
+            this.pb_player.Size = new System.Drawing.Size(50, 50);
+            this.pb_player.TabIndex = 3;
+            this.pb_player.TabStop = false;
+            // 
+            // mapBackgroundCanvas
+            // 
+            this.mapBackgroundCanvas.BackColor = System.Drawing.Color.LightGreen;
+            this.mapBackgroundCanvas.Location = new System.Drawing.Point(0, 0);
+            this.mapBackgroundCanvas.Name = "mapBackgroundCanvas";
+            this.mapBackgroundCanvas.Size = new System.Drawing.Size(349, 278);
+            this.mapBackgroundCanvas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.mapBackgroundCanvas.TabIndex = 0;
+            this.mapBackgroundCanvas.TabStop = false;
+            // 
             // MapView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,10 +194,10 @@
             this.Load += new System.EventHandler(this.MapView_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapView_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MapView_KeyUp);
+            this.start_menu_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mapBackgroundCanvas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_playerFloor)).EndInit();
-            this.start_menu_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

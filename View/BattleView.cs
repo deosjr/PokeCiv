@@ -392,6 +392,11 @@ namespace PokeCiv.View
            groupBox2.Hide();
        }
 
+       private void button3_Click(object sender, EventArgs e)
+       {
+           MessageBox.Show("You cant run its not implemented yet! Fight like a man :D");
+       }
+
 
     }
 }

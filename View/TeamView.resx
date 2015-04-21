@@ -117,4 +117,77 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="poke_mini1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXxJREFUWEfF
+        krFxg0AURFWOy6AEhQ4pg1IcugSFhA5djkMyPOuZd/P57IFQ8B284W7v3+6CdFvX9V+xYiVWrMSKlVix
+        EitWYsVKrFiJFSuxYiVWdAzDsGbyzCu0Rc8Y7evz+49pmhpnd7LuaAsNExIN0CKxhCvDnNb492gLDWOm
+        y+P43owyZ8HMXCogKKFwPaNhNGbGleT8mXCx2VAg4syzns/k81IB4UpcId7XWl8Jb75a1DbBEA17uDkZ
+        Ox9C+VrdAhp2xsBlzczzY3eWwStq2tsCQhd6BXQ5hi/LYudE9umFi00BoYsa4jJIU7DOFZ4L6JyCUc8c
+        FqB5rwDBZ2/vdJHDxWajAXH2FkBh9nxqd19azIKdANk8GsH89rHZR/J89gcrRiOHgl24K5q9MztBl/jH
+        Y6Swn/HeIDwGxlCRfXvsBIL1jL9pJoeDzrLnETuBP2Is4mb4SnoSjpbnj7CikFHPTDrleMZ1nj/Cis9A
+        EOFRu4IVK7FiHevtF6gs+IPGlDxTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="poke_mini2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXxJREFUWEfF
+        krFxg0AURFWOy6AEhQ4pg1IcugSFhA5djkMyPOuZd/P57IFQ8B284W7v3+6CdFvX9V+xYiVWrMSKlVix
+        EitWYsVKrFiJFSuxYiVWdAzDsGbyzCu0Rc8Y7evz+49pmhpnd7LuaAsNExIN0CKxhCvDnNb492gLDWOm
+        y+P43owyZ8HMXCogKKFwPaNhNGbGleT8mXCx2VAg4syzns/k81IB4UpcId7XWl8Jb75a1DbBEA17uDkZ
+        Ox9C+VrdAhp2xsBlzczzY3eWwStq2tsCQhd6BXQ5hi/LYudE9umFi00BoYsa4jJIU7DOFZ4L6JyCUc8c
+        FqB5rwDBZ2/vdJHDxWajAXH2FkBh9nxqd19azIKdANk8GsH89rHZR/J89gcrRiOHgl24K5q9MztBl/jH
+        Y6Swn/HeIDwGxlCRfXvsBIL1jL9pJoeDzrLnETuBP2Is4mb4SnoSjpbnj7CikFHPTDrleMZ1nj/Cis9A
+        EOFRu4IVK7FiHevtF6gs+IPGlDxTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="poke_mini3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXxJREFUWEfF
+        krFxg0AURFWOy6AEhQ4pg1IcugSFhA5djkMyPOuZd/P57IFQ8B284W7v3+6CdFvX9V+xYiVWrMSKlVix
+        EitWYsVKrFiJFSuxYiVWdAzDsGbyzCu0Rc8Y7evz+49pmhpnd7LuaAsNExIN0CKxhCvDnNb492gLDWOm
+        y+P43owyZ8HMXCogKKFwPaNhNGbGleT8mXCx2VAg4syzns/k81IB4UpcId7XWl8Jb75a1DbBEA17uDkZ
+        Ox9C+VrdAhp2xsBlzczzY3eWwStq2tsCQhd6BXQ5hi/LYudE9umFi00BoYsa4jJIU7DOFZ4L6JyCUc8c
+        FqB5rwDBZ2/vdJHDxWajAXH2FkBh9nxqd19azIKdANk8GsH89rHZR/J89gcrRiOHgl24K5q9MztBl/jH
+        Y6Swn/HeIDwGxlCRfXvsBIL1jL9pJoeDzrLnETuBP2Is4mb4SnoSjpbnj7CikFHPTDrleMZ1nj/Cis9A
+        EOFRu4IVK7FiHevtF6gs+IPGlDxTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="poke_mini6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXxJREFUWEfF
+        krFxg0AURFWOy6AEhQ4pg1IcugSFhA5djkMyPOuZd/P57IFQ8B284W7v3+6CdFvX9V+xYiVWrMSKlVix
+        EitWYsVKrFiJFSuxYiVWdAzDsGbyzCu0Rc8Y7evz+49pmhpnd7LuaAsNExIN0CKxhCvDnNb492gLDWOm
+        y+P43owyZ8HMXCogKKFwPaNhNGbGleT8mXCx2VAg4syzns/k81IB4UpcId7XWl8Jb75a1DbBEA17uDkZ
+        Ox9C+VrdAhp2xsBlzczzY3eWwStq2tsCQhd6BXQ5hi/LYudE9umFi00BoYsa4jJIU7DOFZ4L6JyCUc8c
+        FqB5rwDBZ2/vdJHDxWajAXH2FkBh9nxqd19azIKdANk8GsH89rHZR/J89gcrRiOHgl24K5q9MztBl/jH
+        Y6Swn/HeIDwGxlCRfXvsBIL1jL9pJoeDzrLnETuBP2Is4mb4SnoSjpbnj7CikFHPTDrleMZ1nj/Cis9A
+        EOFRu4IVK7FiHevtF6gs+IPGlDxTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="poke_mini5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXxJREFUWEfF
+        krFxg0AURFWOy6AEhQ4pg1IcugSFhA5djkMyPOuZd/P57IFQ8B284W7v3+6CdFvX9V+xYiVWrMSKlVix
+        EitWYsVKrFiJFSuxYiVWdAzDsGbyzCu0Rc8Y7evz+49pmhpnd7LuaAsNExIN0CKxhCvDnNb492gLDWOm
+        y+P43owyZ8HMXCogKKFwPaNhNGbGleT8mXCx2VAg4syzns/k81IB4UpcId7XWl8Jb75a1DbBEA17uDkZ
+        Ox9C+VrdAhp2xsBlzczzY3eWwStq2tsCQhd6BXQ5hi/LYudE9umFi00BoYsa4jJIU7DOFZ4L6JyCUc8c
+        FqB5rwDBZ2/vdJHDxWajAXH2FkBh9nxqd19azIKdANk8GsH89rHZR/J89gcrRiOHgl24K5q9MztBl/jH
+        Y6Swn/HeIDwGxlCRfXvsBIL1jL9pJoeDzrLnETuBP2Is4mb4SnoSjpbnj7CikFHPTDrleMZ1nj/Cis9A
+        EOFRu4IVK7FiHevtF6gs+IPGlDxTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="poke_mini4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXxJREFUWEfF
+        krFxg0AURFWOy6AEhQ4pg1IcugSFhA5djkMyPOuZd/P57IFQ8B284W7v3+6CdFvX9V+xYiVWrMSKlVix
+        EitWYsVKrFiJFSuxYiVWdAzDsGbyzCu0Rc8Y7evz+49pmhpnd7LuaAsNExIN0CKxhCvDnNb492gLDWOm
+        y+P43owyZ8HMXCogKKFwPaNhNGbGleT8mXCx2VAg4syzns/k81IB4UpcId7XWl8Jb75a1DbBEA17uDkZ
+        Ox9C+VrdAhp2xsBlzczzY3eWwStq2tsCQhd6BXQ5hi/LYudE9umFi00BoYsa4jJIU7DOFZ4L6JyCUc8c
+        FqB5rwDBZ2/vdJHDxWajAXH2FkBh9nxqd19azIKdANk8GsH89rHZR/J89gcrRiOHgl24K5q9MztBl/jH
+        Y6Swn/HeIDwGxlCRfXvsBIL1jL9pJoeDzrLnETuBP2Is4mb4SnoSjpbnj7CikFHPTDrleMZ1nj/Cis9A
+        EOFRu4IVK7FiHevtF6gs+IPGlDxTAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
