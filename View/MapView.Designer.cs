@@ -60,9 +60,7 @@
             this.start_menu_panel.Name = "start_menu_panel";
             this.start_menu_panel.Size = new System.Drawing.Size(178, 337);
             this.start_menu_panel.TabIndex = 5;
-            this.start_menu_panel.TabStop = true;
-            this.start_menu_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.start_menu_panel_Paint);
-            this.start_menu_panel.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.start_menu_panel_PreviewKeyDown);
+            this.start_menu_panel.TabStop = true;   
             // 
             // button8
             // 

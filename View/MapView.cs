@@ -123,7 +123,7 @@ namespace PokeCiv.View
             if (e.KeyCode == Keys.Enter)
             {
                     start_menu_panel.Show();
-                    start_menu_panel.Focus();
+                    start_menu_panel.Focus();                  
             }
 
             if (e.KeyCode == Keys.Down)
@@ -184,16 +184,6 @@ namespace PokeCiv.View
         {
             TeamView tv = new TeamView(Control);
             tv.ShowDialog();
-        }
-
-        private void start_menu_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void start_menu_panel_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-
         }
 
     }

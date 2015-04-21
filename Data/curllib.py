@@ -2,7 +2,7 @@ import urllib2
 import os
 import time
 
-url = "http://img.pokemondb.net/artwork/"
+url = "http://www.pokestadium.com/tools/sprites/sprites/xy/"
 
 f = open("pokemon.txt", 'r')
 
@@ -54,8 +54,8 @@ for i, name in names:
 	elif i == 648:
 		name = "meloetta-aria"
 
-	f1 = open("Graphics/Artwork/" + str(i).zfill(3) + ".jpg",'wb')
-	f1.write( urllib2.urlopen(url + name.lower() + ".jpg").read() )
+	f1 = open("Graphics/Artwork/" + str(i).zfill(3) + ".gif",'wb')
+	f1.write( urllib2.urlopen(url + name.lower() + ".gif").read() )
 	f1.close()
 
 	time.sleep(1)
