@@ -186,5 +186,15 @@ namespace PokeCiv.View
             tv.ShowDialog();
         }
 
+        private void start_menu_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void start_menu_panel_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
     }
 }

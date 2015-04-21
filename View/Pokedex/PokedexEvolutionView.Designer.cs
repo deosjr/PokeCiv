@@ -41,18 +41,18 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.stage3 = new System.Windows.Forms.PictureBox();
+            this.stage2 = new System.Windows.Forms.PictureBox();
+            this.stage1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -93,12 +93,14 @@
             // 
             // btn_close_evolutionView
             // 
-            this.btn_close_evolutionView.Location = new System.Drawing.Point(522, 416);
+            this.btn_close_evolutionView.BackColor = System.Drawing.Color.Red;
+            this.btn_close_evolutionView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close_evolutionView.Location = new System.Drawing.Point(573, 2);
             this.btn_close_evolutionView.Name = "btn_close_evolutionView";
-            this.btn_close_evolutionView.Size = new System.Drawing.Size(75, 23);
+            this.btn_close_evolutionView.Size = new System.Drawing.Size(24, 23);
             this.btn_close_evolutionView.TabIndex = 11;
-            this.btn_close_evolutionView.Text = "Close";
-            this.btn_close_evolutionView.UseVisualStyleBackColor = true;
+            this.btn_close_evolutionView.Text = "X";
+            this.btn_close_evolutionView.UseVisualStyleBackColor = false;
             this.btn_close_evolutionView.Click += new System.EventHandler(this.btn_close_evolutionView_Click);
             // 
             // label2
@@ -131,7 +133,7 @@
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(403, 352);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(194, 76);
+            this.pictureBox8.Size = new System.Drawing.Size(194, 48);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 8;
             this.pictureBox8.TabStop = false;
@@ -140,9 +142,9 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(403, 286);
+            this.pictureBox9.Location = new System.Drawing.Point(403, 298);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(194, 76);
+            this.pictureBox9.Size = new System.Drawing.Size(194, 48);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 7;
             this.pictureBox9.TabStop = false;
@@ -153,7 +155,7 @@
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Location = new System.Drawing.Point(203, 352);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(194, 76);
+            this.pictureBox6.Size = new System.Drawing.Size(194, 48);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
@@ -162,9 +164,9 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(203, 286);
+            this.pictureBox7.Location = new System.Drawing.Point(203, 298);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(194, 76);
+            this.pictureBox7.Size = new System.Drawing.Size(194, 48);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 5;
             this.pictureBox7.TabStop = false;
@@ -174,7 +176,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Location = new System.Drawing.Point(3, 352);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(194, 76);
+            this.pictureBox5.Size = new System.Drawing.Size(194, 48);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
@@ -183,45 +185,45 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 286);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 298);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(194, 76);
+            this.pictureBox4.Size = new System.Drawing.Size(194, 48);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox3
+            // stage3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(390, 40);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(205, 218);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.stage3.BackColor = System.Drawing.Color.Transparent;
+            this.stage3.Image = ((System.Drawing.Image)(resources.GetObject("stage3.Image")));
+            this.stage3.Location = new System.Drawing.Point(390, 40);
+            this.stage3.Name = "stage3";
+            this.stage3.Size = new System.Drawing.Size(205, 218);
+            this.stage3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.stage3.TabIndex = 2;
+            this.stage3.TabStop = false;
             // 
-            // pictureBox2
+            // stage2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(203, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(181, 185);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.stage2.BackColor = System.Drawing.Color.Transparent;
+            this.stage2.Image = ((System.Drawing.Image)(resources.GetObject("stage2.Image")));
+            this.stage2.Location = new System.Drawing.Point(203, 73);
+            this.stage2.Name = "stage2";
+            this.stage2.Size = new System.Drawing.Size(181, 185);
+            this.stage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.stage2.TabIndex = 1;
+            this.stage2.TabStop = false;
             // 
-            // pictureBox1
+            // stage1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 106);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.stage1.BackColor = System.Drawing.Color.Transparent;
+            this.stage1.Image = ((System.Drawing.Image)(resources.GetObject("stage1.Image")));
+            this.stage1.Location = new System.Drawing.Point(16, 106);
+            this.stage1.Name = "stage1";
+            this.stage1.Size = new System.Drawing.Size(146, 152);
+            this.stage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.stage1.TabIndex = 0;
+            this.stage1.TabStop = false;
             // 
             // PokedexEvolutionView
             // 
@@ -242,20 +244,21 @@
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.stage3);
+            this.Controls.Add(this.stage2);
+            this.Controls.Add(this.stage1);
             this.Name = "PokedexEvolutionView";
             this.Text = "";
+            this.Load += new System.EventHandler(this.PokedexEvolutionView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,9 +266,9 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox stage1;
+        private System.Windows.Forms.PictureBox stage2;
+        private System.Windows.Forms.PictureBox stage3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;

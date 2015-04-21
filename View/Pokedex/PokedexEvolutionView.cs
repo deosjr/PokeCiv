@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace PokeCiv.View
 {
     public partial class PokedexEvolutionView : IView
     {
-        public PokedexEvolutionView(string evolvestring)
+
+        public ArrayList pokemon;
+
+        public PokedexEvolutionView(string evolvestring, ArrayList pokenumbers)
         {
             MessageBox.Show(evolvestring);
+            pokemon = pokenumbers;
             InitializeComponent();
         }
 
@@ -26,6 +31,13 @@ namespace PokeCiv.View
         private void pictureBox9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PokedexEvolutionView_Load(object sender, EventArgs e)
+        {
+            stage1.ImageLocation = "../../Data/Graphics/Artwork/" + pokemon[0].ToString().PadLeft(3, '0') + ".jpg";
+            stage2.ImageLocation = "../../Data/Graphics/Artwork/" + pokemon[1].ToString().PadLeft(3, '0') + ".jpg";
+            stage3.ImageLocation = "../../Data/Graphics/Artwork/" + pokemon[2].ToString().PadLeft(3, '0') + ".jpg";
         }
     }
 }

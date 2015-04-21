@@ -130,9 +130,9 @@
             // 
             this.type1.BackColor = System.Drawing.Color.Transparent;
             this.type1.Image = ((System.Drawing.Image)(resources.GetObject("type1.Image")));
-            this.type1.Location = new System.Drawing.Point(193, 151);
+            this.type1.Location = new System.Drawing.Point(197, 154);
             this.type1.Name = "type1";
-            this.type1.Size = new System.Drawing.Size(73, 35);
+            this.type1.Size = new System.Drawing.Size(55, 27);
             this.type1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.type1.TabIndex = 8;
             this.type1.TabStop = false;
@@ -141,9 +141,9 @@
             // 
             this.type2.BackColor = System.Drawing.Color.Transparent;
             this.type2.Image = ((System.Drawing.Image)(resources.GetObject("type2.Image")));
-            this.type2.Location = new System.Drawing.Point(323, 152);
+            this.type2.Location = new System.Drawing.Point(342, 154);
             this.type2.Name = "type2";
-            this.type2.Size = new System.Drawing.Size(76, 35);
+            this.type2.Size = new System.Drawing.Size(55, 27);
             this.type2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.type2.TabIndex = 7;
             this.type2.TabStop = false;

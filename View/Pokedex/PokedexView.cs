@@ -93,7 +93,11 @@ namespace PokeCiv.View
         private void pokedex_info_btn_Click(object sender, EventArgs e)
         {
 
-            PokedexEvolutionView pdev = new PokedexEvolutionView(evolveString);
+            ArrayList pokemons = new ArrayList();
+            pokemons.Add(1);
+            pokemons.Add(2);
+            pokemons.Add(3);
+            PokedexEvolutionView pdev = new PokedexEvolutionView(evolveString, pokemons);
             pdev.Show();
         }
 
