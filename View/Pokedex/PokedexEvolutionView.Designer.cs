@@ -44,7 +44,6 @@
             this.stage3 = new System.Windows.Forms.PictureBox();
             this.stage2 = new System.Windows.Forms.PictureBox();
             this.stage1 = new System.Windows.Forms.PictureBox();
-            this.UNFINISHED = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.stage3type2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stage3type1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stage2type2)).BeginInit();
@@ -226,17 +225,6 @@
             this.stage1.TabIndex = 0;
             this.stage1.TabStop = false;
             // 
-            // UNFINISHED
-            // 
-            this.UNFINISHED.AutoSize = true;
-            this.UNFINISHED.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UNFINISHED.ForeColor = System.Drawing.Color.Fuchsia;
-            this.UNFINISHED.Location = new System.Drawing.Point(197, 184);
-            this.UNFINISHED.Name = "UNFINISHED";
-            this.UNFINISHED.Size = new System.Drawing.Size(192, 33);
-            this.UNFINISHED.TabIndex = 15;
-            this.UNFINISHED.Text = "UNFINISHED";
-            // 
             // PokedexEvolutionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,7 +232,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 440);
-            this.Controls.Add(this.UNFINISHED);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -294,6 +281,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label UNFINISHED;
     }
 }

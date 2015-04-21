@@ -116,7 +116,7 @@
             // 
             this.pokedex_info_btn.BackColor = System.Drawing.Color.Red;
             this.pokedex_info_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pokedex_info_btn.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pokedex_info_btn.Font = new System.Drawing.Font("Consolas", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pokedex_info_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pokedex_info_btn.Location = new System.Drawing.Point(215, 209);
             this.pokedex_info_btn.Name = "pokedex_info_btn";
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 440);

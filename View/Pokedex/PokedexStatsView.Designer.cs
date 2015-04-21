@@ -97,6 +97,7 @@
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.White;
+            this.trackBar1.Enabled = false;
             this.trackBar1.Location = new System.Drawing.Point(494, 413);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(86, 45);
