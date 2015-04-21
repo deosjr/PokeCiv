@@ -49,6 +49,7 @@
             // start_menu_panel
             // 
             this.start_menu_panel.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.start_menu_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.start_menu_panel.Controls.Add(this.button8);
             this.start_menu_panel.Controls.Add(this.button6);
             this.start_menu_panel.Controls.Add(this.button5);
@@ -56,6 +57,7 @@
             this.start_menu_panel.Controls.Add(this.button3);
             this.start_menu_panel.Controls.Add(this.button2);
             this.start_menu_panel.Controls.Add(this.button1);
+            this.start_menu_panel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start_menu_panel.Location = new System.Drawing.Point(410, 46);
             this.start_menu_panel.Name = "start_menu_panel";
             this.start_menu_panel.Size = new System.Drawing.Size(178, 337);
@@ -65,7 +67,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Location = new System.Drawing.Point(4, 293);
             this.button8.Name = "button8";
@@ -79,6 +81,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.White;
             this.button6.Enabled = false;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(3, 245);
             this.button6.Name = "button6";
@@ -91,6 +94,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.Enabled = false;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(3, 197);
             this.button5.Name = "button5";
@@ -102,6 +106,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(3, 149);
             this.button4.Name = "button4";
@@ -115,6 +120,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(3, 101);
             this.button3.Name = "button3";
@@ -126,6 +132,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(3, 53);
             this.button2.Name = "button2";
@@ -138,6 +145,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";

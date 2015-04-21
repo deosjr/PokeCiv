@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeamView));
+            this.poke_mini6 = new System.Windows.Forms.PictureBox();
+            this.poke_mini5 = new System.Windows.Forms.PictureBox();
+            this.poke_mini4 = new System.Windows.Forms.PictureBox();
+            this.poke_mini3 = new System.Windows.Forms.PictureBox();
+            this.poke_mini2 = new System.Windows.Forms.PictureBox();
             this.poke_mini1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,18 +51,58 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.team_listbox = new System.Windows.Forms.ListBox();
-            this.poke_mini2 = new System.Windows.Forms.PictureBox();
-            this.poke_mini3 = new System.Windows.Forms.PictureBox();
-            this.poke_mini6 = new System.Windows.Forms.PictureBox();
-            this.poke_mini5 = new System.Windows.Forms.PictureBox();
-            this.poke_mini4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.poke_mini1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poke_mini2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poke_mini3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poke_mini6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poke_mini5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poke_mini4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poke_mini3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poke_mini2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poke_mini1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // poke_mini6
+            // 
+            this.poke_mini6.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini6.Image")));
+            this.poke_mini6.Location = new System.Drawing.Point(24, 253);
+            this.poke_mini6.Name = "poke_mini6";
+            this.poke_mini6.Size = new System.Drawing.Size(50, 35);
+            this.poke_mini6.TabIndex = 22;
+            this.poke_mini6.TabStop = false;
+            // 
+            // poke_mini5
+            // 
+            this.poke_mini5.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini5.Image")));
+            this.poke_mini5.Location = new System.Drawing.Point(24, 212);
+            this.poke_mini5.Name = "poke_mini5";
+            this.poke_mini5.Size = new System.Drawing.Size(50, 35);
+            this.poke_mini5.TabIndex = 21;
+            this.poke_mini5.TabStop = false;
+            // 
+            // poke_mini4
+            // 
+            this.poke_mini4.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini4.Image")));
+            this.poke_mini4.Location = new System.Drawing.Point(24, 171);
+            this.poke_mini4.Name = "poke_mini4";
+            this.poke_mini4.Size = new System.Drawing.Size(50, 35);
+            this.poke_mini4.TabIndex = 20;
+            this.poke_mini4.TabStop = false;
+            // 
+            // poke_mini3
+            // 
+            this.poke_mini3.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini3.Image")));
+            this.poke_mini3.Location = new System.Drawing.Point(24, 130);
+            this.poke_mini3.Name = "poke_mini3";
+            this.poke_mini3.Size = new System.Drawing.Size(50, 35);
+            this.poke_mini3.TabIndex = 19;
+            this.poke_mini3.TabStop = false;
+            // 
+            // poke_mini2
+            // 
+            this.poke_mini2.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini2.Image")));
+            this.poke_mini2.Location = new System.Drawing.Point(24, 89);
+            this.poke_mini2.Name = "poke_mini2";
+            this.poke_mini2.Size = new System.Drawing.Size(50, 35);
+            this.poke_mini2.TabIndex = 18;
+            this.poke_mini2.TabStop = false;
             // 
             // poke_mini1
             // 
@@ -240,51 +285,6 @@
             this.team_listbox.TabIndex = 0;
             this.team_listbox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // poke_mini2
-            // 
-            this.poke_mini2.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini2.Image")));
-            this.poke_mini2.Location = new System.Drawing.Point(24, 89);
-            this.poke_mini2.Name = "poke_mini2";
-            this.poke_mini2.Size = new System.Drawing.Size(50, 35);
-            this.poke_mini2.TabIndex = 18;
-            this.poke_mini2.TabStop = false;
-            // 
-            // poke_mini3
-            // 
-            this.poke_mini3.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini3.Image")));
-            this.poke_mini3.Location = new System.Drawing.Point(24, 130);
-            this.poke_mini3.Name = "poke_mini3";
-            this.poke_mini3.Size = new System.Drawing.Size(50, 35);
-            this.poke_mini3.TabIndex = 19;
-            this.poke_mini3.TabStop = false;
-            // 
-            // poke_mini6
-            // 
-            this.poke_mini6.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini6.Image")));
-            this.poke_mini6.Location = new System.Drawing.Point(24, 253);
-            this.poke_mini6.Name = "poke_mini6";
-            this.poke_mini6.Size = new System.Drawing.Size(50, 35);
-            this.poke_mini6.TabIndex = 22;
-            this.poke_mini6.TabStop = false;
-            // 
-            // poke_mini5
-            // 
-            this.poke_mini5.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini5.Image")));
-            this.poke_mini5.Location = new System.Drawing.Point(24, 212);
-            this.poke_mini5.Name = "poke_mini5";
-            this.poke_mini5.Size = new System.Drawing.Size(50, 35);
-            this.poke_mini5.TabIndex = 21;
-            this.poke_mini5.TabStop = false;
-            // 
-            // poke_mini4
-            // 
-            this.poke_mini4.Image = ((System.Drawing.Image)(resources.GetObject("poke_mini4.Image")));
-            this.poke_mini4.Location = new System.Drawing.Point(24, 171);
-            this.poke_mini4.Name = "poke_mini4";
-            this.poke_mini4.Size = new System.Drawing.Size(50, 35);
-            this.poke_mini4.TabIndex = 20;
-            this.poke_mini4.TabStop = false;
-            // 
             // TeamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,12 +316,12 @@
             this.Name = "TeamView";
             this.Text = "TeamView";
             this.Load += new System.EventHandler(this.TeamView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.poke_mini1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poke_mini2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poke_mini3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poke_mini6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poke_mini5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poke_mini4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poke_mini3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poke_mini2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poke_mini1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,7 +330,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox team_listbox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ProgressBar progressBar2;
@@ -345,11 +344,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox poke_mini1;
-        private System.Windows.Forms.PictureBox poke_mini2;
-        private System.Windows.Forms.PictureBox poke_mini3;
         private System.Windows.Forms.PictureBox poke_mini6;
         private System.Windows.Forms.PictureBox poke_mini5;
         private System.Windows.Forms.PictureBox poke_mini4;
+        private System.Windows.Forms.PictureBox poke_mini3;
+        private System.Windows.Forms.PictureBox poke_mini2;
+        private System.Windows.Forms.PictureBox poke_mini1;
+        private System.Windows.Forms.Label label1;
     }
 }
