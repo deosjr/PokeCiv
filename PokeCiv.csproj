@@ -133,6 +133,12 @@
     <Compile Include="View\TeamView.Designer.cs">
       <DependentUpon>TeamView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Trainercard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Trainercard.Designer.cs">
+      <DependentUpon>Trainercard.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TeamView.resx">
       <DependentUpon>TeamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Trainercard.resx">
+      <DependentUpon>Trainercard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
