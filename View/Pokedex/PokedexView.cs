@@ -94,9 +94,9 @@ namespace PokeCiv.View
         {
 
             ArrayList pokemons = new ArrayList();
-            pokemons.Add(1);
-            pokemons.Add(2);
-            pokemons.Add(3);
+            pokemons.Add(Mechanics.random.Next(1,650));
+            pokemons.Add(Mechanics.random.Next(1, 650));
+            pokemons.Add(Mechanics.random.Next(1, 650));
             PokedexEvolutionView pdev = new PokedexEvolutionView(evolveString, pokemons);
             pdev.Show();
         }

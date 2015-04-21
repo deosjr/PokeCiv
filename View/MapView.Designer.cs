@@ -56,7 +56,7 @@
             this.start_menu_panel.Controls.Add(this.button3);
             this.start_menu_panel.Controls.Add(this.button2);
             this.start_menu_panel.Controls.Add(this.button1);
-            this.start_menu_panel.Location = new System.Drawing.Point(410, 12);
+            this.start_menu_panel.Location = new System.Drawing.Point(410, 46);
             this.start_menu_panel.Name = "start_menu_panel";
             this.start_menu_panel.Size = new System.Drawing.Size(178, 337);
             this.start_menu_panel.TabIndex = 5;
