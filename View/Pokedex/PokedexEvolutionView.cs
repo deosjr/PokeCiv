@@ -22,5 +22,10 @@ namespace PokeCiv.View
         {
             this.Close();
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
