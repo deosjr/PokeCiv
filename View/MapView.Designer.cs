@@ -60,7 +60,7 @@
             this.start_menu_panel.Name = "start_menu_panel";
             this.start_menu_panel.Size = new System.Drawing.Size(178, 337);
             this.start_menu_panel.TabIndex = 5;
-            this.start_menu_panel.TabStop = true;   
+            this.start_menu_panel.TabStop = true;
             // 
             // button8
             // 
@@ -102,14 +102,14 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(3, 149);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(170, 42);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Name";
+            this.button4.Text = "Trainercard";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 

@@ -121,7 +121,7 @@
   <data name="pb_player.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAACaElEQVRoQ+2Y
+        vAAADrwBlbxySQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTFH80I3AAACaElEQVRoQ+2Y
         wU3DQBREKScl+JgjpeSYY8pICRw5poSUwJESUkJuJt/SoGEy37trEIktIz1EZvfPzBcOAl76vl8EVpwj
         Vmxht9n0f4V6t2DFFlyhqah3C1YsweHnrhu47l4ngfngNwtZscQiF3HlprIucsOKJWa/CIL4uXaFpqLv
         lZalrJixmEVuH/HpxyLAFavBeSEn0A4ZVsyAuQt3JWtwXsgJtEOGFTNg7sJdyRqcF3IC7ZBhxQyYu3DH
@@ -138,7 +138,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAFNJREFUaEPtz0ENACAMADGkIg1ZcwM2GnKPCujaZ+4PimiKaIpoimiKaIpoimiK
+        wQAADsEBuJFr7QAAAFNJREFUaEPtz0ENACAMADGkIg1ZcwM2GnKPCujaZ+4PimiKaIpoimiKaIpoimiK
         aIpoimiKaIpoimiKaIpoimiKaIpoimiKaIpoimiKaIpoPonMfXSRvTJW7TAwAAAAAElFTkSuQmCC
 </value>
   </data>

@@ -61,7 +61,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(415, -1);
+            this.label5.Location = new System.Drawing.Point(386, 1);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 24);
             this.label5.TabIndex = 14;
@@ -73,7 +73,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(212, -1);
+            this.label4.Location = new System.Drawing.Point(199, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 24);
             this.label4.TabIndex = 13;
@@ -85,7 +85,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(12, -1);
+            this.label3.Location = new System.Drawing.Point(12, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 24);
             this.label3.TabIndex = 12;
@@ -93,13 +93,13 @@
             // 
             // btn_close_evolutionView
             // 
-            this.btn_close_evolutionView.BackColor = System.Drawing.Color.Red;
+            this.btn_close_evolutionView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_close_evolutionView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close_evolutionView.Location = new System.Drawing.Point(573, 2);
+            this.btn_close_evolutionView.Location = new System.Drawing.Point(3, 2);
             this.btn_close_evolutionView.Name = "btn_close_evolutionView";
-            this.btn_close_evolutionView.Size = new System.Drawing.Size(24, 23);
+            this.btn_close_evolutionView.Size = new System.Drawing.Size(61, 23);
             this.btn_close_evolutionView.TabIndex = 11;
-            this.btn_close_evolutionView.Text = "X";
+            this.btn_close_evolutionView.Text = "Back";
             this.btn_close_evolutionView.UseVisualStyleBackColor = false;
             this.btn_close_evolutionView.Click += new System.EventHandler(this.btn_close_evolutionView_Click);
             // 

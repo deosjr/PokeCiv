@@ -186,5 +186,11 @@ namespace PokeCiv.View
             tv.ShowDialog();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Trainercard tc = new Trainercard();
+            tc.ShowDialog();
+        }
+
     }
 }
