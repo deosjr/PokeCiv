@@ -106,6 +106,18 @@ namespace PokeCiv.Model.Pokedata
             return temp; // x Nature?
         }
 
+        public bool hasType(string typeName)
+        {
+            foreach (PokemonType pt in species.Types)
+            {
+                if (pt.name.Equals(typeName))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void learnMovesUntilLevel()
         {
             var sorted = from entry in species.MovesLearnable orderby entry.Key ascending select entry;

@@ -205,7 +205,7 @@ namespace PokeCiv.Model.Battle
                 escapeAttempts++;
                 int f = ((P1.Speed * 128) / Math.Max(P2.Speed, 1) + 30 * escapeAttempts) % 256;
                 bool escapeSuccesful = Mechanics.random.Next(256) < f;
-                if (escapeSuccesful)
+                if (escapeSuccesful || P1.hasType("Ghost"))
                 {
                     message("Got away safely!");
                     Control.switchFromBattleToMap();
