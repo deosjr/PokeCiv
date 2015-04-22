@@ -295,9 +295,9 @@
             // 
             this.frontImageBattlePokemon.BackColor = System.Drawing.Color.Transparent;
             this.frontImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("frontImageBattlePokemon.Image")));
-            this.frontImageBattlePokemon.Location = new System.Drawing.Point(416, 16);
+            this.frontImageBattlePokemon.Location = new System.Drawing.Point(416, 37);
             this.frontImageBattlePokemon.Name = "frontImageBattlePokemon";
-            this.frontImageBattlePokemon.Size = new System.Drawing.Size(252, 194);
+            this.frontImageBattlePokemon.Size = new System.Drawing.Size(252, 173);
             this.frontImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontImageBattlePokemon.TabIndex = 1;
             this.frontImageBattlePokemon.TabStop = false;
@@ -305,9 +305,9 @@
             // backImageBattlePokemon
             // 
             this.backImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("backImageBattlePokemon.Image")));
-            this.backImageBattlePokemon.Location = new System.Drawing.Point(-5, 144);
+            this.backImageBattlePokemon.Location = new System.Drawing.Point(-5, 192);
             this.backImageBattlePokemon.Name = "backImageBattlePokemon";
-            this.backImageBattlePokemon.Size = new System.Drawing.Size(262, 223);
+            this.backImageBattlePokemon.Size = new System.Drawing.Size(351, 101);
             this.backImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backImageBattlePokemon.TabIndex = 0;
             this.backImageBattlePokemon.TabStop = false;
@@ -325,12 +325,13 @@
             // backFloor
             // 
             this.backFloor.Image = ((System.Drawing.Image)(resources.GetObject("backFloor.Image")));
-            this.backFloor.Location = new System.Drawing.Point(-4, 144);
+            this.backFloor.Location = new System.Drawing.Point(-5, 192);
             this.backFloor.Name = "backFloor";
-            this.backFloor.Size = new System.Drawing.Size(261, 223);
+            this.backFloor.Size = new System.Drawing.Size(351, 144);
             this.backFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.backFloor.TabIndex = 18;
             this.backFloor.TabStop = false;
+            this.backFloor.Click += new System.EventHandler(this.backFloor_Click);
             // 
             // battleBack
             // 
@@ -465,10 +466,10 @@
             this.Controls.Add(this.groupBox_moves);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.backImageBattlePokemon);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.actionTextLabel);
             this.Controls.Add(this.frontImageBattlePokemon);
-            this.Controls.Add(this.backImageBattlePokemon);
             this.Controls.Add(this.frontFloor);
             this.Controls.Add(this.backFloor);
             this.Controls.Add(this.battleBack);

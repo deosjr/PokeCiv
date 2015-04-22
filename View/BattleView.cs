@@ -86,13 +86,13 @@ namespace PokeCiv.View
             //reset the startpoints of the pokemons (relative to the floors)
             if (frontFloor.InvokeRequired || backFloor.InvokeRequired)
             {
-                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.Location = new Point(0, -15); }));
-                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.Location = new Point(0, -25); }));
+                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.Location = new Point(0, -25); }));
+                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.Location = new Point(0, -15); }));
             }
             else
             {
-                frontImageBattlePokemon.Location = new Point(0, -15);
-                backImageBattlePokemon.Location = new Point(0, -25);
+                frontImageBattlePokemon.Location = new Point(0, -25);
+                backImageBattlePokemon.Location = new Point(0, -15);
             }
 
             //Pokemon Images           
@@ -402,6 +402,11 @@ namespace PokeCiv.View
        {
            TeamView tv = new TeamView(Control);
            tv.ShowDialog();
+       }
+
+       private void backFloor_Click(object sender, EventArgs e)
+       {
+
        }
 
 
