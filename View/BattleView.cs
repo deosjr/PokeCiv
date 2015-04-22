@@ -86,13 +86,13 @@ namespace PokeCiv.View
             //reset the startpoints of the pokemons (relative to the floors)
             if (frontFloor.InvokeRequired || backFloor.InvokeRequired)
             {
-                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.Location = new Point(0, 0); }));
-                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.Location = new Point(0, 0); }));
+                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.Location = new Point(0, -15); }));
+                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.Location = new Point(0, -25); }));
             }
             else
             {
-                frontImageBattlePokemon.Location = new Point(0, 0);
-                backImageBattlePokemon.Location = new Point(0, 0);
+                frontImageBattlePokemon.Location = new Point(0, -15);
+                backImageBattlePokemon.Location = new Point(0, -25);
             }
 
             //Pokemon Images           

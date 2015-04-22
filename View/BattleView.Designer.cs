@@ -295,9 +295,9 @@
             // 
             this.frontImageBattlePokemon.BackColor = System.Drawing.Color.Transparent;
             this.frontImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("frontImageBattlePokemon.Image")));
-            this.frontImageBattlePokemon.Location = new System.Drawing.Point(416, 12);
+            this.frontImageBattlePokemon.Location = new System.Drawing.Point(416, 16);
             this.frontImageBattlePokemon.Name = "frontImageBattlePokemon";
-            this.frontImageBattlePokemon.Size = new System.Drawing.Size(252, 129);
+            this.frontImageBattlePokemon.Size = new System.Drawing.Size(252, 194);
             this.frontImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.frontImageBattlePokemon.TabIndex = 1;
             this.frontImageBattlePokemon.TabStop = false;
@@ -305,17 +305,17 @@
             // backImageBattlePokemon
             // 
             this.backImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("backImageBattlePokemon.Image")));
-            this.backImageBattlePokemon.Location = new System.Drawing.Point(23, 188);
+            this.backImageBattlePokemon.Location = new System.Drawing.Point(-5, 144);
             this.backImageBattlePokemon.Name = "backImageBattlePokemon";
-            this.backImageBattlePokemon.Size = new System.Drawing.Size(203, 97);
-            this.backImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.backImageBattlePokemon.Size = new System.Drawing.Size(262, 223);
+            this.backImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backImageBattlePokemon.TabIndex = 0;
             this.backImageBattlePokemon.TabStop = false;
             // 
             // frontFloor
             // 
             this.frontFloor.Image = ((System.Drawing.Image)(resources.GetObject("frontFloor.Image")));
-            this.frontFloor.Location = new System.Drawing.Point(416, 12);
+            this.frontFloor.Location = new System.Drawing.Point(416, 37);
             this.frontFloor.Name = "frontFloor";
             this.frontFloor.Size = new System.Drawing.Size(252, 173);
             this.frontFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -325,7 +325,7 @@
             // backFloor
             // 
             this.backFloor.Image = ((System.Drawing.Image)(resources.GetObject("backFloor.Image")));
-            this.backFloor.Location = new System.Drawing.Point(-5, 144);
+            this.backFloor.Location = new System.Drawing.Point(-4, 144);
             this.backFloor.Name = "backFloor";
             this.backFloor.Size = new System.Drawing.Size(261, 223);
             this.backFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
