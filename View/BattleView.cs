@@ -26,10 +26,11 @@ namespace PokeCiv.View
         private Battle battle;
         public Pokemon ready2Switch;
 
-        public BattleView(Battle battle)
+        public BattleView(Controller control, Battle battle)
         {
             InitializeComponent();
             this.battle = battle;
+            Control = control;
 
             drawOnce();
 
@@ -394,7 +395,7 @@ namespace PokeCiv.View
 
        private void button3_Click(object sender, EventArgs e)
        {
-           MessageBox.Show("You cant run its not implemented yet! Fight like a man :D");
+           Control.attemptEscape();
        }
 
 

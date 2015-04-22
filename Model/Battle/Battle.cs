@@ -21,6 +21,7 @@ namespace PokeCiv.Model.Battle
         public Controller Control { private get; set; }
 
         private bool loop = true;
+        private int escapeAttempts = 0;
 
         public Battle(Controller c, Player pl1, Player pl2, Pokemon p1, Pokemon p2, string mapType)
         {
@@ -60,6 +61,7 @@ namespace PokeCiv.Model.Battle
             bool faint = false;
             bool first = true;
             List<BattleMove> bmoves = selectMoves();
+            escapeAttempts = 0;
             foreach (BattleMove move in bmoves)
             {
                 bool halt = handleStatusPreAttack(move);
@@ -195,11 +197,36 @@ namespace PokeCiv.Model.Battle
             }
         }
 
+        public void attemptEscape()
+        {
+            Console.WriteLine("Attempting to escape");
+            if (player2.Name.Equals("WILD_POKEMON"))
+            {
+                escapeAttempts++;
+                int f = ((P1.Speed * 128) / Math.Max(P2.Speed, 1) + 30 * escapeAttempts) % 256;
+                bool escapeSuccesful = Mechanics.random.Next(256) < f;
+                if (escapeSuccesful)
+                {
+                    message("Got away safely!");
+                    Control.switchFromBattleToMap();
+                }
+                else
+                {
+                    message("Can't escape!");
+                    //TODO: enemy gets a free attack in
+                }
+            }
+            else
+            {
+                message("Can't run in a battle!");
+            }
+        }
+
         //send a message and message string to the view to inform the view about updates.
         public void message(string msg)
         {
-            Control.message(msg);
             Console.WriteLine(msg);
+            Control.message(msg);
         }
     }
 }
