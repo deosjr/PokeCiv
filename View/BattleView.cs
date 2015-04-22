@@ -398,6 +398,12 @@ namespace PokeCiv.View
            Control.attemptEscape();
        }
 
+       private void button4_Click(object sender, EventArgs e)
+       {
+           TeamView tv = new TeamView(Control);
+           tv.ShowDialog();
+       }
+
 
     }
 }
