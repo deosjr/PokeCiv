@@ -26,9 +26,9 @@ for i, name in names:
 	# mime jr.
 
 	if i == 29:
-		name = "nidoran-f"
+		name = "nidoranf"
 	elif i == 32:
-		name = "nidoran-m"
+		name = "nidoranm"
 	elif i == 83:
 		name = "farfetchd"
 	elif i == 122:
@@ -36,6 +36,7 @@ for i, name in names:
 	elif i == 439:
 		name = "mime-jr"
 
+	"""
 	# fuck deoxys and his forms
 	if i == 386:
 		name = "deoxys-normal"
@@ -53,6 +54,7 @@ for i, name in names:
 		name = "darmanitan-standard"
 	elif i == 648:
 		name = "meloetta-aria"
+	"""
 
 	f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + ".gif",'wb')
 	f1.write( urllib2.urlopen(url + name.lower() + ".gif").read() )
