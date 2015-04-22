@@ -2,7 +2,7 @@ import urllib2
 import os
 import time
 
-url = "http://www.pokestadium.com/tools/sprites/sprites/xy/"
+url = "http://www.pokestadium.com/sprites/xy/"
 
 f = open("pokemon.txt", 'r')
 
@@ -35,29 +35,53 @@ for i, name in names:
 		name = "mr-mime"
 	elif i == 439:
 		name = "mime-jr"
+	name = name.lower()
 
-	"""
-	# fuck deoxys and his forms
-	if i == 386:
-		name = "deoxys-normal"
-	# and fuck Wormadam. Thats not even a real pokemon
-	elif i == 413:
-		name = "wormadam-plant"
-	# srsly fuck forms
-	elif i == 479:
-		name = "rotom-normal"
-	elif i == 487:
-		name = "giratina-altered"
-	elif i == 492:
-		name = "shaymin-land"
-	elif i == 555:
-		name = "darmanitan-standard"
-	elif i == 648:
-		name = "meloetta-aria"
-	"""
+	try:
+		f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + ".gif",'wb')
+		f1.write( urllib2.urlopen(url + name + ".gif").read() )
+		f1.close()
+		time.sleep(1)
+	except urllib2.HTTPError, e:
+		print name + " not found"
 
-	f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + ".gif",'wb')
-	f1.write( urllib2.urlopen(url + name.lower() + ".gif").read() )
-	f1.close()
+	try:
+		handle = urllib2.urlopen(url + "back/" + name + ".gif")
+		f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + "b.gif",'wb')
+		f1.write( handle.read() )
+		f1.close()
+		time.sleep(1)
+	except urllib2.HTTPError, e:
+		print name + " back not found"
 
-	time.sleep(1)
+	try:
+		handle = urllib2.urlopen(url + "shiny/" + name + ".gif")
+		f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + "s.gif",'wb')
+		f1.write( handle.read() )
+		f1.close()
+		time.sleep(1)
+	except urllib2.HTTPError, e:
+		print name + " shiny not found"
+
+	try:
+		handle = urllib2.urlopen(url + "shiny/back/" + name + ".gif")
+		f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + "sb.gif",'wb')
+		f1.write( handle.read() )
+		f1.close()
+		time.sleep(1)
+	except urllib2.HTTPError, e:
+		print name + " shiny back not found"
+
+	n = 2
+	while (True):
+		try:
+			handle = urllib2.urlopen(url + name + "-" + str(n) + ".gif")
+			f1 = open("Graphics/Gen6Animations/" + str(i).zfill(3) + "-" + str(n) + ".gif",'wb')
+			f1.write( handle.read() )
+			f1.close()
+			time.sleep(1)
+		except urllib2.HTTPError, e:
+			print name + " has " + str(n - 2) + " attacks"
+			break
+		n = n + 1
+	
