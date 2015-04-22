@@ -70,11 +70,14 @@ namespace PokeCiv.Controllers
         //tell the controller that you are done. so no wait loop is required
         public void continuebattle(Pokemon newPokemon)
         {
-            Player opponent = Battle.player2;
-            Pokemon oppPokemon = Battle.P2;
+            if (Battle != null)
+            {
+                Player opponent = Battle.player2;
+                Pokemon oppPokemon = Battle.P2;
 
-            continueBattle(opponent, newPokemon, oppPokemon);
-            message("Go, " + newPokemon.Name + "!");
+                continueBattle(opponent, newPokemon, oppPokemon);
+                message("Go, " + newPokemon.Name + "!");
+            }
         }
 
         public void opponentSwitchPokemon(Player opponent)
