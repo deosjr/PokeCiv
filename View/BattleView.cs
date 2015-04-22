@@ -98,13 +98,13 @@ namespace PokeCiv.View
             //Pokemon Images           
             if (backImageBattlePokemon.InvokeRequired)
             {
-                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif"; }));
-                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif"; }));          
+                backImageBattlePokemon.Invoke(new MethodInvoker(delegate { backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Gen6Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif"; }));
+                frontImageBattlePokemon.Invoke(new MethodInvoker(delegate { frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Gen6Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif"; }));          
             }
             else
             {
-                backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
-                frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
+                backImageBattlePokemon.ImageLocation = "../../Data/Graphics/Gen6Animations/" + p1.species.ID.ToString().PadLeft(3, '0') + "b.gif";
+                frontImageBattlePokemon.ImageLocation = "../../Data/Graphics/Gen6Animations/" + p2.species.ID.ToString().PadLeft(3, '0') + ".gif";
             }
 
             //backgrond Image

@@ -47,7 +47,7 @@ namespace PokeCiv.View
         private void PokemonListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //set image
-            pokedexPokemonImage.ImageLocation = "../../Data/Graphics/Animations/" + ((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0') + ".gif";
+            pokedexPokemonImage.ImageLocation = "../../Data/Graphics/Gen6Animations/" + ((Species)PokemonListBox.SelectedItem).ID.ToString().PadLeft(3, '0') + ".gif";
             //set info text
             pokedexInfoString = ((Species)PokemonListBox.SelectedItem).Pokedex;
             //set labels

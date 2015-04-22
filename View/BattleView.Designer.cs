@@ -305,9 +305,9 @@
             // backImageBattlePokemon
             // 
             this.backImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("backImageBattlePokemon.Image")));
-            this.backImageBattlePokemon.Location = new System.Drawing.Point(-5, 144);
+            this.backImageBattlePokemon.Location = new System.Drawing.Point(23, 188);
             this.backImageBattlePokemon.Name = "backImageBattlePokemon";
-            this.backImageBattlePokemon.Size = new System.Drawing.Size(235, 127);
+            this.backImageBattlePokemon.Size = new System.Drawing.Size(203, 97);
             this.backImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.backImageBattlePokemon.TabIndex = 0;
             this.backImageBattlePokemon.TabStop = false;
