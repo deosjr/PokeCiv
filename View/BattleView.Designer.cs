@@ -305,7 +305,7 @@
             // backImageBattlePokemon
             // 
             this.backImageBattlePokemon.Image = ((System.Drawing.Image)(resources.GetObject("backImageBattlePokemon.Image")));
-            this.backImageBattlePokemon.Location = new System.Drawing.Point(-5, 154);
+            this.backImageBattlePokemon.Location = new System.Drawing.Point(4, 164);
             this.backImageBattlePokemon.Name = "backImageBattlePokemon";
             this.backImageBattlePokemon.Size = new System.Drawing.Size(378, 115);
             this.backImageBattlePokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -325,7 +325,7 @@
             // backFloor
             // 
             this.backFloor.Image = ((System.Drawing.Image)(resources.GetObject("backFloor.Image")));
-            this.backFloor.Location = new System.Drawing.Point(-14, 154);
+            this.backFloor.Location = new System.Drawing.Point(-5, 164);
             this.backFloor.Name = "backFloor";
             this.backFloor.Size = new System.Drawing.Size(387, 182);
             this.backFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
