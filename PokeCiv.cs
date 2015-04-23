@@ -68,7 +68,7 @@ namespace PokeCiv
             Dictionary<Char, TileItem> lookup = new Dictionary<char, TileItem>();
             // encounters = {0.45: ("PIDGEY", 2, 4), 0.3:("RATTATA",2,2), 0.2:("SENTRET",3,3), 0.05:("FURRET",6,6)}
             ArrayList testWildPokemon = new ArrayList();
-            testWildPokemon.Add(new Encounter("CHARIZARD", 5, 10, 1.0));
+            testWildPokemon.Add(new Encounter("LUGIA", 5, 10, 1.0));
             lookup.Add('w', new Grass(testWildPokemon, 0.1));
             lookup.Add('u', new Water());
             lookup.Add('x', new Block());
