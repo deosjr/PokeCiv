@@ -13,6 +13,7 @@ using PokeCiv.Model.Battle;
 using PokeCiv.Model.Pokedata;
 using PokeCiv.Model.World;
 using System.Collections;
+using System.Media;
 
 namespace PokeCiv.View
 {
@@ -28,6 +29,10 @@ namespace PokeCiv.View
 
         public BattleView(Controller control, Battle battle)
         {
+            
+            SoundPlayer BattleSound = new SoundPlayer("../../Data/Sounds/Music/107-battle-vs-wild-pokemon-.wav");
+            BattleSound.Play();
+
             InitializeComponent();
             this.battle = battle;
             Control = control;

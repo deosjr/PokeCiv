@@ -16,6 +16,7 @@ using PokeCiv.Model.World;
 using PokeCiv.Controllers;
 using PokeCiv.Model.World.Tiles.TileItems;
 using PokeCiv.Model.World.Tiles;
+using System.Media;
 
 namespace PokeCiv
 {
@@ -24,6 +25,10 @@ namespace PokeCiv
         [STAThread]
         static void Main(string[] args)
         {
+            //background sound test
+            SoundPlayer BackgroundSound = new SoundPlayer("../../Data/Sounds/Music/102-palette-town-theme.wav");
+            BackgroundSound.Play();
+
 
             //Debug values
             //Random r = Mechanics.random;
