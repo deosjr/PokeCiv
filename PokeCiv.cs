@@ -78,6 +78,8 @@ namespace PokeCiv
             lookup.Add('b', bush);
 
             m.GridFromASCII(ascii, lookup);
+            m.Grid[4, 4] = new Tile();
+            m.Grid[4, 4].tileItem = new Trainer();
             //TODO: un-hardcode this
             m.setPlayerCoordinates(8, 6);
             c.Map = m;

@@ -81,6 +81,7 @@
     <Compile Include="Model\World\Tiles\Tile.cs" />
     <Compile Include="Model\World\Map.cs" />
     <Compile Include="Model\World\Tiles\TileItems\Block.cs" />
+    <Compile Include="Model\World\Tiles\TileItems\Trainer.cs" />
     <Compile Include="Model\World\Tiles\TileItems\Water.cs" />
     <Compile Include="Model\World\Tiles\TileItems\Grass.cs" />
     <Compile Include="Model\World\Tiles\TileItems\TileItem.cs" />
