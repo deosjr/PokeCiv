@@ -33,8 +33,8 @@ namespace PokeCiv.Model.Pokedata
         public double Height    { get; private set; }
         public double Weight    { get; private set; }
 
-        public int BattlerPlayerX   { get; private set; }
         public int BattlerPlayerY   { get; private set; }
+        public int BattlerEnemyY    { get; private set; }
         public int BattlerAltitude  { get; private set; }
 
         public Species(Dictionary<string, string> data)
@@ -52,13 +52,13 @@ namespace PokeCiv.Model.Pokedata
             Kind = data["Kind"];
             Height = Convert.ToDouble(data["Height"]);
             Weight = Convert.ToDouble(data["Weight"]);
-            if (data.ContainsKey("BattlerPlayerX"))
-            {
-                BattlerPlayerX = Convert.ToInt32(data["BattlerPlayerX"]);
-            }
             if (data.ContainsKey("BattlerPlayerY"))
             {
                 BattlerPlayerY = Convert.ToInt32(data["BattlerPlayerY"]);
+            }
+            if (data.ContainsKey("BattlerEnemyY"))
+            {
+                BattlerEnemyY = Convert.ToInt32(data["BattlerEnemyY"]);
             }
             if (data.ContainsKey("BattlerAltitude"))
             {
