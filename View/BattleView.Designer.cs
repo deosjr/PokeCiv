@@ -327,7 +327,7 @@
             this.backFloor.Image = ((System.Drawing.Image)(resources.GetObject("backFloor.Image")));
             this.backFloor.Location = new System.Drawing.Point(-14, 154);
             this.backFloor.Name = "backFloor";
-            this.backFloor.Size = new System.Drawing.Size(387, 171);
+            this.backFloor.Size = new System.Drawing.Size(387, 182);
             this.backFloor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backFloor.TabIndex = 18;
             this.backFloor.TabStop = false;
