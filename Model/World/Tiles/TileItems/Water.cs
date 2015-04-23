@@ -12,7 +12,7 @@ namespace PokeCiv.Model.World.Tiles.TileItems
         public Water()
         {
             blocks = true;
-            imageSrc = "../../Data/Graphics/Tiles/water.png";
+            imgsrc = "../../Data/Graphics/Tiles/water"; ;
         }
 
     }

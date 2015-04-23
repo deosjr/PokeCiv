@@ -115,7 +115,7 @@ namespace PokeCiv.View
             {
                 return "";
             }
-            return tile.tileItem.imageSrc;
+            return tile.tileItem.imageSrc();
         }
 
         private void MapView_KeyUp(object sender, KeyEventArgs e)

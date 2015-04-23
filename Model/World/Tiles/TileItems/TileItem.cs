@@ -13,7 +13,17 @@ namespace PokeCiv.Model.World.Tiles.TileItems
 
         public bool blocks = false;
 
-        public string imageSrc;
+        public string imgsrc;
+        public int options = 0;
+
+        public string imageSrc()
+        {
+            if (options == 0)
+            {
+                return imgsrc + ".png";
+            }
+            return  imgsrc + Mechanics.random.Next(1, options+1) + ".png";
+        }
 
         public virtual void stepOn(Controller c) { }
 

@@ -73,7 +73,8 @@ namespace PokeCiv
             lookup.Add('u', new Water());
             lookup.Add('x', new Block());
             TileItem bush = new Block();
-            bush.imageSrc = "../../Data/Graphics/Tiles/bush.png";
+            bush.imgsrc = "../../Data/Graphics/Tiles/bush";
+            bush.options = 0;
             lookup.Add('b', bush);
 
             m.GridFromASCII(ascii, lookup);

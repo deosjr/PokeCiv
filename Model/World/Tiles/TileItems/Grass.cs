@@ -21,7 +21,7 @@ namespace PokeCiv.Model.World.Tiles.TileItems
         {
             this.encounters = encounters;
             this.p = p;
-            imageSrc = "../../Data/Graphics/Tiles/gras.png";
+            imgsrc = "../../Data/Graphics/Tiles/gras";
         }
             
         public override void stepOn(Controller c)
