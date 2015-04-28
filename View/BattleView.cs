@@ -164,108 +164,43 @@ namespace PokeCiv.View
 
 
             //HPBars
-           // if (BackPokemonHPBar.InvokeRequired)
-          //  {
-          //      BackPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Maximum = p1.HP; }));
-          //      BackPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Value = p1.CurrentHP; }));
-           // }
-          //  else
-           // {
+
                 BackPokemonHPBar.Maximum = p1.HP;
                 BackPokemonHPBar.Value = p1.CurrentHP;
-           // }
 
-          //  if (FrontPokemonHPBar.InvokeRequired)
-            //{
-             //   FrontPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Maximum = p2.HP; }));
-            //    FrontPokemonHPBar.Invoke(new MethodInvoker(delegate { BackPokemonHPBar.Value = p2.CurrentHP; }));
-          //  }
-          //  else
-          //  {
                 FrontPokemonHPBar.Maximum = p2.HP;
                 FrontPokemonHPBar.Value = p2.CurrentHP;
-           // }
 
-            //Own Pokemon HP Label
-          //  if (BackPokemonHPLabel.InvokeRequired)
-            //{
-              //  BackPokemonHPLabel.Invoke(new MethodInvoker(delegate { BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP"; }));
-          //  }
-           // else
-           // {
                 BackPokemonHPLabel.Text = p1.CurrentHP + "/" + p1.HP + "HP";
-           // }
 
-            //moves buttons
- 
-            
-//if (MovesButton1.InvokeRequired){
-            //    if (p1.Moves[0] != null)
-          //      {
-          //          MovesButton1.Invoke(new MethodInvoker(delegate { MovesButton1.Text = p1.Moves[0].move.ToString(); }));
-          //          labelPP_move1.Invoke(new MethodInvoker(delegate { labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString(); }));
-          //      }
-          //   }
-          //  else
-          //  {
+            //moves
                 if (p1.Moves[0] != null)
                 {
                     MovesButton1.Text = p1.Moves[0].move.ToString();
                     labelPP_move1.Text = "PP " + p1.Moves[0].currentPP.ToString() + "/" + p1.Moves[0].totalPP.ToString();
                 }
 
-           // }
-          //  if (MovesButton2.InvokeRequired)
-          //  {
-          //      if (p1.Moves[1] != null)
-          //      {
-         //       MovesButton2.Invoke(new MethodInvoker(delegate { MovesButton2.Text = p1.Moves[1].move.ToString(); }));
-           //     labelPP_move2.Invoke(new MethodInvoker(delegate { labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString(); }));
-          //      }
-          //  }
-           // else
-           // {
+
                 if (p1.Moves[1] != null)
                 {
                     MovesButton2.Text = p1.Moves[1].move.ToString();
                     labelPP_move2.Text = "PP " + p1.Moves[1].currentPP.ToString() + "/" + p1.Moves[1].totalPP.ToString();
                 }
 
-          //  }
-          //  if (MovesButton3.InvokeRequired)
-          //  {
-           //     if (p1.Moves[2] != null)
-           //     {
-                //    MovesButton3.Invoke(new MethodInvoker(delegate { MovesButton3.Text = p1.Moves[2].move.ToString(); }));
-               //     labelPP_move3.Invoke(new MethodInvoker(delegate { labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString(); }));
-             //   }
-          //  }
-           // else
-           // {
+
                 if (p1.Moves[2] != null)
                 {
                     MovesButton3.Text = p1.Moves[2].move.ToString();
                     labelPP_move3.Text = "PP " + p1.Moves[2].currentPP.ToString() + "/" + p1.Moves[2].totalPP.ToString();
                 }
 
-           // }
-            //if (MovesButton4.InvokeRequired)
-            //{
-            //    if (p1.Moves[3] != null)
-            //    {
-            //        MovesButton4.Invoke(new MethodInvoker(delegate { MovesButton4.Text = p1.Moves[3].move.ToString(); }));
-            //        labelPP_move4.Invoke(new MethodInvoker(delegate { labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString(); }));
-            //    }
-            //}
-            //else
-            //{
                 if (p1.Moves[3] != null)
                 {
                     MovesButton4.Text = p1.Moves[3].move.ToString();
                     labelPP_move4.Text = "PP " + p1.Moves[3].currentPP.ToString() + "/" + p1.Moves[3].totalPP.ToString();
                 }
 
-           // }
+
 
         }
 

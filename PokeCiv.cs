@@ -25,10 +25,9 @@ namespace PokeCiv
         [STAThread]
         static void Main(string[] args)
         {
-            //background sound test
+            
             SoundPlayer BackgroundSound = new SoundPlayer("../../Data/Sounds/Music/102-palette-town-theme.wav");
             BackgroundSound.Play();
-
 
             //Debug values
             //Random r = Mechanics.random;
